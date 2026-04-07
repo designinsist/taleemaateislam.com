@@ -19,7 +19,6 @@
     'quick-steps-for-success.html': 'life-guidance',
     'success-stories.html'        : 'life-guidance',
     'happiness-of-family.html'    : 'life-guidance',
-    'peace-in-old-age.html'       : 'life-guidance',
     'islamic-tools.html'          : 'islamic-tools.html',
   };
 

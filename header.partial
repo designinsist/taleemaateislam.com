@@ -75,7 +75,6 @@
           <li><a href="quick-steps-for-success.html" role="menuitem">Quick Steps for Success</a></li>
           <li><a href="success-stories.html" role="menuitem">Success Stories</a></li>
           <li><a href="happiness-of-family.html" role="menuitem">Happiness of Family</a></li>
-          <li><a href="peace-in-old-age.html" role="menuitem">Peace in Old Age</a></li>
         </ul>
       </li>
       <li class="nav-item">
@@ -105,8 +104,7 @@
       <a href="quick-steps-for-success.html" class="drawer-link drawer-sub">6. Quick Steps for Success</a>
       <div class="drawer-section-title">Family &amp; Elders</div>
       <a href="happiness-of-family.html" class="drawer-link drawer-sub">7. Happiness of Family</a>
-      <a href="peace-in-old-age.html" class="drawer-link drawer-sub">8. Peace in Old Age</a>
-      <a href="success-stories.html" class="drawer-link drawer-sub">9. Success Stories</a>
+      <a href="success-stories.html" class="drawer-link drawer-sub">8. Success Stories</a>
       <div class="drawer-section-title">Social</div>
       <a href="https://www.youtube.com/@TaleemaateIslam" target="_blank" rel="noopener noreferrer" class="drawer-link drawer-sub">▶ YouTube Channel</a>
       <a href="https://www.facebook.com/TaleemaateIslamOfficial/" target="_blank" rel="noopener noreferrer" class="drawer-link drawer-sub">▶ Facebook Page</a>
