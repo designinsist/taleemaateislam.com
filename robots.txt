@@ -1,0 +1,7 @@
+# Block crawlers from indexing the error page
+User-agent: *
+Disallow: /404.html
+Allow: /
+
+# Point all crawlers directly to the sitemap
+Sitemap: https://taleemaateislam.com/sitemap.xml
