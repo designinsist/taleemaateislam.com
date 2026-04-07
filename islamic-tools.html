@@ -4,22 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Namaz Timings, Islamic Calendar & Qibla | Taleemaat-e-Islam</title>
+  <title>Namaz Timings, Asr Hanafi & Shafi, Islamic Calendar & Qibla | Taleemaat-e-Islam</title>
   <meta name="description"
-    content="Accurate daily Namaz timings, Islamic Hijri calendar, Ramadan calendar and Qibla direction for major cities of Pakistan — powered by Aladhan API." />
+    content="Accurate daily Namaz timings with Asr Hanafi (Misal Doem / Misal Doim) and Asr Shafi-Ahl-e-Hadith (Misal Awwal / Misal Awal), plus Islamic Hijri calendar, Ramadan calendar, and Qibla direction for major cities of Pakistan — powered by Aladhan API." />
   <meta name="keywords"
-    content="Namaz timings Pakistan, prayer times Lahore, prayer times Karachi, Islamic calendar 2026, Hijri calendar Pakistan, Qibla direction Pakistan, Ramadan calendar, Taleemaat-e-Islam" />
+    content="Namaz timings Pakistan, prayer times Lahore, prayer times Karachi, Asr Hanafi, Asar Hanfi, Asr Shafi, Asar Shafi, Asr Ahl-e-Hadith, Asar Ahle Hadees, Misal Awwal, Misal Awal, Misal Doem, Misal Doim, عصر حنفی, عصر شافعی, اہل حدیث, مثلِ اوّل, مثلِ دوم, Islamic calendar 2026, Hijri calendar Pakistan, Qibla direction Pakistan, Ramadan calendar, Taleemaat-e-Islam" />
   <meta name="author" content="Taleemaat-e-Islam" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://taleemaateislam.com/islamic-tools.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://taleemaateislam.com/islamic-tools.html" />
-  <meta property="og:title" content="Namaz Timings, Islamic Calendar & Qibla | Taleemaat-e-Islam" />
+  <meta property="og:title" content="Namaz Timings, Asr Hanafi & Shafi, Islamic Calendar & Qibla | Taleemaat-e-Islam" />
   <meta property="og:description"
-    content="Accurate daily Namaz timings, Hijri calendar, Ramadan calendar and Qibla direction for Pakistan — powered by Aladhan API." />
+    content="Accurate daily Namaz timings with Asr Hanafi and Asr Shafi-Ahl-e-Hadith options, plus Hijri calendar, Ramadan calendar, and Qibla direction for Pakistan — powered by Aladhan API." />
   <meta property="og:site_name" content="Taleemaat-e-Islam" />
   <script
-    type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Namaz Timings, Islamic Calendar & Qibla Pakistan","description":"Accurate daily Namaz timings, Islamic Hijri calendar, Ramadan calendar and Qibla direction for major cities of Pakistan.","url":"https://taleemaateislam.com/islamic-tools.html","publisher":{"@type":"Organization","name":"Taleemaat-e-Islam","url":"https://taleemaateislam.com"}}</script>
+    type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Namaz Timings, Asr Hanafi & Shafi, Islamic Calendar & Qibla Pakistan","description":"Accurate daily Namaz timings with Asr Hanafi (Misal Doem) and Asr Shafi-Ahl-e-Hadith (Misal Awwal), plus Islamic Hijri calendar, Ramadan calendar and Qibla direction for major cities of Pakistan.","url":"https://taleemaateislam.com/islamic-tools.html","publisher":{"@type":"Organization","name":"Taleemaat-e-Islam","url":"https://taleemaateislam.com"}}</script>
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between Asr Hanafi and Asr Shafi?","acceptedAnswer":{"@type":"Answer","text":"Asr Hanafi uses Misal Doem (shadow becomes twice the object length), while Asr Shafi and Ahl-e-Hadith use Misal Awwal (shadow becomes equal to object length)."}},{"@type":"Question","name":"What is Misal Awwal and Misal Doem?","acceptedAnswer":{"@type":"Answer","text":"Misal Awwal means first shadow-length method (equal shadow), and Misal Doem means second shadow-length method (double shadow) used for Asr calculations."}},{"@type":"Question","name":"Which Asr option should I select on this page?","acceptedAnswer":{"@type":"Answer","text":"Choose Hanafi if your local mosque follows Hanafi fiqh. Choose Shafi / Ahl-e-Hadith if your local masjid follows that calculation method."}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -486,6 +488,42 @@
       color: var(--text-mid);
     }
 
+    .fiqh-toggle {
+      display: inline-flex;
+      gap: 6px;
+      padding: 5px;
+      border: 1.5px solid rgba(201, 150, 58, 0.35);
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(250, 249, 245, 0.96));
+      box-shadow: 0 8px 20px rgba(13, 40, 24, 0.08);
+    }
+
+    .fiqh-btn {
+      border: none;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--text-mid);
+      padding: 10px 16px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+      white-space: nowrap;
+    }
+
+    .fiqh-btn:hover {
+      transform: translateY(-1px);
+      color: var(--green-deep);
+    }
+
+    .fiqh-btn.active {
+      background: linear-gradient(135deg, var(--green-deep), var(--green-rich));
+      color: var(--gold-light);
+      box-shadow: 0 8px 18px rgba(13, 40, 24, 0.28), inset 0 0 0 1px rgba(232, 184, 75, 0.25);
+    }
+
     .date-display {
       display: flex;
       gap: 14px;
@@ -621,6 +659,56 @@
       font-size: 0.78rem;
       color: var(--text-muted);
       line-height: 1.7;
+    }
+
+    .fiqh-faq-box {
+      margin-top: 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 18px 18px 6px;
+      border-radius: var(--radius);
+    }
+
+    .fiqh-faq-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--green-deep);
+      margin-bottom: 10px;
+    }
+
+    .fiqh-faq-box details {
+      border-top: 1px solid rgba(201, 150, 58, 0.18);
+      padding: 10px 0;
+    }
+
+    .fiqh-faq-box details:first-of-type {
+      border-top: none;
+    }
+
+    .fiqh-faq-box summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text-mid);
+      font-size: 0.85rem;
+    }
+
+    .fiqh-faq-box p {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .fiqh-explainer {
+      margin-top: 14px;
+      margin-bottom: 12px;
+      padding: 14px 16px;
+      background: linear-gradient(180deg, rgba(232, 184, 75, 0.08), rgba(201, 150, 58, 0.04));
+      border: 1px solid rgba(201, 150, 58, 0.28);
+      border-radius: var(--radius);
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.8;
     }
 
     /* QIBLA */
@@ -1345,14 +1433,13 @@
           </div>
           
           <div class="filter-group">
-            <label for="fiqh-select">Fiqh (Asr):</label>
-            <select class="city-select" id="fiqh-select" style="min-width: 150px;">
-              <option value="1">Hanafi</option>
-              <option value="0">Shafi'i / Standard</option>
-            </select>
+            <label id="fiqh-toggle-label">Fiqh (Asr):</label>
+            <div class="fiqh-toggle" role="group" aria-labelledby="fiqh-toggle-label">
+              <button type="button" class="fiqh-btn active" data-school="1" id="fiqh-hanafi" aria-pressed="true">Hanafi (Misal Doem)</button>
+              <button type="button" class="fiqh-btn" data-school="0" id="fiqh-shafi" aria-pressed="false">Shafi / Ahl-e-Hadith (Misal Awwal)</button>
+            </div>
           </div>
         </div>
-
         <div class="date-display">
           <div class="date-pill" id="gregorian-date">Loading...</div>
           <div class="date-pill hijri" id="hijri-date-namaz">Loading...</div>
@@ -1395,7 +1482,25 @@
         </div>
         <div id="namaz-error" class="error-msg">Unable to load prayer times. Please check your internet connection and
           refresh the page.</div>
-        <p class="namaz-note">* Prayer times calculated using the University of Islamic Sciences (Karachi) method. Powered by <a href="https://aladhan.com" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">Aladhan API</a>. Times are approximate — verify with your local mosque.</p>
+        <p class="namaz-note">* Prayer times calculated using the University of Islamic Sciences (Karachi) method with selectable Asr fiqh (Hanafi or Shafi'i / Ahl-e-Hadith). Powered by <a href="https://aladhan.com" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">Aladhan API</a>. Times are approximate — verify with your local mosque.</p>
+        <div class="fiqh-explainer">
+          Asr Hanafi (Asar Hanfi, عصر حنفی) uses <strong>Misal Doem / Misal Doim</strong> (مثلِ دوم), while Asr Shafi / Ahl-e-Hadith (Asar Shafi, Asar Ahle Hadees, عصر شافعی، اہل حدیث) uses <strong>Misal Awwal / Misal Awal</strong> (مثلِ اوّل).
+        </div>
+        <div class="fiqh-faq-box" aria-labelledby="fiqh-faq-title">
+          <h3 id="fiqh-faq-title">Asr Fiqh FAQ</h3>
+          <details>
+            <summary>What is the difference between Asr Hanafi and Asr Shafi?</summary>
+            <p>Asr Hanafi follows <strong>Misal Doem</strong> (shadow reaches roughly 2x object length), while Asr Shafi / Ahl-e-Hadith follows <strong>Misal Awwal</strong> (shadow reaches roughly 1x object length).</p>
+          </details>
+          <details>
+            <summary>Misal Awwal vs Misal Doem — what do these terms mean?</summary>
+            <p><strong>Misal Awwal (مثلِ اوّل)</strong> means first shadow method (equal shadow). <strong>Misal Doem (مثلِ دوم)</strong> means second shadow method (double shadow), commonly used in Hanafi Asr timing.</p>
+          </details>
+          <details>
+            <summary>Which option should I select?</summary>
+            <p>Select the option your local mosque follows. If your masjid follows Hanafi fiqh, choose Hanafi. If it follows Shafi / Ahl-e-Hadith calculation, choose Shafi.</p>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -1609,18 +1714,31 @@
     }
 
     const citySel = document.getElementById('city-select');
-    const fiqhSel = document.getElementById('fiqh-select');
+    const fiqhBtns = document.querySelectorAll('.fiqh-btn');
+    let currentFiqhSchool = '1';
 
     citySel.addEventListener('change', function () { 
-      loadPrayerTimes(this.value, fiqhSel.value); 
+      loadPrayerTimes(this.value, currentFiqhSchool); 
     });
-    
-    fiqhSel.addEventListener('change', function () { 
-      loadPrayerTimes(citySel.value, this.value); 
+
+    fiqhBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const selected = this.getAttribute('data-school');
+        if (selected === currentFiqhSchool) return;
+
+        currentFiqhSchool = selected;
+        fiqhBtns.forEach(function (b) {
+          const active = b === btn;
+          b.classList.toggle('active', active);
+          b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+
+        loadPrayerTimes(citySel.value, currentFiqhSchool);
+      });
     });
 
     // Initial load (Lahore, Hanafi)
-    loadPrayerTimes('Lahore', '1');
+    loadPrayerTimes('Lahore', currentFiqhSchool);
     setInterval(highlightActivePrayer, 60000);
 
     // ══════════════════════

@@ -64,7 +64,7 @@
         </a>
         <ul class="dropdown" role="menu" aria-label="Spirituality submenu">
           <li><a href="connect-with-allah.html" role="menuitem">Connect with Allah</a></li>
-          <li><a href="peace-through-zikr.html" role="menuitem">Peace through Zikr</a></li>
+          <li><a href="peace-through-zikr.html" role="menuitem">Pathway to Peace</a></li>
         </ul>
       </li>
       <li class="nav-item">
@@ -79,7 +79,7 @@
         </ul>
       </li>
       <li class="nav-item">
-        <a href="islamic-tools.html" class="nav-link" data-page="islamic-tools.html">Prayer Times</a>
+        <a href="islamic-tools.html" class="nav-link" data-page="islamic-tools.html">Prayer Tools</a>
       </li>
     </ul>
 
@@ -99,8 +99,8 @@
       <a href="syed-ul-bashar.html" class="drawer-link drawer-sub">2. Syed-ul-Bashar (PBUH)</a>
       <div class="drawer-section-title">Spirituality</div>
       <a href="connect-with-allah.html" class="drawer-link drawer-sub">3. Connect with Allah</a>
-      <a href="peace-through-zikr.html" class="drawer-link drawer-sub">4. Peace through Zikr</a>
-      <a href="islamic-tools.html" class="drawer-link drawer-sub">5. Prayer Times &amp; Calendar</a>
+      <a href="peace-through-zikr.html" class="drawer-link drawer-sub">4. Pathway to Peace</a>
+      <a href="islamic-tools.html" class="drawer-link drawer-sub">5. Prayer Tools</a>
       <div class="drawer-section-title">Success &amp; Life</div>
       <a href="quick-steps-for-success.html" class="drawer-link drawer-sub">6. Quick Steps for Success</a>
       <div class="drawer-section-title">Family &amp; Elders</div>
