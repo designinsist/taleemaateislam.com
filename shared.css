@@ -105,7 +105,7 @@ main { flex: 1; }
 
 /* ═══ MASTER FOOTER ═══ */
 footer { background: #060f0a; color: rgba(255,255,255,0.55); }
-.footer-main { padding: 64px 0 40px; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px; }
+.footer-main { padding: 64px 0 40px; display: grid; grid-template-columns: 1.5fr 1fr 0.8fr 1.1fr; gap: 40px; }
 .footer-brand strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--gold-light); margin-bottom: 12px; }
 .footer-col h4 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
 .footer-col a { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.5); padding: 5px 0; transition: color var(--transition); }
