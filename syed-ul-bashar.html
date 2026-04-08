@@ -5,20 +5,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Syed-ul-Bashar (PBUH) - Tribute of Devotion | Taleemaat-e-Islam</title>
+  <title>Syed-ul-Bashar (PBUH) — Prophet Muhammad ﷺ, His Family & Companions | Taleemaat-e-Islam</title>
   <meta name="description"
-    content="Explore the blessed Seerah of Prophet Muhammad ﷺ through 'A Tribute of Devotion' – a unique collection of tributes from unbiased, world-renowned non-Muslim personalities." />
+    content="Explore the life of Prophet Muhammad ﷺ as the perfect family head, and the blessed lives of Hazrat Fatima (RA) and Hazrat Ali (RA) — alongside the free book 'A Tribute of Devotion' on Taleemaat-e-Islam." />
   <meta name="keywords"
-    content="Syed-ul-Bashar, Prophet Muhammad PBUH, Seerah, Tribute of Devotion, Non-Muslim views on Islam, Islamic Books, Muhammad Mustafa ﷺ" />
+    content="Syed-ul-Bashar, Prophet Muhammad PBUH as family head, Hazrat Fatima RA biography, Hazrat Ali ibn Abi Talib RA, Ahl al-Bayt, Seerah, Tribute of Devotion, free Islamic books, Taleemaat-e-Islam" />
   <meta name="author" content="Taleemaat-e-Islam" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://taleemaateislam.com/syed-ul-bashar.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://taleemaateislam.com/syed-ul-bashar.html" />
-  <meta property="og:title" content="Syed-ul-Bashar (PBUH) | Seerah & Spiritual Guidance" />
+  <meta property="og:title" content="Syed-ul-Bashar (PBUH) — Prophet ﷺ as Family Head, Hazrat Fatima &amp; Hazrat Ali | Taleemaat-e-Islam" />
   <meta property="og:description"
-    content="Read 'A Tribute of Devotion' - an unbiased perspective on the life of the Holy Prophet ﷺ by global personalities." />
+    content="The Prophet Muhammad ﷺ as the perfect family head, lives of Hazrat Fatima (RA) and Hazrat Ali (RA), and the free book A Tribute of Devotion — on Taleemaat-e-Islam." />
   <meta property="og:site_name" content="Taleemaat-e-Islam" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Syed-ul-Bashar (PBUH) | Taleemaat-e-Islam" />
@@ -331,6 +331,66 @@
       border-color: var(--gold);
     }
 
+
+    /* ── Ahl al-Bayt Profiles Section ── */
+    .profiles-section { padding: 72px 0 80px; background: var(--green-deep); position: relative; overflow: hidden; }
+    .profiles-section::before { content: ''; position: absolute; inset: 0; opacity: 0.03; background-image: repeating-linear-gradient(45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px),repeating-linear-gradient(-45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px); }
+    .profiles-section .container { position: relative; z-index: 2; }
+    .profiles-section .section-label { color: var(--gold); }
+    .profiles-section .section-title { color: var(--white); }
+    .profiles-section .section-title span { color: var(--gold-light); }
+    .profiles-section .divider-gold .line { background: rgba(201,150,58,0.3); }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-label { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 700; color: var(--green-deep); line-height: 1.25; }
+    .section-title span { color: var(--gold); }
+    .divider-gold { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 16px auto 0; width: fit-content; }
+    .divider-gold .line { height: 1px; background: var(--border); width: 50px; }
+    .divider-gold .diamond { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+    .profile-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,150,58,0.2);
+      border-radius: 8px;
+      margin-bottom: 32px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+    }
+    .profile-badge {
+      background: rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 20px;
+      text-align: center;
+      position: relative;
+      border-right: 1px solid rgba(201,150,58,0.15);
+    }
+    .profile-badge::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(201,150,58,0.2); pointer-events: none; }
+    .profile-icon { font-size: 2.6rem; margin-bottom: 12px; line-height: 1; }
+    .profile-era { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .profile-category { font-size: 0.68rem; color: rgba(255,255,255,0.45); letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.5; }
+
+    .profile-body { padding: 36px 44px; }
+    .profile-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .profile-name { font-family: 'Playfair Display', serif; font-size: 1.45rem; font-weight: 700; color: var(--white); margin-bottom: 4px; line-height: 1.3; }
+    .profile-name-arabic { font-family: 'Amiri', serif; font-size: 1.1rem; color: var(--gold-light); direction: rtl; margin-bottom: 6px; }
+    .profile-dates { font-size: 0.78rem; color: rgba(255,255,255,0.45); font-weight: 600; margin-bottom: 20px; letter-spacing: 0.04em; }
+    .profile-bio { font-size: 0.93rem; color: rgba(255,255,255,0.7); line-height: 1.85; margin-bottom: 18px; }
+    .profile-quote { border-left: 3px solid var(--gold); padding: 14px 20px; background: rgba(201,150,58,0.07); border-radius: 0 4px 4px 0; font-family: 'Amiri', serif; font-size: 0.95rem; font-style: italic; color: rgba(255,255,255,0.8); line-height: 1.8; }
+    .profile-quote cite { display: block; font-size: 0.7rem; font-style: normal; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-top: 8px; }
+
+    @media(max-width:1024px) { .profile-card { grid-template-columns: 170px 1fr; } }
+    @media(max-width:768px) {
+      .profile-card { grid-template-columns: 1fr; }
+      .profile-badge { padding: 28px 20px; flex-direction: row; gap: 14px; justify-content: flex-start; text-align: left; border-right: none; border-bottom: 1px solid rgba(201,150,58,0.15); }
+      .profile-badge::after { display: none; }
+      .profile-icon { font-size: 2rem; margin-bottom: 0; }
+      .profile-body { padding: 28px 24px; }
+    }
+
     /* IN-PAGE PDF READER */
     .pdf-reader-wrapper {
       margin-top: 30px;
@@ -476,6 +536,84 @@
 
       </div>
     </section>
+
+    <!-- AHL AL-BAYT PROFILES -->
+    <section class="profiles-section" aria-labelledby="family-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">The Noble Household</span>
+          <h2 class="section-title" id="family-heading">The Prophet ﷺ &amp; His <span style="color:var(--gold-light);">Blessed Family</span></h2>
+          <div class="divider-gold" aria-hidden="true">
+            <div class="line"></div><div class="diamond"></div><div class="line"></div>
+          </div>
+        </div>
+
+        <!-- 01. PROPHET ﷺ AS FAMILY HEAD -->
+        <article class="profile-card" aria-labelledby="f1-name">
+          <div class="profile-badge" aria-hidden="true">
+            <span class="profile-icon">🕌</span>
+            <span class="profile-era">570 – 632 CE</span>
+            <span class="profile-category">Prophet ﷺ · Husband · Father</span>
+          </div>
+          <div class="profile-body">
+            <p class="profile-num">Profile 01 of 03</p>
+            <h3 class="profile-name" id="f1-name">Prophet Muhammad ﷺ — The Perfect Family Head</h3>
+            <p class="profile-name-arabic" lang="ar" dir="rtl">مُحَمَّدٌ رَسُولُ اللَّهِ ﷺ</p>
+            <p class="profile-dates">Born: 12 Rabi' al-Awwal, 570 CE, Makkah &nbsp;|&nbsp; Passed: 12 Rabi' al-Awwal, 632 CE (11 AH), Madinah</p>
+            <p class="profile-bio">The Prophet Muhammad ﷺ was not only the final messenger of Allah and the leader of nations — he was, in his home, the most loving, gentle, and exemplary husband and father that humanity has ever known. At a time when women had no rights and daughters were buried alive, the Prophet ﷺ elevated the status of women through his own conduct and example. He helped with household chores, mended his own clothes, and said: <em>"The best of you is the one who is best to his family — and I am the best of you to my family."</em> (Sunan al-Tirmidhi)</p>
+            <p class="profile-bio">His relationship with his first wife, Hazrat Khadijah (RA), was one of profound love, partnership, and devotion. Even years after her passing, he would frequently mention her name, send gifts to her friends, and speak of her with deep affection. With Hazrat Aisha (RA), he was playful and tender, famously racing with her and consulting her on important matters. With his daughter Hazrat Fatima (RA), he would stand and kiss her forehead whenever she entered the room. He said of his grandsons Hasan and Husayn: <em>"They are my fragrance in this world."</em> The Quran commands Muslims: <em>"And live with them in kindness"</em> (4:19), and the Prophet ﷺ was the living embodiment of this command — his home was a sanctuary of mercy, justice, and divine light.</p>
+            <blockquote class="profile-quote">
+              "The best of you is the one who is best to his family — and I am the best of you to my family."
+              <cite>— Prophet Muhammad ﷺ (Sunan al-Tirmidhi, Hadith 3895 — Sahih)</cite>
+            </blockquote>
+          </div>
+        </article>
+
+        <!-- 02. HAZRAT FATIMA (RA) -->
+        <article class="profile-card" aria-labelledby="f2-name">
+          <div class="profile-badge" aria-hidden="true">
+            <span class="profile-icon">🌸</span>
+            <span class="profile-era">c. 605 – 632 CE</span>
+            <span class="profile-category">Sahابية · Ahl al-Bayt · Al-Zahra</span>
+          </div>
+          <div class="profile-body">
+            <p class="profile-num">Profile 02 of 03</p>
+            <h3 class="profile-name" id="f2-name">Hazrat Fatima al-Zahra <span style="color:var(--gold-light);font-size:0.9rem;">رضي الله عنها</span></h3>
+            <p class="profile-name-arabic" lang="ar" dir="rtl">فاطمة الزهراء بنت محمد رسول الله ﷺ</p>
+            <p class="profile-dates">Born: c. 605 CE, Makkah &nbsp;|&nbsp; Passed: c. 632 CE, Madinah — approximately 90 days after her father ﷺ</p>
+            <p class="profile-bio">Hazrat Fatima (RA) — honoured with the title <em>al-Zahra</em> (the Radiant) and <em>Sayyidat Nisa' al-'Alamin</em> (Leader of the Women of all the Worlds) — was the youngest and most beloved daughter of Prophet Muhammad ﷺ and Hazrat Khadijah (RA). Born in Makkah approximately five years before the declaration of Prophethood, she grew up as a witness to the earliest and most difficult years of Islam. When a hostile mob poured filth upon her father during prayer, young Fatima rushed to him — cleaning him and weeping — such that the Prophet ﷺ called her <em>Umm Abiha</em> (Mother of her Father), in recognition of her fierce devotion and care.</p>
+            <p class="profile-bio">The Prophet ﷺ said of her: <em>"Fatima is a part of me. Whoever angers her has angered me, and whoever pleases her has pleased me."</em> (Sahih al-Bukhari). He also declared her one of the four greatest women in all of history, alongside Maryam (AS), Khadijah (RA), and Asiya (RA). She married Hazrat Ali ibn Abi Talib (RA) in the first year of Hijra in Madinah, and despite their simple means, their home was a sanctuary of faith, learning, and devotion. She is the mother of Hasan and Husayn (RA) — the beloved grandsons of the Prophet ﷺ — and of Zaynab and Umm Kulthum (RA). Hazrat Aisha (RA) said of her: <em>"I have not seen anyone who more resembled the Messenger of Allah ﷺ in manner and speech than Fatima."</em> She passed away approximately ninety days after the death of her father ﷺ, deeply grieving his loss, and was buried in Madinah.</p>
+            <blockquote class="profile-quote">
+              "Fatima is a part of me. Whoever angers her has angered me, and whoever pleases her has pleased me."
+              <cite>— Prophet Muhammad ﷺ regarding Hazrat Fatima (RA) (Sahih al-Bukhari, Book 62, Hadith 74)</cite>
+            </blockquote>
+          </div>
+        </article>
+
+        <!-- 03. HAZRAT ALI (RA) -->
+        <article class="profile-card" aria-labelledby="f3-name">
+          <div class="profile-badge" aria-hidden="true">
+            <span class="profile-icon">⚔️</span>
+            <span class="profile-era">c. 600 – 661 CE</span>
+            <span class="profile-category">Sahabi · 4th Caliph · Ahl al-Bayt</span>
+          </div>
+          <div class="profile-body">
+            <p class="profile-num">Profile 03 of 03</p>
+            <h3 class="profile-name" id="f3-name">Hazrat Ali ibn Abi Talib <span style="color:var(--gold-light);font-size:0.9rem;">رضي الله عنه</span></h3>
+            <p class="profile-name-arabic" lang="ar" dir="rtl">عليّ بن أبي طالب كرم الله وجهه</p>
+            <p class="profile-dates">Born: c. 600 CE (13 Rajab), Makkah — reportedly born inside the Ka'bah &nbsp;|&nbsp; Martyred: 21 Ramadan, 661 CE (40 AH), Kufa</p>
+            <p class="profile-bio">Hazrat Ali ibn Abi Talib (RA) — cousin and son-in-law of Prophet Muhammad ﷺ, and the fourth of the Rightly Guided Caliphs — is among the most revered and beloved figures in all of Islamic history. Born into the noble Banu Hashim clan of the Quraysh, he was raised from childhood in the very household of the Prophet ﷺ after his father Abu Talib faced hardship. At approximately ten years of age, he became — after Hazrat Khadijah (RA) — one of the earliest people to accept Islam. The Prophet ﷺ said of him: <em>"Ali prayed with me seven years before anyone else prayed."</em> Imam Ahmad ibn Hanbal declared: <em>"No companion of the Messenger of Allah ﷺ has been narrated with as many virtues as Ali ibn Abi Talib."</em></p>
+            <p class="profile-bio">He is among the ten Companions given the glad tidings of Paradise. In the pivotal night of the Hijra, when the Quraysh plotted to assassinate the Prophet ﷺ, it was Hazrat Ali (RA) who lay in the Prophet's bed as a decoy — offering his own life in service of Islam. He fought in every major battle alongside the Prophet ﷺ, carrying the banner of Islam. He served as a trusted advisor to all three Caliphs before him, and it was he who suggested to Hazrat Umar (RA) the institution of the Hijri Calendar. He became the fourth Caliph in 656 CE, ruling with extraordinary justice, simplicity, and devotion. His sermons, letters and wisdom — collected in <em>Nahj al-Balagha</em> (Peak of Eloquence) — are considered among the most profound works in Arabic literature and Islamic theology after the Quran and Hadith. He was martyred in 661 CE in Kufa while prostrating in Fajr prayer, struck by the poisoned sword of a Kharijite. He was buried in Najaf, Iraq — which became a site of great veneration for all Muslims.</p>
+            <blockquote class="profile-quote">
+              "Your remedy is within you, but you do not sense it. Your sickness is from you, but you do not perceive it. You presume you are a small entity, but within you is enfolded the entire universe."
+              <cite>— Hazrat Ali ibn Abi Talib رضي الله عنه (Nahj al-Balagha)</cite>
+            </blockquote>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
   </main>
 
   <div id="site-footer"></div>
