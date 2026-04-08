@@ -13,13 +13,11 @@
     'index.html'                  : 'index.html',
     ''                            : 'index.html',   // root path
     'dars-e-quran.html'           : 'dars-e-quran.html',
-    'peace-through-zikr.html'     : 'spirituality',
-    'connect-with-allah.html'     : 'spirituality',
+    'connect-with-allah.html'     : 'connect-with-allah.html',
     'syed-ul-bashar.html'         : 'syed-ul-bashar.html',
-    'quick-steps-for-success.html': 'life-guidance',
-    'success-stories.html'        : 'life-guidance',
-    'happiness-of-family.html'    : 'life-guidance',
     'islamic-tools.html'          : 'islamic-tools.html',
+    'qasas-ul-anbiya.html'        : 'qasas-ul-anbiya.html',
+    'al-salihin.html'             : 'al-salihin.html',
   };
 
   /* ── Read fragment text with fetch first, XHR fallback for local file usage ── */
