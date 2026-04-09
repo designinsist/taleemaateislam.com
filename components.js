@@ -115,20 +115,13 @@
     var timeEl  = document.getElementById('live-time');
     if (!gregEl && !hijriEl && !timeEl) return;
 
-    var hijriFormatter = new Intl.DateTimeFormat('en-US-u-ca-islamic', {
-      day: 'numeric', month: 'long', year: 'numeric'
-    });
-
+    /* ── Gregorian date & clock — runs every second, no API needed ── */
     function tick() {
       var now = new Date();
-
       if (gregEl) {
         gregEl.textContent = now.toLocaleDateString('en-US', {
           weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
         });
-      }
-      if (hijriEl) {
-        hijriEl.textContent = hijriFormatter.format(now);
       }
       if (timeEl) {
         timeEl.textContent = now.toLocaleTimeString('en-US', {
@@ -136,9 +129,83 @@
         });
       }
     }
-
     tick();
     setInterval(tick, 1000);
+
+    /* ── Hijri date via Aladhan API ──────────────────────────────────
+     * Endpoint : GET https://api.aladhan.com/v1/gToH/DD-MM-YYYY
+     * Response : res.data.hijri.{ day, month.en, year }
+     * This is the same trusted API powering prayer times on the site,
+     * so the Hijri date is always accurate and identical on every
+     * device and browser — no more "October BC" on Android.
+     *
+     * Fallback : if the API is unreachable (offline / slow network)
+     * the Kuwaiti algorithmic calculation runs instantly in JS and
+     * gives the correct date to within 1 day with zero dependencies.
+     * ────────────────────────────────────────────────────────────── */
+    if (!hijriEl) return;
+
+    /* Kuwaiti algorithm — pure JS, works offline on every device */
+    function hijriFallback(date) {
+      var MONTHS = [
+        'Muharram', 'Safar', 'Rabi al-Awwal', 'Rabi al-Thani',
+        'Jumada al-Ula', 'Jumada al-Akhirah', 'Rajab', "Sha'ban",
+        'Ramadan', 'Shawwal', "Dhu al-Qi'dah", 'Dhu al-Hijjah'
+      ];
+      var jd = Math.floor((date.getTime() / 86400000) + 2440587.5);
+      var l  = jd - 1948440 + 10632;
+      var n  = Math.floor((l - 1) / 10631);
+      l      = l - 10631 * n + 354;
+      var j  = Math.floor((10985 - l) / 5316) * Math.floor((50 * l) / 17719)
+             + Math.floor(l / 5670) * Math.floor((43 * l) / 15238);
+      l      = l - Math.floor((30 - j) / 15) * Math.floor((17719 * j) / 50)
+             - Math.floor(j / 16) * Math.floor((15238 * j) / 43) + 29;
+      var month = Math.floor((24 * l) / 709);
+      var day   = l - Math.floor((709 * month) / 24);
+      var year  = 30 * n + j - 30;
+      return day + ' ' + MONTHS[month - 1] + ' ' + year + ' AH';
+    }
+
+    /* Fetch Hijri date from Aladhan — called once on load, then
+       again automatically at midnight if the page stays open */
+    function fetchHijriDate() {
+      var now  = new Date();
+      var dd   = now.getDate();
+      var mm   = now.getMonth() + 1;
+      var yyyy = now.getFullYear();
+
+      fetch('https://api.aladhan.com/v1/gToH/' + dd + '-' + mm + '-' + yyyy)
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (res.code === 200 && res.data && res.data.hijri) {
+            var h = res.data.hijri;
+            hijriEl.textContent = h.day + ' ' + h.month.en + ' ' + h.year + ' AH';
+          } else {
+            /* API responded but data was unexpected */
+            hijriEl.textContent = hijriFallback(now);
+          }
+        })
+        .catch(function () {
+          /* Network error or offline — use instant JS fallback */
+          hijriEl.textContent = hijriFallback(now);
+        });
+    }
+
+    /* Run immediately on page load */
+    fetchHijriDate();
+
+    /* Schedule a refresh at the next midnight so the date updates
+       correctly if the page is left open overnight */
+    function scheduleNextMidnight() {
+      var now  = new Date();
+      var next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+      var msUntilMidnight = next - now;
+      setTimeout(function () {
+        fetchHijriDate();
+        setInterval(fetchHijriDate, 86400000); /* then every 24 h */
+      }, msUntilMidnight);
+    }
+    scheduleNextMidnight();
   }
 
   /* ── Copyright year ── */
