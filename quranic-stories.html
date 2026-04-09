@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Quranic Stories — واقعات قرآنی | Taleemaat-e-Islam</title>
+  <meta name="description" content="Timeless stories from the Holy Quran — Yusuf (AS), Musa (AS), Ibrahim (AS), Maryam (AS), Ashab al-Kahf, Yunus (AS), Ayyub (AS) and Adam (AS). Authentic lessons of faith, patience and divine wisdom on Taleemaat-e-Islam." />
+  <meta name="keywords" content="Quranic stories, واقعات قرآنی, story of Yusuf in Quran, story of Musa in Quran, story of Ibrahim in Quran, Maryam in Quran, Ashab al-Kahf, Yunus in Quran, Ayyub in Quran, Adam in Quran, Islamic stories, Quran lessons, Taleemaat-e-Islam" />
+  <meta name="author" content="Taleemaat-e-Islam" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://taleemaateislam.com/quranic-stories.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://taleemaateislam.com/quranic-stories.html" />
+  <meta property="og:title" content="Quranic Stories — واقعات قرآنی | Taleemaat-e-Islam" />
+  <meta property="og:description" content="Eight timeless stories from the Holy Quran — lessons of faith, patience, trust in Allah and divine wisdom for every believer." />
+  <meta property="og:site_name" content="Taleemaat-e-Islam" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Quranic Stories — واقعات قرآنی | Taleemaat-e-Islam" />
+  <meta name="twitter:description" content="Timeless stories from the Holy Quran with authentic lessons for every Muslim — on Taleemaat-e-Islam." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Quranic Stories — واقعات قرآنی",
+    "description": "Timeless stories from the Holy Quran including Yusuf, Musa, Ibrahim, Maryam, Ashab al-Kahf, Yunus, Ayyub and Adam.",
+    "url": "https://taleemaateislam.com/quranic-stories.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Taleemaat-e-Islam",
+      "url": "https://taleemaateislam.com"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;600;700&family=Nunito:wght@300;400;600&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+
+  <link rel="stylesheet" href="shared.css" />
+
+  <style>
+    /* ── Story Section ── */
+    .stories-section {
+      padding: 80px 0 96px;
+      background: var(--off-white);
+    }
+
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-label { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 700; color: var(--green-deep); line-height: 1.25; }
+    .section-title span { color: var(--gold); }
+    .divider-gold { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 16px auto 0; width: fit-content; }
+    .divider-gold .line { height: 1px; background: var(--border); width: 50px; }
+    .divider-gold .diamond { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+    /* ── Story Card ── */
+    .story-card {
+      background: var(--white);
+      border: 1px solid rgba(201,150,58,0.15);
+      border-radius: 8px;
+      margin-bottom: 48px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(13,40,24,0.07);
+    }
+
+    /* Card header band */
+    .story-header {
+      background: var(--green-deep);
+      padding: 28px 44px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: repeating-linear-gradient(45deg,transparent,transparent 19px,rgba(201,150,58,1) 20px),
+                        repeating-linear-gradient(-45deg,transparent,transparent 19px,rgba(201,150,58,1) 20px);
+    }
+    .story-header-icon {
+      font-size: 2.6rem;
+      line-height: 1;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+    .story-header-text { position: relative; z-index: 2; }
+    .story-num {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .story-name-eng {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+    .story-name-arabic {
+      font-family: 'Amiri', serif;
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      direction: rtl;
+    }
+    .story-surah-tag {
+      margin-left: auto;
+      padding: 8px 16px;
+      background: rgba(201,150,58,0.15);
+      border: 1px solid rgba(201,150,58,0.3);
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      white-space: nowrap;
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    /* Card body */
+    .story-body { padding: 40px 44px; }
+
+    .story-ayah-block {
+      background: rgba(13,40,24,0.04);
+      border-right: 4px solid var(--gold);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      border-radius: 0 4px 4px 0;
+    }
+    .story-ayah-arabic {
+      font-family: 'Amiri', serif;
+      font-size: 1.3rem;
+      color: var(--green-deep);
+      direction: rtl;
+      text-align: right;
+      line-height: 2.2;
+      margin-bottom: 8px;
+    }
+    .story-ayah-trans {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 4px;
+    }
+    .story-ayah-ref {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .story-narrative {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+    .story-narrative p { margin-bottom: 14px; }
+    .story-narrative p:last-child { margin-bottom: 0; }
+
+    /* Lessons grid */
+    .story-lessons {
+      background: var(--green-light);
+      border-radius: 6px;
+      padding: 24px 28px;
+    }
+    .story-lessons-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 14px;
+    }
+    .lesson-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .lesson-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+      font-weight: 600;
+    }
+    .lesson-item::before {
+      content: '◆';
+      font-size: 0.4rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* Ayah Banner */
+    .ayah-banner { background: var(--green-deep); padding: 60px 0; text-align: center; position: relative; overflow: hidden; }
+    .ayah-banner::before { content: ''; position: absolute; inset: 0; opacity: 0.04; background-image: repeating-linear-gradient(45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px),repeating-linear-gradient(-45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px); }
+    .ayah-banner .container { position: relative; z-index: 2; }
+    .ayah-arabic { font-family: 'Amiri', serif; font-size: clamp(1.4rem,3vw,2.2rem); color: var(--gold-light); line-height: 2.2; margin-bottom: 14px; }
+    .ayah-trans { font-size: 1rem; color: rgba(255,255,255,0.7); font-style: italic; margin-bottom: 10px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .ayah-ref { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dim); font-weight: 600; }
+
+    /* Responsive */
+    @media(max-width:768px) {
+      .story-header { padding: 22px 24px; flex-wrap: wrap; gap: 16px; }
+      .story-surah-tag { margin-left: 0; }
+      .story-body { padding: 28px 24px; }
+      .lesson-list { grid-template-columns: 1fr; }
+    }
+    @media(max-width:480px) {
+      .story-header { padding: 18px 18px; }
+      .story-body { padding: 22px 18px; }
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC55V0MHS8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MC55V0MHS8');
+  </script>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <main>
+
+    <!-- HERO -->
+    <header class="inner-hero" aria-labelledby="hero-title">
+      <div class="container">
+        <p class="hero-bismillah" lang="ar" dir="rtl" aria-label="Bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+        <h1 class="inner-title" id="hero-title">Quranic <span>Stories</span></h1>
+        <p style="font-family:'Noto Nastaliq Urdu',serif;font-size:1.4rem;color:var(--gold-light);direction:rtl;margin:8px auto 16px;line-height:2;">واقعات قرآنی</p>
+        <p class="inner-desc">Timeless stories from the Holy Quran — told by Allah Himself to guide, comfort, and strengthen every believer across all ages.</p>
+      </div>
+    </header>
+
+    <!-- STORIES -->
+    <section class="stories-section" aria-labelledby="stories-heading">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">The Word of Allah</span>
+          <h2 class="section-title" id="stories-heading">نَحْنُ نَقُصُّ عَلَيْكَ <span>أَحْسَنَ الْقَصَصِ</span></h2>
+          <p style="font-size:0.9rem;color:var(--text-muted);font-style:italic;margin-top:10px;">"We relate to you the best of stories." — Surah Yusuf, 12:3</p>
+          <div class="divider-gold" aria-hidden="true">
+            <div class="line"></div><div class="diamond"></div><div class="line"></div>
+          </div>
+        </div>
+
+        <!-- ══ STORY 01: YUSUF (AS) ══ -->
+        <article class="story-card" aria-labelledby="s1-title">
+          <div class="story-header">
+            <span class="story-header-icon" aria-hidden="true">🌙</span>
+            <div class="story-header-text">
+              <p class="story-num">Story 01 of 08</p>
+              <h2 class="story-name-eng" id="s1-title">Yusuf (AS) — The Beautiful Patience</h2>
+              <p class="story-name-arabic" lang="ar" dir="rtl">سيدنا يوسف عليه السلام</p>
+            </div>
+            <span class="story-surah-tag">Surah Yusuf · 12</span>
+          </div>
+          <div class="story-body">
+            <div class="story-ayah-block">
+              <p class="story-ayah-arabic" lang="ar" dir="rtl">إِنَّهُ مَن يَتَّقِ وَيَصْبِرْ فَإِنَّ اللَّهَ لَا يُضِيعُ أَجْرَ الْمُحْسِنِينَ</p>
+              <p class="story-ayah-trans">"Indeed, whoever fears Allah and is patient — then indeed, Allah does not allow to be lost the reward of those who do good."</p>
+              <p class="story-ayah-ref">— Surah Yusuf, 12:90</p>
+            </div>
+            <div class="story-narrative">
+              <p>The story of Prophet Yusuf (AS) is the only Quranic story told completely in a single Surah — and Allah Himself calls it <em>ahsan al-qasas</em>: the most beautiful of all stories. Yusuf (AS) was the beloved son of Prophet Ya'qub (AS) and was blessed with extraordinary beauty and the gift of interpreting dreams. His brothers, consumed by jealousy, threw him into a well and sold him into slavery in Egypt, telling their father he had been devoured by a wolf.</p>
+              <p>In Egypt, Yusuf was purchased by a nobleman and served faithfully in his household. When falsely accused by his master's wife after he refused her advances — choosing imprisonment over sin — he was cast into prison. Yet even in that darkness, he turned to Allah and used his gift of dream interpretation to help his fellow prisoners. Years passed. Then Pharaoh had two troubling dreams that no one could explain, and Yusuf was summoned. His interpretation proved true, and Pharaoh appointed him Treasurer of Egypt — raising a slave and prisoner to the highest position of authority.</p>
+              <p>Years later, a famine drove Yusuf's brothers to Egypt seeking food — not recognising the brother they had wronged. Yusuf recognised them, tested them, and in the most moving moment of the entire Quran, revealed himself: <em>"I am Yusuf, and this is my brother."</em> His brothers trembled in shame, but he said: <em>"No blame upon you today. Allah will forgive you."</em> He was reunited with his father Ya'qub (AS), and the dream he had as a child — of stars, the sun and moon bowing before him — was fulfilled after decades of trial.</p>
+            </div>
+            <div class="story-lessons">
+              <p class="story-lessons-title">Lessons from this Story</p>
+              <div class="lesson-list">
+                <span class="lesson-item">Patience in every trial — Allah's plan is always unfolding</span>
+                <span class="lesson-item">Choosing Allah's pleasure over worldly temptation</span>
+                <span class="lesson-item">Forgiveness even when you have the power to punish</span>
+                <span class="lesson-item">Trusting Allah even when you cannot see the outcome</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ══ STORY 02: MUSA (AS) ══ -->
+        <article class="story-card" aria-labelledby="s2-title">
+          <div class="story-header">
+            <span class="story-header-icon" aria-hidden="true">🌊</span>
+            <div class="story-header-text">
+              <p class="story-num">Story 02 of 08</p>
+              <h2 class="story-name-eng" id="s2-title">Musa (AS) — Courage Against Tyranny</h2>
+              <p class="story-name-arabic" lang="ar" dir="rtl">سيدنا موسى عليه السلام</p>
+            </div>
+            <span class="story-surah-tag">Surah Ta-Ha · 20 &amp; Al-Qasas · 28</span>
+          </div>
+          <div class="story-body">
+            <div class="story-ayah-block">
+              <p class="story-ayah-arabic" lang="ar" dir="rtl">قَالَ لَا تَخَافَا ۖ إِنَّنِي مَعَكُمَا أَسْمَعُ وَأَرَىٰ</p>
+              <p class="story-ayah-trans">"Allah said: Fear not. Indeed, I am with you both — I hear and I see."</p>
+              <p class="story-ayah-ref">— Surah Ta-Ha, 20:46</p>
+            </div>
+            <div class="story-narrative">
+              <p>Prophet Musa (AS) is the most frequently mentioned Prophet in the Quran — his name appearing 136 times — a testament to the depth and richness of his story. Born at a time when Pharaoh had decreed death for every newborn Israelite boy, Musa's mother placed him in a basket on the Nile under Allah's command. The basket drifted to Pharaoh's own palace, where it was retrieved by Pharaoh's wife Asiya — who begged her husband to spare the child. Musa was thus raised in the very palace of his oppressor, nursed unknowingly by his own mother.</p>
+              <p>After accidentally killing an Egyptian who was oppressing an Israelite, Musa fled to Madyan where he lived humbly, tended flocks, and married. Then came the transformative moment: at the burning bush on Mount Tur, Allah spoke to Musa directly — honouring him with the title <em>Kaleem Allah</em> (He who spoke with Allah). He was commanded to return to Pharaoh and demand the freedom of the Israelites. With his brother Harun (AS) beside him, Musa confronted the most powerful tyrant of his age, performing miracle after miracle — his staff turning to a serpent, his hand glowing white — as signs from Allah. Pharaoh refused until ten plagues struck Egypt.</p>
+              <p>When Pharaoh finally released the Israelites and then pursued them, Musa led his people to the Red Sea — surrounded on all sides. In that moment of apparent destruction, Musa said with certainty: <em>"My Lord is with me — He will guide me."</em> He struck the sea with his staff and it parted. The Israelites crossed safely. Pharaoh and his army followed and were drowned.</p>
+            </div>
+            <div class="story-lessons">
+              <p class="story-lessons-title">Lessons from this Story</p>
+              <div class="lesson-list">
+                <span class="lesson-item">Speaking truth to power — standing against injustice</span>
+                <span class="lesson-item">Allah's help arrives when all seems lost</span>
+                <span class="lesson-item">Complete trust in Allah — "My Lord is with me"</span>
+                <span class="lesson-item">Divine plan works through unexpected means</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ══ STORY 03: IBRAHIM (AS) ══ -->
+        <article class="story-card" aria-labelledby="s3-title">
+          <div class="story-header">
+            <span class="story-header-icon" aria-hidden="true">🔥</span>
+            <div class="story-header-text">
+              <p class="story-num">Story 03 of 08</p>
+              <h2 class="story-name-eng" id="s3-title">Ibrahim (AS) — The Friend of Allah</h2>
+              <p class="story-name-arabic" lang="ar" dir="rtl">سيدنا إبراهيم خليل الله عليه السلام</p>
+            </div>
+            <span class="story-surah-tag">Surah Al-Anbiya · 21 &amp; As-Saffat · 37</span>
+          </div>
+          <div class="story-body">
+            <div class="story-ayah-block">
+              <p class="story-ayah-arabic" lang="ar" dir="rtl">قُلْنَا يَا نَارُ كُونِي بَرْدًا وَسَلَامًا عَلَىٰ إِبْرَاهِيمَ</p>
+              <p class="story-ayah-trans">"We said: O fire! Be cool and safe for Ibrahim."</p>
+              <p class="story-ayah-ref">— Surah Al-Anbiya, 21:69</p>
+            </div>
+            <div class="story-narrative">
+              <p>Ibrahim (AS) — known as <em>Khalil Allah</em>, the Friend of Allah — is one of the greatest Prophets and the patriarch of monotheism. Born in a society of idol-worshippers, the young Ibrahim used his own reasoning and the signs of Allah in the universe to arrive at the truth of Tawhid — the Oneness of God. He confronted his own father and his entire community, smashing the idols they worshipped and declaring: <em>"Indeed, I am free of what you associate with Allah."</em></p>
+              <p>His community gathered wood and built the greatest fire they could create, hurling Ibrahim (AS) into it — and Allah commanded the fire: <em>"Be cool and safe."</em> Ibrahim (AS) walked out unharmed. Throughout his life, Allah tested him with the most extraordinary trials — leaving his wife Hajar (AS) and infant son Ismail (AS) in the barren valley of Makkah, only for the miraculous spring of Zamzam to burst forth from the earth. Then came the greatest test: a vision commanding him to sacrifice his own beloved son Ismail (AS). Both father and son submitted completely. As the blade was about to fall, Allah called out: <em>"O Ibrahim! You have fulfilled the vision."</em> A ram was sent in Ismail's place. This sublime act of submission is commemorated by all Muslims every year in the sacrifice of Eid ul-Adha.</p>
+              <p>Ibrahim (AS) and Ismail (AS) together raised the foundations of the Ka'bah in Makkah — the house of Allah — praying: <em>"Our Lord, accept this from us."</em></p>
+            </div>
+            <div class="story-lessons">
+              <p class="story-lessons-title">Lessons from this Story</p>
+              <div class="lesson-list">
+                <span class="lesson-item">Complete submission to Allah — true meaning of Islam</span>
+                <span class="lesson-item">Monotheism is the foundation of all faith</span>
+                <span class="lesson-item">Allah's protection when you trust Him absolutely</span>
+                <span class="lesson-item">Greatest tests come to the greatest believers</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ══ STORY 04: MARYAM (AS) ══ -->
+        <article class="story-card" aria-labelledby="s4-title">
+          <div class="story-header">
+            <span class="story-header-icon" aria-hidden="true">🌿</span>
+            <div class="story-header-text">
+              <p class="story-num">Story 04 of 08</p>
+              <h2 class="story-name-eng" id="s4-title">Maryam (AS) — The Chosen & Purified</h2>
+              <p class="story-name-arabic" lang="ar" dir="rtl">سيدتنا مريم عليها السلام</p>
+            </div>
+            <span class="story-surah-tag">Surah Maryam · 19 &amp; Al-Imran · 3</span>
+          </div>
+          <div class="story-body">
+            <div class="story-ayah-block">
+              <p class="story-ayah-arabic" lang="ar" dir="rtl">يَا مَرْيَمُ إِنَّ اللَّهَ اصْطَفَاكِ وَطَهَّرَكِ وَاصْطَفَاكِ عَلَىٰ نِسَاءِ الْعَالَمِينَ</p>
+              <p class="story-ayah-trans">"O Mary! Indeed Allah has chosen you, purified you, and chosen you above all the women of the worlds."</p>
+              <p class="story-ayah-ref">— Surah Al-Imran, 3:42</p>
+            </div>
+            <div class="story-narrative">
+              <p>Maryam (AS) — the only woman mentioned by name in the Quran — holds a station of honour unparalleled among all the women of humanity. She was born to a righteous family: her father Imran was a descendant of Prophet Musa (AS), and her mother Hannah dedicated her, even before birth, entirely to the service of Allah. Maryam was placed under the guardianship of Prophet Zakariya (AS), who would find fresh fruit miraculously provided for her in her prayer room — gifts from Allah.</p>
+              <p>The angels gave her the extraordinary glad tidings: Allah had chosen her, purified her, and elevated her above all the women of the worlds. Then the Angel Jibril appeared to her in the form of a man, bearing the news that she would miraculously conceive a son — without any father — as a sign and mercy from Allah. Overwhelmed, Maryam withdrew to a remote place. Alone, in pain, she gave birth to Isa (AS) beneath a palm tree. Allah commanded the tree to drop dates upon her and caused a stream to flow beneath her feet.</p>
+              <p>When she returned to her people carrying the infant, they accused her with slander. She pointed silently to her newborn. And then, in one of the greatest miracles of the Quran, the infant Isa (AS) spoke from his cradle: <em>"Indeed I am the servant of Allah. He has given me the Scripture and made me a Prophet."</em> Maryam — who bore her trial with silence, dignity, and complete trust in Allah — was vindicated by a miracle.</p>
+            </div>
+            <div class="story-lessons">
+              <p class="story-lessons-title">Lessons from this Story</p>
+              <div class="lesson-list">
+                <span class="lesson-item">Purity and devotion elevate a person in Allah's sight</span>
+                <span class="lesson-item">Bearing slander with silence and dignity</span>
+                <span class="lesson-item">Allah's miracles vindicate those who trust Him</span>
+                <span class="lesson-item">Dedication of one's children to Allah's service</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ══ STORY 05: ASHAB AL-KAHF ══ -->
+        <article class="story-card" aria-labelledby="s5-title">
+          <div class="story-header">
+            <span class="story-header-icon" aria-hidden="true">🕯️</span>
+            <div class="story-header-text">
+              <p class="story-num">Story 05 of 08</p>
+              <h2 class="story-name-eng" id="s5-title">Ashab al-Kahf — The People of the Cave</h2>
+              <p class="story-name-arabic" lang="ar" dir="rtl">أصحاب الكهف</p>
+            </div>
+            <span class="story-surah-tag">Surah Al-Kahf · 18</span>
+          </div>
+          <div class="story-body">
+            <div class="story-ayah-block">
+              <p class="story-ayah-arabic" lang="ar" dir="rtl">إِذْ أَوَى الْفِتْيَةُ إِلَى الْكَهْفِ فَقَالُوا رَبَّنَا آتِنَا مِن لَّدُنكَ رَحْمَةً وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًا</p>
+              <p class="story-ayah-trans">"When the youths took refuge in the cave and said: Our Lord! Grant us mercy from Yourself and provide us with guidance in our affair."</p>
+              <p class="story-ayah-ref">— Surah Al-Kahf, 18:10</p>
+            </div>
+            <div class="story-narrative">
+              <p>In an unnamed city at an unnamed time, a group of young men — believing in the One true God — found themselves living under a tyrannical ruler who demanded they worship idols. Rather than compromise their faith or be forced into disbelief, they made a momentous decision: they fled — placing their trust entirely in Allah. They took refuge in a cave outside the city and prayed: <em>"Our Lord, grant us mercy and guide us in our affair."</em></p>
+              <p>Allah answered their prayer in a way none of them could have anticipated: He caused them to sleep. Not for a night. Not for a week. But for 309 years. During all that time, Allah caused their bodies to turn from side to side as they slept, and a dog — loyal to its companions — remained at the entrance of the cave with paws outstretched. The sun, by Allah's command, would shift away from the cave's entrance so as not to harm them.</p>
+              <p>When they awoke, they thought they had only slept a day or part of a day. One of them set out to the city to buy food — only to find a transformed world. The tyrant was long dead, and Allah's signs had spread. The people of the city marvelled at the sleeping men and took their story as a sign of Allah's power over life, death and time. The Quran does not specify their exact number — reminding us that in Allah's signs, the precise worldly detail matters less than the divine lesson.</p>
+            </div>
+            <div class="story-lessons">
+              <p class="story-lessons-title">Lessons from this Story</p>
+              <div class="lesson-list">
+                <span class="lesson-item">Standing firm in faith even against an entire society</span>
+                <span class="lesson-item">Fleeing from sin is itself an act of worship</span>
+                <span class="lesson-item">Allah's protection takes forms beyond our imagination</span>
+                <span class="lesson-item">The power of sincere du'a when all doors seem closed</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ══ STORY 06: YUNUS (AS) ══ -->
+        <article class="story-card" aria-labelledby="s6-title">
+          <div class="story-header">
+            <span class="story-header-icon" aria-hidden="true">🌊</span>
+            <div class="story-header-text">
+              <p class="story-num">Story 06 of 08</p>
+              <h2 class="story-name-eng" id="s6-title">Yunus (AS) — Repentance in the Darkness</h2>
+              <p class="story-name-arabic" lang="ar" dir="rtl">سيدنا يونس عليه السلام</p>
+            </div>
+            <span class="story-surah-tag">Surah Al-Anbiya · 21 &amp; Yunus · 10</span>
+          </div>
+          <div class="story-body">
+            <div class="story-ayah-block">
+              <p class="story-ayah-arabic" lang="ar" dir="rtl">لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ</p>
+              <p class="story-ayah-trans">"There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers."</p>
+              <p class="story-ayah-ref">— Surah Al-Anbiya, 21:87 — The Du'a of Yunus (AS)</p>
+            </div>
+            <div class="story-narrative">
+              <p>Prophet Yunus (AS) was sent to the people of Nineveh — a city of over a hundred thousand people — to call them to Allah. When they repeatedly rejected his message, Yunus (AS) departed from among them without Allah's explicit permission, frustrated and believing there was no hope for them. He boarded a ship and set sail across the sea.</p>
+              <p>When the ship was struck by a violent storm and began to sink, the sailors cast lots to decide who must be thrown overboard to lighten the load — and the lot fell to Yunus (AS). He was cast into the sea and swallowed by a great whale. In the belly of the whale, in the depths of the ocean, in the darkness of the night — three layers of darkness — Yunus (AS) called out to Allah in the most powerful act of repentance recorded in the Quran: <em>"There is no deity except You. Exalted are You. Indeed, I have been of the wrongdoers."</em></p>
+              <p>Allah answered his call. The whale was commanded to cast him onto the shore. Yunus (AS) emerged ill and weak, and Allah caused a gourd vine to grow over him for shade and healing. He recovered, and Allah sent him back to his people — who, in his absence, had turned to Allah in repentance. Over one hundred thousand souls were saved. The Prophet ﷺ said that this du'a is such that no Muslim calls upon Allah with it in any matter except that Allah responds to him.</p>
+            </div>
+            <div class="story-lessons">
+              <p class="story-lessons-title">Lessons from this Story</p>
+              <div class="lesson-list">
+                <span class="lesson-item">Sincere repentance is answered from any depth of darkness</span>
+                <span class="lesson-item">Never give up on people — Allah's mercy reaches all</span>
+                <span class="lesson-item">The Du'a of Yunus — the greatest prayer of repentance</span>
+                <span class="lesson-item">Patience in Allah's timing — not our own impatience</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ══ STORY 07: AYYUB (AS) ══ -->
+        <article class="story-card" aria-labelledby="s7-title">
+          <div class="story-header">
+            <span class="story-header-icon" aria-hidden="true">⚖️</span>
+            <div class="story-header-text">
+              <p class="story-num">Story 07 of 08</p>
+              <h2 class="story-name-eng" id="s7-title">Ayyub (AS) — The Summit of Patience</h2>
+              <p class="story-name-arabic" lang="ar" dir="rtl">سيدنا أيوب عليه السلام</p>
+            </div>
+            <span class="story-surah-tag">Surah Al-Anbiya · 21 &amp; Sad · 38</span>
+          </div>
+          <div class="story-body">
+            <div class="story-ayah-block">
+              <p class="story-ayah-arabic" lang="ar" dir="rtl">أَنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ</p>
+              <p class="story-ayah-trans">"Indeed, adversity has touched me, and You are the most merciful of the merciful."</p>
+              <p class="story-ayah-ref">— Surah Al-Anbiya, 21:83 — The Du'a of Ayyub (AS)</p>
+            </div>
+            <div class="story-narrative">
+              <p>Prophet Ayyub (AS) was a man whom Allah had blessed with wealth, family, health and honour. Then came a trial that would test the very limits of human endurance. Ayyub (AS) was afflicted with a severe illness — narrated to have lasted eighteen years — that stripped him of his health, his wealth, and his children, one by one. He was left with almost nothing of the world he had known. Those who had once honoured him abandoned him.</p>
+              <p>Yet through all of it — not once did Ayyub (AS) complain against Allah. Not once did he question Allah's wisdom or His justice. His patience was so extraordinary that his name became synonymous with sabr — perseverance — in every language of the Islamic world. Even in his suffering, he did not demand relief; he simply turned to Allah with the most beautifully humble words: <em>"Adversity has touched me, and You are the most merciful of the merciful."</em></p>
+              <p>Allah heard him. He was commanded to strike the ground with his foot, and a spring of cool, healing water burst forth. He bathed and drank from it and Allah restored his health, reunited him with his family, and gave him again all that he had lost — and more. Allah said of him: <em>"Indeed, We found him patient — an excellent servant. Indeed, he was one repeatedly turning back to Allah."</em> (Surah Sad, 38:44)</p>
+            </div>
+            <div class="story-lessons">
+              <p class="story-lessons-title">Lessons from this Story</p>
+              <div class="lesson-list">
+                <span class="lesson-item">True patience means never losing faith during calamity</span>
+                <span class="lesson-item">Illness and loss can be a means of elevation with Allah</span>
+                <span class="lesson-item">Humility in du'a — not demanding, but entreating</span>
+                <span class="lesson-item">Allah's relief always comes — in its perfect time</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ══ STORY 08: ADAM (AS) ══ -->
+        <article class="story-card" aria-labelledby="s8-title">
+          <div class="story-header">
+            <span class="story-header-icon" aria-hidden="true">🌱</span>
+            <div class="story-header-text">
+              <p class="story-num">Story 08 of 08</p>
+              <h2 class="story-name-eng" id="s8-title">Adam (AS) — The First Human & the First Repentance</h2>
+              <p class="story-name-arabic" lang="ar" dir="rtl">سيدنا آدم عليه السلام</p>
+            </div>
+            <span class="story-surah-tag">Surah Al-Baqarah · 2 &amp; Al-A'raf · 7</span>
+          </div>
+          <div class="story-body">
+            <div class="story-ayah-block">
+              <p class="story-ayah-arabic" lang="ar" dir="rtl">رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ</p>
+              <p class="story-ayah-trans">"Our Lord, we have wronged ourselves, and if You do not forgive us and have mercy upon us, we will surely be among the losers."</p>
+              <p class="story-ayah-ref">— Surah Al-A'raf, 7:23 — The Du'a of Adam &amp; Hawwa (AS)</p>
+            </div>
+            <div class="story-narrative">
+              <p>The story of Adam (AS) is the story of all humanity — its origin, its nature, and its greatest hope. Allah created Adam (AS) with His own hands, fashioned him from clay, and breathed into him of His spirit. He honoured him by teaching him the names of all things — a knowledge given to no other creation — and commanded the angels to prostrate in respect. All did so, except Iblis, who refused out of arrogance and was cursed for eternity.</p>
+              <p>Allah placed Adam (AS) and his wife Hawwa (AS) in the Garden, giving them complete freedom save one prohibition: a single tree they were told not to approach. Iblis — now the eternal enemy of humanity — whispered to them with his deception, and they ate from it. The moment they did, they realised what they had done. They did not argue. They did not blame each other. They turned immediately to Allah with complete humility and one of the most powerful du'as in the Quran: <em>"Our Lord, we have wronged ourselves — if You do not forgive us, we will be among the losers."</em></p>
+              <p>Allah forgave them. They were sent to Earth — not as a punishment, but as vicegerents: <em>"I will create a vicegerent upon the Earth."</em> Allah had already planned this. The lesson is not that humanity fell — it is that humanity, when it errs, can always turn back. Adam (AS) was honoured with prophethood. His story is the beginning of mankind's journey back to Allah — a journey of guidance, trial, repentance, and mercy that continues to this day.</p>
+            </div>
+            <div class="story-lessons">
+              <p class="story-lessons-title">Lessons from this Story</p>
+              <div class="lesson-list">
+                <span class="lesson-item">Repentance immediately after a mistake — not delay</span>
+                <span class="lesson-item">Iblis's pride destroyed him — humility is the foundation of faith</span>
+                <span class="lesson-item">Allah's mercy is greater than any sin</span>
+                <span class="lesson-item">Humanity was created honoured — not fallen</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- AYAH BANNER -->
+    <div class="ayah-banner" aria-label="Quranic verse">
+      <div class="container">
+        <p class="ayah-arabic" lang="ar" dir="rtl">لَقَدْ كَانَ فِي قَصَصِهِمْ عِبْرَةٌ لِّأُولِي الْأَلْبَابِ</p>
+        <p class="ayah-trans">"There was certainly in their stories a lesson for those of understanding."</p>
+        <p class="ayah-ref">— Surah Yusuf, 12:111</p>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="components.js"></script>
+
+</body>
+</html>

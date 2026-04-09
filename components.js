@@ -12,7 +12,8 @@
   const NAV_MAP = {
     'index.html'                  : 'index.html',
     ''                            : 'index.html',   // root path
-    'dars-e-quran.html'           : 'dars-e-quran.html',
+    'dars-e-quran.html'           : 'quran-section',
+    'quranic-stories.html'        : 'quran-section',
     'connect-with-allah.html'     : 'connect-with-allah.html',
     'syed-ul-bashar.html'         : 'syed-ul-bashar.html',
     'islamic-tools.html'          : 'islamic-tools.html',
