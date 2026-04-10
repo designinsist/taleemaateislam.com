@@ -33,8 +33,6 @@
       <span id="gregorian-date"></span>
       <span class="separator" aria-hidden="true">|</span>
       <span id="hijri-date"></span>
-      <span class="separator" aria-hidden="true">|</span>
-      <span id="live-time"></span>
     </div>
 
   </div>
