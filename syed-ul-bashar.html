@@ -25,16 +25,10 @@
   <link rel="shortcut icon" href="/images/favicon.ico">
   <link rel="stylesheet" href="shared.css" />
   <style>
-    /* BASE */
-    :root {
-      --green-deep:#0d2818;--green-mid:#1a4a2e;--green-rich:#1e5c38;--green-light:#e8f5ee;
-      --gold:#c9963a;--gold-light:#e8b84b;--gold-dim:#7a5a1a;
-      --white:#fff;--off-white:#faf9f5;--text-dark:#1a2a1e;--text-mid:#3d5a45;--text-muted:#6b8a73;
-      --border:rgba(201,150,58,.25);--nav-h:72px;--radius:4px;--transition:.3s ease;
-    }
+    :root{--green-deep:#0d2818;--green-mid:#1a4a2e;--green-rich:#1e5c38;--gold:#c9963a;--gold-light:#e8b84b;--gold-dim:#7a5a1a;--white:#fff;--off-white:#faf9f5;--text-dark:#1a2a1e;--text-mid:#3d5a45;--text-muted:#6b8a73;--border:rgba(201,150,58,.25);--radius:4px;--transition:.3s ease;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;font-size:16px}
-    body{font-family:'Nunito',sans-serif;font-weight:400;color:var(--text-dark);background:var(--off-white);line-height:1.7;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh}
+    html{scroll-behavior:smooth}
+    body{font-family:'Nunito',sans-serif;color:var(--text-dark);background:var(--off-white);line-height:1.7;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh}
     a{text-decoration:none;color:inherit}ul{list-style:none}
     .container{max-width:1160px;margin:0 auto;padding:0 24px}
     main{flex:1}
@@ -48,7 +42,8 @@
     .inner-title span{color:var(--gold)}
     .inner-desc{color:rgba(255,255,255,.8);max-width:750px;margin:0 auto;font-size:1.05rem;line-height:1.8}
 
-    /* SECTION HEADER */
+    /* SECTION */
+    .tabs-section{padding:72px 0 88px;background:var(--off-white)}
     .sec-header{text-align:center;margin-bottom:48px}
     .sec-label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
     .sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--green-deep);line-height:1.25}
@@ -57,23 +52,25 @@
     .divider .ln{height:1px;background:var(--border);width:50px}
     .divider .dm{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
 
-    /* ══ TAB SYSTEM ══ */
-    .tabs-section{padding:72px 0 88px;background:var(--off-white)}
-    .tab-bar{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:48px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    /* TAB BAR (desktop) */
+    .tab-bar{display:flex;border-bottom:2px solid var(--border);margin-bottom:40px;overflow-x:auto;scrollbar-width:none}
     .tab-bar::-webkit-scrollbar{display:none}
-    .tab-btn{flex-shrink:0;padding:14px 28px;font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;cursor:pointer;transition:all var(--transition);white-space:nowrap}
+    .tab-btn{flex-shrink:0;padding:14px 26px;font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;cursor:pointer;transition:all .3s ease;white-space:nowrap}
     .tab-btn:hover{color:var(--green-mid)}
-    .tab-btn.active{color:var(--green-deep);border-bottom-color:var(--gold)}
-    .tab-pane{display:none}
-    .tab-pane.active{display:block}
+    .tab-btn.is-active{color:var(--green-deep);border-bottom-color:var(--gold)}
+    .panel{display:none}
+    .panel.is-active{display:block}
 
-    /* ══ BOOK CARD (tall — same as existing site style) ══ */
+    /* ACCORDION HEADER (mobile only) */
+    .acc-hdr{display:none}
+
+    /* BOOK CARD */
     .book-card{background:#fff;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:300px 1fr;box-shadow:0 8px 32px rgba(13,40,24,.08);border:1px solid rgba(201,150,58,.15);margin-bottom:32px}
     .book-visual{display:flex;align-items:center;justify-content:center;padding:44px 32px;position:relative;min-height:220px}
     .book-visual::after{content:'';position:absolute;inset:20px;border:1px solid rgba(201,150,58,.3);pointer-events:none}
     .book-cover{width:160px;height:220px;border:4px solid var(--gold);box-shadow:8px 8px 24px rgba(0,0,0,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;color:#fff;position:relative;z-index:2}
     .cover-urdu{font-family:'Noto Nastaliq Urdu',serif;font-size:1.1rem;line-height:1.9}
-    .cover-eng{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.8;margin-top:6px;line-height:1.4}
+    .cover-eng{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;opacity:.8;margin-top:6px;line-height:1.4}
     .book-content{padding:40px 44px;display:flex;flex-direction:column;justify-content:center}
     .book-num{font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
     .book-badge{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:8px}
@@ -84,15 +81,17 @@
     .book-author span{color:var(--green-mid)}
     .book-desc{font-size:.93rem;color:var(--text-muted);line-height:1.85;margin-bottom:28px}
     .book-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn-read{padding:13px 26px;background:var(--gold);color:var(--green-deep);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--radius);transition:all var(--transition);display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;font-family:'Nunito',sans-serif}
+    .btn-read{padding:13px 26px;background:var(--gold);color:var(--green-deep);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--radius);transition:all .3s ease;display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;font-family:'Nunito',sans-serif}
     .btn-read:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 5px 15px rgba(201,150,58,.3)}
-    .btn-dl{padding:13px 26px;border:1.5px solid var(--border);color:var(--green-mid);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--radius);transition:all var(--transition);display:inline-block;font-family:'Nunito',sans-serif}
+    .btn-dl{padding:13px 26px;border:1.5px solid var(--border);color:var(--green-mid);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--radius);transition:all .3s ease;display:inline-block;font-family:'Nunito',sans-serif}
     .btn-dl:hover{background:rgba(201,150,58,.06);border-color:var(--gold)}
-    .pdf-reader{margin-top:-16px;margin-bottom:32px;width:100%;height:0;opacity:0;overflow:hidden;transition:height .5s ease,opacity .5s ease;border-radius:8px;border:1px solid var(--border);background:#fff}
-    .pdf-reader.open{height:82vh;min-height:560px;opacity:1}
+
+    /* PDF READER */
+    .pdf-reader{margin-top:-12px;margin-bottom:28px;width:100%;height:0;opacity:0;overflow:hidden;transition:height .45s ease,opacity .4s ease;border-radius:8px;border:1px solid var(--border);background:#fff}
+    .pdf-reader.is-open{height:82vh;min-height:520px;opacity:1}
     .pdf-reader iframe{width:100%;height:100%;border:none;display:block}
 
-    /* ══ DALAIL SPECIAL LAYOUT ══ */
+    /* DALAIL */
     .dalail-header{background:var(--green-deep);border-radius:8px 8px 0 0;padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;position:relative;overflow:hidden}
     .dalail-header::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,transparent,transparent 19px,rgba(201,150,58,1) 20px),repeating-linear-gradient(-45deg,transparent,transparent 19px,rgba(201,150,58,1) 20px)}
     .dalail-header-text{position:relative;z-index:2}
@@ -101,21 +100,21 @@
     .dalail-author{font-size:.78rem;color:rgba(255,255,255,.4)}
     .dalail-tag{position:relative;z-index:2;padding:7px 16px;background:rgba(201,150,58,.2);border:1px solid rgba(201,150,58,.4);color:var(--gold-light);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:4px;flex-shrink:0}
     .dalail-vols{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(201,150,58,.15);border-top:none;border-radius:0 0 8px 8px;margin-bottom:32px;overflow:hidden;background:#fff;box-shadow:0 8px 32px rgba(13,40,24,.08)}
-    .dalail-vol{padding:28px 28px 24px;border-right:1px solid rgba(201,150,58,.12)}
+    .dalail-vol{padding:28px;border-right:1px solid rgba(201,150,58,.12)}
     .dalail-vol:last-child{border-right:none}
     .vol-num{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
     .vol-name{font-family:'Playfair Display',serif;font-size:.98rem;font-weight:700;color:var(--green-deep);margin-bottom:8px;line-height:1.4}
     .vol-desc{font-size:.82rem;color:var(--text-muted);line-height:1.75;margin-bottom:18px}
     .vol-actions{display:flex;gap:8px}
-    .btn-vol{padding:11px 14px;background:var(--gold);color:var(--green-deep);font-weight:700;font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;border-radius:var(--radius);border:none;cursor:pointer;font-family:'Nunito',sans-serif;display:inline-flex;align-items:center;gap:6px;transition:all var(--transition);flex:1;justify-content:center}
+    .btn-vol{padding:11px 14px;background:var(--gold);color:var(--green-deep);font-weight:700;font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;border-radius:var(--radius);border:none;cursor:pointer;font-family:'Nunito',sans-serif;display:inline-flex;align-items:center;gap:6px;transition:all .3s ease;flex:1;justify-content:center}
     .btn-vol:hover{background:var(--gold-light);transform:translateY(-1px)}
-    .btn-vol-dl{padding:11px 14px;border:1.5px solid var(--border);color:var(--green-mid);font-weight:700;font-size:.76rem;border-radius:var(--radius);transition:all var(--transition);display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
+    .btn-vol-dl{padding:11px 14px;border:1.5px solid var(--border);color:var(--green-mid);font-weight:700;font-size:.76rem;border-radius:var(--radius);transition:all .3s ease;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
     .btn-vol-dl:hover{border-color:var(--gold);background:rgba(201,150,58,.05)}
-    .vol-reader{grid-column:1/-1;height:0;opacity:0;overflow:hidden;transition:height .5s ease,opacity .5s ease;border-top:1px solid var(--border)}
-    .vol-reader.open{height:80vh;min-height:500px;opacity:1}
+    .vol-reader{grid-column:1/-1;height:0;opacity:0;overflow:hidden;transition:height .45s ease,opacity .4s ease;border-top:1px solid var(--border)}
+    .vol-reader.is-open{height:80vh;min-height:480px;opacity:1}
     .vol-reader iframe{width:100%;height:100%;border:none;display:block}
 
-    /* ══ PROFILES (Ahl al-Bayt) ══ */
+    /* PROFILES */
     .profiles-section{padding:72px 0 80px;background:var(--green-deep);position:relative;overflow:hidden}
     .profiles-section::before{content:'';position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px),repeating-linear-gradient(-45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px)}
     .profiles-section .container{position:relative;z-index:2}
@@ -136,39 +135,48 @@
     .p-quote{border-left:3px solid var(--gold);padding:12px 18px;background:rgba(201,150,58,.07);border-radius:0 4px 4px 0;font-family:'Amiri',serif;font-size:.93rem;font-style:italic;color:rgba(255,255,255,.78);line-height:1.8}
     .p-quote cite{display:block;font-size:.68rem;font-style:normal;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:8px}
 
-    /* RESPONSIVE */
-    @media(max-width:1024px){
-      .book-card{grid-template-columns:260px 1fr}
-      .profile-card{grid-template-columns:170px 1fr}
-    }
+    /* DESKTOP RESPONSIVE */
+    @media(max-width:1024px){.book-card{grid-template-columns:260px 1fr}.profile-card{grid-template-columns:170px 1fr}}
+
+    /* MOBILE */
     @media(max-width:768px){
-      .tab-btn{padding:12px 18px;font-size:.78rem}
-      .book-card{grid-template-columns:1fr}
-      .book-visual{padding:44px 20px}
-      .book-content{padding:32px 22px}
-      .book-actions{flex-direction:column}
-      .btn-read,.btn-dl{text-align:center;justify-content:center;width:100%}
-      .dalail-header{padding:24px 20px}
-      .dalail-vols{grid-template-columns:1fr}
-      .dalail-vol{border-right:none;border-bottom:1px solid rgba(201,150,58,.12)}
-      .dalail-vol:last-child{border-bottom:none}
-      .vol-reader{grid-column:1}
-      .vol-actions{flex-direction:column}
-      .btn-vol,.btn-vol-dl{width:100%;justify-content:center;padding:13px}
-      .pdf-reader.open{height:70vh;min-height:420px}
-      .vol-reader.open{height:70vh;min-height:420px}
+      .tab-bar{display:none !important}
+      .panel{display:block !important}
+
+      .acc-hdr{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:18px 20px;background:var(--green-deep);color:#fff;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:700;border:none;border-bottom:1px solid rgba(201,150,58,.2);cursor:pointer;text-align:left;-webkit-tap-highlight-color:transparent;transition:background .25s ease}
+      .acc-hdr.is-open{background:#091d10}
+      .acc-hdr-label{flex:1;line-height:1.4}
+      .acc-icon{width:34px;height:34px;flex-shrink:0;border-radius:50%;border:1.5px solid rgba(201,150,58,.4);background:rgba(201,150,58,.12);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--gold);transition:transform .3s ease,background .3s ease;pointer-events:none}
+      .acc-hdr.is-open .acc-icon{transform:rotate(45deg);background:rgba(201,150,58,.22)}
+      .acc-body{overflow:hidden;height:0;background:var(--off-white);border-left:1px solid rgba(201,150,58,.15);border-right:1px solid rgba(201,150,58,.15);border-bottom:1px solid rgba(201,150,58,.15);border-radius:0 0 8px 8px;transition:height .38s ease}
+      .acc-body-inner{padding:20px 0 12px}
+      .acc-unit{margin-bottom:10px;border-radius:8px;overflow:hidden;box-shadow:0 3px 12px rgba(13,40,24,.09)}
+
+      .book-card{grid-template-columns:1fr !important;margin-bottom:20px}
+      .book-visual{padding:36px 20px !important;min-height:160px !important}
+      .book-content{padding:24px 20px !important}
+      .book-actions{flex-direction:column !important}
+      .btn-read,.btn-dl{width:100% !important;justify-content:center !important;padding:15px !important;font-size:.9rem !important}
+
+      .dalail-header{padding:22px 20px !important;flex-direction:column !important;align-items:flex-start !important}
+      .dalail-vols{grid-template-columns:1fr !important}
+      .dalail-vol{border-right:none !important;border-bottom:1px solid rgba(201,150,58,.12) !important;padding:22px 20px !important}
+      .dalail-vol:last-child{border-bottom:none !important}
+      .vol-reader{grid-column:1 !important}
+      .vol-actions{flex-direction:column !important}
+      .btn-vol,.btn-vol-dl{width:100% !important;justify-content:center !important;padding:14px !important;font-size:.88rem !important}
+      .pdf-reader.is-open,.vol-reader.is-open{height:70vh !important;min-height:400px !important}
+
       .profile-card{grid-template-columns:1fr}
-      .profile-badge{flex-direction:row;gap:14px;padding:22px 20px;text-align:left;border-right:none;border-bottom:1px solid rgba(201,150,58,.15)}
+      .profile-badge{flex-direction:row;gap:14px;padding:20px;text-align:left;border-right:none;border-bottom:1px solid rgba(201,150,58,.15)}
       .profile-badge::after{display:none}
       .p-icon{font-size:1.8rem;margin-bottom:0}
-      .profile-body{padding:24px 22px}
+      .profile-body{padding:22px 20px}
+
+      .tabs-section{padding:40px 0 48px}
+      .sec-header{margin-bottom:28px}
     }
-    @media(max-width:480px){
-      .book-content{padding:24px 18px}
-      .profile-body{padding:20px 18px}
-      .dalail-header{padding:20px 18px}
-      .dalail-vol{padding:22px 18px}
-    }
+    @media(max-width:480px){.book-content{padding:20px 16px !important}.profile-body{padding:18px 16px}.dalail-vol{padding:18px 16px !important}}
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC55V0MHS8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MC55V0MHS8');</script>
@@ -177,16 +185,14 @@
   <div id="site-header"></div>
   <main>
 
-    <!-- HERO -->
     <header class="inner-hero" aria-labelledby="hero-title">
       <div class="container">
-        <p class="hero-bismillah" lang="ar" dir="rtl" aria-label="Bismillah">مُحَمَّدٌ رَسُولُ اللَّهِ</p>
+        <p class="hero-bismillah" lang="ar" dir="rtl">مُحَمَّدٌ رَسُولُ اللَّهِ</p>
         <h1 class="inner-title" id="hero-title">Syed-ul-<span>Bashar</span> ﷺ</h1>
         <p class="inner-desc">Exploring the life, character and blessed family of Prophet Muhammad ﷺ — the final messenger and the greatest mercy to all mankind — through authentic books and biographies.</p>
       </div>
     </header>
 
-    <!-- TABBED BOOKS SECTION -->
     <section class="tabs-section" aria-labelledby="books-heading">
       <div class="container">
         <div class="sec-header">
@@ -195,183 +201,186 @@
           <div class="divider" aria-hidden="true"><div class="ln"></div><div class="dm"></div><div class="ln"></div></div>
         </div>
 
-        <!-- TAB BUTTONS -->
-        <div class="tab-bar" role="tablist" aria-label="Book categories">
-          <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-tribute"  id="tbtn-1">📜 Tribute of Devotion</button>
-          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-dalail"   id="tbtn-2">📚 Dalail-un-Nubuwwah</button>
-          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-names"    id="tbtn-3">🌹 Names &amp; Durood</button>
-          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-obedience" id="tbtn-4">⚡ Obedience to Rasool ﷺ</button>
+        <!-- DESKTOP TAB BAR -->
+        <div class="tab-bar" role="tablist">
+          <button class="tab-btn is-active" role="tab" aria-selected="true"  data-panel="p-tribute">📜 Tribute of Devotion</button>
+          <button class="tab-btn"            role="tab" aria-selected="false" data-panel="p-dalail">📚 Dalail-un-Nubuwwah</button>
+          <button class="tab-btn"            role="tab" aria-selected="false" data-panel="p-names">🌹 Names &amp; Durood</button>
+          <button class="tab-btn"            role="tab" aria-selected="false" data-panel="p-obedience">⚡ Obedience to Rasool ﷺ</button>
         </div>
 
-        <!-- TAB 1: TRIBUTE OF DEVOTION -->
-        <div class="tab-pane active" id="tab-tribute" role="tabpanel" aria-labelledby="tbtn-1">
-          <article class="book-card" aria-labelledby="book-tribute-title">
-            <div class="book-visual" style="background:var(--green-mid);" aria-hidden="true">
-              <div class="book-cover" style="background:var(--gold-dim);">
-                <span class="cover-urdu">نذرانہ عقیدت</span>
-                <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.4);margin:10px 0;">
-                <span class="cover-eng">Tribute of Devotion</span>
-              </div>
+        <!-- ═══ PANEL 1: TRIBUTE ═══ -->
+        <div class="acc-unit">
+          <button class="acc-hdr" type="button" aria-expanded="false"><span class="acc-hdr-label">📜 Tribute of Devotion</span><span class="acc-icon" aria-hidden="true">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner">
+            <div class="panel is-active" id="p-tribute">
+              <article class="book-card">
+                <div class="book-visual" style="background:var(--green-mid);" aria-hidden="true">
+                  <div class="book-cover" style="background:var(--gold-dim);">
+                    <span class="cover-urdu">نذرانہ عقیدت</span>
+                    <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.4);margin:10px 0;">
+                    <span class="cover-eng">Tribute of Devotion</span>
+                  </div>
+                </div>
+                <div class="book-content">
+                  <p class="book-num">Featured Book</p>
+                  <p class="book-badge">Free Digital Book — Urdu &amp; English (PDF)</p>
+                  <h3 class="book-title-urdu" lang="ur" dir="rtl">غیر مسلم غیر متعصب مشاہیر عالم کا رحمۃ للعالمین سید المرسلین سیدنا حضرت محمد مصطفیٰ صلی اللہ علیہ والہ وبارک وسلم کے دربار عالیہ میں نذرانہ عقیدت</h3>
+                  <h4 class="book-title-eng">"A Tribute of Devotion from Non-Muslim, Unbiased, World-Renowned Personalities to Sayyidna Hazrat Muhammad Mustafa ﷺ"</h4>
+                  <p class="book-author">By <span>Manzoor Muhammad MATB</span></p>
+                  <p class="book-desc">An extraordinary collection of tributes from non-Muslim figures — George Bernard Shaw, Thomas Carlyle, Dr. Radhakrishnan and others — who studied the life of Prophet Muhammad ﷺ. Their unbiased reflections testify to the universal mercy and perfection of his blessed character.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-tribute" data-id="1rcR8btbUSRdeVcVeOgoblPfW1aIpq_3K" data-close-label="Close Reader" aria-expanded="false">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                      <span>Read Online</span>
+                    </button>
+                    <a href="https://drive.google.com/file/d/1rcR8btbUSRdeVcVeOgoblPfW1aIpq_3K/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-tribute" class="pdf-reader" aria-hidden="true"></div>
             </div>
-            <div class="book-content">
-              <p class="book-num">Featured Book</p>
-              <p class="book-badge">Free Digital Book — Urdu &amp; English (PDF)</p>
-              <h3 class="book-title-urdu" id="book-tribute-title" lang="ur" dir="rtl">غیر مسلم غیر متعصب مشاہیر عالم کا رحمۃ للعالمین سید المرسلین سیدنا حضرت محمد مصطفیٰ صلی اللہ علیہ والہ وبارک وسلم کے دربار عالیہ میں نذرانہ عقیدت</h3>
-              <h4 class="book-title-eng">"A Tribute of Devotion from Non-Muslim, Unbiased, World-Renowned Personalities to Sayyidna Hazrat Muhammad Mustafa ﷺ"</h4>
-              <p class="book-author">By <span>Manzoor Muhammad MATB</span></p>
-              <p class="book-desc">This extraordinary collection brings together the perspectives of influential non-Muslim figures — including George Bernard Shaw, Thomas Carlyle and Dr. Radhakrishnan — who studied the life of Prophet Muhammad ﷺ. Their unbiased reflections serve as a powerful testament to the universal mercy and perfection of his blessed character.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="reader-tribute" data-id="1rcR8btbUSRdeVcVeOgoblPfW1aIpq_3K" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1rcR8btbUSRdeVcVeOgoblPfW1aIpq_3K/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="reader-tribute" class="pdf-reader" aria-hidden="true"></div>
-        </div>
+          </div></div>
+        </div><!-- /acc-unit 1 -->
 
-        <!-- TAB 2: DALAIL-UN-NUBUWWAH -->
-        <div class="tab-pane" id="tab-dalail" role="tabpanel" aria-labelledby="tbtn-2">
-          <div class="dalail-header">
-            <div class="dalail-header-text">
-              <p class="dalail-ar" lang="ar" dir="rtl">دلائل النبوة</p>
-              <p class="dalail-en">"Proofs of Prophethood" — Urdu Translation</p>
-              <p class="dalail-author">By Imam Abi Bakr Ahmad Al-Bayhaqi رحمه الله &nbsp;·&nbsp; 3 Volumes</p>
-            </div>
-            <span class="dalail-tag">Authenticated · 3 Volumes</span>
-          </div>
-          <div class="dalail-vols">
-            <!-- Vol 1 -->
-            <div class="dalail-vol">
-              <p class="vol-num">Volume I — الجزء الأول</p>
-              <p class="vol-name">Creation &amp; Birth of the Prophet ﷺ</p>
-              <p class="vol-desc">The noble lineage of the Prophet ﷺ, his blessed birth, early signs of Prophethood, the first revelation, and the beginning of the mission of Islam.</p>
-              <div class="vol-actions">
-                <button type="button" class="btn-vol js-vol-btn" data-reader="vol-reader-1" data-id="1AtM-g4NdMI7lO2Bzh6B-8eFfuYFfMYZq" aria-expanded="false">
-                  <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1AtM-g4NdMI7lO2Bzh6B-8eFfuYFfMYZq/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+        <!-- ═══ PANEL 2: DALAIL ═══ -->
+        <div class="acc-unit">
+          <button class="acc-hdr" type="button" aria-expanded="false"><span class="acc-hdr-label">📚 Dalail-un-Nubuwwah</span><span class="acc-icon" aria-hidden="true">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner">
+            <div class="panel" id="p-dalail">
+              <div class="dalail-header">
+                <div class="dalail-header-text">
+                  <p class="dalail-ar" lang="ar" dir="rtl">دلائل النبوة</p>
+                  <p class="dalail-en">"Proofs of Prophethood" — Urdu Translation</p>
+                  <p class="dalail-author">Imam Abi Bakr Ahmad Al-Bayhaqi رحمه الله &nbsp;·&nbsp; 3 Volumes</p>
+                </div>
+                <span class="dalail-tag">Authenticated · 3 Volumes</span>
+              </div>
+              <div class="dalail-vols">
+                <div class="dalail-vol">
+                  <p class="vol-num">Volume I — الجزء الأول</p>
+                  <p class="vol-name">Creation &amp; Birth of the Prophet ﷺ</p>
+                  <p class="vol-desc">The noble lineage of the Prophet ﷺ, his blessed birth, early signs of Prophethood, the first revelation, and the beginning of the mission of Islam.</p>
+                  <div class="vol-actions">
+                    <button type="button" class="btn-vol" data-reader-btn data-reader="r-vol1" data-id="1AtM-g4NdMI7lO2Bzh6B-8eFfuYFfMYZq" data-close-label="Close" aria-expanded="false">
+                      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                      <span>Read Online</span>
+                    </button>
+                    <a href="https://drive.google.com/file/d/1AtM-g4NdMI7lO2Bzh6B-8eFfuYFfMYZq/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+                  </div>
+                </div>
+                <div class="dalail-vol">
+                  <p class="vol-num">Volume II — الجزء الثاني</p>
+                  <p class="vol-name">Miracles of the Prophet ﷺ</p>
+                  <p class="vol-desc">Splitting of the moon, water flowing from his blessed hands, the weeping tree, and his miraculous night journey of Isra and Mi'raj.</p>
+                  <div class="vol-actions">
+                    <button type="button" class="btn-vol" data-reader-btn data-reader="r-vol2" data-id="1FHRmsjXkhp2404_U6oy5PdvPwHtSWiVL" data-close-label="Close" aria-expanded="false">
+                      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                      <span>Read Online</span>
+                    </button>
+                    <a href="https://drive.google.com/file/d/1FHRmsjXkhp2404_U6oy5PdvPwHtSWiVL/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+                  </div>
+                </div>
+                <div class="dalail-vol">
+                  <p class="vol-num">Volume III — الجزء الثالث</p>
+                  <p class="vol-name">Battles &amp; Later Miracles</p>
+                  <p class="vol-desc">Trees obeying his command, animals speaking to him, events of the Battle of Badr, conquest of Makkah, and miracles from his later years.</p>
+                  <div class="vol-actions">
+                    <button type="button" class="btn-vol" data-reader-btn data-reader="r-vol3" data-id="1okr-Vj1FF4-XY8_inBSWe6rpANcplXu5" data-close-label="Close" aria-expanded="false">
+                      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                      <span>Read Online</span>
+                    </button>
+                    <a href="https://drive.google.com/file/d/1okr-Vj1FF4-XY8_inBSWe6rpANcplXu5/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+                  </div>
+                </div>
+                <div id="r-vol1" class="vol-reader" aria-hidden="true"></div>
+                <div id="r-vol2" class="vol-reader" aria-hidden="true"></div>
+                <div id="r-vol3" class="vol-reader" aria-hidden="true"></div>
               </div>
             </div>
-            <!-- Vol 2 -->
-            <div class="dalail-vol">
-              <p class="vol-num">Volume II — الجزء الثاني</p>
-              <p class="vol-name">Miracles of the Prophet ﷺ</p>
-              <p class="vol-desc">Splitting of the moon, water flowing from his blessed hands, the weeping tree, and his miraculous night journey of Isra and Mi'raj.</p>
-              <div class="vol-actions">
-                <button type="button" class="btn-vol js-vol-btn" data-reader="vol-reader-2" data-id="1FHRmsjXkhp2404_U6oy5PdvPwHtSWiVL" aria-expanded="false">
-                  <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1FHRmsjXkhp2404_U6oy5PdvPwHtSWiVL/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
-              </div>
-            </div>
-            <!-- Vol 3 -->
-            <div class="dalail-vol">
-              <p class="vol-num">Volume III — الجزء الثالث</p>
-              <p class="vol-name">Battles &amp; Later Miracles</p>
-              <p class="vol-desc">Trees obeying his command, animals speaking to him, events of the Battle of Badr, the conquest of Makkah, and miracles from his later years.</p>
-              <div class="vol-actions">
-                <button type="button" class="btn-vol js-vol-btn" data-reader="vol-reader-3" data-id="1okr-Vj1FF4-XY8_inBSWe6rpANcplXu5" aria-expanded="false">
-                  <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1okr-Vj1FF4-XY8_inBSWe6rpANcplXu5/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
-              </div>
-            </div>
-            <div id="vol-reader-1" class="vol-reader" aria-hidden="true"></div>
-            <div id="vol-reader-2" class="vol-reader" aria-hidden="true"></div>
-            <div id="vol-reader-3" class="vol-reader" aria-hidden="true"></div>
-          </div>
-        </div>
+          </div></div>
+        </div><!-- /acc-unit 2 -->
 
-        <!-- TAB 3: NAMES & DUROOD -->
-        <div class="tab-pane" id="tab-names" role="tabpanel" aria-labelledby="tbtn-3">
+        <!-- ═══ PANEL 3: NAMES & DUROOD ═══ -->
+        <div class="acc-unit">
+          <button class="acc-hdr" type="button" aria-expanded="false"><span class="acc-hdr-label">🌹 Names &amp; Durood</span><span class="acc-icon" aria-hidden="true">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner">
+            <div class="panel" id="p-names">
+              <article class="book-card">
+                <div class="book-visual" style="background:#1a3a2a;" aria-hidden="true"><div class="book-cover" style="background:#234d38;"><span class="cover-urdu">اسماء النبی الکریم ﷺ</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 02</p>
+                  <p class="book-badge">Free Digital Book — Arabic/Urdu (PDF)</p>
+                  <h3 class="book-title-urdu" lang="ur" dir="rtl">اسماء النبی الکریم</h3>
+                  <h4 class="book-title-eng">"Asma Un Nabi Al Karim" — Noble Names of the Prophet ﷺ</h4>
+                  <p class="book-author">By <span>Maulana Imdadullah Anwar</span></p>
+                  <p class="book-desc">Over a thousand blessed names and titles of Prophet Muhammad ﷺ drawn from the Quran and authentic Hadith — with their meanings, explanations, and the immense spiritual blessings of reciting his holy names. An essential reference for every Muslim household.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-asma" data-id="1y_FtREOKXT82ENugXHV4iL-6SiJqZzNe" data-close-label="Close Reader" aria-expanded="false">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                      <span>Read Online</span>
+                    </button>
+                    <a href="https://drive.google.com/file/d/1y_FtREOKXT82ENugXHV4iL-6SiJqZzNe/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-asma" class="pdf-reader" aria-hidden="true"></div>
 
-          <article class="book-card" aria-labelledby="book-asma-title">
-            <div class="book-visual" style="background:#1a3a2a;" aria-hidden="true">
-              <div class="book-cover" style="background:#234d38;">
-                <span class="cover-urdu">اسماء النبی الکریم ﷺ</span>
-              </div>
+              <article class="book-card">
+                <div class="book-visual" style="background:#2d1a00;" aria-hidden="true"><div class="book-cover" style="background:#3d2510;"><span class="cover-urdu" style="font-size:.9rem;">البرکات المکیۃ فی الصلوات النبویۃ</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 03</p>
+                  <p class="book-badge">Free Digital Book — Arabic/Urdu (PDF)</p>
+                  <h3 class="book-title-urdu" lang="ur" dir="rtl">البرکات المکیۃ فی الصلوات النبویۃ</h3>
+                  <h4 class="book-title-eng">"Al-Barakat Al-Makkiyah" — Durood Shareef Collection</h4>
+                  <p class="book-author">By <span>Shaykh Maulana Muhammad Musa Al-Ruhani Al-Bazi</span></p>
+                  <p class="book-desc">Over 800 Durood Shareef on the Prophet ﷺ compiled from the Makkah tradition. Can be recited as a daily Wazifa for fulfilling needs, removing hardship, and attracting the mercy of Allah through salutations on His beloved Prophet ﷺ.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-barakat" data-id="1d2pt_vUNT9XEFNwo_ZQZ41e6f4ocRkR5" data-close-label="Close Reader" aria-expanded="false">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                      <span>Read Online</span>
+                    </button>
+                    <a href="https://drive.google.com/file/d/1d2pt_vUNT9XEFNwo_ZQZ41e6f4ocRkR5/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-barakat" class="pdf-reader" aria-hidden="true"></div>
             </div>
-            <div class="book-content">
-              <p class="book-num">Book 02</p>
-              <p class="book-badge">Free Digital Book — Arabic/Urdu (PDF)</p>
-              <h3 class="book-title-urdu" id="book-asma-title" lang="ur" dir="rtl">اسماء النبی الکریم</h3>
-              <h4 class="book-title-eng">"Asma Un Nabi Al Karim" — The Noble Names of the Prophet ﷺ</h4>
-              <p class="book-author">By <span>Maulana Imdadullah Anwar</span></p>
-              <p class="book-desc">A comprehensive collection of over a thousand blessed names and titles of Prophet Muhammad ﷺ drawn from the Quran and authentic Hadith — with their meanings, explanations, and the immense spiritual blessings of reciting his holy names. An essential reference for every Muslim household.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="reader-asma" data-id="1y_FtREOKXT82ENugXHV4iL-6SiJqZzNe" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1y_FtREOKXT82ENugXHV4iL-6SiJqZzNe/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="reader-asma" class="pdf-reader" aria-hidden="true"></div>
+          </div></div>
+        </div><!-- /acc-unit 3 -->
 
-          <article class="book-card" aria-labelledby="book-barakat-title">
-            <div class="book-visual" style="background:#2d1a00;" aria-hidden="true">
-              <div class="book-cover" style="background:#3d2510;">
-                <span class="cover-urdu" style="font-size:.95rem;">البرکات المکیۃ فی الصلوات النبویۃ</span>
-              </div>
+        <!-- ═══ PANEL 4: OBEDIENCE ═══ -->
+        <div class="acc-unit">
+          <button class="acc-hdr" type="button" aria-expanded="false"><span class="acc-hdr-label">⚡ Obedience to Rasool ﷺ</span><span class="acc-icon" aria-hidden="true">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner">
+            <div class="panel" id="p-obedience">
+              <article class="book-card">
+                <div class="book-visual" style="background:#0d2818;" aria-hidden="true"><div class="book-cover" style="background:#154022;"><span class="cover-urdu">اطاعتِ رسول ﷺ</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 04</p>
+                  <p class="book-badge">Free Digital Book — Urdu (PDF)</p>
+                  <h3 class="book-title-urdu" lang="ur" dir="rtl">اطاعتِ رسول</h3>
+                  <h4 class="book-title-eng">"Itaat-i-Rasool" — Obedience to the Messenger ﷺ</h4>
+                  <p class="book-author">By <span>Shaikh-ul-Hadith Maulana Yusuf Motala</span></p>
+                  <p class="book-desc">A powerful work showing that true success — in this world and the Hereafter — lies entirely in obedience to Prophet Muhammad ﷺ. Drawing from Quran and Hadith, it demonstrates that loving him means following his Sunnah in every aspect of life — worship, character, family, and society.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-itaat" data-id="1fp6XDaoX__xyL0iUrfFSKVbPf2EqU_3G" data-close-label="Close Reader" aria-expanded="false">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                      <span>Read Online</span>
+                    </button>
+                    <a href="https://drive.google.com/file/d/1fp6XDaoX__xyL0iUrfFSKVbPf2EqU_3G/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-itaat" class="pdf-reader" aria-hidden="true"></div>
             </div>
-            <div class="book-content">
-              <p class="book-num">Book 03</p>
-              <p class="book-badge">Free Digital Book — Arabic/Urdu (PDF)</p>
-              <h3 class="book-title-urdu" id="book-barakat-title" lang="ur" dir="rtl">البرکات المکیۃ فی الصلوات النبویۃ</h3>
-              <h4 class="book-title-eng">"Al-Barakat Al-Makkiyah" — Durood Shareef Collection</h4>
-              <p class="book-author">By <span>Shaykh Maulana Muhammad Musa Al-Ruhani Al-Bazi</span></p>
-              <p class="book-desc">A blessed collection of over 800 Durood Shareef on the Prophet ﷺ compiled from the Makkah tradition. Can be recited as a daily Wazifa for fulfilling needs, removing hardship, and attracting the mercy and blessings of Allah through salutations on His beloved Prophet ﷺ.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="reader-barakat" data-id="1d2pt_vUNT9XEFNwo_ZQZ41e6f4ocRkR5" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1d2pt_vUNT9XEFNwo_ZQZ41e6f4ocRkR5/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="reader-barakat" class="pdf-reader" aria-hidden="true"></div>
-
-        </div>
-
-        <!-- TAB 4: OBEDIENCE -->
-        <div class="tab-pane" id="tab-obedience" role="tabpanel" aria-labelledby="tbtn-4">
-          <article class="book-card" aria-labelledby="book-itaat-title">
-            <div class="book-visual" style="background:#0d2818;" aria-hidden="true">
-              <div class="book-cover" style="background:#154022;">
-                <span class="cover-urdu">اطاعتِ رسول ﷺ</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <p class="book-num">Book 04</p>
-              <p class="book-badge">Free Digital Book — Urdu (PDF)</p>
-              <h3 class="book-title-urdu" id="book-itaat-title" lang="ur" dir="rtl">اطاعتِ رسول</h3>
-              <h4 class="book-title-eng">"Itaat-i-Rasool" — Obedience to the Messenger ﷺ</h4>
-              <p class="book-author">By <span>Shaikh-ul-Hadith Maulana Yusuf Motala</span></p>
-              <p class="book-desc">A powerful work emphasising that true success — in this world and the Hereafter — lies entirely in obedience to Prophet Muhammad ﷺ. Drawing from Quran and Hadith, it shows that loving the Prophet ﷺ means following his Sunnah in every aspect of life — worship, character, family, and society.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="reader-itaat" data-id="1fp6XDaoX__xyL0iUrfFSKVbPf2EqU_3G" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1fp6XDaoX__xyL0iUrfFSKVbPf2EqU_3G/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="reader-itaat" class="pdf-reader" aria-hidden="true"></div>
-        </div>
+          </div></div>
+        </div><!-- /acc-unit 4 -->
 
       </div>
     </section>
 
-    <!-- AHL AL-BAYT PROFILES -->
+    <!-- PROFILES -->
     <section class="profiles-section" aria-labelledby="family-heading">
       <div class="container">
         <div class="sec-header">
@@ -380,54 +389,44 @@
           <div class="divider" aria-hidden="true"><div class="ln" style="background:rgba(201,150,58,.3)"></div><div class="dm"></div><div class="ln" style="background:rgba(201,150,58,.3)"></div></div>
         </div>
 
-        <article class="profile-card" aria-labelledby="f1-name">
-          <div class="profile-badge" aria-hidden="true">
-            <span class="p-icon">🕌</span>
-            <div><span class="p-era">570 – 632 CE</span><br><span class="p-cat">Prophet ﷺ · Husband · Father</span></div>
-          </div>
+        <article class="profile-card">
+          <div class="profile-badge" aria-hidden="true"><span class="p-icon">🕌</span><div><span class="p-era">570 – 632 CE</span><br><span class="p-cat">Prophet ﷺ · Husband · Father</span></div></div>
           <div class="profile-body">
             <p class="p-num">Profile 01 of 03</p>
-            <h3 class="p-name" id="f1-name">Prophet Muhammad ﷺ — The Perfect Family Head</h3>
+            <h3 class="p-name">Prophet Muhammad ﷺ — The Perfect Family Head</h3>
             <p class="p-arabic" lang="ar" dir="rtl">مُحَمَّدٌ رَسُولُ اللَّهِ ﷺ</p>
             <p class="p-dates">Born: 12 Rabi' al-Awwal, 570 CE, Makkah &nbsp;|&nbsp; Passed: 12 Rabi' al-Awwal, 632 CE, Madinah</p>
-            <p class="p-bio">The Prophet Muhammad ﷺ was not only the final messenger of Allah and the leader of nations — he was, in his home, the most loving, gentle, and exemplary husband and father humanity has ever known. He helped with household chores, mended his own clothes, and said: <em>"The best of you is the one who is best to his family — and I am the best of you to my family."</em> (Sunan al-Tirmidhi)</p>
-            <p class="p-bio">His relationship with Hazrat Khadijah (RA) was one of profound love and devotion. With Hazrat Aisha (RA), he was playful and tender. With his daughter Hazrat Fatima (RA), he would stand and kiss her forehead whenever she entered. He said of his grandsons Hasan and Husayn: <em>"They are my fragrance in this world."</em></p>
+            <p class="p-bio">The Prophet Muhammad ﷺ was not only the final messenger of Allah and the leader of nations — he was, in his home, the most loving, gentle, and exemplary husband and father humanity has ever known. He helped with household chores, mended his own clothes, and said: <em>"The best of you is the one who is best to his family — and I am the best of you to my family."</em></p>
+            <p class="p-bio">With Hazrat Khadijah (RA), his relationship was one of profound love and devotion. With Hazrat Aisha (RA), he was playful and tender. With his daughter Hazrat Fatima (RA), he would stand and kiss her forehead whenever she entered the room. He said of his grandsons Hasan and Husayn: <em>"They are my fragrance in this world."</em></p>
             <blockquote class="p-quote">"The best of you is the one who is best to his family — and I am the best of you to my family."<cite>— Prophet Muhammad ﷺ (Sunan al-Tirmidhi, Hadith 3895 — Sahih)</cite></blockquote>
           </div>
         </article>
 
-        <article class="profile-card" aria-labelledby="f2-name">
-          <div class="profile-badge" aria-hidden="true">
-            <span class="p-icon">🌸</span>
-            <div><span class="p-era">c. 605 – 632 CE</span><br><span class="p-cat">Sahabiyya · Ahl al-Bayt · Al-Zahra</span></div>
-          </div>
+        <article class="profile-card">
+          <div class="profile-badge" aria-hidden="true"><span class="p-icon">🌸</span><div><span class="p-era">c. 605 – 632 CE</span><br><span class="p-cat">Sahabiyya · Ahl al-Bayt · Al-Zahra</span></div></div>
           <div class="profile-body">
             <p class="p-num">Profile 02 of 03</p>
-            <h3 class="p-name" id="f2-name">Hazrat Fatima al-Zahra <span style="color:var(--gold-light);font-size:.88rem;">رضي الله عنها</span></h3>
+            <h3 class="p-name">Hazrat Fatima al-Zahra <span style="color:var(--gold-light);font-size:.88rem;">رضي الله عنها</span></h3>
             <p class="p-arabic" lang="ar" dir="rtl">فاطمة الزهراء بنت محمد رسول الله ﷺ</p>
             <p class="p-dates">Born: c. 605 CE, Makkah &nbsp;|&nbsp; Passed: c. 632 CE, Madinah — approximately 90 days after her father ﷺ</p>
-            <p class="p-bio">Hazrat Fatima (RA) — honoured with the title <em>al-Zahra</em> (the Radiant) and <em>Sayyidat Nisa' al-'Alamin</em> (Leader of the Women of all the Worlds) — was the youngest and most beloved daughter of Prophet Muhammad ﷺ. When a hostile mob poured filth upon her father during prayer, young Fatima rushed to him — such that the Prophet ﷺ called her <em>Umm Abiha</em> (Mother of her Father). The Prophet ﷺ declared her one of the four greatest women in all of history.</p>
+            <p class="p-bio">Hazrat Fatima (RA) — honoured as <em>al-Zahra</em> (the Radiant) and <em>Sayyidat Nisa' al-'Alamin</em> (Leader of the Women of all the Worlds) — was the youngest and most beloved daughter of Prophet Muhammad ﷺ. When a mob poured filth upon her father during prayer, young Fatima rushed to him and cleaned him — such that the Prophet ﷺ called her <em>Umm Abiha</em> (Mother of her Father). The Prophet ﷺ declared her one of the four greatest women in all of history.</p>
             <p class="p-bio">She married Hazrat Ali (RA) in the first year of Hijra, and is the mother of Hasan and Husayn (RA) — the beloved grandsons of the Prophet ﷺ. She passed away approximately ninety days after her father ﷺ.</p>
             <blockquote class="p-quote">"Fatima is a part of me. Whoever angers her has angered me, and whoever pleases her has pleased me."<cite>— Prophet Muhammad ﷺ (Sahih al-Bukhari, Book 62, Hadith 74)</cite></blockquote>
           </div>
         </article>
 
-        <article class="profile-card" aria-labelledby="f3-name">
-          <div class="profile-badge" aria-hidden="true">
-            <span class="p-icon">⚔️</span>
-            <div><span class="p-era">c. 600 – 661 CE</span><br><span class="p-cat">Sahabi · 4th Caliph · Ahl al-Bayt</span></div>
-          </div>
+        <article class="profile-card">
+          <div class="profile-badge" aria-hidden="true"><span class="p-icon">⚔️</span><div><span class="p-era">c. 600 – 661 CE</span><br><span class="p-cat">Sahabi · 4th Caliph · Ahl al-Bayt</span></div></div>
           <div class="profile-body">
             <p class="p-num">Profile 03 of 03</p>
-            <h3 class="p-name" id="f3-name">Hazrat Ali ibn Abi Talib <span style="color:var(--gold-light);font-size:.88rem;">رضي الله عنه</span></h3>
+            <h3 class="p-name">Hazrat Ali ibn Abi Talib <span style="color:var(--gold-light);font-size:.88rem;">رضي الله عنه</span></h3>
             <p class="p-arabic" lang="ar" dir="rtl">عليّ بن أبي طالب كرم الله وجهه</p>
             <p class="p-dates">Born: c. 600 CE (13 Rajab), Makkah &nbsp;|&nbsp; Martyred: 21 Ramadan, 661 CE, Kufa</p>
-            <p class="p-bio">Hazrat Ali (RA) — cousin and son-in-law of Prophet Muhammad ﷺ and the fourth Rightly Guided Caliph — is among the most revered figures in Islamic history. Raised in the Prophet's own household, he was among the earliest Muslims and is among the ten Companions promised Paradise. On the night of the Hijra, he lay in the Prophet's bed as a decoy — offering his life for Islam.</p>
-            <p class="p-bio">He fought in every major battle alongside the Prophet ﷺ. His wisdom — collected in <em>Nahj al-Balagha</em> (Peak of Eloquence) — is among the most profound works in Arabic literature after the Quran and Hadith. He was martyred in 661 CE while prostrating in Fajr prayer.</p>
-            <blockquote class="p-quote">"Your remedy is within you, but you do not sense it. Your sickness is from you, but you do not perceive it. You presume you are a small entity, but within you is enfolded the entire universe."<cite>— Hazrat Ali ibn Abi Talib رضي الله عنه (Nahj al-Balagha)</cite></blockquote>
+            <p class="p-bio">Hazrat Ali (RA) — cousin and son-in-law of Prophet Muhammad ﷺ and the fourth Rightly Guided Caliph — is among the most revered figures in Islamic history. Raised in the Prophet's own household from childhood, he was among the earliest Muslims and is among the ten Companions promised Paradise. On the night of the Hijra, he lay in the Prophet's bed as a decoy — offering his own life for Islam.</p>
+            <p class="p-bio">He fought in every major battle alongside the Prophet ﷺ. His wisdom — collected in <em>Nahj al-Balagha</em> (Peak of Eloquence) — is among the most profound works in Arabic literature. He was martyred in 661 CE while prostrating in Fajr prayer.</p>
+            <blockquote class="p-quote">"Your remedy is within you, but you do not sense it. You presume you are a small entity, but within you is enfolded the entire universe."<cite>— Hazrat Ali ibn Abi Talib رضي الله عنه (Nahj al-Balagha)</cite></blockquote>
           </div>
         </article>
-
       </div>
     </section>
 
@@ -436,92 +435,113 @@
 
   <script>
   (function () {
+    'use strict';
 
-    /* ── TAB SWITCHING ── */
-    var tabBtns  = document.querySelectorAll('.tab-btn');
-    var tabPanes = document.querySelectorAll('.tab-pane');
-
-    tabBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var target = this.getAttribute('aria-controls');
-        tabBtns.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
-        tabPanes.forEach(function (p) { p.classList.remove('active'); });
-        this.classList.add('active');
-        this.setAttribute('aria-selected', 'true');
-        document.getElementById(target).classList.add('active');
-        /* Close any open readers when switching tabs */
-        closeAllReaders();
-      });
-    });
-
-    /* ── HELPER: close every open reader ── */
-    function closeAllReaders() {
-      document.querySelectorAll('.pdf-reader.open, .vol-reader.open').forEach(function (r) {
-        r.classList.remove('open');
+    /* ── Close all open PDF readers ── */
+    function closeReaders() {
+      document.querySelectorAll('.pdf-reader.is-open, .vol-reader.is-open').forEach(function (r) {
+        r.classList.remove('is-open');
         r.setAttribute('aria-hidden', 'true');
       });
-      document.querySelectorAll('.js-reader-btn[aria-expanded="true"], .js-vol-btn[aria-expanded="true"]').forEach(function (b) {
+      document.querySelectorAll('[data-reader-btn][aria-expanded="true"]').forEach(function (b) {
         b.setAttribute('aria-expanded', 'false');
         var s = b.querySelector('span');
         if (s) s.textContent = 'Read Online';
       });
     }
 
-    /* ── BOOK READERS (tall cards) ── */
-    document.querySelectorAll('.js-reader-btn').forEach(function (btn) {
+    /* ── TABS (desktop) ── */
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var readerId = this.getAttribute('data-reader');
-        var driveId  = this.getAttribute('data-id');
-        var reader   = document.getElementById(readerId);
-        var span     = this.querySelector('span');
-        var isOpen   = reader.classList.contains('open');
-
-        closeAllReaders();
-
-        if (!isOpen) {
-          if (!reader.innerHTML.trim()) {
-            reader.innerHTML = '<iframe src="https://drive.google.com/file/d/' + driveId + '/preview" title="PDF Reader" allow="autoplay" loading="lazy"></iframe>';
-          }
-          reader.classList.add('open');
-          reader.setAttribute('aria-hidden', 'false');
-          this.setAttribute('aria-expanded', 'true');
-          if (span) span.textContent = 'Close Reader';
-          setTimeout(function () { reader.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 160);
-        }
+        var targetId = this.getAttribute('data-panel');
+        document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('is-active'); b.setAttribute('aria-selected','false'); });
+        document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('is-active'); });
+        this.classList.add('is-active');
+        this.setAttribute('aria-selected','true');
+        var t = document.getElementById(targetId);
+        if (t) t.classList.add('is-active');
+        closeReaders();
       });
     });
 
-    /* ── DALAIL VOLUME READERS ── */
-    document.querySelectorAll('.js-vol-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var readerId = this.getAttribute('data-reader');
-        var driveId  = this.getAttribute('data-id');
-        var reader   = document.getElementById(readerId);
-        var span     = this.querySelector('span');
-        var isOpen   = reader.classList.contains('open');
+    /* ── ACCORDION (mobile) ── */
+    function initAccordion() {
+      var units = document.querySelectorAll('.acc-unit');
 
-        /* Close all vol readers only */
-        document.querySelectorAll('.vol-reader.open').forEach(function (r) {
-          r.classList.remove('open');
-          r.setAttribute('aria-hidden', 'true');
-        });
-        document.querySelectorAll('.js-vol-btn').forEach(function (b) {
-          b.setAttribute('aria-expanded', 'false');
-          var s = b.querySelector('span');
-          if (s) s.textContent = 'Read Online';
-        });
-
-        if (!isOpen) {
-          if (!reader.innerHTML.trim()) {
-            reader.innerHTML = '<iframe src="https://drive.google.com/file/d/' + driveId + '/preview" title="PDF Reader" allow="autoplay" loading="lazy"></iframe>';
-          }
-          reader.classList.add('open');
-          reader.setAttribute('aria-hidden', 'false');
-          this.setAttribute('aria-expanded', 'true');
-          if (span) span.textContent = 'Close';
-          setTimeout(function () { reader.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 160);
+      /* Open first by default on mobile */
+      if (window.innerWidth <= 768 && units.length) {
+        var fHdr  = units[0].querySelector('.acc-hdr');
+        var fBody = units[0].querySelector('.acc-body');
+        if (fHdr && fBody) {
+          fHdr.classList.add('is-open');
+          fHdr.setAttribute('aria-expanded','true');
+          fBody.style.height = 'auto';
         }
+      }
+
+      units.forEach(function (unit) {
+        var hdr   = unit.querySelector('.acc-hdr');
+        var body  = unit.querySelector('.acc-body');
+        var inner = unit.querySelector('.acc-body-inner');
+        if (!hdr || !body || !inner) return;
+
+        hdr.addEventListener('click', function () {
+          if (window.innerWidth > 768) return;
+
+          var isOpen = hdr.classList.contains('is-open');
+
+          /* Close all */
+          units.forEach(function (u) {
+            var h = u.querySelector('.acc-hdr');
+            var b = u.querySelector('.acc-body');
+            if (h) { h.classList.remove('is-open'); h.setAttribute('aria-expanded','false'); }
+            if (b) b.style.height = '0';
+          });
+          closeReaders();
+
+          /* Open this one if it was closed */
+          if (!isOpen) {
+            hdr.classList.add('is-open');
+            hdr.setAttribute('aria-expanded','true');
+            /* Measure real height for smooth animation */
+            body.style.height = inner.scrollHeight + 'px';
+            body.addEventListener('transitionend', function once() {
+              if (hdr.classList.contains('is-open')) body.style.height = 'auto';
+              body.removeEventListener('transitionend', once);
+            });
+            setTimeout(function () { hdr.scrollIntoView({ behavior:'smooth', block:'start' }); }, 130);
+          }
+        });
       });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAccordion);
+    } else {
+      initAccordion();
+    }
+
+    /* ── PDF READER BUTTONS (event delegation) ── */
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-reader-btn]');
+      if (!btn) return;
+      var rid    = btn.getAttribute('data-reader');
+      var did    = btn.getAttribute('data-id');
+      var reader = document.getElementById(rid);
+      if (!reader) return;
+      var isOpen = reader.classList.contains('is-open');
+      closeReaders();
+      if (!isOpen) {
+        if (!reader.innerHTML.trim()) {
+          reader.innerHTML = '<iframe src="https://drive.google.com/file/d/' + did + '/preview" title="PDF Reader" allow="autoplay" loading="lazy"></iframe>';
+        }
+        reader.classList.add('is-open');
+        reader.setAttribute('aria-hidden','false');
+        btn.setAttribute('aria-expanded','true');
+        var s = btn.querySelector('span');
+        if (s) s.textContent = btn.getAttribute('data-close-label') || 'Close Reader';
+        setTimeout(function () { reader.scrollIntoView({ behavior:'smooth', block:'start' }); }, 180);
+      }
     });
 
   })();

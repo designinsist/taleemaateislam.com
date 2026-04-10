@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Connect with Allah — 12 Free Islamic Books | Taleemaat-e-Islam</title>
-  <meta name="description" content="Strengthen your connection with Allah with 12 free Islamic books — Khuda Mojood Hai, Meet God, Islam & Science, Namaz Translation, Al-Hizb ul-Azam, Munajat-e-Maqbool, Manzil Dua, Istikhara and more. Read online or download free." />
-  <meta name="keywords" content="Connect with Allah, free Islamic books, Khuda Mojood Hai, Meet God, Islam and Science, Integration Islam Science, Prayer Supplication, Fallacy Evolution, Yaqeen Ka Safar, Namaz Urdu English Translation, Al-Hizb ul-Azam, Munajat-e-Maqbool, Manzil Dua, Istikhara, Taleemaat-e-Islam" />
+  <meta name="description" content="Strengthen your connection with Allah with 12 free Islamic books — Khuda Mojood Hai, Meet God, Islam & Science, Namaz Translation, Al-Hizb ul-Azam, Munajat-e-Maqbool, Manzil Dua, Istikhara and more." />
+  <meta name="keywords" content="Connect with Allah, free Islamic books, Khuda Mojood Hai, Meet God, Islam Science, Namaz Urdu English, Al-Hizb ul-Azam, Munajat-e-Maqbool, Manzil Dua, Istikhara, Fallacy Evolution, Yaqeen Ka Safar, Taleemaat-e-Islam" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://taleemaateislam.com/connect-with-allah.html" />
   <meta property="og:type" content="website" />
@@ -25,15 +25,10 @@
   <link rel="shortcut icon" href="/images/favicon.ico">
   <link rel="stylesheet" href="shared.css" />
   <style>
-    :root{
-      --green-deep:#0d2818;--green-mid:#1a4a2e;--green-rich:#1e5c38;--green-light:#e8f5ee;
-      --gold:#c9963a;--gold-light:#e8b84b;--gold-dim:#7a5a1a;
-      --white:#fff;--off-white:#faf9f5;--text-dark:#1a2a1e;--text-mid:#3d5a45;--text-muted:#6b8a73;
-      --border:rgba(201,150,58,.25);--nav-h:72px;--radius:4px;--transition:.3s ease;
-    }
+    :root{--green-deep:#0d2818;--green-mid:#1a4a2e;--green-rich:#1e5c38;--gold:#c9963a;--gold-light:#e8b84b;--gold-dim:#7a5a1a;--white:#fff;--off-white:#faf9f5;--text-dark:#1a2a1e;--text-muted:#6b8a73;--border:rgba(201,150,58,.25);--radius:4px;--transition:.3s ease;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;font-size:16px}
-    body{font-family:'Nunito',sans-serif;font-weight:400;color:var(--text-dark);background:var(--off-white);line-height:1.7;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh}
+    html{scroll-behavior:smooth}
+    body{font-family:'Nunito',sans-serif;color:var(--text-dark);background:var(--off-white);line-height:1.7;overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh}
     a{text-decoration:none;color:inherit}ul{list-style:none}
     .container{max-width:1160px;margin:0 auto;padding:0 24px}
     main{flex:1}
@@ -54,7 +49,8 @@
     .intro-stat span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55)}
     .intro-div{width:1px;height:36px;background:rgba(255,255,255,.15)}
 
-    /* SECTION HEADER */
+    /* SECTION */
+    .tabs-section{padding:72px 0 88px;background:var(--off-white)}
     .sec-header{text-align:center;margin-bottom:48px}
     .sec-label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
     .sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--green-deep);line-height:1.25}
@@ -63,15 +59,17 @@
     .divider .ln{height:1px;background:var(--border);width:50px}
     .divider .dm{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
 
-    /* TABS */
-    .tabs-section{padding:72px 0 88px;background:var(--off-white)}
-    .tab-bar{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:48px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    /* TAB BAR */
+    .tab-bar{display:flex;border-bottom:2px solid var(--border);margin-bottom:40px;overflow-x:auto;scrollbar-width:none}
     .tab-bar::-webkit-scrollbar{display:none}
-    .tab-btn{flex-shrink:0;padding:14px 26px;font-family:'Nunito',sans-serif;font-size:.84rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;cursor:pointer;transition:all var(--transition);white-space:nowrap}
+    .tab-btn{flex-shrink:0;padding:14px 26px;font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;cursor:pointer;transition:all .3s ease;white-space:nowrap}
     .tab-btn:hover{color:var(--green-mid)}
-    .tab-btn.active{color:var(--green-deep);border-bottom-color:var(--gold)}
-    .tab-pane{display:none}
-    .tab-pane.active{display:block}
+    .tab-btn.is-active{color:var(--green-deep);border-bottom-color:var(--gold)}
+    .panel{display:none}
+    .panel.is-active{display:block}
+
+    /* ACCORDION HEADER (mobile only) */
+    .acc-hdr{display:none}
 
     /* BOOK CARD */
     .book-card{background:#fff;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:300px 1fr;box-shadow:0 8px 32px rgba(13,40,24,.08);border:1px solid rgba(201,150,58,.15);margin-bottom:32px}
@@ -90,15 +88,17 @@
     .book-author span{color:var(--green-mid)}
     .book-desc{font-size:.93rem;color:var(--text-muted);line-height:1.85;margin-bottom:28px}
     .book-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn-read{padding:13px 26px;background:var(--gold);color:var(--green-deep);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--radius);transition:all var(--transition);display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;font-family:'Nunito',sans-serif}
+    .btn-read{padding:13px 26px;background:var(--gold);color:var(--green-deep);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--radius);transition:all .3s ease;display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;font-family:'Nunito',sans-serif}
     .btn-read:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 5px 15px rgba(201,150,58,.3)}
-    .btn-dl{padding:13px 26px;border:1.5px solid var(--border);color:var(--green-mid);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--radius);transition:all var(--transition);display:inline-block;font-family:'Nunito',sans-serif}
+    .btn-dl{padding:13px 26px;border:1.5px solid var(--border);color:var(--green-mid);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--radius);transition:all .3s ease;display:inline-block;font-family:'Nunito',sans-serif}
     .btn-dl:hover{background:rgba(201,150,58,.06);border-color:var(--gold)}
-    .pdf-reader{margin-top:-16px;margin-bottom:32px;width:100%;height:0;opacity:0;overflow:hidden;transition:height .5s ease,opacity .5s ease;border-radius:8px;border:1px solid var(--border);background:#fff}
-    .pdf-reader.open{height:82vh;min-height:560px;opacity:1}
+
+    /* PDF READER */
+    .pdf-reader{margin-top:-12px;margin-bottom:28px;width:100%;height:0;opacity:0;overflow:hidden;transition:height .45s ease,opacity .4s ease;border-radius:8px;border:1px solid var(--border);background:#fff}
+    .pdf-reader.is-open{height:82vh;min-height:520px;opacity:1}
     .pdf-reader iframe{width:100%;height:100%;border:none;display:block}
 
-    /* AYAH BANNER */
+    /* AYAH */
     .ayah-banner{background:var(--green-deep);padding:60px 0;text-align:center;position:relative;overflow:hidden}
     .ayah-banner::before{content:'';position:absolute;inset:0;opacity:.04;background-image:repeating-linear-gradient(45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px),repeating-linear-gradient(-45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px)}
     .ayah-banner .container{position:relative;z-index:2}
@@ -106,19 +106,35 @@
     .ayah-tr{font-size:1rem;color:rgba(255,255,255,.7);font-style:italic;margin-bottom:10px;max-width:640px;margin-left:auto;margin-right:auto}
     .ayah-ref{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(201,150,58,.6);font-weight:600}
 
-    /* RESPONSIVE */
+    /* DESKTOP RESPONSIVE */
     @media(max-width:1024px){.book-card{grid-template-columns:260px 1fr}}
+
+    /* MOBILE */
     @media(max-width:768px){
-      .tab-btn{padding:12px 16px;font-size:.76rem}
-      .book-card{grid-template-columns:1fr}
-      .book-visual{padding:44px 20px}
-      .book-content{padding:32px 22px}
-      .book-actions{flex-direction:column}
-      .btn-read,.btn-dl{text-align:center;justify-content:center;width:100%}
-      .pdf-reader.open{height:70vh;min-height:420px}
+      .tab-bar{display:none !important}
+      .panel{display:block !important}
+
+      .acc-hdr{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:18px 20px;background:var(--green-deep);color:#fff;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:700;border:none;border-bottom:1px solid rgba(201,150,58,.2);cursor:pointer;text-align:left;-webkit-tap-highlight-color:transparent;transition:background .25s ease}
+      .acc-hdr.is-open{background:#091d10}
+      .acc-hdr-label{flex:1;line-height:1.4}
+      .acc-icon{width:34px;height:34px;flex-shrink:0;border-radius:50%;border:1.5px solid rgba(201,150,58,.4);background:rgba(201,150,58,.12);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--gold);transition:transform .3s ease,background .3s ease;pointer-events:none}
+      .acc-hdr.is-open .acc-icon{transform:rotate(45deg);background:rgba(201,150,58,.22)}
+      .acc-body{overflow:hidden;height:0;background:var(--off-white);border-left:1px solid rgba(201,150,58,.15);border-right:1px solid rgba(201,150,58,.15);border-bottom:1px solid rgba(201,150,58,.15);border-radius:0 0 8px 8px;transition:height .38s ease}
+      .acc-body-inner{padding:20px 0 12px}
+      .acc-unit{margin-bottom:10px;border-radius:8px;overflow:hidden;box-shadow:0 3px 12px rgba(13,40,24,.09)}
+
+      .book-card{grid-template-columns:1fr !important;margin-bottom:20px}
+      .book-visual{padding:36px 20px !important;min-height:160px !important}
+      .book-content{padding:24px 20px !important}
+      .book-actions{flex-direction:column !important}
+      .btn-read,.btn-dl{width:100% !important;justify-content:center !important;padding:15px !important;font-size:.9rem !important}
+      .pdf-reader.is-open{height:70vh !important;min-height:400px !important}
+
       .intro-div{display:none}
+      .tabs-section{padding:40px 0 48px}
+      .sec-header{margin-bottom:28px}
     }
-    @media(max-width:480px){.book-content{padding:24px 18px}}
+    @media(max-width:480px){.book-content{padding:20px 16px !important}}
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC55V0MHS8"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MC55V0MHS8');</script>
@@ -127,16 +143,14 @@
   <div id="site-header"></div>
   <main>
 
-    <!-- HERO -->
     <header class="inner-hero" aria-labelledby="hero-title">
       <div class="container">
-        <p class="hero-bismillah" lang="ar" dir="rtl" aria-label="Bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+        <p class="hero-bismillah" lang="ar" dir="rtl">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
         <h1 class="inner-title" id="hero-title">Connect with <span>Allah</span></h1>
         <p class="inner-desc">Strengthen your faith and deepen your personal connection with Allah ﷻ through knowledge, reason, and the timeless wisdom of Islam.</p>
       </div>
     </header>
 
-    <!-- INTRO STRIP -->
     <div class="intro-strip">
       <div class="container">
         <div class="intro-stat"><strong>12</strong><span>Free Books</span></div>
@@ -147,7 +161,6 @@
       </div>
     </div>
 
-    <!-- TABBED BOOKS -->
     <section class="tabs-section" aria-labelledby="books-heading">
       <div class="container">
         <div class="sec-header">
@@ -156,342 +169,246 @@
           <div class="divider" aria-hidden="true"><div class="ln"></div><div class="dm"></div><div class="ln"></div></div>
         </div>
 
-        <!-- TAB BUTTONS -->
-        <div class="tab-bar" role="tablist" aria-label="Book categories">
-          <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-faith"   id="ctbtn-1">🌟 Faith &amp; Existence</button>
-          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-prayer"  id="ctbtn-2">🤲 Prayer &amp; Worship</button>
-          <button class="tab-btn"        role="tab" aria-selected="false" aria-controls="tab-reform"  id="ctbtn-3">📖 Knowledge &amp; Reform</button>
+        <!-- DESKTOP TAB BAR -->
+        <div class="tab-bar" role="tablist">
+          <button class="tab-btn is-active" role="tab" aria-selected="true"  data-panel="p-faith">🌟 Faith &amp; Existence</button>
+          <button class="tab-btn"            role="tab" aria-selected="false" data-panel="p-prayer">🤲 Prayer &amp; Worship</button>
+          <button class="tab-btn"            role="tab" aria-selected="false" data-panel="p-reform">📖 Knowledge &amp; Reform</button>
         </div>
 
-        <!-- TAB 1: FAITH & EXISTENCE (4 books) -->
-        <div class="tab-pane active" id="tab-faith" role="tabpanel" aria-labelledby="ctbtn-1">
+        <!-- ═══ PANEL 1: FAITH & EXISTENCE ═══ -->
+        <div class="acc-unit">
+          <button class="acc-hdr" type="button" aria-expanded="false"><span class="acc-hdr-label">🌟 Faith &amp; Existence</span><span class="acc-icon" aria-hidden="true">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner">
+            <div class="panel is-active" id="p-faith">
 
-          <!-- Book 01 -->
-          <article class="book-card" aria-labelledby="c-book1-title">
-            <div class="book-visual" style="background:#8b1a1a;" aria-hidden="true">
-              <div class="book-cover" style="background:#a52020;">
-                <span class="cover-urdu">خدا موجود ہے</span>
-                <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;">
-                <span class="cover-eng">I Saw Almighty God</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <p class="book-num">Book 01 of 12</p>
-              <p class="book-badge">Free Digital Book — Urdu/English (PDF)</p>
-              <h3 class="book-title-urdu" id="c-book1-title" lang="ur" dir="rtl">خدا موجود ہے</h3>
-              <h4 class="book-title-eng">"Khuda Mojood Hai" (God Exists)</h4>
-              <p class="book-author">By <span>M. Manzur Muhammad M.A.B.T.</span></p>
-              <p class="book-desc">A compelling and rational exploration of the existence of Allah. Written with clarity and conviction, this book uses logical reasoning and evidence to affirm what every believing heart already knows — that Allah exists, and His presence is witnessed in every corner of creation.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="cr1" data-id="1fpPEwPeYmsfNTrj5ENZAujeioxsexUGn" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1oZ5WMM5LnKW2PjdQnsXgtiu_lFeqaSRL/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="cr1" class="pdf-reader" aria-hidden="true"></div>
+              <article class="book-card">
+                <div class="book-visual" style="background:#8b1a1a;" aria-hidden="true"><div class="book-cover" style="background:#a52020;"><span class="cover-urdu">خدا موجود ہے</span><hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;"><span class="cover-eng">I Saw Almighty God</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 01 of 12</p>
+                  <p class="book-badge">Free Digital Book — Urdu/English (PDF)</p>
+                  <h3 class="book-title-urdu" lang="ur" dir="rtl">خدا موجود ہے</h3>
+                  <h4 class="book-title-eng">"Khuda Mojood Hai" (God Exists)</h4>
+                  <p class="book-author">By <span>M. Manzur Muhammad M.A.B.T.</span></p>
+                  <p class="book-desc">A compelling and rational exploration of the existence of Allah. Written with clarity and conviction, this book uses logical reasoning and evidence to affirm what every believing heart already knows — that Allah exists, and His presence is witnessed in every corner of creation.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-c1" data-id="1fpPEwPeYmsfNTrj5ENZAujeioxsexUGn" data-close-label="Close Reader" aria-expanded="false"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                    <a href="https://drive.google.com/file/d/1oZ5WMM5LnKW2PjdQnsXgtiu_lFeqaSRL/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-c1" class="pdf-reader" aria-hidden="true"></div>
 
-          <!-- Book 02 -->
-          <article class="book-card" aria-labelledby="c-book2-title">
-            <div class="book-visual" style="background:#6b5a3a;" aria-hidden="true">
-              <div class="book-cover" style="background:#7a6540;">
-                <span class="cover-eng" style="font-size:1.2rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.5;">Islam<br>&amp;<br>Science</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <p class="book-num">Book 02 of 12</p>
-              <p class="book-badge">Free Digital Book — English (PDF)</p>
-              <h3 class="book-title-eng" id="c-book2-title" style="font-size:1.5rem;margin-bottom:8px;font-style:normal;font-family:'Playfair Display',serif;font-weight:700;color:var(--green-deep);">Islam &amp; Science</h3>
-              <p class="book-author">By <span>Muhammad Manzur Qadri M.A.</span></p>
-              <p class="book-desc">A remarkable work exploring the profound harmony between Islamic teachings and modern scientific discoveries. This book demonstrates how the Quran, revealed over 1,400 years ago, contains truths that science is only now beginning to confirm — a powerful reminder of the divine origin of Islam.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="cr2" data-id="1ayRtzkIaRhN-0sBgB9fRWgUYs7LNws0a" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1ayRtzkIaRhN-0sBgB9fRWgUYs7LNws0a/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="cr2" class="pdf-reader" aria-hidden="true"></div>
+              <article class="book-card">
+                <div class="book-visual" style="background:#6b5a3a;" aria-hidden="true"><div class="book-cover" style="background:#7a6540;"><span class="cover-eng" style="font-size:1.2rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.5;">Islam<br>&amp;<br>Science</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 02 of 12</p>
+                  <p class="book-badge">Free Digital Book — English (PDF)</p>
+                  <h3 class="book-title-eng" style="font-size:1.5rem;margin-bottom:8px;font-family:'Playfair Display',serif;font-weight:700;color:var(--green-deep);">Islam &amp; Science</h3>
+                  <p class="book-author">By <span>Muhammad Manzur Qadri M.A.</span></p>
+                  <p class="book-desc">A remarkable work exploring the profound harmony between Islamic teachings and modern scientific discoveries. Demonstrates how the Quran, revealed over 1,400 years ago, contains truths that science is only now beginning to confirm — a powerful reminder of the divine origin of Islam.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-c2" data-id="1ayRtzkIaRhN-0sBgB9fRWgUYs7LNws0a" data-close-label="Close Reader" aria-expanded="false"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                    <a href="https://drive.google.com/file/d/1ayRtzkIaRhN-0sBgB9fRWgUYs7LNws0a/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-c2" class="pdf-reader" aria-hidden="true"></div>
 
-          <!-- Book 03 -->
-          <article class="book-card" aria-labelledby="c-book3-title">
-            <div class="book-visual" style="background:#2d1b4e;" aria-hidden="true">
-              <div class="book-cover" style="background:#3f266e;">
-                <span class="cover-eng" style="font-size:1.4rem;font-weight:700;text-transform:uppercase;line-height:1.4;">Meet<br>God</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <p class="book-num">Book 03 of 12</p>
-              <p class="book-badge">Free Digital Book — English (PDF)</p>
-              <h3 class="book-title-eng" id="c-book3-title" style="font-size:1.5rem;margin-bottom:8px;font-style:normal;font-family:'Playfair Display',serif;font-weight:700;color:var(--green-deep);">Meet God</h3>
-              <p class="book-author">By <span>Manzoor Muhammad M.A.</span></p>
-              <p class="book-desc">A deeply spiritual and rational dialogue designed to awaken the soul to the reality of the Creator. An English translation of extracts from the Maktubat of Hazrat Sheikh Ahmed Sirhandi, Mujaddid Alf Sani — a guiding light for those seeking certainty and a closer relationship with Allah.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="cr3" data-id="1-PVXanv_8Qjhxv9FWn0VNNZ9XIcBzxmC" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1-PVXanv_8Qjhxv9FWn0VNNZ9XIcBzxmC/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="cr3" class="pdf-reader" aria-hidden="true"></div>
+              <article class="book-card">
+                <div class="book-visual" style="background:#2d1b4e;" aria-hidden="true"><div class="book-cover" style="background:#3f266e;"><span class="cover-eng" style="font-size:1.4rem;font-weight:700;text-transform:uppercase;line-height:1.4;">Meet<br>God</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 03 of 12</p>
+                  <p class="book-badge">Free Digital Book — English (PDF)</p>
+                  <h3 class="book-title-eng" style="font-size:1.5rem;margin-bottom:8px;font-family:'Playfair Display',serif;font-weight:700;color:var(--green-deep);">Meet God</h3>
+                  <p class="book-author">By <span>Manzoor Muhammad M.A.</span></p>
+                  <p class="book-desc">A deeply spiritual and rational dialogue designed to awaken the soul to the reality of the Creator. An English translation of extracts from the Maktubat of Hazrat Sheikh Ahmed Sirhandi, Mujaddid Alf Sani — a guiding light for those seeking certainty and a closer relationship with Allah.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-c3" data-id="1-PVXanv_8Qjhxv9FWn0VNNZ9XIcBzxmC" data-close-label="Close Reader" aria-expanded="false"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                    <a href="https://drive.google.com/file/d/1-PVXanv_8Qjhxv9FWn0VNNZ9XIcBzxmC/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-c3" class="pdf-reader" aria-hidden="true"></div>
 
-          <!-- Book 04 -->
-          <article class="book-card" aria-labelledby="c-book4-title">
-            <div class="book-visual" style="background:#2b3a42;" aria-hidden="true">
-              <div class="book-cover" style="background:#3d5059;">
-                <span class="cover-eng" style="font-size:.9rem;font-weight:700;text-transform:uppercase;line-height:1.5;">Integration<br>of Islam<br>&amp; Science</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <p class="book-num">Book 04 of 12</p>
-              <p class="book-badge">Free Digital Book — English (PDF)</p>
-              <h3 class="book-title-eng" id="c-book4-title" style="font-size:1.5rem;margin-bottom:8px;font-style:normal;font-family:'Playfair Display',serif;font-weight:700;color:var(--green-deep);">Integration of Islam with Science</h3>
-              <p class="book-author">By <span>M. M. Qadri, M.A.</span></p>
-              <p class="book-desc">An analytical masterpiece bridging divine revelation and empirical science. It provides compelling evidence of how Islamic principles seamlessly integrate with and preempt modern scientific realities — showing that the study of science is virtually obligatory for Muslims as the phenomena of nature are called "Signs of God" in the Quran.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="cr4" data-id="1D_o6sk3k-PsYm8V--nGXaUv1c5O5NuaC" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1D_o6sk3k-PsYm8V--nGXaUv1c5O5NuaC/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="cr4" class="pdf-reader" aria-hidden="true"></div>
+              <article class="book-card">
+                <div class="book-visual" style="background:#2b3a42;" aria-hidden="true"><div class="book-cover" style="background:#3d5059;"><span class="cover-eng" style="font-size:.88rem;font-weight:700;text-transform:uppercase;line-height:1.5;">Integration<br>of Islam<br>&amp; Science</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 04 of 12</p>
+                  <p class="book-badge">Free Digital Book — English (PDF)</p>
+                  <h3 class="book-title-eng" style="font-size:1.5rem;margin-bottom:8px;font-family:'Playfair Display',serif;font-weight:700;color:var(--green-deep);">Integration of Islam with Science</h3>
+                  <p class="book-author">By <span>M. M. Qadri, M.A.</span></p>
+                  <p class="book-desc">An analytical masterpiece bridging divine revelation and empirical science. Provides compelling evidence of how Islamic principles seamlessly integrate with and preempt modern scientific realities — showing that the study of science is virtually obligatory for Muslims as the phenomena of nature are called "Signs of God" in the Quran.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-c4" data-id="1D_o6sk3k-PsYm8V--nGXaUv1c5O5NuaC" data-close-label="Close Reader" aria-expanded="false"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                    <a href="https://drive.google.com/file/d/1D_o6sk3k-PsYm8V--nGXaUv1c5O5NuaC/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-c4" class="pdf-reader" aria-hidden="true"></div>
 
-        </div><!-- /tab-faith -->
+            </div>
+          </div></div>
+        </div><!-- /acc-unit 1 -->
 
-        <!-- TAB 2: PRAYER & WORSHIP (6 books) -->
-        <div class="tab-pane" id="tab-prayer" role="tabpanel" aria-labelledby="ctbtn-2">
+        <!-- ═══ PANEL 2: PRAYER & WORSHIP ═══ -->
+        <div class="acc-unit">
+          <button class="acc-hdr" type="button" aria-expanded="false"><span class="acc-hdr-label">🤲 Prayer &amp; Worship</span><span class="acc-icon" aria-hidden="true">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner">
+            <div class="panel" id="p-prayer">
 
-          <!-- Book 05 -->
-          <article class="book-card" aria-labelledby="c-book5-title">
-            <div class="book-visual" style="background:#1a2d4a;" aria-hidden="true">
-              <div class="book-cover" style="background:#243d63;">
-                <span class="cover-eng" style="font-size:.85rem;font-weight:700;text-transform:uppercase;line-height:1.5;">Prayer<br>&amp;<br>Supplication</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <p class="book-num">Book 05 of 12</p>
-              <p class="book-badge">Free Digital Book — English (PDF)</p>
-              <h3 class="book-title-eng" id="c-book5-title" style="font-size:1.5rem;margin-bottom:8px;font-style:normal;font-family:'Playfair Display',serif;font-weight:700;color:var(--green-deep);">Prayer and Supplication</h3>
-              <p class="book-author">By <span>Taleemaat-e-Islam</span></p>
-              <p class="book-desc">A comprehensive guide to the heart of Islamic worship — Salah and Du'a. This book illuminates the profound spiritual significance of prayer and supplication, offering practical guidance on how to draw closer to Allah through sincere, mindful worship and heartfelt invocation.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="cr5" data-id="1GvHm_wtq5V98AKZFLETogFKO1uwW-XkT" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1GvHm_wtq5V98AKZFLETogFKO1uwW-XkT/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="cr5" class="pdf-reader" aria-hidden="true"></div>
+              <article class="book-card">
+                <div class="book-visual" style="background:#1a2d4a;" aria-hidden="true"><div class="book-cover" style="background:#243d63;"><span class="cover-eng" style="font-size:.85rem;font-weight:700;text-transform:uppercase;line-height:1.5;">Prayer<br>&amp;<br>Supplication</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 05 of 12</p>
+                  <p class="book-badge">Free Digital Book — English (PDF)</p>
+                  <h3 class="book-title-eng" style="font-size:1.5rem;margin-bottom:8px;font-family:'Playfair Display',serif;font-weight:700;color:var(--green-deep);">Prayer and Supplication</h3>
+                  <p class="book-author">By <span>Taleemaat-e-Islam</span></p>
+                  <p class="book-desc">A comprehensive guide to the heart of Islamic worship — Salah and Du'a. Illuminates the profound spiritual significance of prayer and supplication, offering practical guidance on how to draw closer to Allah through sincere, mindful worship and heartfelt invocation.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-c5" data-id="1GvHm_wtq5V98AKZFLETogFKO1uwW-XkT" data-close-label="Close Reader" aria-expanded="false"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                    <a href="https://drive.google.com/file/d/1GvHm_wtq5V98AKZFLETogFKO1uwW-XkT/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-c5" class="pdf-reader" aria-hidden="true"></div>
 
-          <!-- Book 07 -->
-          <article class="book-card" aria-labelledby="c-book7-title">
-            <div class="book-visual" style="background:#2e3a1a;" aria-hidden="true">
-              <div class="book-cover" style="background:#3d4e22;">
-                <span class="cover-urdu">نماز مع ترجمہ</span>
-                <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;">
-                <span class="cover-eng">Namaz Translation</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <p class="book-num">Book 07 of 12</p>
-              <p class="book-badge">Free Digital Book — Urdu &amp; English (PDF)</p>
-              <h3 class="book-title-urdu" id="c-book7-title" lang="ur" dir="rtl">نماز مع اردو اور انگریزی ترجمہ</h3>
-              <h4 class="book-title-eng">"Namaz with English and Urdu Translation"</h4>
-              <p class="book-author">By <span>MS Ch. Qadri</span></p>
-              <p class="book-desc">Understanding what we recite during prayer is the key to achieving Khushu (concentration and humility) in Namaz. This comprehensive guide provides accurate English and Urdu translations for all elements of the daily prayers, elevating your routine Salah into true Zikr and spiritual connection with Allah.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="cr7" data-id="1XKzktn4-eWGVmIDmHN0ml0O3yWt6Xb3n" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1XKzktn4-eWGVmIDmHN0ml0O3yWt6Xb3n/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="cr7" class="pdf-reader" aria-hidden="true"></div>
+              <article class="book-card">
+                <div class="book-visual" style="background:#2e3a1a;" aria-hidden="true"><div class="book-cover" style="background:#3d4e22;"><span class="cover-urdu">نماز مع ترجمہ</span><hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;"><span class="cover-eng">Namaz Translation</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 07 of 12</p>
+                  <p class="book-badge">Free Digital Book — Urdu &amp; English (PDF)</p>
+                  <h3 class="book-title-urdu" lang="ur" dir="rtl">نماز مع اردو اور انگریزی ترجمہ</h3>
+                  <h4 class="book-title-eng">"Namaz with English and Urdu Translation"</h4>
+                  <p class="book-author">By <span>MS Ch. Qadri</span></p>
+                  <p class="book-desc">Understanding what we recite during prayer is the key to achieving Khushu in Namaz. This comprehensive guide provides accurate English and Urdu translations for all elements of the daily prayers — elevating your routine Salah into true Zikr and spiritual connection with Allah.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-c7" data-id="1XKzktn4-eWGVmIDmHN0ml0O3yWt6Xb3n" data-close-label="Close Reader" aria-expanded="false"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                    <a href="https://drive.google.com/file/d/1XKzktn4-eWGVmIDmHN0ml0O3yWt6Xb3n/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-c7" class="pdf-reader" aria-hidden="true"></div>
 
-          <!-- Book 09 -->
-          <article class="book-card" aria-labelledby="c-book9-title">
-            <div class="book-visual" style="background:#1a1a3a;" aria-hidden="true">
-              <div class="book-cover" style="background:#2a2a5a;">
-                <span class="cover-urdu" style="font-size:1rem;">الحزب الاعظم</span>
-                <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;">
-                <span class="cover-eng">Al-Hizb ul-Azam</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <p class="book-num">Book 09 of 12</p>
-              <p class="book-badge">Free Digital Book — Arabic/Urdu (PDF)</p>
-              <h3 class="book-title-urdu" id="c-book9-title" lang="ur" dir="rtl">الحزب الاعظم مع حاشیۃ الورد الاعظم</h3>
-              <h4 class="book-title-eng">"Al-Hizb ul-Azam" — The Greatest Daily Supplication</h4>
-              <p class="book-author">By <span>Mulla Ali al-Qari</span> · Commentary: <span>Mufti Saad Abdul Razzaq</span></p>
-              <p class="book-desc">A timeless treasury of daily du'as divided into seven Manzils — one for each day of the week. Compiled by the great scholar Mulla Ali al-Qari, this blessed collection covers morning, evening and occasion-specific supplications from the Quran and authentic Hadith. An indispensable daily companion.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="cr9" data-id="1dUGGPKGsk4b5LSlbSLViaYDsayiwkz6s" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1dUGGPKGsk4b5LSlbSLViaYDsayiwkz6s/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="cr9" class="pdf-reader" aria-hidden="true"></div>
+              <article class="book-card">
+                <div class="book-visual" style="background:#1a1a3a;" aria-hidden="true"><div class="book-cover" style="background:#2a2a5a;"><span class="cover-urdu" style="font-size:1rem;">الحزب الاعظم</span><hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;"><span class="cover-eng">Al-Hizb ul-Azam</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 09 of 12</p>
+                  <p class="book-badge">Free Digital Book — Arabic/Urdu (PDF)</p>
+                  <h3 class="book-title-urdu" lang="ur" dir="rtl">الحزب الاعظم مع حاشیۃ الورد الاعظم</h3>
+                  <h4 class="book-title-eng">"Al-Hizb ul-Azam" — The Greatest Daily Supplication</h4>
+                  <p class="book-author">By <span>Mulla Ali al-Qari</span> · Commentary: <span>Mufti Saad Abdul Razzaq</span></p>
+                  <p class="book-desc">A timeless treasury of daily du'as divided into seven Manzils — one for each day of the week. Compiled by the great scholar Mulla Ali al-Qari, this blessed collection covers morning, evening and occasion-specific supplications from the Quran and authentic Hadith. An indispensable daily companion.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-c9" data-id="1dUGGPKGsk4b5LSlbSLViaYDsayiwkz6s" data-close-label="Close Reader" aria-expanded="false"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                    <a href="https://drive.google.com/file/d/1dUGGPKGsk4b5LSlbSLViaYDsayiwkz6s/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-c9" class="pdf-reader" aria-hidden="true"></div>
 
-          <!-- Book 10 -->
-          <article class="book-card" aria-labelledby="c-book10-title">
-            <div class="book-visual" style="background:#2d1a0e;" aria-hidden="true">
-              <div class="book-cover" style="background:#3d2510;">
-                <span class="cover-urdu">مناجاتِ مقبول</span>
-                <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;">
-                <span class="cover-eng">Munajat-e-Maqbool</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <p class="book-num">Book 10 of 12</p>
-              <p class="book-badge">Free Digital Book — Urdu/Arabic (PDF)</p>
-              <h3 class="book-title-urdu" id="c-book10-title" lang="ur" dir="rtl">مناجاتِ مقبول</h3>
-              <h4 class="book-title-eng">"Munajat-e-Maqbool" — Accepted Supplications</h4>
-              <p class="book-author">By <span>Hakim ul-Ummat Maulana Ashraf Ali Thanwi</span></p>
-              <p class="book-desc">One of the most beloved du'a collections in the Urdu-speaking Muslim world. This cherished compilation brings together heartfelt supplications and Durood Shareef arranged into seven daily sections — combined with a Durood collection translated by Maulana Muhammad Yusuf Ludhianvi. A complete spiritual companion.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="cr10" data-id="1CnWTAplX6hq4678Kf8jWu4w6-UG3Mj0h" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1CnWTAplX6hq4678Kf8jWu4w6-UG3Mj0h/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="cr10" class="pdf-reader" aria-hidden="true"></div>
+              <article class="book-card">
+                <div class="book-visual" style="background:#2d1a0e;" aria-hidden="true"><div class="book-cover" style="background:#3d2510;"><span class="cover-urdu">مناجاتِ مقبول</span><hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;"><span class="cover-eng">Munajat-e-Maqbool</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 10 of 12</p>
+                  <p class="book-badge">Free Digital Book — Urdu/Arabic (PDF)</p>
+                  <h3 class="book-title-urdu" lang="ur" dir="rtl">مناجاتِ مقبول</h3>
+                  <h4 class="book-title-eng">"Munajat-e-Maqbool" — Accepted Supplications</h4>
+                  <p class="book-author">By <span>Hakim ul-Ummat Maulana Ashraf Ali Thanwi</span></p>
+                  <p class="book-desc">One of the most beloved du'a collections in the Urdu-speaking Muslim world. Heartfelt supplications and Durood Shareef arranged into seven daily sections — combined with a Durood collection translated by Maulana Muhammad Yusuf Ludhianvi. A complete spiritual companion for every day of the week.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-c10" data-id="1CnWTAplX6hq4678Kf8jWu4w6-UG3Mj0h" data-close-label="Close Reader" aria-expanded="false"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                    <a href="https://drive.google.com/file/d/1CnWTAplX6hq4678Kf8jWu4w6-UG3Mj0h/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-c10" class="pdf-reader" aria-hidden="true"></div>
 
-          <!-- Book 11 -->
-          <article class="book-card" aria-labelledby="c-book11-title">
-            <div class="book-visual" style="background:#0d3320;" aria-hidden="true">
-              <div class="book-cover" style="background:#154a2e;">
-                <span class="cover-urdu">منزل دعا</span>
-                <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;">
-                <span class="cover-eng">Manzil Dua</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <p class="book-num">Book 11 of 12</p>
-              <p class="book-badge">Free Digital Book — Arabic/Urdu (PDF)</p>
-              <h3 class="book-title-urdu" id="c-book11-title" lang="ur" dir="rtl">منزل دعا — قرآنی آیات برائے حفاظت</h3>
-              <h4 class="book-title-eng">"Manzil Dua" — Quranic Verses for Protection</h4>
-              <p class="book-author">Selected Quranic Verses &amp; Surahs · <span>Ruqya — Spiritual Protection</span></p>
-              <p class="book-desc">A specific collection of Quranic verses and short Surahs recited as Ruqya — a means of divine protection and healing. Recommended by scholars as an antidote against black magic, evil eye, harmful jinn, and spiritual ailments. Includes Arabic text with benefits and method of recitation.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="cr11" data-id="1eFbr42xiL3sb8UhSVrCDGNQtrUvmblqy" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1eFbr42xiL3sb8UhSVrCDGNQtrUvmblqy/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="cr11" class="pdf-reader" aria-hidden="true"></div>
+              <article class="book-card">
+                <div class="book-visual" style="background:#0d3320;" aria-hidden="true"><div class="book-cover" style="background:#154a2e;"><span class="cover-urdu">منزل دعا</span><hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;"><span class="cover-eng">Manzil Dua</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 11 of 12</p>
+                  <p class="book-badge">Free Digital Book — Arabic/Urdu (PDF)</p>
+                  <h3 class="book-title-urdu" lang="ur" dir="rtl">منزل دعا — قرآنی آیات برائے حفاظت</h3>
+                  <h4 class="book-title-eng">"Manzil Dua" — Quranic Verses for Protection</h4>
+                  <p class="book-author">Selected Quranic Verses &amp; Surahs · <span>Ruqya — Spiritual Protection</span></p>
+                  <p class="book-desc">A specific collection of Quranic verses and short Surahs recited as Ruqya — a means of divine protection and healing. Recommended by scholars as an antidote against black magic, evil eye, harmful jinn, and spiritual ailments. Includes Arabic text with benefits and method of recitation.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-c11" data-id="1eFbr42xiL3sb8UhSVrCDGNQtrUvmblqy" data-close-label="Close Reader" aria-expanded="false"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                    <a href="https://drive.google.com/file/d/1eFbr42xiL3sb8UhSVrCDGNQtrUvmblqy/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-c11" class="pdf-reader" aria-hidden="true"></div>
 
-          <!-- Book 12 -->
-          <article class="book-card" aria-labelledby="c-book12-title">
-            <div class="book-visual" style="background:#2a1a0a;" aria-hidden="true">
-              <div class="book-cover" style="background:#3a2510;">
-                <span class="cover-urdu" style="font-size:.95rem;">استخارہ<br>سنت کے مطابق</span>
-                <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;">
-                <span class="cover-eng">Istikhara</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <p class="book-num">Book 12 of 12</p>
-              <p class="book-badge">Free Digital Book — Urdu (PDF)</p>
-              <h3 class="book-title-urdu" id="c-book12-title" lang="ur" dir="rtl">استخارہ — سنت کے مطابق کیجیے</h3>
-              <h4 class="book-title-eng">"Istikhara — Perform it According to the Sunnah"</h4>
-              <p class="book-author">By <span>Muhammad Umar Anwar</span></p>
-              <p class="book-desc">A clear and concise guide to the correct Prophetic method of performing Istikhara — seeking Allah's guidance before important decisions. Corrects common misconceptions and emphasises that Istikhara is a du'a of sincere submission to Allah's wisdom. Essential reading before any major life decision.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="cr12" data-id="15xqk_4m8B6P_bW69VVVKRwX84zUa_1nb" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/15xqk_4m8B6P_bW69VVVKRwX84zUa_1nb/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="cr12" class="pdf-reader" aria-hidden="true"></div>
+              <article class="book-card">
+                <div class="book-visual" style="background:#2a1a0a;" aria-hidden="true"><div class="book-cover" style="background:#3a2510;"><span class="cover-urdu" style="font-size:.95rem;">استخارہ<br>سنت کے مطابق</span><hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;"><span class="cover-eng">Istikhara</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 12 of 12</p>
+                  <p class="book-badge">Free Digital Book — Urdu (PDF)</p>
+                  <h3 class="book-title-urdu" lang="ur" dir="rtl">استخارہ — سنت کے مطابق کیجیے</h3>
+                  <h4 class="book-title-eng">"Istikhara — Perform it According to the Sunnah"</h4>
+                  <p class="book-author">By <span>Muhammad Umar Anwar</span></p>
+                  <p class="book-desc">A clear and concise guide to the correct Prophetic method of performing Istikhara — seeking Allah's guidance before important decisions. Corrects common misconceptions and emphasises that Istikhara is a du'a of sincere submission to Allah's wisdom. Essential reading before any major life decision.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-c12" data-id="15xqk_4m8B6P_bW69VVVKRwX84zUa_1nb" data-close-label="Close Reader" aria-expanded="false"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                    <a href="https://drive.google.com/file/d/15xqk_4m8B6P_bW69VVVKRwX84zUa_1nb/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-c12" class="pdf-reader" aria-hidden="true"></div>
 
-        </div><!-- /tab-prayer -->
-
-        <!-- TAB 3: KNOWLEDGE & REFORM (2 books) -->
-        <div class="tab-pane" id="tab-reform" role="tabpanel" aria-labelledby="ctbtn-3">
-
-          <!-- Book 06 -->
-          <article class="book-card" aria-labelledby="c-book6-title">
-            <div class="book-visual" style="background:#1a3d3a;" aria-hidden="true">
-              <div class="book-cover" style="background:#245450;">
-                <span class="cover-eng" style="font-size:.9rem;font-weight:700;text-transform:uppercase;line-height:1.5;">Fallacy<br>of<br>Evolution</span>
-              </div>
             </div>
-            <div class="book-content">
-              <p class="book-num">Book 06 of 12</p>
-              <p class="book-badge">Free Digital Book — English (PDF)</p>
-              <h3 class="book-title-eng" id="c-book6-title" style="font-size:1.5rem;margin-bottom:8px;font-style:normal;font-family:'Playfair Display',serif;font-weight:700;color:var(--green-deep);">Fallacy of Evolution</h3>
-              <p class="book-author">By <span>Mian Manzoor Muhammad Qadri</span> · Revised by <span>Abdul Hamid Qadri</span></p>
-              <p class="book-desc">A rigorous and thought-provoking critique of the theory of evolution from an Islamic intellectual perspective. This book examines the scientific, philosophical, and theological evidence that challenges Darwinian theory, affirming the divine creation of humanity as revealed in the Quran — that the first man, Adam (AS), was created from clay by a single Divine Command.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="cr6" data-id="1XEQQkhgireQUah--zG0usghxMRrZMt6s" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1XEQQkhgireQUah--zG0usghxMRrZMt6s/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="cr6" class="pdf-reader" aria-hidden="true"></div>
+          </div></div>
+        </div><!-- /acc-unit 2 -->
 
-          <!-- Book 08 -->
-          <article class="book-card" aria-labelledby="c-book8-title">
-            <div class="book-visual" style="background:#2e3a1a;" aria-hidden="true">
-              <div class="book-cover" style="background:#3d4e22;">
-                <span class="cover-urdu">یقین کا سفر</span>
-                <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;">
-                <span class="cover-eng">Journey of Faith</span>
-              </div>
-            </div>
-            <div class="book-content">
-              <p class="book-num">Book 08 of 12</p>
-              <p class="book-badge">Free Digital Book — Urdu (PDF)</p>
-              <h3 class="book-title-urdu" id="c-book8-title" lang="ur" dir="rtl">یقین کا سفر (علمی واصلاحی خطوط)</h3>
-              <h4 class="book-title-eng">"Yaqeen Ka Safar" — Letters of Knowledge and Reform</h4>
-              <p class="book-author">By <span>Hazrat Master Manzoor Muhammad ؒ</span> · Compiled by <span>Mian Abdul Kareem</span></p>
-              <p class="book-desc">A profound collection of scholarly and reformative letters (Ilmi wa Islahi Khutoot) that guide the reader on the spiritual journey toward absolute certainty (Yaqeen). The author — a retired Headmaster and devoted follower of the Naqshbandia order — offers practical steps for internal purification, strengthening belief, and achieving true success in the eyes of Allah.</p>
-              <div class="book-actions">
-                <button type="button" class="btn-read js-reader-btn" data-reader="cr8" data-id="1qtZ5ecbxqInOtn-aLNh2PzwZhqSLNVuc" aria-expanded="false">
-                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1qtZ5ecbxqInOtn-aLNh2PzwZhqSLNVuc/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
-            </div>
-          </article>
-          <div id="cr8" class="pdf-reader" aria-hidden="true"></div>
+        <!-- ═══ PANEL 3: KNOWLEDGE & REFORM ═══ -->
+        <div class="acc-unit">
+          <button class="acc-hdr" type="button" aria-expanded="false"><span class="acc-hdr-label">📖 Knowledge &amp; Reform</span><span class="acc-icon" aria-hidden="true">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner">
+            <div class="panel" id="p-reform">
 
-        </div><!-- /tab-reform -->
+              <article class="book-card">
+                <div class="book-visual" style="background:#1a3d3a;" aria-hidden="true"><div class="book-cover" style="background:#245450;"><span class="cover-eng" style="font-size:.9rem;font-weight:700;text-transform:uppercase;line-height:1.5;">Fallacy<br>of<br>Evolution</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 06 of 12</p>
+                  <p class="book-badge">Free Digital Book — English (PDF)</p>
+                  <h3 class="book-title-eng" style="font-size:1.5rem;margin-bottom:8px;font-family:'Playfair Display',serif;font-weight:700;color:var(--green-deep);">Fallacy of Evolution</h3>
+                  <p class="book-author">By <span>Mian Manzoor Muhammad Qadri</span> · Revised by <span>Abdul Hamid Qadri</span></p>
+                  <p class="book-desc">A rigorous and thought-provoking critique of the theory of evolution from an Islamic intellectual perspective. Examines scientific, philosophical, and theological evidence challenging Darwinian theory, affirming the divine creation of humanity as revealed in the Quran — that Adam (AS) was created from clay by a single Divine Command.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-c6" data-id="1XEQQkhgireQUah--zG0usghxMRrZMt6s" data-close-label="Close Reader" aria-expanded="false"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                    <a href="https://drive.google.com/file/d/1XEQQkhgireQUah--zG0usghxMRrZMt6s/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-c6" class="pdf-reader" aria-hidden="true"></div>
+
+              <article class="book-card">
+                <div class="book-visual" style="background:#2e3a1a;" aria-hidden="true"><div class="book-cover" style="background:#3d4e22;"><span class="cover-urdu">یقین کا سفر</span><hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;"><span class="cover-eng">Journey of Faith</span></div></div>
+                <div class="book-content">
+                  <p class="book-num">Book 08 of 12</p>
+                  <p class="book-badge">Free Digital Book — Urdu (PDF)</p>
+                  <h3 class="book-title-urdu" lang="ur" dir="rtl">یقین کا سفر (علمی واصلاحی خطوط)</h3>
+                  <h4 class="book-title-eng">"Yaqeen Ka Safar" — Letters of Knowledge and Reform</h4>
+                  <p class="book-author">By <span>Hazrat Master Manzoor Muhammad ؒ</span> · Compiled by <span>Mian Abdul Kareem</span></p>
+                  <p class="book-desc">A profound collection of scholarly and reformative letters that guide the reader toward absolute certainty (Yaqeen). The author — a retired Headmaster and devoted follower of the Naqshbandia order — offers practical steps for internal purification, strengthening belief, and achieving true success in the eyes of Allah.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-c8" data-id="1qtZ5ecbxqInOtn-aLNh2PzwZhqSLNVuc" data-close-label="Close Reader" aria-expanded="false"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                    <a href="https://drive.google.com/file/d/1qtZ5ecbxqInOtn-aLNh2PzwZhqSLNVuc/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-c8" class="pdf-reader" aria-hidden="true"></div>
+
+            </div>
+          </div></div>
+        </div><!-- /acc-unit 3 -->
 
       </div>
     </section>
 
-    <!-- AYAH BANNER -->
-    <div class="ayah-banner" aria-label="Quranic verse">
+    <div class="ayah-banner">
       <div class="container">
         <p class="ayah-ar" lang="ar" dir="rtl">وَهُوَ مَعَكُمْ أَيْنَمَا كُنتُمْ</p>
         <p class="ayah-tr">"And He is with you wherever you are."</p>
@@ -504,55 +421,112 @@
 
   <script>
   (function () {
+    'use strict';
 
-    /* ── TABS ── */
-    var tabBtns  = document.querySelectorAll('.tab-btn');
-    var tabPanes = document.querySelectorAll('.tab-pane');
-
-    tabBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var target = this.getAttribute('aria-controls');
-        tabBtns.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
-        tabPanes.forEach(function (p) { p.classList.remove('active'); });
-        this.classList.add('active');
-        this.setAttribute('aria-selected','true');
-        document.getElementById(target).classList.add('active');
-        closeAll();
+    /* ── Close all open PDF readers ── */
+    function closeReaders() {
+      document.querySelectorAll('.pdf-reader.is-open').forEach(function (r) {
+        r.classList.remove('is-open');
+        r.setAttribute('aria-hidden', 'true');
       });
-    });
-
-    function closeAll() {
-      document.querySelectorAll('.pdf-reader.open').forEach(function (r) {
-        r.classList.remove('open'); r.setAttribute('aria-hidden','true');
-      });
-      document.querySelectorAll('.js-reader-btn[aria-expanded="true"]').forEach(function (b) {
-        b.setAttribute('aria-expanded','false');
-        var s = b.querySelector('span'); if (s) s.textContent = 'Read Online';
+      document.querySelectorAll('[data-reader-btn][aria-expanded="true"]').forEach(function (b) {
+        b.setAttribute('aria-expanded', 'false');
+        var s = b.querySelector('span');
+        if (s) s.textContent = 'Read Online';
       });
     }
 
-    /* ── READERS ── */
-    document.querySelectorAll('.js-reader-btn').forEach(function (btn) {
+    /* ── TABS (desktop) ── */
+    document.querySelectorAll('.tab-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var rid    = this.getAttribute('data-reader');
-        var did    = this.getAttribute('data-id');
-        var reader = document.getElementById(rid);
-        var span   = this.querySelector('span');
-        var isOpen = reader.classList.contains('open');
-
-        closeAll();
-
-        if (!isOpen) {
-          if (!reader.innerHTML.trim()) {
-            reader.innerHTML = '<iframe src="https://drive.google.com/file/d/' + did + '/preview" title="PDF Reader" allow="autoplay" loading="lazy"></iframe>';
-          }
-          reader.classList.add('open');
-          reader.setAttribute('aria-hidden','false');
-          this.setAttribute('aria-expanded','true');
-          if (span) span.textContent = 'Close Reader';
-          setTimeout(function () { reader.scrollIntoView({ behavior:'smooth', block:'start' }); }, 160);
-        }
+        var targetId = this.getAttribute('data-panel');
+        document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('is-active'); b.setAttribute('aria-selected','false'); });
+        document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('is-active'); });
+        this.classList.add('is-active');
+        this.setAttribute('aria-selected','true');
+        var t = document.getElementById(targetId);
+        if (t) t.classList.add('is-active');
+        closeReaders();
       });
+    });
+
+    /* ── ACCORDION (mobile) ── */
+    function initAccordion() {
+      var units = document.querySelectorAll('.acc-unit');
+
+      /* Open first by default on mobile */
+      if (window.innerWidth <= 768 && units.length) {
+        var fHdr  = units[0].querySelector('.acc-hdr');
+        var fBody = units[0].querySelector('.acc-body');
+        if (fHdr && fBody) {
+          fHdr.classList.add('is-open');
+          fHdr.setAttribute('aria-expanded', 'true');
+          fBody.style.height = 'auto';
+        }
+      }
+
+      units.forEach(function (unit) {
+        var hdr   = unit.querySelector('.acc-hdr');
+        var body  = unit.querySelector('.acc-body');
+        var inner = unit.querySelector('.acc-body-inner');
+        if (!hdr || !body || !inner) return;
+
+        hdr.addEventListener('click', function () {
+          if (window.innerWidth > 768) return;
+
+          var isOpen = hdr.classList.contains('is-open');
+
+          /* Close all units */
+          units.forEach(function (u) {
+            var h = u.querySelector('.acc-hdr');
+            var b = u.querySelector('.acc-body');
+            if (h) { h.classList.remove('is-open'); h.setAttribute('aria-expanded','false'); }
+            if (b) b.style.height = '0';
+          });
+          closeReaders();
+
+          /* Open clicked if it was closed */
+          if (!isOpen) {
+            hdr.classList.add('is-open');
+            hdr.setAttribute('aria-expanded', 'true');
+            body.style.height = inner.scrollHeight + 'px';
+            body.addEventListener('transitionend', function once() {
+              if (hdr.classList.contains('is-open')) body.style.height = 'auto';
+              body.removeEventListener('transitionend', once);
+            });
+            setTimeout(function () { hdr.scrollIntoView({ behavior:'smooth', block:'start' }); }, 130);
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAccordion);
+    } else {
+      initAccordion();
+    }
+
+    /* ── PDF READER BUTTONS (event delegation — one listener for all) ── */
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-reader-btn]');
+      if (!btn) return;
+      var rid    = btn.getAttribute('data-reader');
+      var did    = btn.getAttribute('data-id');
+      var reader = document.getElementById(rid);
+      if (!reader) return;
+      var isOpen = reader.classList.contains('is-open');
+      closeReaders();
+      if (!isOpen) {
+        if (!reader.innerHTML.trim()) {
+          reader.innerHTML = '<iframe src="https://drive.google.com/file/d/' + did + '/preview" title="PDF Reader" allow="autoplay" loading="lazy"></iframe>';
+        }
+        reader.classList.add('is-open');
+        reader.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('aria-expanded', 'true');
+        var s = btn.querySelector('span');
+        if (s) s.textContent = btn.getAttribute('data-close-label') || 'Close Reader';
+        setTimeout(function () { reader.scrollIntoView({ behavior:'smooth', block:'start' }); }, 180);
+      }
     });
 
   })();
