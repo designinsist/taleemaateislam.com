@@ -12,17 +12,6 @@
     'drjILoGSSb8'
   ];
 
-  function getUtcDayIndex(length) {
-    var now = new Date();
-    var utcDay = Math.floor(Date.UTC(
-      now.getUTCFullYear(),
-      now.getUTCMonth(),
-      now.getUTCDate()
-    ) / 86400000);
-
-    return utcDay % length;
-  }
-
   function buildEmbedUrl(videoId) {
     return 'https://www.youtube-nocookie.com/embed/' +
       encodeURIComponent(videoId) +
@@ -58,7 +47,7 @@
 
     var orderedShorts = DAILY_SHORTS.slice().reverse();
 
-    var activeIndex = getUtcDayIndex(orderedShorts.length);
+    var activeIndex = 0;
     var total = orderedShorts.length;
 
     if (dots && !dots.children.length) {
