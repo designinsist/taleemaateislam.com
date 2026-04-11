@@ -2,9 +2,9 @@
 <footer>
   <div class="container">
     <div class="footer-main">
-      <div>
-        <strong style="color:var(--gold-light);font-size:1.3rem;display:block;margin-bottom:10px;">Taleemaat-e-Islam</strong>
-        <p style="font-size:0.85rem;line-height:1.8;">A sacred space for Islamic education, spiritual guidance, and timeless wisdom from the Quran and Sunnah.</p>
+      <div class="footer-brand">
+        <strong>Taleemaat-e-Islam</strong>
+        <p>A sacred space for Islamic education, spiritual guidance, and timeless wisdom from the Quran and Sunnah.</p>
       </div>
 
       <div class="footer-col">

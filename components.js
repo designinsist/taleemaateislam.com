@@ -80,32 +80,152 @@
         link.setAttribute('aria-current', 'page');
       }
     });
+
+    var drawerLinks = document.querySelectorAll('.nav-drawer .drawer-link[data-page]');
+    drawerLinks.forEach(function (link) {
+      if (link.getAttribute('data-page') === activeKey) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+  }
+
+  /* ── Accessible desktop submenu toggle ── */
+  function initDesktopDropdown() {
+    var toggles = document.querySelectorAll('.nav-menu .nav-menu-toggle');
+    if (!toggles.length) return;
+
+    function closeAll() {
+      toggles.forEach(function (btn) {
+        var parent = btn.closest('.nav-item');
+        if (parent) parent.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    toggles.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var parent = btn.closest('.nav-item');
+        var willOpen = !(parent && parent.classList.contains('is-open'));
+        closeAll();
+        if (parent && willOpen) {
+          parent.classList.add('is-open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeAll();
+          btn.blur();
+        }
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-menu')) {
+        closeAll();
+      }
+    });
   }
 
   /* ── Mobile hamburger drawer ── */
   function initHamburger() {
     var hamburger = document.getElementById('hamburger');
     var navDrawer  = document.getElementById('navDrawer');
+    var drawerClose = document.getElementById('drawerClose');
     if (!hamburger || !navDrawer) return;
 
+    function openDrawer() {
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      navDrawer.classList.add('open');
+      navDrawer.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      var firstLink = navDrawer.querySelector('.drawer-link');
+      if (firstLink) firstLink.focus();
+    }
+
+    function closeDrawer() {
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      navDrawer.classList.remove('open');
+      navDrawer.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      hamburger.focus();
+    }
+
     hamburger.addEventListener('click', function () {
-      var isOpen = hamburger.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', isOpen);
-      navDrawer.classList.toggle('open', isOpen);
-      navDrawer.setAttribute('aria-hidden', !isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      var isOpen = hamburger.classList.contains('open');
+      if (isOpen) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    });
+
+    if (drawerClose) {
+      drawerClose.addEventListener('click', closeDrawer);
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navDrawer.classList.contains('open')) {
+        closeDrawer();
+        return;
+      }
+
+      if (e.key === 'Tab' && navDrawer.classList.contains('open')) {
+        var focusables = navDrawer.querySelectorAll('a[href], button:not([disabled])');
+        if (!focusables.length) return;
+        var first = focusables[0];
+        var last = focusables[focusables.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     });
 
     /* Close drawer when a link inside it is clicked */
     navDrawer.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        navDrawer.classList.remove('open');
-        navDrawer.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        closeDrawer();
       });
     });
+  }
+
+  /* ── Scroll to top button ── */
+  function initScrollToTop() {
+    var existingButton = document.getElementById('scrollTopButton');
+    if (!existingButton) {
+      existingButton = document.createElement('button');
+      existingButton.type = 'button';
+      existingButton.id = 'scrollTopButton';
+      existingButton.className = 'scroll-top-btn';
+      existingButton.setAttribute('aria-label', 'Scroll to top');
+      existingButton.setAttribute('title', 'Scroll to top');
+      existingButton.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l-8 8 1.41 1.41L11 8.83V20h2V8.83l5.59 5.58L20 13z"/></svg>';
+      document.body.appendChild(existingButton);
+    }
+
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function updateVisibility() {
+      var show = window.scrollY > 500;
+      existingButton.classList.toggle('is-visible', show);
+    }
+
+    existingButton.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+    updateVisibility();
   }
 
   /* ── Live date / Hijri date / clock in the top bar ── */
@@ -221,7 +341,9 @@
 
     headerPromise.then(function () {
       setActiveNav();
+      initDesktopDropdown();
       initHamburger();
+      initScrollToTop();
       initDateTime();
     }).catch(function (err) {
       console.error('Header load failed:', err);
