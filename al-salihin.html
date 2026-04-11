@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Al-Salihin — Lives of the Righteous | Taleemaat-e-Islam</title>
   <meta name="description" content="Al-Salihin profiles the righteous Companions, Tabi'een, and Islamic scholars who shaped the spiritual legacy of Islam — including Hazrat Umar, Sa'ad ibn Muadh, Umar ibn Abdul Aziz, Imam Ghazali, Junayd al-Baghdadi, Ibrahim ibn Adham, Maulana Rumi, and Zubaidah bint Ja'far." />
-  <meta name="keywords" content="Al-Salihin, Hazrat Umar ibn Khattab, Saad ibn Muadh, Umar ibn Abdul Aziz, Imam Ghazali Hujjat ul Islam, Junayd Baghdadi Sufi, Ibrahim ibn Adham, Maulana Rumi, Zubaidah bint Ja'far, Islamic scholars biography, Companions of Prophet, Sahaba biography, Taleemaat-e-Islam" />
+  <meta name="keywords" content="Al-Salihin, Hazrat Umar ibn Khattab, Saad ibn Muadh, Umar ibn Abdul Aziz, Seerat Umar bin Abdul Aziz, Imam Ghazali Hujjat ul Islam, Junayd Baghdadi Sufi, Ibrahim ibn Adham, Maulana Rumi, Zubaidah bint Ja'far, Islamic scholars biography, Companions of Prophet, Sahaba biography, Taleemaat-e-Islam" />
   <meta name="author" content="Taleemaat-e-Islam" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://taleemaateislam.com/al-salihin.html" />
@@ -160,6 +160,19 @@
       margin-top: 8px;
     }
 
+    /* ── Featured Book Component (Inside Profile) ── */
+    .featured-book-box { margin-top: 24px; padding: 20px; background: rgba(201,150,58,0.04); border: 1px solid var(--border); border-radius: 8px; }
+    .featured-book-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--green-deep); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .featured-book-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+    .book-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-read { padding: 10px 20px; background: var(--gold); color: var(--green-deep); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; border-radius: var(--radius); border: none; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; font-family: 'Nunito', sans-serif; }
+    .btn-read:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(201,150,58,0.2); }
+    .btn-dl { padding: 10px 20px; border: 1.5px solid var(--border); color: var(--green-mid); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; border-radius: var(--radius); transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+    .btn-dl:hover { border-color: var(--gold); background: rgba(201,150,58,0.05); }
+    .pdf-reader { width: 100%; height: 0; opacity: 0; overflow: hidden; transition: height 0.45s ease, opacity 0.4s ease; border-radius: 8px; border: 1px solid var(--border); background: #fff; margin-bottom: 40px; margin-top: -16px; }
+    .pdf-reader.is-open { height: 80vh; min-height: 500px; opacity: 1; }
+    .pdf-reader iframe { width: 100%; height: 100%; border: none; display: block; }
+
     /* ── Ayah Banner ── */
     .ayah-banner { background: var(--green-deep); padding: 60px 0; text-align: center; position: relative; overflow: hidden; }
     .ayah-banner::before { content: ''; position: absolute; inset: 0; opacity: 0.04; background-image: repeating-linear-gradient(45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px),repeating-linear-gradient(-45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px); }
@@ -176,6 +189,7 @@
       .profile-badge::after { display: none; }
       .profile-icon { font-size: 2rem; margin-bottom: 0; }
       .profile-body { padding: 28px 24px; }
+      .btn-read, .btn-dl { width: 100%; justify-content: center; }
     }
     @media(max-width:480px) { .profile-body { padding: 24px 18px; } }
   </style>
@@ -209,7 +223,6 @@
           </div>
         </div>
 
-        <!-- 01. HAZRAT UMAR ibn al-KHATTAB (RA) -->
         <article class="profile-card" aria-labelledby="p1-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">⚖️</span>
@@ -230,7 +243,6 @@
           </div>
         </article>
 
-        <!-- 02. SA'AD ibn MU'ADH (RA) -->
         <article class="profile-card" aria-labelledby="p2-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">🛡️</span>
@@ -251,7 +263,6 @@
           </div>
         </article>
 
-        <!-- 03. UMAR ibn ABDUL AZIZ -->
         <article class="profile-card" aria-labelledby="p3-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">🏛️</span>
@@ -269,10 +280,26 @@
               "If you wish to do something, consider its consequences. If it leads to good, proceed — and if it leads to evil, refrain."
               <cite>— Umar ibn Abdul Aziz رحمه الله</cite>
             </blockquote>
+
+            <div class="featured-book-box">
+              <h4 class="featured-book-title">📖 Featured Book: Seerat Umar bin Abdul Aziz</h4>
+              <p class="featured-book-desc">
+                <strong>Translator:</strong> Maulana Muhammad Yusuf Ludhianvi | <strong>Original Author:</strong> Imam Abu Muhammad Abdullah bin Abdul Hakam al-Maliki.<br><br>
+                A comprehensive and rare historical guide detailing the life, justice, piety, and administrative genius of the "Fifth Rightly Guided Caliph". It covers his noble lineage, early life, strict honesty with public funds, protection of non-Muslim rights, and his final days. Imam Nawawi praised the original work for containing "precious gems" of knowledge indispensable for understanding Islamic history.
+              </p>
+              <div class="book-actions">
+                <button type="button" class="btn-read" data-reader-btn data-reader="r-umar" data-id="1a72UlNb17hAkxdpePHDr226ZdNk2g710" data-close-label="Close Reader" aria-expanded="false">
+                  <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                  <span>Read Online</span>
+                </button>
+                <a href="https://drive.google.com/file/d/1a72UlNb17hAkxdpePHDr226ZdNk2g710/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+              </div>
+            </div>
+
           </div>
         </article>
+        <div id="r-umar" class="pdf-reader" aria-hidden="true"></div>
 
-        <!-- 04. IMAM GHAZALI -->
         <article class="profile-card" aria-labelledby="p4-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">📜</span>
@@ -293,7 +320,6 @@
           </div>
         </article>
 
-        <!-- 05. JUNAYD AL-BAGHDADI -->
         <article class="profile-card" aria-labelledby="p5-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">🕯️</span>
@@ -314,7 +340,6 @@
           </div>
         </article>
 
-        <!-- 06. IBRAHIM ibn ADHAM -->
         <article class="profile-card" aria-labelledby="p6-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">🌾</span>
@@ -335,7 +360,6 @@
           </div>
         </article>
 
-        <!-- 07. MAULANA RUMI -->
         <article class="profile-card" aria-labelledby="p7-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">🌹</span>
@@ -356,8 +380,6 @@
           </div>
         </article>
 
-
-        <!-- 08. ZUBAIDAH bint JA'FAR -->
         <article class="profile-card" aria-labelledby="p8-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">💧</span>
@@ -392,5 +414,44 @@
   </main>
   <div id="site-footer"></div>
   <script src="components.js"></script>
+
+  <script>
+    (function () {
+      'use strict';
+      function closeReaders() {
+        document.querySelectorAll('.pdf-reader.is-open').forEach(function (r) {
+          r.classList.remove('is-open');
+          r.setAttribute('aria-hidden', 'true');
+        });
+        document.querySelectorAll('[data-reader-btn][aria-expanded="true"]').forEach(function (b) {
+          b.setAttribute('aria-expanded', 'false');
+          var s = b.querySelector('span');
+          if (s) s.textContent = 'Read Online';
+        });
+      }
+
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-reader-btn]');
+        if (!btn) return;
+        var rid    = btn.getAttribute('data-reader');
+        var did    = btn.getAttribute('data-id');
+        var reader = document.getElementById(rid);
+        if (!reader) return;
+        var isOpen = reader.classList.contains('is-open');
+        closeReaders();
+        if (!isOpen) {
+          if (!reader.innerHTML.trim()) {
+            reader.innerHTML = '<iframe src="https://drive.google.com/file/d/' + did + '/preview" title="PDF Reader" allow="autoplay" loading="lazy"></iframe>';
+          }
+          reader.classList.add('is-open');
+          reader.setAttribute('aria-hidden', 'false');
+          btn.setAttribute('aria-expanded', 'true');
+          var s = btn.querySelector('span');
+          if (s) s.textContent = btn.getAttribute('data-close-label') || 'Close Reader';
+          setTimeout(function () { reader.scrollIntoView({ behavior:'smooth', block:'start' }); }, 180);
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
