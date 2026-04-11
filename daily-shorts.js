@@ -33,6 +33,10 @@
     return 'Dars-e-Quran Short ' + (index + 1) + ' of ' + total;
   }
 
+  function buildStatus(index, total) {
+    return 'Short ' + (index + 1) + ' / ' + total;
+  }
+
   function createDotButton(index, total) {
     var button = document.createElement('button');
     button.type = 'button';
@@ -72,7 +76,7 @@
       wrap.setAttribute('aria-label', title);
 
       if (status) {
-        status.textContent = title;
+        status.textContent = buildStatus(activeIndex, total);
       }
 
       if (prevButton) {
