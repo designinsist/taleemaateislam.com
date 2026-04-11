@@ -2,8 +2,8 @@
   'use strict';
 
   /*
-   * Add new YouTube video IDs here.
-   * The page will rotate through this list one video per UTC day.
+   * Add new YouTube video IDs here in chronological order.
+   * The last ID you add is treated as the latest short.
    */
   var DAILY_SHORTS = [
     'M8DZqaM4-q8',
@@ -56,8 +56,10 @@
     var status = wrap && wrap.querySelector('[data-short-status]');
     if (!wrap || !frame || !DAILY_SHORTS.length) return;
 
-    var activeIndex = getUtcDayIndex(DAILY_SHORTS.length);
-    var total = DAILY_SHORTS.length;
+    var orderedShorts = DAILY_SHORTS.slice().reverse();
+
+    var activeIndex = getUtcDayIndex(orderedShorts.length);
+    var total = orderedShorts.length;
 
     if (dots && !dots.children.length) {
       for (var i = 0; i < total; i += 1) {
@@ -68,7 +70,7 @@
     function setActive(index) {
       activeIndex = (index + total) % total;
 
-      var videoId = DAILY_SHORTS[activeIndex];
+      var videoId = orderedShorts[activeIndex];
       var title = buildTitle(activeIndex, total);
 
       frame.src = buildEmbedUrl(videoId);
