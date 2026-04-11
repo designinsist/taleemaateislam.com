@@ -6,6 +6,9 @@
    * The page will rotate through this list one video per UTC day.
    */
   var DAILY_SHORTS = [
+    'M8DZqaM4-q8',
+    'CTniDtcXyvg',
+    'B4Ng9uI49pI',
     'drjILoGSSb8'
   ];
 
