@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prophets | Taleemaat-e-Islam</title>
-  <meta name="description" content="Prophets on Taleemaat-e-Islam. Lessons of faith, patience and divine wisdom from the lives of Allah's chosen messengers, coming soon." />
-  <meta name="keywords" content="Qasas ul Anbiya, Prophets, Islamic stories, prophets of Islam, coming soon, Taleemaat-e-Islam" />
+  <title>Qasas Ul Anbiya — Stories of the Prophets | Taleemaat-e-Islam</title>
+  <meta name="description" content="Read Qasas Ul Anbiya, a classic Urdu text containing stories of the Prophets, intended for the guidance and spiritual education of the Muslim community." />
+  <meta name="keywords" content="Qasas Ul Anbiya, Stories of the Prophets, classic Urdu text, Islamic stories, prophets of Islam, Taleemaat-e-Islam" />
   <meta name="author" content="Taleemaat-e-Islam" />
-  <meta name="robots" content="noindex, follow" />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://taleemaateislam.com/qasas-ul-anbiya.html" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://taleemaateislam.com/qasas-ul-anbiya.html" />
-  <meta property="og:title" content="Prophets | Taleemaat-e-Islam" />
-  <meta property="og:description" content="Prophets on Taleemaat-e-Islam. Lessons of faith, patience and divine wisdom from the lives of Allah's chosen messengers, coming soon." />
+  <meta property="og:title" content="Qasas Ul Anbiya — Stories of the Prophets | Taleemaat-e-Islam" />
+  <meta property="og:description" content="Read Qasas Ul Anbiya, a classic Urdu text containing stories of the Prophets for guidance and spiritual education." />
   <meta property="og:site_name" content="Taleemaat-e-Islam" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Prophets | Taleemaat-e-Islam" />
-  <meta name="twitter:description" content="Prophets section is coming soon with stories and lessons from the Prophets." />
+  <meta name="twitter:title" content="Qasas Ul Anbiya — Stories of the Prophets | Taleemaat-e-Islam" />
+  <meta name="twitter:description" content="A classic Urdu text containing stories of the Prophets for guidance and spiritual education." />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Prophets",
-    "description": "Prophets section is coming soon with stories and lessons from the Prophets.",
+    "name": "Qasas Ul Anbiya",
+    "description": "A classic Urdu text containing stories of the Prophets for guidance and spiritual education.",
     "url": "https://taleemaateislam.com/qasas-ul-anbiya.html",
     "isPartOf": {
       "@type": "WebSite",
@@ -40,16 +40,46 @@
   <link rel="shortcut icon" href="/images/favicon.ico">
   <link rel="stylesheet" href="shared.css"/>
   <style>
-    .coming-soon-section { padding: 80px 0; display: flex; align-items: center; min-height: 60vh; }
-    .coming-soon-card { max-width: 650px; margin: 0 auto; background: var(--white); border: 1px solid var(--border); padding: 60px 40px; border-radius: 8px; box-shadow: 0 15px 40px rgba(13,40,24,0.06); text-align: center; }
-    .coming-soon-icon { font-size: 3.5rem; display: block; margin-bottom: 20px; line-height: 1; }
-    .coming-soon-title { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--green-deep); margin-bottom: 15px; }
-    .coming-soon-desc { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 30px; }
-    .coming-soon-ayah { font-family: 'Amiri', serif; font-size: 1.8rem; color: var(--gold); margin-bottom: 5px; direction: rtl; }
-    .coming-soon-trans { font-size: 0.9rem; color: var(--text-muted); font-style: italic; margin-bottom: 30px; }
-    .btn-outline-gold { display: inline-block; padding: 12px 32px; border: 1.5px solid var(--gold); color: var(--gold-dim); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; border-radius: var(--radius); transition: all var(--transition); }
-    .btn-outline-gold:hover { background: rgba(201,150,58,0.08); color: var(--gold); transform: translateY(-2px); }
-    @media(max-width:768px) { .coming-soon-card { padding: 40px 20px; } }
+    .books-section{padding:80px 0 92px;background:var(--off-white)}
+    .section-header{text-align:center;margin-bottom:44px}
+    .section-label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--green-deep);line-height:1.25}
+    .section-title span{color:var(--gold)}
+    .divider-gold{display:flex;align-items:center;justify-content:center;gap:12px;margin:16px auto 0;width:fit-content}
+    .divider-gold .line{height:1px;background:var(--border);width:50px}
+    .divider-gold .diamond{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+    .book-card{background:#fff;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:300px 1fr;box-shadow:0 8px 32px rgba(13,40,24,.08);border:1px solid rgba(201,150,58,.15);margin-bottom:32px}
+    .book-visual{display:flex;align-items:center;justify-content:center;padding:44px 32px;position:relative;min-height:220px}
+    .book-visual::after{content:'';position:absolute;inset:20px;border:1px solid rgba(201,150,58,.3);pointer-events:none}
+    .book-cover{width:160px;height:220px;border:4px solid var(--gold);box-shadow:8px 8px 24px rgba(0,0,0,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;color:#fff;position:relative;z-index:2}
+    .cover-urdu{font-family:'Noto Nastaliq Urdu',serif;font-size:1.1rem;line-height:1.9}
+    .cover-eng{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;opacity:.8;margin-top:6px;line-height:1.4}
+    .book-content{padding:40px 44px;display:flex;flex-direction:column;justify-content:center}
+    .book-num{font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+    .book-badge{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .book-badge::before{content:'';display:inline-block;width:18px;height:2px;background:var(--gold)}
+    .book-title-urdu{font-family:'Noto Nastaliq Urdu',serif;font-size:1.45rem;line-height:2.4;color:var(--green-deep);margin-bottom:14px;border-right:4px solid var(--gold);padding-right:18px;direction:rtl;text-align:right}
+    .book-title-eng{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600;color:var(--text-dark);margin-bottom:12px;font-style:italic}
+    .book-desc{font-size:.93rem;color:var(--text-muted);line-height:1.85;margin-bottom:28px}
+    .book-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-read{padding:13px 26px;background:var(--gold);color:var(--green-deep);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--radius);transition:all .3s ease;display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;font-family:'Nunito',sans-serif}
+    .btn-read:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 5px 15px rgba(201,150,58,.3)}
+    .btn-dl{padding:13px 26px;border:1.5px solid var(--border);color:var(--green-mid);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--radius);transition:all .3s ease;display:inline-block;font-family:'Nunito',sans-serif}
+    .btn-dl:hover{background:rgba(201,150,58,.06);border-color:var(--gold)}
+    .pdf-reader{margin-top:-12px;margin-bottom:28px;width:100%;height:0;opacity:0;overflow:hidden;transition:height .45s ease,opacity .4s ease;border-radius:8px;border:1px solid var(--border);background:#fff}
+    .pdf-reader.is-open{height:82vh;min-height:520px;opacity:1}
+    .pdf-reader iframe{width:100%;height:100%;border:none;display:block}
+    @media(max-width:1024px){.book-card{grid-template-columns:260px 1fr}}
+    @media(max-width:768px){
+      .books-section{padding:56px 0 72px}
+      .book-card{grid-template-columns:1fr}
+      .book-visual{padding:36px 20px;min-height:180px}
+      .book-content{padding:28px 24px}
+      .book-actions{flex-direction:column}
+      .btn-read,.btn-dl{width:100%;justify-content:center}
+      .pdf-reader.is-open{height:70vh;min-height:420px}
+    }
+    @media(max-width:480px){.book-content{padding:24px 18px}}
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC55V0MHS8"></script>
   <script>
@@ -65,29 +95,81 @@
     <header class="inner-hero" aria-labelledby="hero-title">
       <div class="container">
         <p class="hero-bismillah" lang="ar" dir="rtl" aria-label="Bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-        <h1 class="inner-title" id="hero-title">Prophets</h1>
-        <p class="inner-desc">Timeless lessons of faith, patience, and divine wisdom from the lives of Allah's chosen messengers ﷺ.</p>
+        <h1 class="inner-title" id="hero-title">Qasas Ul Anbiya <span>Stories of the Prophets</span></h1>
+        <p class="inner-desc">A classic Urdu text containing the stories of the Prophets, intended for the guidance and spiritual education of the Muslim community.</p>
       </div>
     </header>
-    <section class="coming-soon-section">
+    <section class="books-section" aria-labelledby="books-heading">
       <div class="container">
-        <div class="coming-soon-card">
-          <span class="coming-soon-icon" aria-hidden="true">🕯️</span>
-          <h2 class="coming-soon-title">Content Coming Soon</h2>
-          <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;" aria-hidden="true">
-            <div style="height:1px;background:var(--border);width:40px;"></div>
-            <div style="width:6px;height:6px;background:var(--gold);transform:rotate(45deg);"></div>
-            <div style="height:1px;background:var(--border);width:40px;"></div>
-          </div>
-          <p class="coming-soon-desc">We are currently preparing detailed accounts of the lives of the Prophets — from Adam ﷺ to Muhammad ﷺ — drawing from authentic Islamic sources. This section will offer profound lessons in faith, perseverance, and surrender to Allah's will.</p>
-          <p class="coming-soon-ayah" lang="ar" dir="rtl">وَكُلًّا نَّقُصُّ عَلَيْكَ مِنْ أَنبَاءِ الرُّسُلِ</p>
-          <p class="coming-soon-trans">"And each of the stories of the messengers We relate to you." — Surah Hud, 11:120</p>
-          <a href="index.html" class="btn-outline-gold">Return to Homepage</a>
+        <div class="section-header">
+          <span class="section-label">Featured Literature</span>
+          <h2 class="section-title" id="books-heading">Qasas Ul Anbiya <span>Stories of the Prophets</span></h2>
+          <div class="divider-gold" aria-hidden="true"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
         </div>
+
+        <article class="book-card">
+          <div class="book-visual" style="background:#5f3c14;" aria-hidden="true">
+            <div class="book-cover" style="background:#73491a;">
+              <span class="cover-urdu">قصص الانبیاء</span>
+              <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;">
+              <span class="cover-eng">Qasas Ul Anbiya</span>
+            </div>
+          </div>
+          <div class="book-content">
+            <p class="book-num">Book 01 of 01</p>
+            <p class="book-badge">Classic Urdu Text — Stories of the Prophets (PDF)</p>
+            <h3 class="book-title-urdu" lang="ur" dir="rtl">قصص الانبیاء</h3>
+            <h4 class="book-title-eng">"Qasas Ul Anbiya"</h4>
+            <p class="book-desc">A classic Urdu text containing stories of the Prophets, intended for the guidance and spiritual education of the Muslim community.</p>
+            <div class="book-actions">
+              <button type="button" class="btn-read" data-reader-btn data-reader="r-qasas" data-id="1Zknbu3wYE7EQYoThpemCI8Xw2pKaVrNHA" data-close-label="Close Reader" aria-expanded="false"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+              <a href="https://drive.google.com/file/d/1Zknbu3wYE7EQYoThpemCI8Xw2pKaVrNHA/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+            </div>
+          </div>
+        </article>
+        <div id="r-qasas" class="pdf-reader" aria-hidden="true"></div>
       </div>
     </section>
   </main>
   <div id="site-footer"></div>
+  <script>
+    (function () {
+      'use strict';
+      function closeReaders() {
+        document.querySelectorAll('.pdf-reader.is-open').forEach(function (r) {
+          r.classList.remove('is-open');
+          r.setAttribute('aria-hidden', 'true');
+        });
+        document.querySelectorAll('[data-reader-btn][aria-expanded="true"]').forEach(function (b) {
+          b.setAttribute('aria-expanded', 'false');
+          var s = b.querySelector('span');
+          if (s) s.textContent = 'Read Online';
+        });
+      }
+
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-reader-btn]');
+        if (!btn) return;
+        var rid = btn.getAttribute('data-reader');
+        var did = btn.getAttribute('data-id');
+        var reader = document.getElementById(rid);
+        if (!reader) return;
+        var isOpen = reader.classList.contains('is-open');
+        closeReaders();
+        if (!isOpen) {
+          if (!reader.innerHTML.trim()) {
+            reader.innerHTML = '<iframe src="https://drive.google.com/file/d/' + did + '/preview" title="PDF Reader" allow="autoplay" loading="lazy"></iframe>';
+          }
+          reader.classList.add('is-open');
+          reader.setAttribute('aria-hidden', 'false');
+          btn.setAttribute('aria-expanded', 'true');
+          var s = btn.querySelector('span');
+          if (s) s.textContent = btn.getAttribute('data-close-label') || 'Close Reader';
+          setTimeout(function () { reader.scrollIntoView({ behavior:'smooth', block:'start' }); }, 180);
+        }
+      });
+    })();
+  </script>
   <script src="components.js"></script>
 </body>
 </html>
