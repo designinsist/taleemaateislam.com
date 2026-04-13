@@ -160,17 +160,29 @@
       margin-top: 8px;
     }
 
-    /* ── Featured Book Component (Inside Profile) ── */
-    .featured-book-box { margin-top: 24px; padding: 20px; background: rgba(201,150,58,0.04); border: 1px solid var(--border); border-radius: 8px; }
-    .featured-book-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--green-deep); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-    .featured-book-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+    /* ── Book Card (Site Standard Layout) ── */
+    .book-card { background: #fff; border-radius: 8px; overflow: hidden; display: grid; grid-template-columns: 300px 1fr; box-shadow: 0 8px 32px rgba(13,40,24,.08); border: 1px solid rgba(201,150,58,.15); margin-bottom: 32px; }
+    .book-visual { display: flex; align-items: center; justify-content: center; padding: 44px 32px; position: relative; min-height: 220px; }
+    .book-visual::after { content: ''; position: absolute; inset: 20px; border: 1px solid rgba(201,150,58,.3); pointer-events: none; }
+    .book-cover { width: 160px; height: 220px; border: 4px solid var(--gold); box-shadow: 8px 8px 24px rgba(0,0,0,.3); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 16px; color: #fff; position: relative; z-index: 2; }
+    .cover-urdu { font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.1rem; line-height: 1.9; }
+    .cover-eng { font-size: .7rem; letter-spacing: .09em; text-transform: uppercase; opacity: .8; margin-top: 6px; line-height: 1.4; }
+    .book-content { padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; }
+    .book-num { font-size: .65rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .book-badge { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .book-badge::before { content: ''; display: inline-block; width: 18px; height: 2px; background: var(--gold); }
+    .book-title-urdu { font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.45rem; line-height: 2.4; color: var(--green-deep); margin-bottom: 14px; border-right: 4px solid var(--gold); padding-right: 18px; direction: rtl; text-align: right; }
+    .book-title-eng { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 6px; font-style: italic; }
+    .book-author { font-size: .82rem; color: var(--text-muted); margin-bottom: 18px; font-weight: 600; }
+    .book-author span { color: var(--green-mid); }
+    .book-desc { font-size: .93rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 28px; }
     .book-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-read { padding: 10px 20px; background: var(--gold); color: var(--green-deep); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; border-radius: var(--radius); border: none; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; font-family: 'Nunito', sans-serif; }
-    .btn-read:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(201,150,58,0.2); }
-    .btn-dl { padding: 10px 20px; border: 1.5px solid var(--border); color: var(--green-mid); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; border-radius: var(--radius); transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
-    .btn-dl:hover { border-color: var(--gold); background: rgba(201,150,58,0.05); }
-    .pdf-reader { width: 100%; height: 0; opacity: 0; overflow: hidden; transition: height 0.45s ease, opacity 0.4s ease; border-radius: 8px; border: 1px solid var(--border); background: #fff; margin-bottom: 40px; margin-top: -16px; }
-    .pdf-reader.is-open { height: 80vh; min-height: 500px; opacity: 1; }
+    .btn-read { padding: 13px 26px; background: var(--gold); color: var(--green-deep); font-weight: 700; font-size: .82rem; text-transform: uppercase; letter-spacing: .07em; border-radius: var(--radius); transition: all .3s ease; display: inline-flex; align-items: center; gap: 9px; cursor: pointer; border: none; font-family: 'Nunito', sans-serif; }
+    .btn-read:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(201,150,58,.3); }
+    .btn-dl { padding: 13px 26px; border: 1.5px solid var(--border); color: var(--green-mid); font-weight: 700; font-size: .82rem; text-transform: uppercase; letter-spacing: .07em; border-radius: var(--radius); transition: all .3s ease; display: inline-block; font-family: 'Nunito', sans-serif; text-decoration: none; }
+    .btn-dl:hover { background: rgba(201,150,58,.06); border-color: var(--gold); }
+    .pdf-reader { margin-top: -12px; margin-bottom: 28px; width: 100%; height: 0; opacity: 0; overflow: hidden; transition: height .45s ease, opacity .4s ease; border-radius: 8px; border: 1px solid var(--border); background: #fff; }
+    .pdf-reader.is-open { height: 82vh; min-height: 520px; opacity: 1; }
     .pdf-reader iframe { width: 100%; height: 100%; border: none; display: block; }
 
     /* ── Ayah Banner ── */
@@ -182,14 +194,19 @@
     .ayah-ref { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dim); font-weight: 600; }
 
     /* ── Responsive ── */
-    @media(max-width:1024px) { .profile-card { grid-template-columns: 180px 1fr; } }
+    @media(max-width:1024px) { .profile-card { grid-template-columns: 180px 1fr; } .book-card { grid-template-columns: 260px 1fr; } }
     @media(max-width:768px) {
       .profile-card { grid-template-columns: 1fr; }
       .profile-badge { padding: 36px 24px; flex-direction: row; gap: 16px; justify-content: flex-start; text-align: left; }
       .profile-badge::after { display: none; }
       .profile-icon { font-size: 2rem; margin-bottom: 0; }
       .profile-body { padding: 28px 24px; }
-      .btn-read, .btn-dl { width: 100%; justify-content: center; }
+      .book-card { grid-template-columns: 1fr; margin-bottom: 20px; }
+      .book-visual { padding: 36px 20px; min-height: 160px; }
+      .book-content { padding: 24px 20px; }
+      .book-actions { flex-direction: column; }
+      .btn-read, .btn-dl { width: 100%; justify-content: center; padding: 15px; font-size: .9rem; }
+      .pdf-reader.is-open { height: 70vh; min-height: 400px; }
     }
     @media(max-width:480px) { .profile-body { padding: 24px 18px; } }
   </style>
@@ -223,6 +240,34 @@
           </div>
         </div>
 
+        <article class="book-card" aria-labelledby="tabieen-book-title">
+          <div class="book-visual" style="background:#2d1a00;" aria-hidden="true">
+            <div class="book-cover" style="background:#3d2510;">
+              <span class="cover-urdu">تابعین کے واقعات</span>
+              <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.4);margin:10px 0;">
+              <span class="cover-eng">Tabieen Kay Waqiaat</span>
+            </div>
+          </div>
+          <div class="book-content">
+            <p class="book-num">Featured Book</p>
+            <p class="book-badge">Free Digital Book — Urdu (PDF)</p>
+            <h3 class="book-title-urdu" id="tabieen-book-title" lang="ur" dir="rtl">تابعین کے واقعات</h3>
+            <h4 class="book-title-eng">"Tabieen Kay Waqiaat" — Stories of the Tabi'een</h4>
+            <p class="book-author">For <span>Seeking Inspiration from the Righteous</span></p>
+            <p class="book-desc">A detailed collection of significant events and stories from the lives of the Tabi'een, the generation that followed the Companions of the Prophet ﷺ.</p>
+            <div class="book-actions">
+              <button type="button" class="btn-read" data-reader-btn data-reader="r-tabieen" data-id="1Mc_QM1dT0eqCOV53LvC-J-j3HdAuppBh" data-close-label="Close Reader" aria-expanded="false">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                <span>Read Online</span>
+              </button>
+              <a href="https://drive.google.com/file/d/1Mc_QM1dT0eqCOV53LvC-J-j3HdAuppBh/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+            </div>
+          </div>
+        </article>
+        <div id="r-tabieen" class="pdf-reader" aria-hidden="true"></div>
+
+        <!-- PROFILE 01: Hazrat Umar ibn al-Khattab (NO FEATURED BOOK) -->
+        <!--
         <article class="profile-card" aria-labelledby="p1-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">⚖️</span>
@@ -242,7 +287,10 @@
             </blockquote>
           </div>
         </article>
+        -->
 
+        <!-- PROFILE 02: Sa'ad ibn Mu'adh (NO FEATURED BOOK) -->
+        <!--
         <article class="profile-card" aria-labelledby="p2-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">🛡️</span>
@@ -262,7 +310,10 @@
             </blockquote>
           </div>
         </article>
+        -->
 
+        <!-- PROFILE 03: Umar ibn Abdul Aziz (COMMENTED OUT - BOOK ONLY VIEW ENABLED) -->
+        <!--
         <article class="profile-card" aria-labelledby="p3-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">🏛️</span>
@@ -274,32 +325,39 @@
             <h3 class="profile-name" id="p3-name">Umar ibn Abdul Aziz <span style="color:var(--gold);font-size:0.9rem;">رحمه الله</span></h3>
             <p class="profile-name-arabic" lang="ar" dir="rtl">عُمَر بْن عَبْد الْعَزِيز</p>
             <p class="profile-dates">Born: c. 682 CE (61 AH), Madinah &nbsp;|&nbsp; Died: February 720 CE (101 AH) &nbsp;|&nbsp; Caliphate: 717–720 CE</p>
-            <p class="profile-bio">Umar ibn Abdul Aziz — widely revered as <em>Umar II</em> and considered by scholars the fifth of the rightly guided Caliphs — was the eighth Umayyad Caliph. His mother was a granddaughter of Hazrat Umar ibn al-Khattab (RA), and he was educated in Madinah under the great Tabi'i scholars. Before becoming Caliph, he had served as the just and beloved governor of Madinah. When Caliph Sulayman ibn Abdul Malik lay dying, he nominated Umar as his successor — an appointment Umar accepted only reluctantly, considering the enormous weight of the trust.</p>
-            <p class="profile-bio">Upon assuming the Caliphate, he returned all the wealth he had accumulated to the public treasury, rode his own modest mule instead of the royal horses, and immediately dismissed corrupt and oppressive governors. He was the first Caliph to order the official collection and documentation of Hadith, fearing it might be lost. He abolished the cursing of Hazrat Ali (RA) that had become customary in Umayyad Friday sermons. Under his three-year reign, the wealth of the empire was so equitably distributed that it became difficult to find recipients of Zakat. He was poisoned — it is widely held by members of the Umayyad royal family who resented his reforms — and died at approximately 39 years of age. Historians and scholars unanimously regard his brief reign as the closest return to the spirit of the Rashidun Caliphate.</p>
-            <blockquote class="profile-quote">
-              "If you wish to do something, consider its consequences. If it leads to good, proceed — and if it leads to evil, refrain."
-              <cite>— Umar ibn Abdul Aziz رحمه الله</cite>
-            </blockquote>
+            <p class="profile-bio">Umar ibn Abdul Aziz — widely revered as <em>Umar II</em> and considered by scholars the fifth of the rightly guided Caliphs — was the eighth Umayyad Caliph...</p>
+          </div>
+        </article>
+        -->
 
-            <div class="featured-book-box">
-              <h4 class="featured-book-title">📖 Featured Book: Seerat Umar bin Abdul Aziz</h4>
-              <p class="featured-book-desc">
-                <strong>Translator:</strong> Maulana Muhammad Yusuf Ludhianvi | <strong>Original Author:</strong> Imam Abu Muhammad Abdullah bin Abdul Hakam al-Maliki.<br><br>
-                A comprehensive and rare historical guide detailing the life, justice, piety, and administrative genius of the "Fifth Rightly Guided Caliph". It covers his noble lineage, early life, strict honesty with public funds, protection of non-Muslim rights, and his final days. Imam Nawawi praised the original work for containing "precious gems" of knowledge indispensable for understanding Islamic history.
-              </p>
-              <div class="book-actions">
-                <button type="button" class="btn-read" data-reader-btn data-reader="r-umar" data-id="1a72UlNb17hAkxdpePHDr226ZdNk2g710" data-close-label="Close Reader" aria-expanded="false">
-                  <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                  <span>Read Online</span>
-                </button>
-                <a href="https://drive.google.com/file/d/1a72UlNb17hAkxdpePHDr226ZdNk2g710/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-              </div>
+        <article class="book-card" aria-labelledby="umar-book-title">
+          <div class="book-visual" style="background:#243b55;" aria-hidden="true">
+            <div class="book-cover" style="background:#2f4f72;">
+              <span class="cover-urdu">سیرت عمر بن عبدالعزیز</span>
+              <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.4);margin:10px 0;">
+              <span class="cover-eng">Seerat Umar bin Abdul Aziz</span>
             </div>
-
+          </div>
+          <div class="book-content">
+            <p class="book-num">Featured Book</p>
+            <p class="book-badge">Free Digital Book — Urdu (PDF)</p>
+            <h3 class="book-title-urdu" id="umar-book-title" lang="ur" dir="rtl">سیرت عمر بن عبدالعزیز</h3>
+            <h4 class="book-title-eng">"Seerat Umar bin Abdul Aziz" — The Fifth Rightly Guided Caliph</h4>
+            <p class="book-author">Translator: <span>Maulana Muhammad Yusuf Ludhianvi</span></p>
+            <p class="book-desc">Original by Imam Abu Muhammad Abdullah bin Abdul Hakam al-Maliki. A comprehensive guide detailing the life, justice, piety, and administrative genius of Umar ibn Abdul Aziz, with key lessons on governance, accountability, and spiritual leadership in Islam.</p>
+            <div class="book-actions">
+              <button type="button" class="btn-read" data-reader-btn data-reader="r-umar" data-id="1a72UlNb17hAkxdpePHDr226ZdNk2g710" data-close-label="Close Reader" aria-expanded="false">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                <span>Read Online</span>
+              </button>
+              <a href="https://drive.google.com/file/d/1a72UlNb17hAkxdpePHDr226ZdNk2g710/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+            </div>
           </div>
         </article>
         <div id="r-umar" class="pdf-reader" aria-hidden="true"></div>
 
+        <!-- PROFILE 04: Imam Abu Hamid al-Ghazali (NO FEATURED BOOK) -->
+        <!--
         <article class="profile-card" aria-labelledby="p4-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">📜</span>
@@ -319,7 +377,10 @@
             </blockquote>
           </div>
         </article>
+        -->
 
+        <!-- PROFILE 05: Imam Junayd al-Baghdadi (NO FEATURED BOOK) -->
+        <!--
         <article class="profile-card" aria-labelledby="p5-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">🕯️</span>
@@ -339,7 +400,10 @@
             </blockquote>
           </div>
         </article>
+        -->
 
+        <!-- PROFILE 06: Ibrahim ibn Adham al-Balkhi (NO FEATURED BOOK) -->
+        <!--
         <article class="profile-card" aria-labelledby="p6-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">🌾</span>
@@ -359,7 +423,10 @@
             </blockquote>
           </div>
         </article>
+        -->
 
+        <!-- PROFILE 07: Maulana Jalaluddin Rumi (NO FEATURED BOOK) -->
+        <!--
         <article class="profile-card" aria-labelledby="p7-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">🌹</span>
@@ -372,14 +439,17 @@
             <p class="profile-name-arabic" lang="ar" dir="rtl">مولانا جلال الدين محمد الرومي</p>
             <p class="profile-dates">Born: 30 September 1207 CE (604 AH), Balkh, Afghanistan &nbsp;|&nbsp; Died: 17 December 1273 CE (672 AH), Konya, Turkey</p>
             <p class="profile-bio">Maulana Jalaluddin Muhammad Rumi — honoured as <em>Mawlana</em> (Our Master) throughout the Muslim world — was a devout Sunni Muslim scholar, jurist, and Sufi mystic of the 13th century CE. He followed the Hanafi school of Islamic law and was deeply rooted in the Quran, Hadith, and the Shari'ah throughout his life. Born in Balkh to a distinguished family of Islamic scholars — his father Baha'uddin Walad was known as "Sultan of the Scholars" — Rumi received a comprehensive Islamic education in the religious sciences of fiqh, theology, and Arabic literature, studying in Aleppo and Damascus before settling in Konya, Anatolia (present-day Turkey), which was known then as "Rum."</p>
-            <p class="profile-bio">His transformative encounter with the wandering Sufi dervish Shams al-Din al-Tabrizi in 1244 CE — a meeting Rumi considered among the greatest gifts of his life — gave birth to an extraordinary outpouring of mystical poetry. His masterwork, the <em>Masnavi-ye Ma'navi</em> (Spiritual Couplets) — nearly 26,000 verses — has been described by Islamic scholars as "a Quran in Persian," so saturated is it with Quranic verses, Hadith, and Islamic teachings. Rumi himself described it as "the roots of the roots of the roots of the Islamic Religion." He also composed the vast <em>Divan-e Shams-e Tabrizi</em>, containing over 40,000 verses. His teachings on divine love, spiritual purification, and nearness to Allah have inspired generations of Muslims and continue to do so. He founded the Mevlevi Sufi Order, whose tradition of spiritual practice has been continuous for over 750 years.</p>
+            <p class="profile-bio">His transformative encounter with the wandering Sufi dervish Shams al-Din al-Tabrizi in 1244 CE — a meeting Rumi considered among the greatest gifts of his life — gave birth to an extraordinary outpouring of mystical poetry. His masterwork, the <em>Masnava-ye Ma'navi</em> (Spiritual Couplets) — nearly 26,000 verses — has been described by Islamic scholars as "a Quran in Persian," so saturated is it with Quranic verses, Hadith, and Islamic teachings. Rumi himself described it as "the roots of the roots of the roots of the Islamic Religion." He also composed the vast <em>Divan-e Shams-e Tabrizi</em>, containing over 40,000 verses. His teachings on divine love, spiritual purification, and nearness to Allah have inspired generations of Muslims and continue to do so. He founded the Mevlevi Sufi Order, whose tradition of spiritual practice has been continuous for over 750 years.</p>
             <blockquote class="profile-quote">
               "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself."
               <cite>— Maulana Jalaluddin Rumi رحمه الله, Masnavi</cite>
             </blockquote>
           </div>
         </article>
+        -->
 
+        <!-- PROFILE 08: Zubaidah bint Ja'far (NO FEATURED BOOK) -->
+        <!--
         <article class="profile-card" aria-labelledby="p8-name">
           <div class="profile-badge" aria-hidden="true">
             <span class="profile-icon">💧</span>
@@ -399,21 +469,7 @@
             </blockquote>
           </div>
         </article>
-
-        <div class="featured-book-box" aria-labelledby="tabieen-book-title">
-          <h4 class="featured-book-title" id="tabieen-book-title">📖 Featured Book: TABIEEN KAY WAQIAAT</h4>
-          <p class="featured-book-desc">
-            A detailed collection of significant events and stories from the lives of the Tabieen, the generation that followed the Companions of the Prophet.
-          </p>
-          <div class="book-actions">
-            <button type="button" class="btn-read" data-reader-btn data-reader="r-tabieen" data-id="1Mc_QM1dT0eqCOV53LvC-J-j3HdAuppBh" data-close-label="Close Reader" aria-expanded="false">
-              <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-              <span>Read Online</span>
-            </button>
-            <a href="https://drive.google.com/file/d/1Mc_QM1dT0eqCOV53LvC-J-j3HdAuppBh/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-          </div>
-        </div>
-        <div id="r-tabieen" class="pdf-reader" aria-hidden="true"></div>
+        -->
 
       </div>
     </section>

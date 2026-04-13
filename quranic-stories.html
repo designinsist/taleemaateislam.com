@@ -198,6 +198,31 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
+    /* ── Book Card (Site Standard Layout) ── */
+    .book-card { background: #fff; border-radius: 8px; overflow: hidden; display: grid; grid-template-columns: 300px 1fr; box-shadow: 0 8px 32px rgba(13,40,24,.08); border: 1px solid rgba(201,150,58,.15); margin-bottom: 32px; }
+    .book-visual { display: flex; align-items: center; justify-content: center; padding: 44px 32px; position: relative; min-height: 220px; }
+    .book-visual::after { content: ''; position: absolute; inset: 20px; border: 1px solid rgba(201,150,58,.3); pointer-events: none; }
+    .book-cover { width: 160px; height: 220px; border: 4px solid var(--gold); box-shadow: 8px 8px 24px rgba(0,0,0,.3); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 16px; color: #fff; position: relative; z-index: 2; }
+    .cover-urdu { font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.1rem; line-height: 1.9; }
+    .cover-eng { font-size: .7rem; letter-spacing: .09em; text-transform: uppercase; opacity: .8; margin-top: 6px; line-height: 1.4; }
+    .book-content { padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; }
+    .book-num { font-size: .65rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .book-badge { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .book-badge::before { content: ''; display: inline-block; width: 18px; height: 2px; background: var(--gold); }
+    .book-title-urdu { font-family: 'Noto Nastaliq Urdu', serif; font-size: 1.45rem; line-height: 2.4; color: var(--green-deep); margin-bottom: 14px; border-right: 4px solid var(--gold); padding-right: 18px; direction: rtl; text-align: right; }
+    .book-title-eng { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 6px; font-style: italic; }
+    .book-author { font-size: .82rem; color: var(--text-muted); margin-bottom: 18px; font-weight: 600; }
+    .book-author span { color: var(--green-mid); }
+    .book-desc { font-size: .93rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 28px; }
+    .book-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-read { padding: 13px 26px; background: var(--gold); color: var(--green-deep); font-weight: 700; font-size: .82rem; text-transform: uppercase; letter-spacing: .07em; border-radius: 4px; transition: all .3s ease; display: inline-flex; align-items: center; gap: 9px; cursor: pointer; border: none; font-family: 'Nunito', sans-serif; }
+    .btn-read:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(201,150,58,.3); }
+    .btn-dl { padding: 13px 26px; border: 1.5px solid var(--border); color: var(--green-mid); font-weight: 700; font-size: .82rem; text-transform: uppercase; letter-spacing: .07em; border-radius: 4px; transition: all .3s ease; display: inline-block; font-family: 'Nunito', sans-serif; text-decoration: none; }
+    .btn-dl:hover { background: rgba(201,150,58,.06); border-color: var(--gold); }
+    .pdf-reader { margin-top: -12px; margin-bottom: 28px; width: 100%; height: 0; opacity: 0; overflow: hidden; transition: height .45s ease, opacity .4s ease; border-radius: 8px; border: 1px solid var(--border); background: #fff; }
+    .pdf-reader.is-open { height: 82vh; min-height: 520px; opacity: 1; }
+    .pdf-reader iframe { width: 100%; height: 100%; border: none; display: block; }
+
     .lesson-item {
       display: flex;
       align-items: flex-start;
@@ -224,11 +249,18 @@
     .ayah-ref { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dim); font-weight: 600; }
 
     /* Responsive */
+    @media(min-width:769px) and (max-width:1024px) { .book-card { grid-template-columns: 260px 1fr; } }
     @media(max-width:768px) {
       .story-header { padding: 22px 24px; flex-wrap: wrap; gap: 16px; }
       .story-surah-tag { margin-left: 0; }
       .story-body { padding: 28px 24px; }
       .lesson-list { grid-template-columns: 1fr; }
+      .book-card { grid-template-columns: 1fr; margin-bottom: 20px; }
+      .book-visual { padding: 36px 20px; min-height: 160px; }
+      .book-content { padding: 24px 20px; }
+      .book-actions { flex-direction: column; }
+      .btn-read, .btn-dl { width: 100%; justify-content: center; padding: 15px; font-size: .9rem; }
+      .pdf-reader.is-open { height: 70vh; min-height: 400px; }
     }
     @media(max-width:480px) {
       .story-header { padding: 18px 18px; }
@@ -273,7 +305,34 @@
           </div>
         </div>
 
+        <article class="book-card" aria-labelledby="quranic-stories-book-title">
+          <div class="book-visual" style="background:#1a3a2a;" aria-hidden="true">
+            <div class="book-cover" style="background:#234d38;">
+              <span class="cover-urdu">واقعات قرآنی</span>
+              <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.4);margin:10px 0;">
+              <span class="cover-eng">Quranic Stories</span>
+            </div>
+          </div>
+          <div class="book-content">
+            <p class="book-num">Featured Book</p>
+            <p class="book-badge">Free Digital Book — Urdu/English (PDF)</p>
+            <h3 class="book-title-urdu" id="quranic-stories-book-title" lang="ur" dir="rtl">واقعات قرآنی</h3>
+            <h4 class="book-title-eng">"Quranic Stories" — Lessons from the Holy Quran</h4>
+            <p class="book-author">For <span>Faith, Patience and Divine Guidance</span></p>
+            <p class="book-desc">A comprehensive collection of the great stories of the Holy Quran — including Yusuf, Musa, Ibrahim, Maryam, Ashab al-Kahf, Yunus, Ayyub and Adam (AS) — with authentic lessons of faith, patience, trust in Allah and divine wisdom.</p>
+            <div class="book-actions">
+              <button type="button" class="btn-read" data-reader-btn data-reader="r-quranic-stories" data-id="1UfKuCo9bEAGLsTo0xEUuGIU3TPxbFpwt" data-close-label="Close Reader" aria-expanded="false">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                <span>Read Online</span>
+              </button>
+              <a href="https://drive.google.com/file/d/1UfKuCo9bEAGLsTo0xEUuGIU3TPxbFpwt/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+            </div>
+          </div>
+        </article>
+        <div id="r-quranic-stories" class="pdf-reader" aria-hidden="true"></div>
+
         <!-- ══ STORY 01: YUSUF (AS) ══ -->
+        <!--
         <article class="story-card" aria-labelledby="s1-title">
           <div class="story-header">
             <span class="story-header-icon" aria-hidden="true">🌙</span>
@@ -306,8 +365,10 @@
             </div>
           </div>
         </article>
+        -->
 
         <!-- ══ STORY 02: MUSA (AS) ══ -->
+        <!--
         <article class="story-card" aria-labelledby="s2-title">
           <div class="story-header">
             <span class="story-header-icon" aria-hidden="true">🌊</span>
@@ -340,8 +401,10 @@
             </div>
           </div>
         </article>
+        -->
 
         <!-- ══ STORY 03: IBRAHIM (AS) ══ -->
+        <!--
         <article class="story-card" aria-labelledby="s3-title">
           <div class="story-header">
             <span class="story-header-icon" aria-hidden="true">🔥</span>
@@ -374,8 +437,10 @@
             </div>
           </div>
         </article>
+        -->
 
         <!-- ══ STORY 04: MARYAM (AS) ══ -->
+        <!--
         <article class="story-card" aria-labelledby="s4-title">
           <div class="story-header">
             <span class="story-header-icon" aria-hidden="true">🌿</span>
@@ -408,8 +473,10 @@
             </div>
           </div>
         </article>
+        -->
 
         <!-- ══ STORY 05: ASHAB AL-KAHF ══ -->
+        <!--
         <article class="story-card" aria-labelledby="s5-title">
           <div class="story-header">
             <span class="story-header-icon" aria-hidden="true">🕯️</span>
@@ -442,8 +509,10 @@
             </div>
           </div>
         </article>
+        -->
 
         <!-- ══ STORY 06: YUNUS (AS) ══ -->
+        <!--
         <article class="story-card" aria-labelledby="s6-title">
           <div class="story-header">
             <span class="story-header-icon" aria-hidden="true">🌊</span>
@@ -476,8 +545,10 @@
             </div>
           </div>
         </article>
+        -->
 
         <!-- ══ STORY 07: AYYUB (AS) ══ -->
+        <!--
         <article class="story-card" aria-labelledby="s7-title">
           <div class="story-header">
             <span class="story-header-icon" aria-hidden="true">⚖️</span>
@@ -510,8 +581,10 @@
             </div>
           </div>
         </article>
+        -->
 
         <!-- ══ STORY 08: ADAM (AS) ══ -->
+        <!--
         <article class="story-card" aria-labelledby="s8-title">
           <div class="story-header">
             <span class="story-header-icon" aria-hidden="true">🌱</span>
@@ -544,6 +617,7 @@
             </div>
           </div>
         </article>
+        -->
 
       </div>
     </section>
@@ -561,6 +635,45 @@
 
   <div id="site-footer"></div>
   <script src="components.js"></script>
+
+  <script>
+    (function () {
+      'use strict';
+      function closeReaders() {
+        document.querySelectorAll('.pdf-reader.is-open').forEach(function (r) {
+          r.classList.remove('is-open');
+          r.setAttribute('aria-hidden', 'true');
+        });
+        document.querySelectorAll('[data-reader-btn][aria-expanded="true"]').forEach(function (b) {
+          b.setAttribute('aria-expanded', 'false');
+          var s = b.querySelector('span');
+          if (s) s.textContent = 'Read Online';
+        });
+      }
+
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-reader-btn]');
+        if (!btn) return;
+        var rid    = btn.getAttribute('data-reader');
+        var did    = btn.getAttribute('data-id');
+        var reader = document.getElementById(rid);
+        if (!reader) return;
+        var isOpen = reader.classList.contains('is-open');
+        closeReaders();
+        if (!isOpen) {
+          if (!reader.innerHTML.trim()) {
+            reader.innerHTML = '<iframe src="https://drive.google.com/file/d/' + did + '/preview" title="PDF Reader" allow="autoplay" loading="lazy"></iframe>';
+          }
+          reader.classList.add('is-open');
+          reader.setAttribute('aria-hidden', 'false');
+          btn.setAttribute('aria-expanded', 'true');
+          var s = btn.querySelector('span');
+          if (s) s.textContent = btn.getAttribute('data-close-label') || 'Close Reader';
+          setTimeout(function () { reader.scrollIntoView({ behavior:'smooth', block:'start' }); }, 180);
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
