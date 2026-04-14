@@ -5,17 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Dars-e-Quran by Maulana Shahid Mushtaq | Taleemaat-e-Islam</title>
+  <title>Dars-e-Quran v2 by Maulana Shahid Mushtaq | Taleemaat-e-Islam</title>
   <meta name="description"
     content="Listen to Dars-e-Quran lectures by Maulana Shahid Mushtaq, explaining the teachings, meanings, and guidance of the Holy Quran." />
   <meta name="keywords"
     content="Dars-e-Quran, Maulana Shahid Mushtaq, Quran Tafseer, Quran explanation, Surah Yunus, Surah Baqarah, Islamic lectures, Taleemaat-e-Islam" />
   <meta name="author" content="Taleemaat-e-Islam" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://taleemaateislam.com/dars-e-quran.html" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://taleemaateislam.com/dars-e-quran-v2.html" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://taleemaateislam.com/dars-e-quran.html" />
+  <meta property="og:url" content="https://taleemaateislam.com/dars-e-quran-v2.html" />
   <meta property="og:title" content="Dars-e-Quran by Maulana Shahid Mushtaq" />
   <meta property="og:description" content="Deeply spiritual and educational explanations of the Holy Quran." />
   <meta property="og:site_name" content="Taleemaat-e-Islam" />
@@ -444,44 +444,135 @@
       }
     }
 
-    /* ═══ PLAYLIST BROWSER (Al-Isra YouTube) ═══ */
-    .playlist-panel { background: var(--white); border: 1px solid rgba(0,0,0,.06); border-radius: 8px; padding: 18px; box-shadow: 0 2px 6px rgba(0,0,0,.03); }
-    .playlist-note { color: var(--text-mid); font-size: .95rem; margin-bottom: 14px; line-height: 1.7; }
-    .playlist-browser { display: grid; grid-template-columns: minmax(0,1.35fr) minmax(260px,.8fr); gap: 18px; align-items: start; }
-    .playlist-featured { border: 1px solid rgba(201,150,58,.2); border-radius: 8px; overflow: hidden; background: var(--off-white); }
-    .playlist-frame-wrap { position: relative; width: 100%; padding-top: 56.25%; background: #000; }
-    .playlist-frame-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-    .playlist-featured-body { padding: 16px 18px 18px; }
-    .playlist-featured-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; line-height: 1.45; color: var(--green-deep); margin-bottom: 8px; font-weight: 700; }
-    .playlist-featured-desc { color: var(--text-muted); font-size: .9rem; line-height: 1.75; margin-bottom: 12px; }
-    .playlist-featured-meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
-    .playlist-status { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); }
-    .playlist-status::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(201,150,58,.12); }
-    .btn-yt { display: inline-block; padding: 7px 16px; background: #ff0000; color: #fff; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-radius: 4px; transition: background .3s ease; }
-    .btn-yt:hover { background: #cc0000; }
-    .playlist-grid { display: grid; gap: 10px; max-height: 520px; overflow-y: auto; padding-right: 4px; }
-    .playlist-grid::-webkit-scrollbar { width: 4px; }
-    .playlist-grid::-webkit-scrollbar-track { background: transparent; }
-    .playlist-grid::-webkit-scrollbar-thumb { background: rgba(201,150,58,.3); border-radius: 4px; }
-    .playlist-item { display: grid; grid-template-columns: 110px 1fr; gap: 12px; align-items: center; text-align: left; width: 100%; padding: 10px; border: 1px solid rgba(0,0,0,.07); background: var(--white); border-radius: 8px; cursor: pointer; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; font-family: 'Nunito', sans-serif; }
-    .playlist-item:hover, .playlist-item.is-active { transform: translateY(-1px); border-color: rgba(201,150,58,.45); box-shadow: 0 8px 18px rgba(13,40,24,.08); }
-    .playlist-item.is-active { border-color: var(--gold); background: rgba(201,150,58,.04); }
-    .playlist-thumb { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 6px; overflow: hidden; background: #d8e4dc; border: 1px solid rgba(0,0,0,.08); flex-shrink: 0; }
-    .playlist-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .playlist-thumb::after { content: '▶'; position: absolute; inset: auto 8px 8px auto; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: rgba(13,40,24,.86); color: #fff; font-size: .7rem; box-shadow: 0 4px 10px rgba(0,0,0,.18); }
-    .playlist-item-title { display: block; font-size: .88rem; line-height: 1.4; color: var(--green-deep); font-weight: 700; margin-bottom: 4px; }
-    .playlist-item-num { display: block; font-size: .72rem; color: var(--text-muted); }
-    .playlist-fallback p { color: var(--text-muted); font-size: .9rem; line-height: 1.7; }
-    @media(max-width:768px) {
-      .playlist-browser { grid-template-columns: 1fr; }
-      .playlist-grid { max-height: 360px; }
-      .playlist-item { grid-template-columns: 90px 1fr; }
-    }
-    @media(max-width:480px) {
-      .playlist-item { grid-template-columns: 1fr; }
-      .playlist-thumb { aspect-ratio: 16/9; width: 100%; }
+
+    .playlist-embed-wrap { position: relative; width: 100%; padding-top: 56.25%; background: #000; border-radius: 8px; overflow: hidden; }
+    .playlist-embed-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
+
+    /* ═══ AL-ISRA VIDEO PLAYER ═══ */
+    .isra-player-wrap {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(13,40,24,.07);
     }
 
+    /* Main video frame — 16:9 */
+    .isra-frame-box {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #000;
+    }
+    .isra-frame-box iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Info bar below player */
+    .isra-info-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 16px;
+      background: var(--green-deep);
+      flex-wrap: wrap;
+    }
+    .isra-now-playing {
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .isra-nav-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .isra-nav-btn {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,150,58,.4);
+      background: rgba(201,150,58,.1);
+      color: var(--gold-light);
+      font-size: 1rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+    .isra-nav-btn:hover { background: rgba(201,150,58,.25); border-color: var(--gold); color: #fff; }
+    .isra-nav-btn:disabled { opacity: .3; cursor: not-allowed; }
+    .isra-counter {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: rgba(255,255,255,.55);
+      white-space: nowrap;
+    }
+
+    /* Thumbnail strip */
+    .isra-thumb-strip {
+      display: flex;
+      gap: 8px;
+      padding: 12px 14px;
+      overflow-x: auto;
+      background: var(--off-white);
+      border-top: 1px solid rgba(0,0,0,.05);
+      scrollbar-width: thin;
+      scrollbar-color: rgba(201,150,58,.3) transparent;
+    }
+    .isra-thumb-strip::-webkit-scrollbar { height: 4px; }
+    .isra-thumb-strip::-webkit-scrollbar-thumb { background: rgba(201,150,58,.3); border-radius: 4px; }
+
+    .isra-thumb-btn {
+      flex-shrink: 0;
+      width: 100px;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      overflow: hidden;
+      background: none;
+      cursor: pointer;
+      padding: 0;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+      position: relative;
+    }
+    .isra-thumb-btn img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .isra-thumb-num {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(0,0,0,.65);
+      color: #fff;
+      font-size: .62rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 3px 4px;
+    }
+    .isra-thumb-btn:hover { border-color: rgba(201,150,58,.5); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.15); }
+    .isra-thumb-btn.is-active { border-color: var(--gold); box-shadow: 0 4px 12px rgba(201,150,58,.25); }
+    .isra-thumb-btn.is-active .isra-thumb-num { background: var(--gold); color: var(--green-deep); }
+
+    @media(max-width: 480px) {
+      .isra-thumb-btn { width: 82px; }
+      .isra-now-playing { font-size: .76rem; }
+    }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC55V0MHS8"></script>
@@ -549,39 +640,142 @@
                 <div class="surah-content" aria-hidden="true">
                   <div class="surah-content-inner">
 
-                    <div class="playlist-panel">
-                      <p class="playlist-note">
-                        Surah Al-Isra is now connected to the YouTube playlist — new videos uploaded by Maulana Shahid Mushtaq appear here automatically. Click any thumbnail to watch directly on this page.
-                      </p>
-                      <div class="playlist-browser" data-playlist-browser data-playlist-id="PLdujDev9jtVa_X_RmQNXyPQrSTn2M1MM9">
-                        <div class="playlist-featured">
-                          <div class="playlist-frame-wrap" data-featured-frame>
-                            <iframe
-                              src="https://www.youtube.com/embed/videoseries?list=PLdujDev9jtVa_X_RmQNXyPQrSTn2M1MM9"
-                              title="Surah Al-Isra Dars-e-Quran Playlist"
-                              loading="lazy"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                              referrerpolicy="strict-origin-when-cross-origin"
-                              allowfullscreen></iframe>
-                          </div>
-                          <div class="playlist-featured-body">
-                            <p class="playlist-featured-title" data-featured-title>Surah Al-Isra — Select a video from the list</p>
-                            <p class="playlist-featured-desc" data-featured-desc>Click any thumbnail on the right to jump to that lesson. The playlist updates automatically when new videos are added.</p>
-                            <div class="playlist-featured-meta">
-                              <span class="playlist-status">Auto-updated from YouTube</span>
-                              <a class="btn-yt" href="https://www.youtube.com/playlist?list=PLdujDev9jtVa_X_RmQNXyPQrSTn2M1MM9" target="_blank" rel="noopener noreferrer">▶ Open on YouTube</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="playlist-grid" data-playlist-items>
-                          <div class="playlist-fallback">
-                            <p>Loading videos from the YouTube playlist...</p>
-                          </div>
+                    <div class="isra-player-wrap">
+
+                      <!-- Main 16:9 player — src swapped by JS, no reload -->
+                      <div class="isra-frame-box">
+                        <iframe
+                          id="isra-iframe"
+                          src="https://www.youtube.com/embed/Nk_CKgGbuIU?rel=0"
+                          title="Surah Al-Isra — Ayah 1"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerpolicy="strict-origin-when-cross-origin"
+                          allowfullscreen>
+                        </iframe>
+                      </div>
+
+                      <!-- Info bar: title + prev/next/counter -->
+                      <div class="isra-info-bar">
+                        <span class="isra-now-playing" id="isra-title">Surah Al-Isra — Ayah 1</span>
+                        <div class="isra-nav-wrap">
+                          <button type="button" class="isra-nav-btn" id="isra-prev"
+                            onclick="israNav(-1)" aria-label="Previous video" disabled>‹</button>
+                          <span class="isra-counter" id="isra-counter">1 / 13</span>
+                          <button type="button" class="isra-nav-btn" id="isra-next"
+                            onclick="israNav(1)" aria-label="Next video">›</button>
                         </div>
                       </div>
-                    </div>
 
-                  </div>
+                      <!-- Horizontal scrollable thumbnail strip -->
+                      <div class="isra-thumb-strip" id="isra-strip" aria-label="All videos">
+                        
+          <button class="isra-thumb-btn is-active" type="button"
+            data-index="0"
+            aria-label="Play Surah Al-Isra — Ayah 1"
+            onclick="israSetVideo(0)">
+            <img src="https://i.ytimg.com/vi/Nk_CKgGbuIU/mqdefault.jpg"
+                 alt="Surah Al-Isra — Ayah 1" loading="lazy">
+            <span class="isra-thumb-num">1</span>
+          </button>
+          <button class="isra-thumb-btn" type="button"
+            data-index="1"
+            aria-label="Play Surah Al-Isra — Ayah 2"
+            onclick="israSetVideo(1)">
+            <img src="https://i.ytimg.com/vi/tk9JfeFWEkg/mqdefault.jpg"
+                 alt="Surah Al-Isra — Ayah 2" loading="lazy">
+            <span class="isra-thumb-num">2</span>
+          </button>
+          <button class="isra-thumb-btn" type="button"
+            data-index="2"
+            aria-label="Play Surah Al-Isra — Ayah 3"
+            onclick="israSetVideo(2)">
+            <img src="https://i.ytimg.com/vi/tbfiG4kBE7c/mqdefault.jpg"
+                 alt="Surah Al-Isra — Ayah 3" loading="lazy">
+            <span class="isra-thumb-num">3</span>
+          </button>
+          <button class="isra-thumb-btn" type="button"
+            data-index="3"
+            aria-label="Play Surah Al-Isra — Ayah 4"
+            onclick="israSetVideo(3)">
+            <img src="https://i.ytimg.com/vi/01BUyQqSgW8/mqdefault.jpg"
+                 alt="Surah Al-Isra — Ayah 4" loading="lazy">
+            <span class="isra-thumb-num">4</span>
+          </button>
+          <button class="isra-thumb-btn" type="button"
+            data-index="4"
+            aria-label="Play Surah Al-Isra — Ayah 5"
+            onclick="israSetVideo(4)">
+            <img src="https://i.ytimg.com/vi/lThwVP0zfk8/mqdefault.jpg"
+                 alt="Surah Al-Isra — Ayah 5" loading="lazy">
+            <span class="isra-thumb-num">5</span>
+          </button>
+          <button class="isra-thumb-btn" type="button"
+            data-index="5"
+            aria-label="Play Surah Al-Isra — Ayah 6"
+            onclick="israSetVideo(5)">
+            <img src="https://i.ytimg.com/vi/0q6mZD0nXAI/mqdefault.jpg"
+                 alt="Surah Al-Isra — Ayah 6" loading="lazy">
+            <span class="isra-thumb-num">6</span>
+          </button>
+          <button class="isra-thumb-btn" type="button"
+            data-index="6"
+            aria-label="Play Surah Al-Isra — Ayah 7"
+            onclick="israSetVideo(6)">
+            <img src="https://i.ytimg.com/vi/-IF1W0D2oPI/mqdefault.jpg"
+                 alt="Surah Al-Isra — Ayah 7" loading="lazy">
+            <span class="isra-thumb-num">7</span>
+          </button>
+          <button class="isra-thumb-btn" type="button"
+            data-index="7"
+            aria-label="Play Surah Al-Isra — Ayah 8"
+            onclick="israSetVideo(7)">
+            <img src="https://i.ytimg.com/vi/xjOrM8yfsp0/mqdefault.jpg"
+                 alt="Surah Al-Isra — Ayah 8" loading="lazy">
+            <span class="isra-thumb-num">8</span>
+          </button>
+          <button class="isra-thumb-btn" type="button"
+            data-index="8"
+            aria-label="Play Surah Al-Isra — Ayah 9"
+            onclick="israSetVideo(8)">
+            <img src="https://i.ytimg.com/vi/UtMZkg0ofOY/mqdefault.jpg"
+                 alt="Surah Al-Isra — Ayah 9" loading="lazy">
+            <span class="isra-thumb-num">9</span>
+          </button>
+          <button class="isra-thumb-btn" type="button"
+            data-index="9"
+            aria-label="Play Surah Al-Isra — Ayah 10"
+            onclick="israSetVideo(9)">
+            <img src="https://i.ytimg.com/vi/_2YmCaiCPnw/mqdefault.jpg"
+                 alt="Surah Al-Isra — Ayah 10" loading="lazy">
+            <span class="isra-thumb-num">10</span>
+          </button>
+          <button class="isra-thumb-btn" type="button"
+            data-index="10"
+            aria-label="Play Surah Al-Isra — Ayah 11"
+            onclick="israSetVideo(10)">
+            <img src="https://i.ytimg.com/vi/8ivVyUiuzTg/mqdefault.jpg"
+                 alt="Surah Al-Isra — Ayah 11" loading="lazy">
+            <span class="isra-thumb-num">11</span>
+          </button>
+          <button class="isra-thumb-btn" type="button"
+            data-index="11"
+            aria-label="Play Surah Al-Isra — Ayah 12"
+            onclick="israSetVideo(11)">
+            <img src="https://i.ytimg.com/vi/GlprwuJJ4RE/mqdefault.jpg"
+                 alt="Surah Al-Isra — Ayah 12" loading="lazy">
+            <span class="isra-thumb-num">12</span>
+          </button>
+          <button class="isra-thumb-btn" type="button"
+            data-index="12"
+            aria-label="Play Surah Al-Isra — Ayah 13"
+            onclick="israSetVideo(12)">
+            <img src="https://i.ytimg.com/vi/UTa3cgULAyg/mqdefault.jpg"
+                 alt="Surah Al-Isra — Ayah 13" loading="lazy">
+            <span class="isra-thumb-num">13</span>
+          </button>
+                      </div>
+
+                    </div>                  </div>
                 </div>
               </article>
 
@@ -3945,15 +4139,6 @@
         content.setAttribute('aria-hidden', 'false');
         // Expand height based on scrollHeight
         content.style.maxHeight = content.scrollHeight + "px";
-        // If this accordion contains the playlist browser, load it now
-        if (content.querySelector('[data-playlist-browser]')) {
-          initPlaylistBrowser().then(function() {
-            // Re-measure height after playlist items render
-            setTimeout(function() {
-              content.style.maxHeight = content.scrollHeight + 'px';
-            }, 600);
-          });
-        }
       } else {
         header.setAttribute('aria-expanded', 'false');
         content.setAttribute('aria-hidden', 'true');
@@ -3984,127 +4169,54 @@
     }
 
     /* ── PLAYLIST BROWSER (Surah Al-Isra) ── */
-    var _playlistLoaded = false;
+    /* Playlist: no JS needed — YouTube embed handles all video navigation */
 
-    function getXmlText(entry, tagNames) {
-      /* Safely query namespaced XML tags without querySelector CSS escaping issues */
-      for (var i = 0; i < tagNames.length; i++) {
-        var parts = tagNames[i].split(':');
-        var els;
-        if (parts.length === 2) {
-          els = entry.getElementsByTagNameNS('*', parts[1]);
-        } else {
-          els = entry.getElementsByTagName(tagNames[i]);
+    /* ── Al-Isra Video Player ── */
+    var ISRA_VIDEOS = [("Nk_CKgGbuIU", "Surah Al-Isra — Ayah 1"), ("tk9JfeFWEkg", "Surah Al-Isra — Ayah 2"), ("tbfiG4kBE7c", "Surah Al-Isra — Ayah 3"), ("01BUyQqSgW8", "Surah Al-Isra — Ayah 4"), ("lThwVP0zfk8", "Surah Al-Isra — Ayah 5"), ("0q6mZD0nXAI", "Surah Al-Isra — Ayah 6"), ("-IF1W0D2oPI", "Surah Al-Isra — Ayah 7"), ("xjOrM8yfsp0", "Surah Al-Isra — Ayah 8"), ("UtMZkg0ofOY", "Surah Al-Isra — Ayah 9"), ("_2YmCaiCPnw", "Surah Al-Isra — Ayah 10"), ("8ivVyUiuzTg", "Surah Al-Isra — Ayah 11"), ("GlprwuJJ4RE", "Surah Al-Isra — Ayah 12"), ("UTa3cgULAyg", "Surah Al-Isra — Ayah 13")];
+    var israIndex = 0;
+
+    function israSetVideo(index) {
+      var total = ISRA_VIDEOS.length;
+      if (index < 0 || index >= total) return;
+      israIndex = index;
+
+      var vid   = ISRA_VIDEOS[index][0];
+      var title = ISRA_VIDEOS[index][1];
+
+      /* Swap iframe src — no DOM rebuild, no flicker */
+      var frame = document.getElementById('isra-iframe');
+      if (frame) frame.src = 'https://www.youtube.com/embed/' + vid + '?autoplay=1&rel=0';
+
+      /* Update title and counter */
+      var titleEl   = document.getElementById('isra-title');
+      var counterEl = document.getElementById('isra-counter');
+      if (titleEl)   titleEl.textContent   = title;
+      if (counterEl) counterEl.textContent = (index + 1) + ' / ' + total;
+
+      /* Update prev/next buttons */
+      var prev = document.getElementById('isra-prev');
+      var next = document.getElementById('isra-next');
+      if (prev) prev.disabled = index === 0;
+      if (next) next.disabled = index === total - 1;
+
+      /* Update active thumbnail */
+      document.querySelectorAll('.isra-thumb-btn').forEach(function(btn) {
+        btn.classList.remove('is-active');
+        if (parseInt(btn.getAttribute('data-index')) === index) {
+          btn.classList.add('is-active');
+          /* Scroll the strip to keep active thumb visible */
+          btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         }
-        if (els && els.length) return els[0];
-      }
-      return null;
+      });
+
+      /* Re-adjust accordion height */
+      var acc = frame && frame.closest('.surah-content');
+      if (acc) setTimeout(function() { acc.style.maxHeight = acc.scrollHeight + 'px'; }, 200);
     }
 
-    async function initPlaylistBrowser() {
-      if (_playlistLoaded) return; /* only load once */
-
-      var browser = document.querySelector('[data-playlist-browser]');
-      if (!browser) return;
-
-      var playlistId    = browser.getAttribute('data-playlist-id');
-      var itemsHost     = browser.querySelector('[data-playlist-items]');
-      var featuredFrame = browser.querySelector('[data-featured-frame]');
-      var featuredTitle = browser.querySelector('[data-featured-title]');
-      var featuredDesc  = browser.querySelector('[data-featured-desc]');
-
-      function renderFeatured(item) {
-        if (!item) return;
-        featuredFrame.innerHTML =
-          '<iframe src="https://www.youtube.com/embed/' + item.videoId +
-          '?autoplay=1&rel=0" title="' + item.title.replace(/"/g, '&quot;') +
-          '" loading="lazy" allow="accelerometer; autoplay; clipboard-write;' +
-          ' encrypted-media; gyroscope; picture-in-picture; web-share"' +
-          ' referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-        featuredTitle.textContent = item.title;
-        featuredDesc.textContent  = item.description || 'Click any thumbnail to play that lesson.';
-        /* Re-adjust accordion height after iframe swap */
-        var acc = browser.closest('.surah-content');
-        if (acc) setTimeout(function () { acc.style.maxHeight = acc.scrollHeight + 'px'; }, 250);
-      }
-
-      function activateItem(btn, item) {
-        browser.querySelectorAll('.playlist-item').forEach(function (n) { n.classList.remove('is-active'); });
-        btn.classList.add('is-active');
-        renderFeatured(item);
-      }
-
-      function buildFallback() {
-        itemsHost.innerHTML =
-          '<div class="playlist-fallback">' +
-          '<p>Videos could not be loaded. ' +
-          '<a href="https://www.youtube.com/playlist?list=' + playlistId +
-          '" target="_blank" rel="noopener noreferrer" style="color:var(--gold);font-weight:700;">' +
-          'Open playlist on YouTube →</a></p></div>';
-      }
-
-      try {
-        /* YouTube RSS blocks direct browser fetch (CORS).
-           allorigins.win proxies the request server-side and returns JSON
-           with the XML inside the .contents property. */
-        var feedUrl  = 'https://www.youtube.com/feeds/videos.xml?playlist_id=' + encodeURIComponent(playlistId);
-        var proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(feedUrl);
-
-        var response = await fetch(proxyUrl);
-        if (!response.ok) throw new Error('Proxy request failed: ' + response.status);
-
-        var json    = await response.json();
-        var xmlText = json.contents;
-        if (!xmlText) throw new Error('Empty response from proxy');
-        var xmlDoc  = new DOMParser().parseFromString(xmlText, 'text/xml');
-        var entries = Array.from(xmlDoc.querySelectorAll('entry')).map(function (entry) {
-          var titleEl   = entry.querySelector('title');
-          var title     = titleEl ? titleEl.textContent.trim() : '';
-
-          /* Use getElementsByTagNameNS — avoids CSS selector namespace escaping issues */
-          var vidEl     = getXmlText(entry, ['yt:videoId', 'videoId']);
-          var videoId   = vidEl ? vidEl.textContent.trim() : '';
-
-          var descEl    = getXmlText(entry, ['media:description', 'description']);
-          var description = descEl ? descEl.textContent.trim() : '';
-
-          var thumbEl   = getXmlText(entry, ['media:thumbnail', 'thumbnail']);
-          var thumbnail = thumbEl
-            ? (thumbEl.getAttribute('url') || '')
-            : ('https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg');
-
-          return { title: title, videoId: videoId, description: description, thumbnail: thumbnail };
-        }).filter(function (i) { return i.videoId; });
-
-        if (!entries.length) { buildFallback(); return; }
-
-        _playlistLoaded = true;
-        itemsHost.innerHTML = '';
-        entries.forEach(function (item, index) {
-          var card = document.createElement('button');
-          card.type = 'button';
-          card.className = 'playlist-item' + (index === 0 ? ' is-active' : '');
-          card.innerHTML =
-            '<span class="playlist-thumb">' +
-            '<img src="' + item.thumbnail + '" alt="' + item.title.replace(/"/g, '&quot;') + '" loading="lazy">' +
-            '</span>' +
-            '<span>' +
-            '<span class="playlist-item-title">' + item.title + '</span>' +
-            '<span class="playlist-item-num">Video ' + (index + 1) + ' of ' + entries.length + '</span>' +
-            '</span>';
-          card.addEventListener('click', function () { activateItem(card, item); });
-          itemsHost.appendChild(card);
-          if (index === 0) renderFeatured(item);
-        });
-
-      } catch (err) {
-        console.warn('Playlist load failed:', err.message);
-        buildFallback();
-      }
+    function israNav(dir) {
+      israSetVideo(israIndex + dir);
     }
-
-    /* Run on DOMContentLoaded (catches normal page load) */
-    document.addEventListener('DOMContentLoaded', initPlaylistBrowser);
 
   </script>
   <script src="components.js"></script>
