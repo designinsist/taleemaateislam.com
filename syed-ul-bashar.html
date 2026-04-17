@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Syed-ul-Bashar ﷺ — Books, Blessed Family &amp; Companions | Taleemaat-e-Islam</title>
   <meta name="description" content="Free books on Prophet Muhammad ﷺ including Seerat-ul-Mustafa, Seerat-e-Sarwar-e-Konain, Dalail-un-Nubuwwah, Asma Un Nabi Al Karim, and more — plus profiles of his blessed family." />
-  <meta name="keywords" content="Syed-ul-Bashar, Prophet Muhammad PBUH, Seerat ul Mustafa, Seerat e Sarwar e Konain, Jadeed Seerat un Nabi, Dalail-un-Nubuwwah, Ahl al-Bayt, free Islamic books, Taleemaat-e-Islam" />
+  <meta name="keywords" content="Syed-ul-Bashar, Prophet Muhammad PBUH, Seerat ul Mustafa, Seerat e Sarwar e Konain, Jadeed Seerat un Nabi, Dalail-un-Nubuwwah, Asbat-i-Risalat, Khutbat-e-Seerat-e-Tayyiba, Asma Un Nabi PBUH, Ahl al-Bayt, free Islamic books, Taleemaat-e-Islam" />
   <meta name="author" content="Taleemaat-e-Islam" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://taleemaateislam.com/syed-ul-bashar.html" />
@@ -80,10 +80,10 @@
 
     /* TAB BAR (desktop) */
     .tab-nav{display:flex;align-items:center;gap:10px;margin-bottom:40px}
-    .tab-scroll-btn{width:38px;height:38px;flex-shrink:0;border:1.5px solid var(--border);background:#fff;color:var(--green-mid);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s ease}
-    .tab-scroll-btn:hover{border-color:var(--gold);color:var(--green-deep);background:rgba(201,150,58,.08)}
-    .tab-scroll-btn.is-disabled{opacity:.35;cursor:not-allowed;pointer-events:none}
-    .tab-scroll-btn svg{width:18px;height:18px;display:block}
+    .tab-scroll-btn{width:42px;height:42px;flex-shrink:0;border:2px solid var(--gold);background:var(--gold);color:var(--green-deep);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s ease;font-weight:700;box-shadow:0 2px 10px rgba(201,150,58,.3)}
+    .tab-scroll-btn:hover{background:var(--gold-light);border-color:var(--gold-light);transform:scale(1.08);box-shadow:0 4px 16px rgba(201,150,58,.4)}
+    .tab-scroll-btn.is-disabled{opacity:.25;cursor:not-allowed;pointer-events:none;background:var(--border);border-color:var(--border);box-shadow:none}
+    .tab-scroll-btn svg{width:18px;height:18px;display:block;fill:currentColor}
     .tab-bar{display:flex;flex:1;min-width:0;border-bottom:2px solid var(--border);overflow-x:auto;scrollbar-width:none}
     .tab-bar::-webkit-scrollbar{display:none}
     .tab-btn{flex-shrink:0;padding:14px 26px;font-family:'Nunito',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;cursor:pointer;transition:all .3s ease;white-space:nowrap}
@@ -241,7 +241,7 @@
             <button class="tab-btn is-active" role="tab" aria-selected="true"  data-panel="p-tribute">📜 Tribute of Devotion</button>
             <button class="tab-btn"            role="tab" aria-selected="false" data-panel="p-seerah">📖 Seerah Collection</button>
             <button class="tab-btn"            role="tab" aria-selected="false" data-panel="p-dalail">📚 Dalail-un-Nubuwwah</button>
-            <button class="tab-btn"            role="tab" aria-selected="false" data-panel="p-names">🌹 Asma Un Nabi &amp; Durood</button>
+            <button class="tab-btn"            role="tab" aria-selected="false" data-panel="p-names">🌹 Asma Un Nabi (PBUH) &amp; Durood</button>
             <button class="tab-btn"            role="tab" aria-selected="false" data-panel="p-obedience">⚡ Obedience to Rasool ﷺ</button>
           </div>
           <button type="button" class="tab-scroll-btn" data-tab-scroll="next" aria-label="Scroll tabs right">
@@ -278,6 +278,32 @@
                 </div>
               </article>
               <div id="r-tribute" class="pdf-reader" aria-hidden="true"></div>
+
+              <article class="book-card" aria-labelledby="book-asbat-title">
+                <div class="book-visual" style="background:#1a3050;" aria-hidden="true">
+                  <div class="book-cover" style="background:#243d6a;">
+                    <span class="cover-urdu" style="font-size:.95rem;">اثباتِ رسالت</span>
+                    <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;">
+                    <span class="cover-eng">Asbat-i-Risalat</span>
+                  </div>
+                </div>
+                <div class="book-content">
+                  <p class="book-num">Book 02</p>
+                  <p class="book-badge">Free Digital Book — English (PDF)</p>
+                  <h3 class="book-title-eng" id="book-asbat-title" style="font-size:1.4rem;margin-bottom:8px;font-family:'Playfair Display',serif;font-weight:700;color:var(--green-deep);">Asbat-i-Risalat</h3>
+                  <h4 class="book-title-eng" style="font-size:.95rem;font-style:italic;color:var(--text-muted);margin-bottom:6px;">Proofs of the Prophethood of Muhammad ﷺ</h4>
+                  <p class="book-author">By <span>Manzoor Muhammad M.A.B.T.</span> — Retired Headmaster &amp; Principal, Pakistan Embassy Secondary School, Jeddah</p>
+                  <p class="book-desc">A scholarly work providing seven rational and logical proofs for the truth of the Prophethood of Muhammad ﷺ and the divine origin of the Quran — addressing doubts raised by Orientalists and Christian missionaries through intellectual and historical arguments. The seven proofs cover: the Miracle of the Quran, Quranic Prophecies, Scientific and Literary Excellence, the Prophet's character as Sadiq and Amin, his Life of Simplicity (Faqr), Spiritual and Physical Miracles, and the Social and Moral Revolution he brought to humanity.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-asbat" data-id="1AKSCZSNvLw-0ip6uctyNe2dISRkl_AEj" data-close-label="Close Reader" aria-expanded="false">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                      <span>Read Online</span>
+                    </button>
+                    <a href="https://drive.google.com/file/d/1AKSCZSNvLw-0ip6uctyNe2dISRkl_AEj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-asbat" class="pdf-reader" aria-hidden="true"></div>
             </div>
           </div></div>
         </div><div class="acc-unit">
@@ -460,6 +486,33 @@
               </div>
 
             </div>
+
+              <article class="book-card" aria-labelledby="book-khutbat-title">
+                <div class="book-visual" style="background:#0d2818;" aria-hidden="true">
+                  <div class="book-cover" style="background:#1a4a2e;">
+                    <span class="cover-urdu" style="font-size:.95rem;">خطباتِ سیرتِ طیبہ</span>
+                    <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;">
+                    <span class="cover-eng">Khutbat-e-Seerat</span>
+                  </div>
+                </div>
+                <div class="book-content">
+                  <p class="book-num">New Addition</p>
+                  <p class="book-badge">Free Digital Book — Urdu (PDF)</p>
+                  <h3 class="book-title-urdu" id="book-khutbat-title" lang="ur" dir="rtl">خطباتِ سیرتِ طیبہ</h3>
+                  <h4 class="book-title-eng">"Khutbat-e-Seerat-e-Tayyiba" — Lectures on the Noble Seerah</h4>
+                  <p class="book-author">By <span>Mufti Salman Mansoorpuri</span></p>
+                  <p class="book-desc">A collection of speeches and lectures providing a comprehensive guide for Muslims to reform their lives by following the Uswah-e-Hasanah (the best example) of the Prophet Muhammad ﷺ. Organized into multiple chapters addressing: the Prophet's character of honesty, simplicity and mercy; the fundamentals of Iman; social ethics and rights of fellow humans; spiritual growth through prayer and remembrance; and the contemporary relevance of the Seerah in addressing modern challenges and misconceptions.</p>
+                  <div class="book-actions">
+                    <button type="button" class="btn-read" data-reader-btn data-reader="r-khutbat" data-id="1O3pLFgN0ueKNWkDRiRd3alaSBXPE-Nfu" data-close-label="Close Reader" aria-expanded="false">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
+                      <span>Read Online</span>
+                    </button>
+                    <a href="https://drive.google.com/file/d/1O3pLFgN0ueKNWkDRiRd3alaSBXPE-Nfu/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
+                  </div>
+                </div>
+              </article>
+              <div id="r-khutbat" class="pdf-reader" aria-hidden="true"></div>
+            </div>
           </div></div>
         </div><div class="acc-unit">
           <button class="acc-hdr" type="button" aria-expanded="false"><span class="acc-hdr-label">📚 Dalail-un-Nubuwwah</span><span class="acc-icon" aria-hidden="true">+</span></button>
@@ -517,7 +570,7 @@
             </div>
           </div></div>
         </div><div class="acc-unit">
-          <button class="acc-hdr" type="button" aria-expanded="false"><span class="acc-hdr-label">🌹 Asma Un Nabi &amp; Durood</span><span class="acc-icon" aria-hidden="true">+</span></button>
+          <button class="acc-hdr" type="button" aria-expanded="false"><span class="acc-hdr-label">🌹 Asma Un Nabi (PBUH) &amp; Durood</span><span class="acc-icon" aria-hidden="true">+</span></button>
           <div class="acc-body"><div class="acc-body-inner">
             <div class="panel" id="p-names">
               <article class="book-card">
