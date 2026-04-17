@@ -68,6 +68,13 @@
     .salawat{font-size:.58em;vertical-align:super;line-height:0;white-space:nowrap}
     .inner-desc{color:rgba(255,255,255,.8);max-width:750px;margin:0 auto;font-size:1.05rem;line-height:1.8}
 
+    /* INTRO STRIP */
+    .intro-strip{background:var(--green-rich);padding:26px 0;border-bottom:1px solid rgba(201,150,58,.2)}
+    .intro-strip .container{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;text-align:center}
+    .intro-stat strong{display:block;font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold-light)}
+    .intro-stat span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+    .intro-div{width:1px;height:36px;background:rgba(255,255,255,.15)}
+    @media(max-width:768px){.intro-div{display:none}}
     /* SECTION */
     .tabs-section{padding:72px 0 88px;background:var(--off-white)}
     .sec-header{text-align:center;margin-bottom:48px}
@@ -95,6 +102,21 @@
     /* ACCORDION HEADER (mobile only) */
     .acc-hdr{display:none}
 
+    /* NESTED SEERAH ACCORDION */
+    .seerah-acc-hdr{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:16px 20px;background:var(--green-deep);color:#fff;border:none;border-radius:8px;cursor:pointer;text-align:left;margin-bottom:0;transition:background .25s ease;-webkit-tap-highlight-color:transparent}
+    .seerah-acc-hdr:hover{background:#0a1f12}
+    .seerah-acc-hdr.is-open{border-radius:8px 8px 0 0;background:#091d10}
+    .seerah-acc-title{flex:1}
+    .seerah-acc-ar{font-family:'Amiri',serif;font-size:1.3rem;color:var(--gold-light);direction:rtl;line-height:1.5;display:block}
+    .seerah-acc-en{font-size:.78rem;color:rgba(255,255,255,.6);font-style:italic;display:block;margin-top:2px}
+    .seerah-acc-author{font-size:.72rem;color:rgba(255,255,255,.4);display:block;margin-top:2px}
+    .seerah-acc-badge{padding:5px 12px;background:rgba(201,150,58,.2);border:1px solid rgba(201,150,58,.4);color:var(--gold-light);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:4px;flex-shrink:0}
+    .seerah-acc-icon{width:28px;height:28px;flex-shrink:0;border-radius:50%;border:1.5px solid rgba(201,150,58,.4);background:rgba(201,150,58,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--gold);transition:transform .3s ease;pointer-events:none}
+    .seerah-acc-hdr.is-open .seerah-acc-icon{transform:rotate(45deg)}
+    .seerah-acc-body{height:0;overflow:hidden;transition:height .35s ease;margin-bottom:16px}
+    .seerah-acc-body.is-open{height:auto}
+    .seerah-acc-unit{margin-bottom:12px}
+    .seerah-acc-unit:last-child{margin-bottom:0}
     /* BOOK CARD */
     .book-card{background:#fff;border-radius:8px;overflow:hidden;display:grid;grid-template-columns:300px 1fr;box-shadow:0 8px 32px rgba(13,40,24,.08);border:1px solid rgba(201,150,58,.15);margin-bottom:32px}
     .book-visual{display:flex;align-items:center;justify-content:center;padding:44px 32px;position:relative;min-height:220px}
@@ -224,6 +246,16 @@
         <p class="inner-desc">Exploring the life, character and blessed family of Prophet Muhammad ﷺ — the final messenger and the greatest mercy to all mankind — through authentic books and biographies.</p>
       </div>
     </header>
+    
+    <div class="intro-strip">
+      <div class="container">
+        <div class="intro-stat"><strong>9</strong><span>Free Books</span></div>
+        <div class="intro-div" aria-hidden="true"></div>
+        <div class="intro-stat"><strong>Urdu &amp; English</strong><span>Languages</span></div>
+        <div class="intro-div" aria-hidden="true"></div>
+        <div class="intro-stat"><strong>Read &amp; Download</strong><span>Free Access</span></div>
+      </div>
+    </div>
 
     <section class="tabs-section" aria-labelledby="books-heading">
       <div class="container">
@@ -310,208 +342,165 @@
           <button class="acc-hdr" type="button" aria-expanded="false"><span class="acc-hdr-label">📖 Seerah Collection</span><span class="acc-icon" aria-hidden="true">+</span></button>
           <div class="acc-body"><div class="acc-body-inner">
             <div class="panel" id="p-seerah">
-              
-              <div class="dalail-header">
-                <div class="dalail-header-text">
-                  <p class="dalail-ar" lang="ur" dir="rtl">سیرت المصطفیٰ ﷺ</p>
-                  <p class="dalail-en">"Seerat-ul-Mustafa ﷺ"</p>
-                  <p class="dalail-author">By Shaykh Muhammad Idrees Kandhelvi &nbsp;·&nbsp; 3 Volumes</p>
-                </div>
-                <span class="dalail-tag">3 Volumes</span>
-              </div>
-              <div class="dalail-vols">
-                <div class="dalail-vol">
-                  <p class="vol-num">Volume 1</p>
-                  <p class="vol-name">Makkan Era &amp; Revelation</p>
-                  <p class="vol-desc">An academic biography covering the Makkan era, noble genealogy, childhood, and the start of divine revelation (Wahi).</p>
-                  <div class="vol-actions">
-                    <button type="button" class="btn-vol" data-reader-btn data-reader="r-sm1" data-id="14hr4zN9es-b95nxV56JZrrQZCloWU8eF" data-close-label="Close" aria-expanded="false">
-                      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                      <span>Read</span>
-                    </button>
-                    <a href="https://drive.google.com/file/d/14hr4zN9es-b95nxV56JZrrQZCloWU8eF/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+
+              <!-- Seerah work 1: Seerat-ul-Mustafa -->
+              <div class="seerah-acc-unit">
+                <button class="seerah-acc-hdr" type="button" data-seerah-acc="seerah-body-1" aria-expanded="false">
+                  <div class="seerah-acc-title">
+                    <span class="seerah-acc-ar" lang="ur" dir="rtl">سیرت المصطفیٰ ﷺ</span>
+                    <span class="seerah-acc-en">"Seerat-ul-Mustafa ﷺ"</span>
+                    <span class="seerah-acc-author">By Shaykh Muhammad Idrees Kandhelvi</span>
+                  </div>
+                  <span class="seerah-acc-badge">3 Volumes</span>
+                  <span class="seerah-acc-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="seerah-acc-body" id="seerah-body-1" aria-hidden="true">
+                  <div class="dalail-vols" style="border-radius:0 0 8px 8px;border-top:none;margin-bottom:0">
+                    <div class="dalail-vol">
+                      <p class="vol-num">Volume 1</p><p class="vol-name">Makkan Era &amp; Revelation</p>
+                      <p class="vol-desc">An academic biography covering the Makkan era, noble genealogy, childhood, and the start of divine revelation (Wahi).</p>
+                      <div class="vol-actions">
+                        <button type="button" class="btn-vol" data-reader-btn data-reader="r-sm1" data-id="14hr4zN9es-b95nxV56JZrrQZCloWU8eF" data-close-label="Close" aria-expanded="false"><svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read</span></button>
+                        <a href="https://drive.google.com/file/d/14hr4zN9es-b95nxV56JZrrQZCloWU8eF/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+                      </div>
+                    </div>
+                    <div class="dalail-vol">
+                      <p class="vol-num">Volume 2</p><p class="vol-name">Migration &amp; Ghazwat</p>
+                      <p class="vol-desc">Details the migration to Madinah, military expeditions (Ghazwat and Saraya), and explains the philosophy of Jihad.</p>
+                      <div class="vol-actions">
+                        <button type="button" class="btn-vol" data-reader-btn data-reader="r-sm2" data-id="1yAd9j9HNbuJ9eI2KtTiodf1hjF4in5qS" data-close-label="Close" aria-expanded="false"><svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read</span></button>
+                        <a href="https://drive.google.com/file/d/1yAd9j9HNbuJ9eI2KtTiodf1hjF4in5qS/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+                      </div>
+                    </div>
+                    <div class="dalail-vol">
+                      <p class="vol-num">Volume 3</p><p class="vol-name">Final Years &amp; Miracles</p>
+                      <p class="vol-desc">Covers the final years, the Conquest of Makkah, the year of delegations (Aam-ul-Wufood), his final pilgrimage, and miracles.</p>
+                      <div class="vol-actions">
+                        <button type="button" class="btn-vol" data-reader-btn data-reader="r-sm3" data-id="1z0SrwkvTwLI8c6z0Ld1flz3jzBXziDdx" data-close-label="Close" aria-expanded="false"><svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read</span></button>
+                        <a href="https://drive.google.com/file/d/1z0SrwkvTwLI8c6z0Ld1flz3jzBXziDdx/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+                      </div>
+                    </div>
+                    <div id="r-sm1" class="vol-reader" aria-hidden="true"></div>
+                    <div id="r-sm2" class="vol-reader" aria-hidden="true"></div>
+                    <div id="r-sm3" class="vol-reader" aria-hidden="true"></div>
                   </div>
                 </div>
-                <div class="dalail-vol">
-                  <p class="vol-num">Volume 2</p>
-                  <p class="vol-name">Migration &amp; Ghazwat</p>
-                  <p class="vol-desc">Details the migration to Madinah, military expeditions (Ghazwat and Saraya), and explains the philosophy of Jihad.</p>
-                  <div class="vol-actions">
-                    <button type="button" class="btn-vol" data-reader-btn data-reader="r-sm2" data-id="1yAd9j9HNbuJ9eI2KtTiodf1hjF4in5qS" data-close-label="Close" aria-expanded="false">
-                      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                      <span>Read</span>
-                    </button>
-                    <a href="https://drive.google.com/file/d/1yAd9j9HNbuJ9eI2KtTiodf1hjF4in5qS/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
-                  </div>
-                </div>
-                <div class="dalail-vol">
-                  <p class="vol-num">Volume 3</p>
-                  <p class="vol-name">Final Years &amp; Miracles</p>
-                  <p class="vol-desc">Covers the final years, the Conquest of Makkah, the year of delegations (Aam-ul-Wufood), his final pilgrimage, and miracles.</p>
-                  <div class="vol-actions">
-                    <button type="button" class="btn-vol" data-reader-btn data-reader="r-sm3" data-id="1z0SrwkvTwLI8c6z0Ld1flz3jzBXziDdx" data-close-label="Close" aria-expanded="false">
-                      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                      <span>Read</span>
-                    </button>
-                    <a href="https://drive.google.com/file/d/1z0SrwkvTwLI8c6z0Ld1flz3jzBXziDdx/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
-                  </div>
-                </div>
-                <div id="r-sm1" class="vol-reader" aria-hidden="true"></div>
-                <div id="r-sm2" class="vol-reader" aria-hidden="true"></div>
-                <div id="r-sm3" class="vol-reader" aria-hidden="true"></div>
               </div>
 
-              <div class="dalail-header">
-                <div class="dalail-header-text">
-                  <p class="dalail-ar" lang="ur" dir="rtl">سیرت سرور کونین ﷺ</p>
-                  <p class="dalail-en">"Seerat-e-Sarwar-e-Konain"</p>
-                  <p class="dalail-author">By Shaykh Ashiq Ilahi Madni &nbsp;·&nbsp; 2 Volumes</p>
-                </div>
-                <span class="dalail-tag">2 Volumes</span>
-              </div>
-              <div class="dalail-vols" style="grid-template-columns: repeat(2, 1fr);">
-                <div class="dalail-vol">
-                  <p class="vol-num">Volume 1</p>
-                  <p class="vol-name">Makkan Period &amp; Mi'raj</p>
-                  <p class="vol-desc">Provides a chronological account of the Makkah period, covering noble lineage, the excavation of Zamzam, and the Mi'raj.</p>
-                  <div class="vol-actions">
-                    <button type="button" class="btn-vol" data-reader-btn data-reader="r-sk1" data-id="1DHbY_VzI6nZomZcCUIMQH59ywKrJIUbj" data-close-label="Close" aria-expanded="false">
-                      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                      <span>Read Online</span>
-                    </button>
-                    <a href="https://drive.google.com/file/d/1DHbY_VzI6nZomZcCUIMQH59ywKrJIUbj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+              <!-- Seerah work 2: Seerat-e-Sarwar-e-Konain -->
+              <div class="seerah-acc-unit">
+                <button class="seerah-acc-hdr" type="button" data-seerah-acc="seerah-body-2" aria-expanded="false">
+                  <div class="seerah-acc-title">
+                    <span class="seerah-acc-ar" lang="ur" dir="rtl">سیرت سرور کونین ﷺ</span>
+                    <span class="seerah-acc-en">"Seerat-e-Sarwar-e-Konain"</span>
+                    <span class="seerah-acc-author">By Shaykh Ashiq Ilahi Madni</span>
+                  </div>
+                  <span class="seerah-acc-badge">2 Volumes</span>
+                  <span class="seerah-acc-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="seerah-acc-body" id="seerah-body-2" aria-hidden="true">
+                  <div class="dalail-vols" style="grid-template-columns:repeat(2,1fr);border-radius:0 0 8px 8px;border-top:none;margin-bottom:0">
+                    <div class="dalail-vol">
+                      <p class="vol-num">Volume 1</p><p class="vol-name">Makkan Period &amp; Mi'raj</p>
+                      <p class="vol-desc">Provides a chronological account of the Makkah period, covering noble lineage, the excavation of Zamzam, and the Mi'raj.</p>
+                      <div class="vol-actions">
+                        <button type="button" class="btn-vol" data-reader-btn data-reader="r-sk1" data-id="1DHbY_VzI6nZomZcCUIMQH59ywKrJIUbj" data-close-label="Close" aria-expanded="false"><svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                        <a href="https://drive.google.com/file/d/1DHbY_VzI6nZomZcCUIMQH59ywKrJIUbj/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+                      </div>
+                    </div>
+                    <div class="dalail-vol">
+                      <p class="vol-num">Volume 2</p><p class="vol-name">Madinah &amp; Conquest</p>
+                      <p class="vol-desc">Focuses on the Madinah period, detailing Ghazwat, letters to world leaders, the Conquest of Makkah, and his final days.</p>
+                      <div class="vol-actions">
+                        <button type="button" class="btn-vol" data-reader-btn data-reader="r-sk2" data-id="15-vJ5eQ4Pil_bBXz4ewClv-5ltEepc8D" data-close-label="Close" aria-expanded="false"><svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                        <a href="https://drive.google.com/file/d/15-vJ5eQ4Pil_bBXz4ewClv-5ltEepc8D/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+                      </div>
+                    </div>
+                    <div id="r-sk1" class="vol-reader" aria-hidden="true"></div>
+                    <div id="r-sk2" class="vol-reader" aria-hidden="true"></div>
                   </div>
                 </div>
-                <div class="dalail-vol">
-                  <p class="vol-num">Volume 2</p>
-                  <p class="vol-name">Madinah &amp; Conquest</p>
-                  <p class="vol-desc">Focuses on the Madinah period, detailing Ghazwat, letters to world leaders, the Conquest of Makkah, and his final days.</p>
-                  <div class="vol-actions">
-                    <button type="button" class="btn-vol" data-reader-btn data-reader="r-sk2" data-id="15-vJ5eQ4Pil_bBXz4ewClv-5ltEepc8D" data-close-label="Close" aria-expanded="false">
-                      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                      <span>Read Online</span>
-                    </button>
-                    <a href="https://drive.google.com/file/d/15-vJ5eQ4Pil_bBXz4ewClv-5ltEepc8D/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
-                  </div>
-                </div>
-                <div id="r-sk1" class="vol-reader" aria-hidden="true"></div>
-                <div id="r-sk2" class="vol-reader" aria-hidden="true"></div>
               </div>
 
-              <div class="dalail-header">
-                <div class="dalail-header-text">
-                  <p class="dalail-ar" lang="ur" dir="rtl">جدید سیرت النبی ﷺ</p>
-                  <p class="dalail-en">"Jadeed Seerat-un-Nabi ﷺ"</p>
-                  <p class="dalail-author">By Muhammad Ishaq Multani &nbsp;·&nbsp; 3 Volumes</p>
-                </div>
-                <span class="dalail-tag">3 Volumes</span>
-              </div>
-              <div class="dalail-vols">
-                <div class="dalail-vol">
-                  <p class="vol-num">Volume 1</p>
-                  <p class="vol-name">Birth &amp; Early Hardships</p>
-                  <p class="vol-desc">Covers the Prophet's ﷺ life from birth through the early days of the call in Makkah, focusing on early converts and initial hardships.</p>
-                  <div class="vol-actions">
-                    <button type="button" class="btn-vol" data-reader-btn data-reader="r-jsn1" data-id="1Hzm7IZ99gpil7rpWM5VrwXj3L3oR5Id3" data-close-label="Close" aria-expanded="false">
-                      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                      <span>Read</span>
-                    </button>
-                    <a href="https://drive.google.com/file/d/1Hzm7IZ99gpil7rpWM5VrwXj3L3oR5Id3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+              <!-- Seerah work 3: Jadeed Seerat-un-Nabi -->
+              <div class="seerah-acc-unit">
+                <button class="seerah-acc-hdr" type="button" data-seerah-acc="seerah-body-3" aria-expanded="false">
+                  <div class="seerah-acc-title">
+                    <span class="seerah-acc-ar" lang="ur" dir="rtl">جدید سیرت النبی ﷺ</span>
+                    <span class="seerah-acc-en">"Jadeed Seerat-un-Nabi ﷺ"</span>
+                    <span class="seerah-acc-author">By Muhammad Ishaq Multani</span>
+                  </div>
+                  <span class="seerah-acc-badge">3 Volumes</span>
+                  <span class="seerah-acc-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="seerah-acc-body" id="seerah-body-3" aria-hidden="true">
+                  <div class="dalail-vols" style="border-radius:0 0 8px 8px;border-top:none;margin-bottom:0">
+                    <div class="dalail-vol">
+                      <p class="vol-num">Volume 1</p><p class="vol-name">Birth &amp; Early Hardships</p>
+                      <p class="vol-desc">Covers the Prophet's ﷺ life from birth through the early days of the call in Makkah, focusing on early converts and initial hardships.</p>
+                      <div class="vol-actions">
+                        <button type="button" class="btn-vol" data-reader-btn data-reader="r-jsn1" data-id="1Hzm7IZ99gpil7rpWM5VrwXj3L3oR5Id3" data-close-label="Close" aria-expanded="false"><svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read</span></button>
+                        <a href="https://drive.google.com/file/d/1Hzm7IZ99gpil7rpWM5VrwXj3L3oR5Id3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+                      </div>
+                    </div>
+                    <div class="dalail-vol">
+                      <p class="vol-num">Volume 2</p><p class="vol-name">Madani Period &amp; Battles</p>
+                      <p class="vol-desc">Details the Madani period, including the Hijrah, establishment of Islamic society, and key battles like Badr and Uhud.</p>
+                      <div class="vol-actions">
+                        <button type="button" class="btn-vol" data-reader-btn data-reader="r-jsn2" data-id="1UOiVWJijEIsRabpB__JufDUIaVc46Lxu" data-close-label="Close" aria-expanded="false"><svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read</span></button>
+                        <a href="https://drive.google.com/file/d/1UOiVWJijEIsRabpB__JufDUIaVc46Lxu/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+                      </div>
+                    </div>
+                    <div class="dalail-vol">
+                      <p class="vol-num">Volume 3</p><p class="vol-name">Character &amp; Miracles</p>
+                      <p class="vol-desc">Focuses on the physical description (Hulyah), character, and personal life, including clothing, daily routine, and miracles.</p>
+                      <div class="vol-actions">
+                        <button type="button" class="btn-vol" data-reader-btn data-reader="r-jsn3" data-id="16KGGrvAr6_dynVszCDryZro8tdfjHdbv" data-close-label="Close" aria-expanded="false"><svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read</span></button>
+                        <a href="https://drive.google.com/file/d/16KGGrvAr6_dynVszCDryZro8tdfjHdbv/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+                      </div>
+                    </div>
+                    <div id="r-jsn1" class="vol-reader" aria-hidden="true"></div>
+                    <div id="r-jsn2" class="vol-reader" aria-hidden="true"></div>
+                    <div id="r-jsn3" class="vol-reader" aria-hidden="true"></div>
                   </div>
                 </div>
-                <div class="dalail-vol">
-                  <p class="vol-num">Volume 2</p>
-                  <p class="vol-name">Madani Period &amp; Battles</p>
-                  <p class="vol-desc">Details the Madani period, including the Hijrah, establishment of Islamic society, and key battles like Badr and Uhud.</p>
-                  <div class="vol-actions">
-                    <button type="button" class="btn-vol" data-reader-btn data-reader="r-jsn2" data-id="1UOiVWJijEIsRabpB__JufDUIaVc46Lxu" data-close-label="Close" aria-expanded="false">
-                      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                      <span>Read</span>
-                    </button>
-                    <a href="https://drive.google.com/file/d/1UOiVWJijEIsRabpB__JufDUIaVc46Lxu/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
-                  </div>
-                </div>
-                <div class="dalail-vol">
-                  <p class="vol-num">Volume 3</p>
-                  <p class="vol-name">Character &amp; Miracles</p>
-                  <p class="vol-desc">Focuses on the physical description (Hulyah), character, and personal life, including clothing, daily routine, and miracles.</p>
-                  <div class="vol-actions">
-                    <button type="button" class="btn-vol" data-reader-btn data-reader="r-jsn3" data-id="16KGGrvAr6_dynVszCDryZro8tdfjHdbv" data-close-label="Close" aria-expanded="false">
-                      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                      <span>Read</span>
-                    </button>
-                    <a href="https://drive.google.com/file/d/16KGGrvAr6_dynVszCDryZro8tdfjHdbv/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
-                  </div>
-                </div>
-                <div id="r-jsn1" class="vol-reader" aria-hidden="true"></div>
-                <div id="r-jsn2" class="vol-reader" aria-hidden="true"></div>
-                <div id="r-jsn3" class="vol-reader" aria-hidden="true"></div>
               </div>
 
-              <div class="dalail-header">
-                <div class="dalail-header-text">
-                  <p class="dalail-ar" lang="ur" dir="rtl">سیرت النبی ﷺ قدم بقدم</p>
-                  <p class="dalail-en">"Seerat-un-Nabi ﷺ Qadam Ba Qadam"</p>
-                  <p class="dalail-author">By Abdullah Farani &nbsp;·&nbsp; 2 Volumes</p>
-                </div>
-                <span class="dalail-tag">2 Volumes</span>
-              </div>
-              <div class="dalail-vols" style="grid-template-columns: repeat(2, 1fr);">
-                <div class="dalail-vol">
-                  <p class="vol-num">Volume 1</p>
-                  <p class="vol-name">Birth to Hijrah</p>
-                  <p class="vol-desc">Designed for easy reading, this volume covers the Prophet's ﷺ life from birth until the Hijrah to Madinah in a simple format.</p>
-                  <div class="vol-actions">
-                    <button type="button" class="btn-vol" data-reader-btn data-reader="r-sq1" data-id="1ugT83uXl3sZ6tlRYRv7MEsW_sbaLqSNC" data-close-label="Close" aria-expanded="false">
-                      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                      <span>Read Online</span>
-                    </button>
-                    <a href="https://drive.google.com/file/d/1ugT83uXl3sZ6tlRYRv7MEsW_sbaLqSNC/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+              <!-- Seerah work 4: Seerat-un-Nabi Qadam Ba Qadam -->
+              <div class="seerah-acc-unit">
+                <button class="seerah-acc-hdr" type="button" data-seerah-acc="seerah-body-4" aria-expanded="false">
+                  <div class="seerah-acc-title">
+                    <span class="seerah-acc-ar" lang="ur" dir="rtl">سیرت النبی ﷺ قدم بقدم</span>
+                    <span class="seerah-acc-en">"Seerat-un-Nabi ﷺ Qadam Ba Qadam"</span>
+                    <span class="seerah-acc-author">By Abdullah Farani</span>
+                  </div>
+                  <span class="seerah-acc-badge">2 Volumes</span>
+                  <span class="seerah-acc-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="seerah-acc-body" id="seerah-body-4" aria-hidden="true">
+                  <div class="dalail-vols" style="grid-template-columns:repeat(2,1fr);border-radius:0 0 8px 8px;border-top:none;margin-bottom:0">
+                    <div class="dalail-vol">
+                      <p class="vol-num">Volume 1</p><p class="vol-name">Birth to Hijrah</p>
+                      <p class="vol-desc">Designed for easy reading, this volume covers the Prophet's ﷺ life from birth until the Hijrah to Madinah in a simple format.</p>
+                      <div class="vol-actions">
+                        <button type="button" class="btn-vol" data-reader-btn data-reader="r-sq1" data-id="1ugT83uXl3sZ6tlRYRv7MEsW_sbaLqSNC" data-close-label="Close" aria-expanded="false"><svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                        <a href="https://drive.google.com/file/d/1ugT83uXl3sZ6tlRYRv7MEsW_sbaLqSNC/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+                      </div>
+                    </div>
+                    <div class="dalail-vol">
+                      <p class="vol-num">Volume 2</p><p class="vol-name">Arrival in Madinah</p>
+                      <p class="vol-desc">Continues the narrative with the arrival in Madinah, the construction of the Prophet's Mosque, and major Madani events.</p>
+                      <div class="vol-actions">
+                        <button type="button" class="btn-vol" data-reader-btn data-reader="r-sq2" data-id="1i2BFnvfr3s3QQsaQg6HoF91wRjghUSii" data-close-label="Close" aria-expanded="false"><svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span>Read Online</span></button>
+                        <a href="https://drive.google.com/file/d/1i2BFnvfr3s3QQsaQg6HoF91wRjghUSii/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
+                      </div>
+                    </div>
+                    <div id="r-sq1" class="vol-reader" aria-hidden="true"></div>
+                    <div id="r-sq2" class="vol-reader" aria-hidden="true"></div>
                   </div>
                 </div>
-                <div class="dalail-vol">
-                  <p class="vol-num">Volume 2</p>
-                  <p class="vol-name">Arrival in Madinah</p>
-                  <p class="vol-desc">Continues the narrative with the arrival in Madinah, the construction of the Prophet's Mosque, and major Madani events.</p>
-                  <div class="vol-actions">
-                    <button type="button" class="btn-vol" data-reader-btn data-reader="r-sq2" data-id="1i2BFnvfr3s3QQsaQg6HoF91wRjghUSii" data-close-label="Close" aria-expanded="false">
-                      <svg width="15" height="15" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                      <span>Read Online</span>
-                    </button>
-                    <a href="https://drive.google.com/file/d/1i2BFnvfr3s3QQsaQg6HoF91wRjghUSii/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-vol-dl">↓ PDF</a>
-                  </div>
-                </div>
-                <div id="r-sq1" class="vol-reader" aria-hidden="true"></div>
-                <div id="r-sq2" class="vol-reader" aria-hidden="true"></div>
               </div>
 
-            </div>
-
-              <article class="book-card" aria-labelledby="book-khutbat-title">
-                <div class="book-visual" style="background:#0d2818;" aria-hidden="true">
-                  <div class="book-cover" style="background:#1a4a2e;">
-                    <span class="cover-urdu" style="font-size:.95rem;">خطباتِ سیرتِ طیبہ</span>
-                    <hr style="width:36px;border:none;border-top:1px solid rgba(255,255,255,.3);margin:8px 0;">
-                    <span class="cover-eng">Khutbat-e-Seerat</span>
-                  </div>
-                </div>
-                <div class="book-content">
-                  <p class="book-num">New Addition</p>
-                  <p class="book-badge">Free Digital Book — Urdu (PDF)</p>
-                  <h3 class="book-title-urdu" id="book-khutbat-title" lang="ur" dir="rtl">خطباتِ سیرتِ طیبہ</h3>
-                  <h4 class="book-title-eng">"Khutbat-e-Seerat-e-Tayyiba" — Lectures on the Noble Seerah</h4>
-                  <p class="book-author">By <span>Mufti Salman Mansoorpuri</span></p>
-                  <p class="book-desc">A collection of speeches and lectures providing a comprehensive guide for Muslims to reform their lives by following the Uswah-e-Hasanah (the best example) of the Prophet Muhammad ﷺ. Organized into multiple chapters addressing: the Prophet's character of honesty, simplicity and mercy; the fundamentals of Iman; social ethics and rights of fellow humans; spiritual growth through prayer and remembrance; and the contemporary relevance of the Seerah in addressing modern challenges and misconceptions.</p>
-                  <div class="book-actions">
-                    <button type="button" class="btn-read" data-reader-btn data-reader="r-khutbat" data-id="1O3pLFgN0ueKNWkDRiRd3alaSBXPE-Nfu" data-close-label="Close Reader" aria-expanded="false">
-                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>
-                      <span>Read Online</span>
-                    </button>
-                    <a href="https://drive.google.com/file/d/1O3pLFgN0ueKNWkDRiRd3alaSBXPE-Nfu/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-dl">Download PDF</a>
-                  </div>
-                </div>
-              </article>
-              <div id="r-khutbat" class="pdf-reader" aria-hidden="true"></div>
             </div>
           </div></div>
         </div><div class="acc-unit">
@@ -832,6 +821,38 @@ Profiles Section -->
     });
 
   })();
+    /* ── Nested Seerah Accordions ── */
+    document.querySelectorAll('.seerah-acc-hdr').forEach(function(hdr) {
+      hdr.addEventListener('click', function() {
+        var bodyId = this.getAttribute('data-seerah-acc');
+        var body   = document.getElementById(bodyId);
+        var isOpen = this.classList.contains('is-open');
+
+        /* Close all nested */
+        document.querySelectorAll('.seerah-acc-hdr.is-open').forEach(function(h) {
+          h.classList.remove('is-open');
+          h.setAttribute('aria-expanded', 'false');
+          var b = document.getElementById(h.getAttribute('data-seerah-acc'));
+          if (b) { b.classList.remove('is-open'); b.setAttribute('aria-hidden', 'true'); b.style.height = '0'; }
+        });
+
+        if (!isOpen) {
+          this.classList.add('is-open');
+          this.setAttribute('aria-expanded', 'true');
+          body.setAttribute('aria-hidden', 'false');
+          body.style.height = body.scrollHeight + 'px';
+          body.classList.add('is-open');
+          body.addEventListener('transitionend', function once() {
+            if (body.classList.contains('is-open')) body.style.height = 'auto';
+            body.removeEventListener('transitionend', once);
+          });
+          /* Re-adjust outer accordion */
+          var outer = body.closest('.acc-body');
+          if (outer) setTimeout(function() { outer.style.height = outer.scrollHeight + 'px'; }, 50);
+        }
+      });
+    });
+
   </script>
   <script src="components.js"></script>
 </body>
