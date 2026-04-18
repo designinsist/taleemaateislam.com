@@ -432,6 +432,200 @@
     scheduleNextMidnight();
   }
 
+  /* ── Book sharing (all pages with .book-card except connect-with-allah) ── */
+  function initBookSharing() {
+    var pageName = window.location.pathname.split('/').pop() || 'index.html';
+    if (pageName === 'connect-with-allah.html') return;
+
+    var entries = document.querySelectorAll('.book-card, .dalail-vol');
+    if (!entries.length) return;
+
+    var toastTimer = null;
+
+    function ensureStyles() {
+      if (document.getElementById('book-share-style')) return;
+      var style = document.createElement('style');
+      style.id = 'book-share-style';
+      style.textContent =
+        '.btn-share-global{background:transparent;cursor:pointer;}' +
+        '.btn-share-global.is-copied{background:rgba(30,92,56,0.12);border-color:rgba(30,92,56,0.45);color:#1e5c38;}' +
+        '.book-share-highlight{border-color:rgba(201,150,58,0.78)!important;box-shadow:0 12px 34px rgba(201,150,58,0.22),0 8px 28px rgba(13,40,24,0.12)!important;animation:bookSharePulse 1.3s ease;}' +
+        '@keyframes bookSharePulse{0%{transform:translateY(0);box-shadow:0 0 0 rgba(201,150,58,0)}35%{transform:translateY(-2px);box-shadow:0 0 0 8px rgba(201,150,58,0.14)}100%{transform:translateY(0);box-shadow:0 0 0 rgba(201,150,58,0)}}' +
+        '.book-share-toast{position:fixed;left:50%;bottom:18px;transform:translate(-50%,12px);background:#112f1d;color:#fff;border:1px solid rgba(201,150,58,0.45);border-radius:999px;padding:8px 14px;font-size:0.76rem;letter-spacing:0.06em;text-transform:uppercase;opacity:0;visibility:hidden;transition:all 0.24s ease;z-index:1200;pointer-events:none;}' +
+        '.book-share-toast.is-visible{opacity:1;visibility:visible;transform:translate(-50%,0);}';
+      document.head.appendChild(style);
+    }
+
+    function slugify(text) {
+      return String(text || '')
+        .toLowerCase()
+        .replace(/[\"'.,()!?/\\&]/g, ' ')
+        .replace(/[^a-z0-9\s-]/g, '')
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+    }
+
+    function getBookTitle(card) {
+      var titleNode =
+        card.querySelector('.book-title-eng') ||
+        card.querySelector('.book-title-urdu') ||
+        card.querySelector('.vol-name') ||
+        card.querySelector('h3') ||
+        card.querySelector('h4');
+      return titleNode ? titleNode.textContent : '';
+    }
+
+    function getBookNumber(card, fallbackIndex) {
+      var numNode = card.querySelector('.book-num');
+      if (!numNode) numNode = card.querySelector('.vol-num');
+      if (!numNode) return fallbackIndex + 1;
+      var m = (numNode.textContent || '').match(/\d+/);
+      return m ? m[0] : fallbackIndex + 1;
+    }
+
+    function ensureToast() {
+      var toast = document.getElementById('bookShareToast');
+      if (toast) return toast;
+      toast = document.createElement('div');
+      toast.id = 'bookShareToast';
+      toast.className = 'book-share-toast';
+      toast.setAttribute('aria-live', 'polite');
+      toast.setAttribute('aria-atomic', 'true');
+      document.body.appendChild(toast);
+      return toast;
+    }
+
+    function showToast(message) {
+      var toast = ensureToast();
+      toast.textContent = message;
+      toast.classList.add('is-visible');
+      if (toastTimer) window.clearTimeout(toastTimer);
+      toastTimer = window.setTimeout(function () {
+        toast.classList.remove('is-visible');
+      }, 1600);
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise(function (resolve, reject) {
+        try {
+          var area = document.createElement('textarea');
+          area.value = text;
+          area.setAttribute('readonly', '');
+          area.style.position = 'absolute';
+          area.style.left = '-9999px';
+          document.body.appendChild(area);
+          area.select();
+          var ok = document.execCommand('copy');
+          document.body.removeChild(area);
+          if (ok) resolve(); else reject(new Error('copy failed'));
+        } catch (err) {
+          reject(err);
+        }
+      });
+    }
+
+    function ensureCardIdsAndButtons() {
+      var usedIds = new Set();
+      document.querySelectorAll('.book-card[id]').forEach(function (card) {
+        usedIds.add(card.id);
+      });
+
+      entries.forEach(function (card, idx) {
+        if (!card.id) {
+          var bookNumber = getBookNumber(card, idx);
+          var baseTitle = slugify(getBookTitle(card)) || 'book';
+          var baseId = 'book-' + String(bookNumber).padStart(2, '0') + '-' + baseTitle;
+          var finalId = baseId;
+          var suffix = 2;
+          while (usedIds.has(finalId)) {
+            finalId = baseId + '-' + suffix;
+            suffix += 1;
+          }
+          card.id = finalId;
+          usedIds.add(finalId);
+        }
+
+        var actions = card.querySelector('.book-actions') || card.querySelector('.vol-actions');
+        if (!actions || actions.querySelector('.btn-share-global, .btn-share')) return;
+
+        var shareBtn = document.createElement('button');
+        shareBtn.type = 'button';
+        shareBtn.className = 'btn-dl btn-share-global';
+        shareBtn.setAttribute('aria-label', 'Share this book');
+        shareBtn.textContent = 'Share Book';
+        shareBtn.addEventListener('click', function () {
+          var link = window.location.origin + window.location.pathname + '#' + card.id;
+          copyText(link).then(function () {
+            shareBtn.classList.add('is-copied');
+            shareBtn.textContent = 'Copied!';
+            showToast('Link copied');
+            window.setTimeout(function () {
+              shareBtn.classList.remove('is-copied');
+              shareBtn.textContent = 'Share Book';
+            }, 1600);
+          }).catch(function () {
+            showToast('Copy failed');
+          });
+        });
+        actions.appendChild(shareBtn);
+      });
+    }
+
+    function revealTarget(card) {
+      var panel = card.closest('.panel');
+      if (panel && panel.id) {
+        var tabBtn = document.querySelector('.tab-btn[data-panel="' + panel.id + '"]');
+        if (tabBtn) tabBtn.click();
+      }
+
+      if (window.innerWidth <= 768) {
+        var outerAcc = card.closest('.acc-unit');
+        if (outerAcc) {
+          var outerHdr = outerAcc.querySelector('.acc-hdr');
+          if (outerHdr && !outerHdr.classList.contains('is-open')) outerHdr.click();
+        }
+
+        var seerahBody = card.closest('.seerah-acc-body');
+        if (seerahBody && !seerahBody.classList.contains('is-open') && seerahBody.id) {
+          var seerahHdr = document.querySelector('.seerah-acc-hdr[data-seerah-acc="' + seerahBody.id + '"]');
+          if (seerahHdr && !seerahHdr.classList.contains('is-open')) seerahHdr.click();
+        }
+      }
+    }
+
+    function focusHashBook() {
+      if (!window.location.hash) return;
+      var id = window.location.hash.slice(1);
+      if (!id) return;
+      var target = document.getElementById(id);
+      if (!target) return;
+      if (!target.classList.contains('book-card') && !target.classList.contains('dalail-vol')) return;
+
+      revealTarget(target);
+
+      window.setTimeout(function () {
+        document.querySelectorAll('.book-share-highlight').forEach(function (el) {
+          el.classList.remove('book-share-highlight');
+        });
+        target.classList.add('book-share-highlight');
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        window.setTimeout(function () {
+          target.classList.remove('book-share-highlight');
+        }, 2400);
+      }, 180);
+    }
+
+    ensureStyles();
+    ensureCardIdsAndButtons();
+    focusHashBook();
+    window.addEventListener('hashchange', focusHashBook);
+  }
+
   /* ── Copyright year ── */
   function initCopyrightYear() {
     var el = document.getElementById('current-year');
@@ -440,6 +634,8 @@
 
   /* ── Bootstrap: load both partials, then initialise ── */
   function init() {
+    initBookSharing();
+
     var headerPromise = loadFragment('site-header', 'header.partial');
     var footerPromise = loadFragment('site-footer', 'footer.partial');
 

@@ -31,6 +31,52 @@ main { flex: 1; }
 .divider-gold .line { height: 1px; background: var(--border); flex: 1; max-width: 60px; }
 .divider-gold .diamond { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
 
+/* ═══ BOOK ACTION ROWS ═══ */
+.book-actions,
+.vol-actions {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+.book-actions > *,
+.vol-actions > * {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.book-actions .btn-read,
+.book-actions .btn-dl,
+.book-actions .btn-share,
+.book-actions .btn-share-global,
+.book-actions .btn-vol,
+.book-actions .btn-vol-dl,
+.vol-actions .btn-read,
+.vol-actions .btn-dl,
+.vol-actions .btn-share,
+.vol-actions .btn-share-global,
+.vol-actions .btn-vol,
+.vol-actions .btn-vol-dl {
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+@media (max-width: 480px) {
+  .book-actions,
+  .vol-actions {
+    flex-direction: column !important;
+  }
+
+  .book-actions > *,
+  .vol-actions > * {
+    width: 100% !important;
+  }
+}
+
 /* ═══ COMPONENT PLACEHOLDERS ═══ */
 /* display:contents makes the wrapper div invisible to layout,
    so the injected <nav> and <footer> act as direct body children —

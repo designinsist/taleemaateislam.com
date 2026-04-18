@@ -12,14 +12,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://taleemaateislam.com/connect-with-allah.html" />
   <meta property="og:title" content="Connect with Allah — 16 Free Islamic Books | Taleemaat-e-Islam" />
-  <meta property="og:description" content="Read and download 16 free Islamic books in Urdu and English to strengthen your faith and connection with Allah, presented with authentic guidance rooted in Sunni scholarly legacy." />
+  <meta property="og:description" content="Strengthen your connection with Allah through 16 free Islamic books in Urdu and English, presented with authentic Sunni guidance by Taleemaat-e-Islam." />
   <meta property="og:site_name" content="Taleemaat-e-Islam" />
   <meta property="og:image" content="https://taleemaateislam.com/images/android-chrome-512x512.png" />
   <meta property="og:image:width" content="512" />
   <meta property="og:image:height" content="512" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Connect with Allah — 16 Free Islamic Books | Taleemaat-e-Islam" />
-  <meta name="twitter:description" content="16 free Islamic books in Urdu and English on faith, prayer, science and spirituality, aligned with Ahl-us-Sunnat wal-Jama'at guidance." />
+  <meta name="twitter:description" content="Strengthen your connection with Allah through 16 free Islamic books in Urdu and English, presented with authentic Sunni guidance by Taleemaat-e-Islam." />
   <meta name="twitter:image" content="https://taleemaateislam.com/images/android-chrome-512x512.png" />
   <meta name="twitter:image:alt" content="Connect with Allah" />
   <script type="application/ld+json">
@@ -117,6 +117,46 @@
     .btn-read:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 5px 15px rgba(201,150,58,.3)}
     .btn-dl{padding:13px 26px;border:1.5px solid var(--border);color:var(--green-mid);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;border-radius:var(--radius);transition:all .3s ease;display:inline-block;font-family:'Nunito',sans-serif}
     .btn-dl:hover{background:rgba(201,150,58,.06);border-color:var(--gold)}
+    .btn-share{background:transparent;cursor:pointer}
+    .btn-share.is-copied{background:rgba(30,92,56,.12);border-color:rgba(30,92,56,.45);color:var(--green-rich)}
+
+    .book-card.shared-highlight{
+      border-color:rgba(201,150,58,.78);
+      box-shadow:0 12px 34px rgba(201,150,58,.22),0 8px 28px rgba(13,40,24,.12);
+      animation:sharePulse 1.3s ease;
+    }
+
+    @keyframes sharePulse{
+      0%{transform:translateY(0);box-shadow:0 0 0 rgba(201,150,58,0)}
+      35%{transform:translateY(-2px);box-shadow:0 0 0 8px rgba(201,150,58,.14)}
+      100%{transform:translateY(0);box-shadow:0 0 0 rgba(201,150,58,0)}
+    }
+
+    .share-toast{
+      position:fixed;
+      left:50%;
+      bottom:18px;
+      transform:translate(-50%,12px);
+      background:#112f1d;
+      color:#fff;
+      border:1px solid rgba(201,150,58,.45);
+      border-radius:999px;
+      padding:8px 14px;
+      font-size:.76rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      opacity:0;
+      visibility:hidden;
+      transition:all .24s ease;
+      z-index:1200;
+      pointer-events:none;
+    }
+
+    .share-toast.is-visible{
+      opacity:1;
+      visibility:visible;
+      transform:translate(-50%,0);
+    }
 
     /* PDF READER */
     .pdf-reader{margin-top:-12px;margin-bottom:28px;width:100%;height:0;opacity:0;overflow:hidden;transition:height .45s ease,opacity .4s ease;border-radius:8px;border:1px solid var(--border);background:#fff}
@@ -515,6 +555,186 @@
   (function () {
     'use strict';
 
+    var SHARE_TOAST_TIMEOUT = null;
+
+    function slugify(text) {
+      return String(text || '')
+        .toLowerCase()
+        .replace(/['".,()!?/\\&]/g, ' ')
+        .replace(/[^a-z0-9\s-]/g, '')
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+    }
+
+    function findOrCreateShareToast() {
+      var toast = document.getElementById('shareToast');
+      if (toast) return toast;
+      toast = document.createElement('div');
+      toast.id = 'shareToast';
+      toast.className = 'share-toast';
+      toast.setAttribute('aria-live', 'polite');
+      toast.setAttribute('aria-atomic', 'true');
+      document.body.appendChild(toast);
+      return toast;
+    }
+
+    function showToast(message) {
+      var toast = findOrCreateShareToast();
+      toast.textContent = message;
+      toast.classList.add('is-visible');
+      if (SHARE_TOAST_TIMEOUT) window.clearTimeout(SHARE_TOAST_TIMEOUT);
+      SHARE_TOAST_TIMEOUT = window.setTimeout(function () {
+        toast.classList.remove('is-visible');
+      }, 1600);
+    }
+
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+      }
+
+      return new Promise(function (resolve, reject) {
+        try {
+          var area = document.createElement('textarea');
+          area.value = text;
+          area.setAttribute('readonly', '');
+          area.style.position = 'absolute';
+          area.style.left = '-9999px';
+          document.body.appendChild(area);
+          area.select();
+          var ok = document.execCommand('copy');
+          document.body.removeChild(area);
+          if (ok) resolve(); else reject(new Error('copy failed'));
+        } catch (err) {
+          reject(err);
+        }
+      });
+    }
+
+    function activatePanel(panelId) {
+      if (!panelId) return;
+
+      document.querySelectorAll('.tab-btn').forEach(function (b) {
+        var active = b.getAttribute('data-panel') === panelId;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+
+      document.querySelectorAll('.panel').forEach(function (p) {
+        p.classList.toggle('is-active', p.id === panelId);
+      });
+    }
+
+    function openAccordionUnit(targetUnit) {
+      var units = document.querySelectorAll('.acc-unit');
+      units.forEach(function (u) {
+        var h = u.querySelector('.acc-hdr');
+        var b = u.querySelector('.acc-body');
+        var inner = u.querySelector('.acc-body-inner');
+        var isTarget = u === targetUnit;
+        if (h) {
+          h.classList.toggle('is-open', isTarget);
+          h.setAttribute('aria-expanded', isTarget ? 'true' : 'false');
+        }
+        if (b) {
+          if (isTarget && inner) {
+            b.style.height = inner.scrollHeight + 'px';
+            window.setTimeout(function () {
+              if (h && h.classList.contains('is-open')) b.style.height = 'auto';
+            }, 220);
+          } else {
+            b.style.height = '0';
+          }
+        }
+      });
+    }
+
+    function revealBookCard(card) {
+      if (!card) return;
+      var panel = card.closest('.panel');
+      if (panel && panel.id) activatePanel(panel.id);
+      var unit = card.closest('.acc-unit');
+      if (window.innerWidth <= 768 && unit) openAccordionUnit(unit);
+    }
+
+    function highlightSharedCard(card) {
+      document.querySelectorAll('.book-card.shared-highlight').forEach(function (c) {
+        c.classList.remove('shared-highlight');
+      });
+      card.classList.add('shared-highlight');
+      window.setTimeout(function () {
+        card.classList.remove('shared-highlight');
+      }, 2400);
+    }
+
+    function focusHashBook() {
+      if (!window.location.hash) return;
+      var id = window.location.hash.slice(1);
+      if (!id) return;
+      var target = document.getElementById(id);
+      if (!target || !target.classList.contains('book-card')) return;
+
+      revealBookCard(target);
+      window.setTimeout(function () {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        highlightSharedCard(target);
+      }, 120);
+    }
+
+    function buildBookAnchorsAndShareButtons() {
+      var usedIds = new Set();
+      document.querySelectorAll('.book-card[id]').forEach(function (card) {
+        usedIds.add(card.id);
+      });
+
+      var cards = document.querySelectorAll('.book-card');
+      cards.forEach(function (card, idx) {
+        if (!card.id) {
+          var numNode = card.querySelector('.book-num');
+          var titleNode = card.querySelector('.book-title-eng') || card.querySelector('.book-title-urdu');
+          var bookNum = (numNode && (numNode.textContent.match(/\d+/) || [])[0]) || String(idx + 1);
+          var titleSlug = slugify(titleNode ? titleNode.textContent : 'book');
+          if (!titleSlug) titleSlug = 'book';
+
+          var baseId = 'book-' + bookNum + '-' + titleSlug;
+          var finalId = baseId;
+          var n = 2;
+          while (usedIds.has(finalId)) {
+            finalId = baseId + '-' + n;
+            n += 1;
+          }
+          card.id = finalId;
+          usedIds.add(finalId);
+        }
+
+        var actions = card.querySelector('.book-actions');
+        if (!actions || actions.querySelector('.btn-share')) return;
+
+        var shareButton = document.createElement('button');
+        shareButton.type = 'button';
+        shareButton.className = 'btn-dl btn-share';
+        shareButton.setAttribute('aria-label', 'Share this book');
+        shareButton.textContent = 'Share Book';
+        shareButton.addEventListener('click', function () {
+          var shareUrl = window.location.origin + window.location.pathname + '#' + card.id;
+          copyText(shareUrl).then(function () {
+            shareButton.classList.add('is-copied');
+            shareButton.textContent = 'Copied!';
+            showToast('Link copied');
+            window.setTimeout(function () {
+              shareButton.classList.remove('is-copied');
+              shareButton.textContent = 'Share Book';
+            }, 1600);
+          }).catch(function () {
+            showToast('Copy failed');
+          });
+        });
+
+        actions.appendChild(shareButton);
+      });
+    }
+
     /* ── Close all open PDF readers ── */
     function closeReaders() {
       document.querySelectorAll('.pdf-reader.is-open').forEach(function (r) {
@@ -597,6 +817,10 @@
     } else {
       initAccordion();
     }
+
+    buildBookAnchorsAndShareButtons();
+    focusHashBook();
+    window.addEventListener('hashchange', focusHashBook);
 
     /* ── PDF READER BUTTONS (event delegation — one listener for all) ── */
     document.addEventListener('click', function (e) {
