@@ -1,5 +1,62 @@
 <!-- ═══ MASTER FOOTER ═══ -->
 <footer>
+  <div class="social-sticky-rail" id="socialStickyRail" aria-label="Social media links">
+    <button type="button" class="social-sticky-toggle" id="socialStickyToggle" aria-controls="socialStickyPanel" aria-expanded="false" aria-label="Open social media links">
+      <span class="social-sticky-toggle-copy">
+        <span class="social-sticky-kicker">Follow</span>
+        <span class="social-sticky-title">Taleemaat-e-Islam</span>
+      </span>
+      <span class="social-sticky-toggle-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      </span>
+    </button>
+
+    <div class="social-sticky-panel" id="socialStickyPanel" aria-hidden="true">
+      <div class="social-sticky-panel-header">
+        <div class="social-sticky-panel-heading">
+          <span class="social-sticky-panel-badge" aria-hidden="true">Live</span>
+          <span class="social-sticky-panel-title">Our social platforms</span>
+        </div>
+        <button type="button" class="social-sticky-close" id="socialStickyClose" aria-label="Close social media links">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <p class="social-sticky-panel-note">Open any channel to follow, listen, or watch.</p>
+
+      <a href="https://www.youtube.com/@TaleemaateIslam" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel" class="social-sticky-link social-youtube">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 8.1s-.2-1.5-.8-2.1c-.8-.8-1.8-.8-2.2-.9C16 5 12 5 12 5s-4 0-6.8.1c-.4 0-1.4.1-2.2.9-.6.6-.8 2.1-.8 2.1S2 9.9 2 11.8v.4c0 1.9.2 3.7.2 3.7s.2 1.5.8 2.1c.8.8 1.9.8 2.4.9 1.8.1 7.6.1 7.6.1s4 0 6.8-.1c.4 0 1.4-.1 2.2-.9.6-.6.8-2.1.8-2.1s.2-1.8.2-3.7v-.4c0-1.9-.2-3.7-.2-3.7Zm-11 7.5V8.5l6 3.6-6 3.5Z"/></svg>
+        <span>YouTube</span>
+      </a>
+
+      <a href="https://www.facebook.com/TaleemaateIslamOfficial/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page" class="social-sticky-link social-facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.2-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.5-.1-2.4 0-4 1.5-4 4.2V11H8v3.1h2.3v8h3.2Z"/></svg>
+        <span>Facebook</span>
+      </a>
+
+      <a href="https://x.com/taleemaateislam" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter Profile" class="social-sticky-link social-x">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 3H21l-6.8 7.8L22 21h-5.6l-4.4-5.6L7.1 21H5l7.3-8.4L2 3h5.7l4 5.1L18.9 3Zm-1 16h1.9L7 4.9H5L17.9 19Z"/></svg>
+        <span>X</span>
+      </a>
+
+      <a href="https://www.tiktok.com/@taleemaateislam?_r=1&_t=ZS-95NGFM8hHyW" target="_blank" rel="noopener noreferrer" aria-label="TikTok Profile" class="social-sticky-link social-tiktok">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 3c.4 2 1.5 3.2 3.4 3.4v3.1c-1.1 0-2.1-.3-3.1-.8v6.3c0 3.5-2.8 5.9-6.2 5.9-3.3 0-6-2.7-6-6s2.7-6 6-6c.4 0 .8 0 1.2.1v3.3c-.4-.1-.8-.2-1.2-.2-1.6 0-2.9 1.3-2.9 2.9s1.3 3 2.9 3c1.7 0 3-1.2 3-2.9V3h3Z"/></svg>
+        <span>TikTok</span>
+      </a>
+
+      <a href="https://whatsapp.com/channel/0029VbBzqagCnA7vXKnf8k0s" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Channel" class="social-sticky-link social-whatsapp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Zm0 16.4c-1.2 0-2.4-.3-3.4-.9l-.2-.1-2.8.7.7-2.7-.2-.2A6.6 6.6 0 1 1 18.6 12 6.6 6.6 0 0 1 12 19.4Zm3.8-4.8c-.2-.1-1.3-.7-1.5-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.9 1-.2.2-.3.2-.6.1-.3-.1-1.1-.4-2.1-1.2-.8-.7-1.3-1.6-1.4-1.9-.1-.3 0-.5.1-.6l.4-.5c.1-.2.1-.3.2-.5 0-.2 0-.3-.1-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-1 1-1 2.4 0 1.4 1 2.7 1.1 2.9.1.2 1.9 2.9 4.6 4.1.6.3 1.1.5 1.5.6.6.2 1.1.2 1.5.1.5-.1 1.3-.6 1.4-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.1-.4-.2Z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+
+      <a href="https://open.spotify.com/show/0tJ2NIOpV6QkyfxZrmf2ae?si=Vn6zX0HzT2qZaV1jqHHJlA" target="_blank" rel="noopener noreferrer" aria-label="Spotify Podcast" class="social-sticky-link social-spotify">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8A9.2 9.2 0 1 0 21.2 12 9.2 9.2 0 0 0 12 2.8Zm4.2 13.3a.8.8 0 0 1-1.1.3c-3-1.8-6.8-2.2-11.2-1.1a.8.8 0 0 1-.4-1.5c4.8-1.3 9-.8 12.4 1.2.4.2.5.8.3 1.1Zm1.1-2.5a1 1 0 0 1-1.3.3c-3.5-2.1-8.8-2.7-12.9-1.3a1 1 0 1 1-.7-1.8c4.7-1.6 10.6-.9 14.7 1.5.5.2.7.9.2 1.3Zm.1-2.7c-4.3-2.5-11.4-2.8-15.5-1.6a1.2 1.2 0 1 1-.7-2.3c4.7-1.4 12.6-1.1 17.5 1.8a1.2 1.2 0 0 1-1.3 2.1Z"/></svg>
+        <span>Spotify</span>
+      </a>
+    </div>
+  </div>
+  <!-- Backdrop for mobile panel — JS toggles .is-visible -->
+  <div class="social-sticky-backdrop" id="socialStickyBackdrop" aria-hidden="true"></div>
+
   <div class="container">
     <div class="footer-main">
       <div class="footer-brand">

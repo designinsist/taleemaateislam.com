@@ -228,6 +228,110 @@
     updateVisibility();
   }
 
+  /* ── Sticky social rail ── */
+  function initSocialStickyBar() {
+    var rail     = document.getElementById('socialStickyRail');
+    var toggle   = document.getElementById('socialStickyToggle');
+    var panel    = document.getElementById('socialStickyPanel');
+    var closeBtn = document.getElementById('socialStickyClose');
+    var backdrop = document.getElementById('socialStickyBackdrop');
+    if (!rail || !toggle || !panel) return;
+
+    /* On mobile (≤768px) always start closed — never persist open state */
+    var isMobile = function () { return window.innerWidth <= 768; };
+
+    var storageKey = 'taleemaatSocialRailState';
+    var hasStorage = false;
+    try { hasStorage = !!window.localStorage; } catch (e) { hasStorage = false; }
+
+    function getSavedState() {
+      if (!hasStorage || isMobile()) return null;
+      try { return window.localStorage.getItem(storageKey); } catch (e) { return null; }
+    }
+
+    function saveState(isOpen) {
+      if (!hasStorage || isMobile()) return;
+      try { window.localStorage.setItem(storageKey, isOpen ? 'open' : 'closed'); } catch (e) {}
+    }
+
+    function applyState(isOpen, shouldSave) {
+      rail.classList.toggle('is-open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      toggle.setAttribute('aria-label', isOpen ? 'Close social media links' : 'Open social media links');
+      panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+
+      /* Backdrop: show on mobile when open, prevent body scroll */
+      if (backdrop) {
+        backdrop.classList.toggle('is-visible', isOpen && isMobile());
+        backdrop.setAttribute('aria-hidden', 'true');
+      }
+      document.body.style.overflow = (isOpen && isMobile()) ? 'hidden' : '';
+
+      if (shouldSave) saveState(isOpen);
+    }
+
+    /* Restore saved state on desktop only */
+    applyState(getSavedState() === 'open', false);
+
+    function closeRail() {
+      if (!rail.classList.contains('is-open')) return;
+      applyState(false, true);
+      toggle.focus();
+    }
+
+    /* Toggle button */
+    toggle.addEventListener('click', function () {
+      var isOpen = rail.classList.contains('is-open');
+      applyState(!isOpen, true);
+      if (!isOpen) {
+        var firstLink = panel.querySelector('a[href]');
+        if (firstLink) setTimeout(function () { firstLink.focus(); }, 50);
+      }
+    });
+
+    /* Close button inside panel */
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeRail);
+    }
+
+    /* Backdrop tap closes panel */
+    if (backdrop) {
+      backdrop.addEventListener('click', closeRail);
+    }
+
+    /* Clicking a social link closes panel on mobile */
+    panel.querySelectorAll('a[href]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (isMobile()) applyState(false, true);
+      });
+    });
+
+    /* Outside click closes panel on desktop */
+    document.addEventListener('click', function (e) {
+      if (
+        rail.classList.contains('is-open') &&
+        !rail.contains(e.target) &&
+        (!backdrop || !backdrop.contains(e.target))
+      ) {
+        closeRail();
+      }
+    });
+
+    /* Escape key always closes */
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && rail.classList.contains('is-open')) {
+        closeRail();
+      }
+    });
+
+    /* Re-evaluate on resize — close if switching to mobile while open */
+    window.addEventListener('resize', function () {
+      if (isMobile() && rail.classList.contains('is-open')) {
+        applyState(false, false);
+      }
+    }, { passive: true });
+  }
+
   /* ── Live date / Hijri date / clock in the top bar ── */
   function initDateTime() {
     var gregEl  = document.getElementById('gregorian-date');
@@ -351,6 +455,7 @@
 
     footerPromise.then(function () {
       initCopyrightYear();
+      initSocialStickyBar();
     }).catch(function (err) {
       console.error('Footer load failed:', err);
     });
