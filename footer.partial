@@ -33,6 +33,11 @@
         <span>Facebook</span>
       </a>
 
+      <a href="https://www.instagram.com/taleemaateislam/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" class="social-sticky-link social-instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 3.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8Zm0 2A2.2 2.2 0 1 0 14.2 12 2.2 2.2 0 0 0 12 9.8ZM17.4 6.6a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/></svg>
+        <span>Instagram</span>
+      </a>
+
       <a href="https://x.com/taleemaateislam" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter Profile" class="social-sticky-link social-x">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 3H21l-6.8 7.8L22 21h-5.6l-4.4-5.6L7.1 21H5l7.3-8.4L2 3h5.7l4 5.1L18.9 3Zm-1 16h1.9L7 4.9H5L17.9 19Z"/></svg>
         <span>X</span>
@@ -85,6 +90,7 @@
         <h4>Social</h4>
         <a href="https://www.youtube.com/@TaleemaateIslam" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
         <a href="https://www.facebook.com/TaleemaateIslamOfficial/" target="_blank" rel="noopener noreferrer">Facebook Page</a>
+        <a href="https://www.instagram.com/taleemaateislam/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://x.com/taleemaateislam" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
         <a href="https://www.tiktok.com/@taleemaateislam?_r=1&_t=ZS-95NGFM8hHyW" target="_blank" rel="noopener noreferrer">TikTok Profile</a>
         <a href="https://whatsapp.com/channel/0029VbBzqagCnA7vXKnf8k0s" target="_blank" rel="noopener noreferrer">WhatsApp Channel</a>
