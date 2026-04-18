@@ -42,7 +42,7 @@
 <nav class="navbar" id="navbar" aria-label="Main Navigation">
   <div class="container">
     <a href="index.html" class="nav-logo" aria-label="Taleemaat-e-Islam Home">
-      <div class="nav-logo-icon" aria-hidden="true"></div>
+      <div class="nav-logo-icon" aria-hidden="true" style="display:none;"></div>
       <div class="nav-logo-text">
         <strong>Taleemaat-e-Islam</strong>
         <span>Authoritative Guidance · Purified Hearts</span>
