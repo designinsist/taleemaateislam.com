@@ -21,15 +21,15 @@
   <meta property="og:title" content="Dars-e-Quran by Mufti Shahid Mushtaq | Taleemaat-e-Islam" />
   <meta property="og:description" content="Listen to Dars-e-Quran by Mufti Shahid Mushtaq, with clear Quran explanation, brief tafseer-focused learning, and authentic Sunni scholarly guidance." />
   <meta property="og:site_name" content="Taleemaat-e-Islam" />
-  <meta property="og:image" content="https://taleemaateislam.com/images/android-chrome-512x512.png" />
-  <meta property="og:image:width" content="512" />
-  <meta property="og:image:height" content="512" />
+  <meta property="og:image" content="https://taleemaateislam.com/images/MuftiShahidMushtaq2.png" />
+  <meta property="og:image:width" content="876" />
+  <meta property="og:image:height" content="1080" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Dars-e-Quran by Mufti Shahid Mushtaq | Taleemaat-e-Islam" />
   <meta name="twitter:description"
     content="Listen to Dars-e-Quran by Mufti Shahid Mushtaq, with clear Quran explanation, brief tafseer-focused learning, and authentic Sunni scholarly guidance." />
-  <meta name="twitter:image" content="https://taleemaateislam.com/images/android-chrome-512x512.png" />
-  <meta name="twitter:image:alt" content="Dars-e-Quran" />
+  <meta name="twitter:image" content="https://taleemaateislam.com/images/MuftiShahidMushtaq2.png" />
+  <meta name="twitter:image:alt" content="Mufti Shahid Mushtaq" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -138,8 +138,7 @@
     .inner-hero {
       position: relative;
       background: var(--green-deep);
-      padding: 70px 0 50px;
-      text-align: center;
+      padding: 80px 0 60px;
       overflow: hidden;
     }
 
@@ -154,6 +153,14 @@
     .inner-hero .container {
       position: relative;
       z-index: 2;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      text-align: left;
     }
 
     .hero-bismillah {
@@ -165,7 +172,7 @@
 
     .inner-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 700;
       color: var(--white);
       margin-bottom: 12px;
@@ -177,7 +184,7 @@
 
     .inner-desc {
       color: rgba(255, 255, 255, 0.8);
-      max-width: 700px;
+      max-width: 640px;
       margin: 0 auto;
       font-size: 1.05rem;
       line-height: 1.7;
@@ -191,8 +198,53 @@
       border: 1px solid var(--gold);
       color: var(--gold-light);
       border-radius: 25px;
-      font-size: 0.9rem;
+      font-size: 0.84rem;
       font-weight: 600;
+      line-height: 1.45;
+      max-width: 100%;
+    }
+
+    .mufti-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(201, 150, 58, 0.35);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.24);
+      max-width: 340px;
+      margin-left: auto;
+    }
+
+    .mufti-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      aspect-ratio: 73 / 90;
+      object-fit: cover;
+      object-position: 50% 18%;
+      background: #113320;
+    }
+
+    .mufti-caption {
+      padding: 14px 16px;
+      border-top: 1px solid rgba(201, 150, 58, 0.24);
+      background: rgba(0, 0, 0, 0.16);
+      text-align: center;
+    }
+
+    .mufti-caption strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      color: var(--gold-light);
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .mufti-caption span {
+      display: block;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
     }
 
     /* ═══ SURAH ACCORDION SECTION ═══ */
@@ -405,6 +457,21 @@
       .lazy-player {
         width: 100%;
       }
+
+      .inner-hero .container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        text-align: center;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .mufti-card {
+        margin: 0 auto;
+        max-width: 300px;
+      }
     }
 
     /* ═══ URDU INSTRUCTION BOX ═══ */
@@ -525,11 +592,20 @@
   <main>
     <header class="inner-hero">
       <div class="container">
-        <p class="hero-bismillah">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</p>
-        <h1 class="inner-title">Dars-e-<span>Quran</span></h1>
-        <p class="inner-desc">Dars-e-Quran lectures by Mufti Shahid Mushtaq (M.Phil. in Islamic Studies, MA Urdu; Faazil, Jamia Darul Uloom Karachi), explaining the teachings, meanings, and guidance of the Holy Quran.
-        </p>
-        <span class="scholar-name">Mufti Shahid Mushtaq (M.Phil. in Islamic Studies, MA Urdu; Faazil, Jamia Darul Uloom Karachi)</span>
+        <div class="hero-copy">
+          <p class="hero-bismillah">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</p>
+          <h1 class="inner-title">Dars-e-<span>Quran</span></h1>
+          <p class="inner-desc">Explore Quran lectures that explain the teachings, meanings, and guidance of the Holy Quran in a clear and structured way.</p>
+          <span class="scholar-name">Mufti Shahid Mushtaq • M.Phil. Islamic Studies • MA Urdu • Faazil, Jamia Darul Uloom Karachi</span>
+        </div>
+
+        <figure class="mufti-card">
+          <img src="images/MuftiShahidMushtaq2.png" alt="Mufti Shahid Mushtaq" loading="lazy" />
+          <figcaption class="mufti-caption">
+            <strong>Mufti Shahid Mushtaq</strong>
+            <span>Dars-e-Quran Scholar</span>
+          </figcaption>
+        </figure>
       </div>
     </header>
 
