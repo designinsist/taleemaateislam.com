@@ -309,10 +309,11 @@
     /* Lazy Player & Play Button Styling */
     .lazy-player {
       width: 100%;
-      min-height: 40px;
+      min-height: 80px;
       display: flex;
       align-items: center;
       flex: 1;
+      position: relative;
     }
 
     .play-btn {
@@ -335,6 +336,60 @@
       background: var(--gold-light);
       transform: translateY(-2px);
       box-shadow: 0 6px 15px rgba(201, 150, 58, 0.3);
+    }
+
+    /* Player loading skeleton */
+    .player-loading {
+      width: 100%;
+      height: 80px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, rgba(201,150,58,0.08) 25%, rgba(201,150,58,0.18) 50%, rgba(201,150,58,0.08) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--green-deep);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+
+    .player-loading-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: bounce 1.2s infinite ease-in-out;
+    }
+    .player-loading-dot:nth-child(2) { animation-delay: 0.2s; }
+    .player-loading-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0.7); opacity: 0.5; }
+      40%           { transform: scale(1.1); opacity: 1; }
+    }
+
+    .lazy-player iframe {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      border-radius: 6px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+    }
+    .lazy-player iframe.loaded {
+      opacity: 1;
+      position: relative;
     }
 
     /* RESPONSIVE */
@@ -657,6 +712,8 @@
     <button class="play-btn" onclick="loadPlayer(this)">▶ Play Audio</button>
   </div>
 </div>
+
+
 
 
 
@@ -4033,24 +4090,43 @@
 
     // Lazy Load the Google Player On-Click (Updated for A11y & Perf)
     function loadPlayer(button) {
-      // Find any currently open players and revert them to a button
-      document.querySelectorAll('.lazy-player iframe').forEach(iframe => {
-        const parent = iframe.parentElement;
+      // Revert any open players or loading states back to buttons
+      document.querySelectorAll('.lazy-player iframe, .lazy-player .player-loading').forEach(el => {
+        const parent = el.parentElement;
         parent.innerHTML = '<button class="play-btn" onclick="loadPlayer(this)">▶ Play Audio</button>';
       });
 
-      // Load the specific iframe where the user clicked
       const container = button.parentElement;
       const fileId = container.getAttribute('data-id');
-      container.innerHTML = '<iframe src="https://drive.google.com/file/d/' + fileId + '/preview" width="100%" height="80" frameborder="0" allow="autoplay" loading="lazy" title="Quran Audio Player"></iframe>';
 
-      // Re-adjust accordion height dynamically since iframe alters content size
-      const accordionContent = container.closest('.surah-content');
-      if (accordionContent) {
-        setTimeout(() => {
-          accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-        }, 100);
-      }
+      // Show animated loading skeleton immediately
+      container.innerHTML = '<div class="player-loading"><div class="player-loading-dot"></div><div class="player-loading-dot"></div><div class="player-loading-dot"></div><span>Loading audio…</span></div>';
+
+      // Inject iframe directly into container (never moved, so no reload)
+      const iframe = document.createElement('iframe');
+      iframe.src = 'https://drive.google.com/file/d/' + fileId + '/preview';
+      iframe.width = '100%';
+      iframe.height = '80';
+      iframe.frameBorder = '0';
+      iframe.allow = 'autoplay';
+      iframe.title = 'Quran Audio Player';
+
+      iframe.addEventListener('load', function () {
+        requestAnimationFrame(() => {
+          const skeleton = container.querySelector('.player-loading');
+          if (skeleton) skeleton.remove();
+          iframe.classList.add('loaded');
+        });
+
+        const accordionContent = container.closest('.surah-content');
+        if (accordionContent) {
+          setTimeout(() => {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+          }, 100);
+        }
+      });
+
+      container.appendChild(iframe);
     }
 
   </script>
