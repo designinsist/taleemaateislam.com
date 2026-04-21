@@ -5,7 +5,8 @@
       "Bash(grep -l \"top-bar\\\\|class=\\\\\"top-bar\\\\\"\" /Users/mr.khatana/Downloads/taleemaateislam.com-main/*.html)",
       "Bash(grep -rn \"class=\\\\\"navbar\\\\\"\" /Users/mr.khatana/Downloads/taleemaateislam.com-main/*.html)",
       "Bash(grep -rn \"^  <footer>\" /Users/mr.khatana/Downloads/taleemaateislam.com-main/*.html)",
-      "Bash(grep -rn \"hamburger.addEventListener\\\\|getElementById\\('hamburger'\\)\\\\|updateDateTime\\\\|current-year.*textContent\" /Users/mr.khatana/Downloads/taleemaateislam.com-main/*.html)"
+      "Bash(grep -rn \"hamburger.addEventListener\\\\|getElementById\\('hamburger'\\)\\\\|updateDateTime\\\\|current-year.*textContent\" /Users/mr.khatana/Downloads/taleemaateislam.com-main/*.html)",
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiMTahirMasood.png)"
     ]
   }
 }

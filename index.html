@@ -264,6 +264,17 @@
     .btn-font-download svg{width:14px;height:14px;fill:currentColor;}
     .btn-font-info{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.6);font-size:0.75rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;border-radius:var(--radius);transition:border-color var(--transition),color var(--transition);}
     .btn-font-info:hover{border-color:var(--gold);color:var(--gold-light);}
+
+    .hajj-spotlight{padding:36px 0 88px;background:var(--off-white);}
+    .hajj-spotlight-card{position:relative;overflow:hidden;background:linear-gradient(120deg,#0c2517 0%,#143724 56%,#1f5938 100%);border:1px solid rgba(201,150,58,0.35);border-radius:10px;padding:40px 44px;display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center;box-shadow:0 16px 34px rgba(13,40,24,0.16);}
+    .hajj-spotlight-card::before{content:'';position:absolute;inset:0;opacity:.08;background-image:repeating-linear-gradient(45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px),repeating-linear-gradient(-45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px);pointer-events:none;}
+    .hajj-copy,.hajj-action{position:relative;z-index:1;}
+    .hajj-kicker{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);margin-bottom:12px;}
+    .hajj-title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3.2vw,2.3rem);line-height:1.2;color:var(--white);margin-bottom:12px;}
+    .hajj-title span{color:var(--gold-light);}
+    .hajj-desc{color:rgba(255,255,255,0.78);font-size:.92rem;line-height:1.85;max-width:680px;}
+    .btn-hajj{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;background:var(--gold);color:var(--green-deep);font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:4px;transition:all .3s ease;}
+    .btn-hajj:hover{background:var(--gold-light);transform:translateY(-2px);}
     
     @media(max-width:768px){.fonts-grid{grid-template-columns:1fr;}.fonts-header{flex-direction:column;}.fonts-note{align-self:stretch;}}
     @media(max-width:480px){.font-actions{flex-direction:column;}}
@@ -279,6 +290,8 @@
       .hero-short-nav{width:32px;height:32px;font-size:1rem;}
       .hero-short-status{font-size:0.58rem;}
       .topics-grid{grid-template-columns:1fr 1fr;}
+      .hajj-spotlight{padding:20px 0 64px;}
+      .hajj-spotlight-card{grid-template-columns:1fr;padding:28px 22px;gap:16px;}
     }
     @media(max-width:480px){
       .topics-grid{grid-template-columns:1fr}
@@ -393,6 +406,21 @@
             <p>Lives of the righteous — the Companions, Tabi'een, and Islamic scholars who walked the path of piety and left a legacy of faith.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="hajj-spotlight" aria-labelledby="hajj-spotlight-title">
+      <div class="container">
+        <article class="hajj-spotlight-card">
+          <div class="hajj-copy">
+            <span class="hajj-kicker">✦ New — Hajj 2026</span>
+            <h2 class="hajj-title" id="hajj-spotlight-title">Hajj 2026 <span>Questions &amp; Answers</span></h2>
+            <p class="hajj-desc">A dedicated page for pilgrims — practical Q&amp;A on key rites, preparation, and common concerns, presented under the guidance of <strong style="color:var(--gold-light);">Mufti Muhammad Tahir Masood</strong>. New questions added regularly.</p>
+          </div>
+          <div class="hajj-action">
+            <a class="btn-hajj" href="hajj-2026.html">Explore Hajj 2026 Q&amp;A</a>
+          </div>
+        </article>
       </div>
     </section>
 

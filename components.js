@@ -15,6 +15,7 @@
     'dars-e-quran.html'           : 'quran-section',
     'quranic-stories.html'        : 'quran-section',
     'connect-with-allah.html'     : 'connect-with-allah.html',
+    'hajj-2026.html'              : 'hajj-2026.html',
     'syed-ul-bashar.html'         : 'syed-ul-bashar.html',
     'islamic-tools.html'          : 'islamic-tools.html',
     'qasas-ul-anbiya.html'        : 'qasas-ul-anbiya.html',
