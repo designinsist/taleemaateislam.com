@@ -176,50 +176,16 @@
       cursor:not-allowed;
       transform:none;
     }
-    .hero-short-dots{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:7px;
-      flex:1;
-      min-width:0;
-      flex-wrap:wrap;
-    }
-    .hero-short-dot{
-      width:8px;
-      height:8px;
-      border-radius:999px;
-      border:1px solid rgba(201,150,58,0.35);
-      background:rgba(255,255,255,0.2);
-      padding:0;
-      transition:transform var(--transition),background var(--transition),border-color var(--transition),width var(--transition),opacity var(--transition);
-      opacity:0.85;
-    }
-    .hero-short-dot.is-active{
-      width:24px;
-      background:var(--gold);
-      border-color:var(--gold);
-      opacity:1;
-    }
-    .hero-short-dot:focus-visible{
-      outline:none;
-      box-shadow:0 0 0 3px rgba(201,150,58,0.22);
-    }
     .hero-short-status{
-      position:relative;
-      margin-top:10px;
-      text-align:center;
       font-size:0.64rem;
       font-weight:700;
       letter-spacing:0.1em;
       text-transform:uppercase;
       color:rgba(255,255,255,0.8);
-      background:rgba(8,27,17,0.72);
-      border:1px solid rgba(201,150,58,0.2);
-      border-radius:999px;
-      padding:6px 12px;
       white-space:nowrap;
-      z-index:2;
+      flex:1;
+      text-align:center;
+      margin:0;
     }
     .hero-short-label{
       text-align:center;
@@ -361,10 +327,9 @@
             <p class="hero-short-label">Daily Dars-e-Quran Short</p>
             <div class="hero-short-controls" aria-label="Short navigation">
               <button type="button" class="hero-short-nav" data-short-prev aria-label="Previous short">‹</button>
-              <div class="hero-short-dots" data-short-dots aria-label="Select a short"></div>
+              <p class="hero-short-status" data-short-status aria-live="polite"></p>
               <button type="button" class="hero-short-nav" data-short-next aria-label="Next short">›</button>
             </div>
-            <p class="hero-short-status" data-short-status aria-live="polite"></p>
           </div>
         </div>
       </div>

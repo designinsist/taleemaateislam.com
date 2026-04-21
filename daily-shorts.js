@@ -36,35 +36,17 @@
     return 'Short ' + (index + 1) + ' / ' + total;
   }
 
-  function createDotButton(index, total) {
-    var button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'hero-short-dot';
-    button.setAttribute('data-short-index', String(index));
-    button.setAttribute('aria-label', 'Go to short ' + (index + 1) + ' of ' + total);
-    button.setAttribute('aria-pressed', 'false');
-    return button;
-  }
-
   function updateHeroShort() {
     var wrap = document.querySelector('.hero-short-wrap');
     var frame = wrap && wrap.querySelector('iframe');
-    var dots = wrap && wrap.querySelector('[data-short-dots]');
     var prevButton = wrap && wrap.querySelector('[data-short-prev]');
     var nextButton = wrap && wrap.querySelector('[data-short-next]');
     var status = wrap && wrap.querySelector('[data-short-status]');
     if (!wrap || !frame || !DAILY_SHORTS.length) return;
 
     var orderedShorts = DAILY_SHORTS.slice().reverse();
-
     var activeIndex = 0;
     var total = orderedShorts.length;
-
-    if (dots && !dots.children.length) {
-      for (var i = 0; i < total; i += 1) {
-        dots.appendChild(createDotButton(i, total));
-      }
-    }
 
     function setActive(index) {
       activeIndex = (index + total) % total;
@@ -76,51 +58,19 @@
       frame.title = title;
       wrap.setAttribute('aria-label', title);
 
-      if (status) {
-        status.textContent = buildStatus(activeIndex, total);
-      }
-
-      if (prevButton) {
-        prevButton.disabled = total <= 1;
-      }
-
-      if (nextButton) {
-        nextButton.disabled = total <= 1;
-      }
-
-      if (dots) {
-        var dotButtons = dots.querySelectorAll('.hero-short-dot');
-        dotButtons.forEach(function (button, buttonIndex) {
-          var isActive = buttonIndex === activeIndex;
-          button.classList.toggle('is-active', isActive);
-          button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-        });
-      }
+      if (status) status.textContent = buildStatus(activeIndex, total);
+      if (prevButton) prevButton.disabled = total <= 1;
+      if (nextButton) nextButton.disabled = total <= 1;
     }
 
     if (prevButton && !prevButton.dataset.bound) {
       prevButton.dataset.bound = 'true';
-      prevButton.addEventListener('click', function () {
-        setActive(activeIndex - 1);
-      });
+      prevButton.addEventListener('click', function () { setActive(activeIndex - 1); });
     }
 
     if (nextButton && !nextButton.dataset.bound) {
       nextButton.dataset.bound = 'true';
-      nextButton.addEventListener('click', function () {
-        setActive(activeIndex + 1);
-      });
-    }
-
-    if (dots) {
-      dots.querySelectorAll('.hero-short-dot').forEach(function (button) {
-        if (button.dataset.bound) return;
-        button.dataset.bound = 'true';
-        button.addEventListener('click', function () {
-          var index = parseInt(button.getAttribute('data-short-index'), 10);
-          if (!isNaN(index)) setActive(index);
-        });
-      });
+      nextButton.addEventListener('click', function () { setActive(activeIndex + 1); });
     }
 
     setActive(activeIndex);

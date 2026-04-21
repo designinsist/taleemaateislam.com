@@ -670,7 +670,10 @@
     var msgEl   = document.getElementById('sl-msg');
     var retryEl = document.getElementById('sl-retry');
 
+    var dismissed = false;
     function dismiss() {
+      if (dismissed) return;
+      dismissed = true;
       try { sessionStorage.setItem('taleemaat_loaded', '1'); } catch (e) {}
       clearTimeout(slowTimer);
       clearTimeout(errorTimer);
@@ -683,20 +686,23 @@
 
     var slowTimer  = setTimeout(function () {
       if (msgEl) msgEl.textContent = 'Still loading, please wait\u2026';
-    }, 5000);
+    }, 3000);
 
     var errorTimer = setTimeout(function () {
       if (msgEl) msgEl.textContent = 'Taking longer than usual \u2014 check your connection.';
       if (retryEl) retryEl.style.display = 'block';
-    }, 12000);
+    }, 6000);
 
-    var forceTimer = setTimeout(dismiss, 15000);
+    var forceTimer = setTimeout(dismiss, 8000);
 
-    if (document.readyState === 'complete') {
-      dismiss();
-    } else {
-      window.addEventListener('load', dismiss, { once: true });
+    // Dismiss when own fonts are ready — does NOT wait for third-party iframes like YouTube
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { setTimeout(dismiss, 250); });
     }
+    // Fallback: window.load (covers browsers without fonts API)
+    window.addEventListener('load', dismiss, { once: true });
+    // Fast-path: already loaded before this script ran
+    if (document.readyState === 'complete') { dismiss(); }
   }
 
   /* ── Bootstrap: load both partials, then initialise ── */
