@@ -13,10 +13,12 @@
   <meta name="author" content="Taleemaat-e-Islam" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://taleemaateislam.com/dars-e-quran.html" />
+  <link rel="alternate" hreflang="en" href="https://taleemaateislam.com/dars-e-quran.html" />
+  <link rel="alternate" hreflang="x-default" href="https://taleemaateislam.com/dars-e-quran.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://taleemaateislam.com/dars-e-quran.html" />
-  <meta property="og:title" content="Dars-e-Quran by Mufti Shahid Mushtaq" />
+  <meta property="og:title" content="Dars-e-Quran by Mufti Shahid Mushtaq | Taleemaat-e-Islam" />
   <meta property="og:description" content="Listen to Dars-e-Quran by Mufti Shahid Mushtaq, with clear Quran explanation, brief tafseer-focused learning, and authentic Sunni scholarly guidance." />
   <meta property="og:site_name" content="Taleemaat-e-Islam" />
   <meta property="og:image" content="https://taleemaateislam.com/images/android-chrome-512x512.png" />
@@ -4116,14 +4118,14 @@
           const skeleton = container.querySelector('.player-loading');
           if (skeleton) skeleton.remove();
           iframe.classList.add('loaded');
-        });
 
-        const accordionContent = container.closest('.surah-content');
-        if (accordionContent) {
-          setTimeout(() => {
-            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-          }, 100);
-        }
+          const accordionContent = container.closest('.surah-content');
+          if (accordionContent) {
+            setTimeout(() => {
+              accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            }, 100);
+          }
+        });
       });
 
       container.appendChild(iframe);

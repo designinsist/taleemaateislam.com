@@ -632,8 +632,76 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
+  /* ── Site-wide page loader ── */
+  function initPageLoader() {
+    try {
+      if (sessionStorage.getItem('taleemaat_loaded')) return;
+    } catch (e) {}
+
+    var style = document.createElement('style');
+    style.textContent =
+      '#site-loader{position:fixed;inset:0;z-index:99999;background:#0d2818;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity 0.5s ease,visibility 0.5s ease;}' +
+      '#site-loader.is-hidden{opacity:0;visibility:hidden;pointer-events:none;}' +
+      '.sl-brand{color:#c9963a;font-family:"Amiri",serif;font-size:1.6rem;letter-spacing:0.04em;text-align:center;}' +
+      '.sl-sub{color:rgba(255,255,255,0.45);font-family:"Nunito",sans-serif;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:-14px;}' +
+      '.sl-dots{display:flex;gap:9px;margin-top:4px;}' +
+      '.sl-dot{width:10px;height:10px;border-radius:50%;background:#c9963a;animation:slBounce 1.2s infinite ease-in-out;}' +
+      '.sl-dot:nth-child(2){animation-delay:0.2s;}' +
+      '.sl-dot:nth-child(3){animation-delay:0.4s;}' +
+      '@keyframes slBounce{0%,80%,100%{transform:scale(0.55);opacity:0.35;}40%{transform:scale(1);opacity:1;}}' +
+      '.sl-msg{color:rgba(255,255,255,0.55);font-family:"Nunito",sans-serif;font-size:0.8rem;text-align:center;max-width:260px;min-height:1.2em;transition:opacity 0.3s ease;}' +
+      '.sl-retry{display:none;background:#c9963a;color:#0d2818;border:none;padding:10px 28px;border-radius:25px;cursor:pointer;font-family:"Nunito",sans-serif;font-weight:700;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.05em;margin-top:4px;}' +
+      '.sl-retry:hover{background:#e8b84b;}';
+    document.head.appendChild(style);
+
+    var overlay = document.createElement('div');
+    overlay.id = 'site-loader';
+    overlay.setAttribute('role', 'status');
+    overlay.setAttribute('aria-live', 'polite');
+    overlay.setAttribute('aria-label', 'Page loading');
+    overlay.innerHTML =
+      '<div class="sl-brand">Taleemaat-e-Islam</div>' +
+      '<div class="sl-sub">Loading</div>' +
+      '<div class="sl-dots"><div class="sl-dot"></div><div class="sl-dot"></div><div class="sl-dot"></div></div>' +
+      '<div class="sl-msg" id="sl-msg"></div>' +
+      '<button class="sl-retry" id="sl-retry" onclick="window.location.reload()">Try Again</button>';
+    document.body.insertBefore(overlay, document.body.firstChild);
+
+    var msgEl   = document.getElementById('sl-msg');
+    var retryEl = document.getElementById('sl-retry');
+
+    function dismiss() {
+      try { sessionStorage.setItem('taleemaat_loaded', '1'); } catch (e) {}
+      clearTimeout(slowTimer);
+      clearTimeout(errorTimer);
+      clearTimeout(forceTimer);
+      overlay.classList.add('is-hidden');
+      setTimeout(function () {
+        if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+      }, 520);
+    }
+
+    var slowTimer  = setTimeout(function () {
+      if (msgEl) msgEl.textContent = 'Still loading, please wait\u2026';
+    }, 5000);
+
+    var errorTimer = setTimeout(function () {
+      if (msgEl) msgEl.textContent = 'Taking longer than usual \u2014 check your connection.';
+      if (retryEl) retryEl.style.display = 'block';
+    }, 12000);
+
+    var forceTimer = setTimeout(dismiss, 15000);
+
+    if (document.readyState === 'complete') {
+      dismiss();
+    } else {
+      window.addEventListener('load', dismiss, { once: true });
+    }
+  }
+
   /* ── Bootstrap: load both partials, then initialise ── */
   function init() {
+    initPageLoader();
     initBookSharing();
 
     var headerPromise = loadFragment('site-header', 'header.partial');
