@@ -136,8 +136,12 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <div class="search-modal-body">
-      <script async src="https://cse.google.com/cse.js?cx=96e45e1f193b34d16"></script>
-      <div class="gcse-search"></div>
+      <p class="search-modal-label">Search Taleemaat-e-Islam</p>
+      <div class="site-search-input-wrap">
+        <svg class="site-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+        <input type="text" id="siteSearchInput" placeholder="e.g. Hajj, Khuda Mojood Hai, Rumi…" autocomplete="off" />
+      </div>
+      <div id="siteSearchResults" class="site-search-results" role="listbox" aria-live="polite"></div>
     </div>
   </div>
 </div>

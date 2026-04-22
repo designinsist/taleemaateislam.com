@@ -5,6 +5,18 @@
  * live date/time bar, and the copyright year.
  */
 
+var SITE_SEARCH_INDEX = [
+  { title: 'Home', label: 'Home', url: 'index.html', desc: 'Authentic Quranic commentary, free Islamic books, and Sunni guidance.', tags: 'taleemaat islam books quran guidance khuda mojood hai yaqeen ka safar islamic education free' },
+  { title: 'Dars-e-Quran', label: 'Quran', url: 'dars-e-quran.html', desc: 'Dars-e-Quran by Mufti Shahid Mushtaq — Quran explanation with brief tafseer.', tags: 'dars quran tafseer mufti shahid mushtaq surah yunus baqarah lecture explanation' },
+  { title: 'Hajj 2026 Q&A', label: 'Hajj', url: 'hajj-2026.html', desc: 'Practical Hajj 2026 guidance and Q&A by Mufti Muhammad Tahir Masood.', tags: 'hajj 2026 pilgrimage mufti tahir masood ihram tawaf arafat mina umrah miqat jamarat muzdalifah qurbani wuqoof' },
+  { title: 'Connect with Allah — Free Islamic Books', label: 'Books', url: 'connect-with-allah.html', desc: '16 free Islamic books in Urdu and English — Khuda Mojood Hai, Yaqeen Ka Safar, Manzil Dua, and more.', tags: 'khuda mojood hai meet god islam science namaz al-hizb ul-azam munajat maqbool manzil dua istikhara fallacy evolution yaqeen ka safar hayat muslimeen polygamy tasawwuf allah sharam books free urdu english duas spirituality connect allah' },
+  { title: 'Syed-ul-Bashar — Prophet & Companions', label: 'Seerah', url: 'syed-ul-bashar.html', desc: '10 free books on Prophet Muhammad, Seerah, Sahaba and Islamic legacy.', tags: 'prophet muhammad pbuh seerah seerat mustafa sarwar konain jadeed nabi dalail nubuwwah asbat risalat khutbat asma zariya wusool durood salawat ahl al-bayt companions sahaba' },
+  { title: 'Islamic Tools — Namaz Timings & Qibla', label: 'Tools', url: 'islamic-tools.html', desc: 'Namaz timings for Pakistan cities, Hijri calendar 2026, and Qibla direction.', tags: 'namaz prayer times timings qibla hijri calendar pakistan lahore karachi fajr zuhr asr maghrib isha salah' },
+  { title: 'Qasas Ul Anbiya — Stories of Prophets', label: 'Prophets', url: 'qasas-ul-anbiya.html', desc: 'Classic Urdu collection of stories of the Prophets for spiritual education.', tags: 'qasas ul anbiya prophets stories islamic urdu adam nuh ibrahim musa isa yusuf' },
+  { title: 'Quranic Stories', label: 'Quran', url: 'quranic-stories.html', desc: 'Timeless Quranic stories of Yusuf, Musa, Ibrahim, Maryam, Ashab al-Kahf, Yunus, Ayyub, and Adam.', tags: 'quranic stories yusuf musa ibrahim maryam ashab kahf yunus ayyub adam quran lessons' },
+  { title: 'Al-Salihin — Lives of the Righteous', label: 'Biographies', url: 'al-salihin.html', desc: "Biographies of righteous Companions, Tabi'een, and scholars — Umar, Imam Ghazali, Maulana Rumi and more.", tags: 'al salihin umar ibn khattab saad muadh umar abdul aziz imam ghazali junayd baghdadi ibrahim ibn adham maulana rumi fihi ma fihi zubaidah scholars companions biographies' }
+];
+
 (function () {
   'use strict';
 
@@ -714,15 +726,43 @@
     var backdrop  = document.getElementById('searchBackdrop');
     if (!toggleBtn || !modal) return;
 
+    var searchInput  = document.getElementById('siteSearchInput');
+    var resultsBox   = document.getElementById('siteSearchResults');
+
+    function renderResults(q) {
+      if (!resultsBox) return;
+      q = q.trim().toLowerCase();
+      if (q.length < 2) {
+        resultsBox.innerHTML = '<p class="search-prompt">Type to search pages, books, topics…</p>';
+        return;
+      }
+      var words = q.split(/\s+/);
+      var matches = SITE_SEARCH_INDEX.filter(function (page) {
+        var hay = (page.title + ' ' + page.desc + ' ' + page.tags).toLowerCase();
+        return words.every(function (w) { return hay.indexOf(w) !== -1; });
+      });
+      if (!matches.length) {
+        resultsBox.innerHTML = '<p class="search-no-results">No results for <strong>"' + q + '"</strong> — try a different keyword.</p>';
+        return;
+      }
+      resultsBox.innerHTML = matches.map(function (page) {
+        return '<a href="' + page.url + '" class="search-result-item" role="option">' +
+          '<span class="search-result-label">' + page.label + '</span>' +
+          '<span class="search-result-title">' + page.title + '</span>' +
+          '<span class="search-result-desc">' + page.desc + '</span>' +
+          '</a>';
+      }).join('');
+    }
+
     function openSearch() {
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       toggleBtn.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
+      renderResults('');
       setTimeout(function () {
-        var input = modal.querySelector('input[type="text"]');
-        if (input) input.focus();
-      }, 300);
+        if (searchInput) searchInput.focus();
+      }, 200);
     }
 
     function closeSearch() {
@@ -730,7 +770,13 @@
       modal.setAttribute('aria-hidden', 'true');
       toggleBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
+      if (searchInput) searchInput.value = '';
+      if (resultsBox) resultsBox.innerHTML = '';
       toggleBtn.focus();
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', function () { renderResults(this.value); });
     }
 
     var drawerSearchBtn = document.getElementById('drawerSearchBtn');
