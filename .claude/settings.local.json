@@ -6,7 +6,9 @@
       "Bash(grep -rn \"class=\\\\\"navbar\\\\\"\" /Users/mr.khatana/Downloads/taleemaateislam.com-main/*.html)",
       "Bash(grep -rn \"^  <footer>\" /Users/mr.khatana/Downloads/taleemaateislam.com-main/*.html)",
       "Bash(grep -rn \"hamburger.addEventListener\\\\|getElementById\\('hamburger'\\)\\\\|updateDateTime\\\\|current-year.*textContent\" /Users/mr.khatana/Downloads/taleemaateislam.com-main/*.html)",
-      "Bash(sips -g pixelWidth -g pixelHeight /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiMTahirMasood.png)"
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiMTahirMasood.png)",
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(yt-dlp --flat-playlist --print \"%\\(id\\)s %\\(title\\)s\" \"https://www.youtube.com/playlist?list=PLdujDev9jtVYGkOfaOEu80pbTtaPKPY7Q\")"
     ]
   }
 }

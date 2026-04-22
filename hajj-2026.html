@@ -397,6 +397,47 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .shorts-section {
+      padding: 70px 0 80px;
+      background: var(--white);
+    }
+
+    .shorts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .short-item {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(201, 150, 58, 0.28);
+      box-shadow: 0 6px 18px rgba(13, 40, 24, 0.07);
+      background: #000;
+    }
+
+    .short-item iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .shorts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .shorts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+    }
   </style>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC55V0MHS8"></script>
@@ -446,6 +487,41 @@
           <article class="pathway-item"><strong>05. Muzdalifah</strong><span>Night of humility, gathering, and patience.</span></article>
           <article class="pathway-item"><strong>06. Mina & Jamarat</strong><span>Obedience, resolve, and practical order.</span></article>
           <article class="pathway-item"><strong>07. Tawaf & Return</strong><span>Completion with gratitude and renewal.</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="shorts-section" aria-labelledby="shorts-title">
+      <div class="container">
+        <div class="faq-header">
+          <span class="section-label">Video Shorts</span>
+          <h2 class="section-title" id="shorts-title">Hajj 2026 <span>Quick Answers</span></h2>
+          <div class="divider-gold" aria-hidden="true"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+        </div>
+
+        <div class="shorts-grid">
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/suqam8mwHRI" title="حج کس پر فرض ہے؟" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/KSCCJjJAxh8" title="حج کے فرائض اور واجبات" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/16VGf5BB9b8" title="احرام کا طریقہ" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/XtFs238ST3E" title="خواتین کا احرام" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/GkCTdG8p_zg" title="حج کے پانچ دن" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/6e_C2UgQPpw" title="نو ذی الحج عرفات کا دن" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/UZ3ORndZDjM" title="مزدلفہ - نو اور دس ذی الحجہ کی رات" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/0ue7VMfwslQ" title="دس ذی الحجہ رمی قربانی اور احرام کھولنا" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/O_x3L6EjCkQ" title="طواف زیارت اور حج کی سعی" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/vmQ9gnDOjTc" title="گیارہ بارہ ذی الحج کی رمی" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/CCP0i3BLjWE" title="جمرات پر دعا کا طریقہ" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/nOdUsI5_IIw" title="تیرہ ذی الحج کی رمی کر سکتے ھیں" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/NrJyJ_yv7Gk" title="طوافِ وداع" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/GPNZvoovQ7Q" title="حج کی پہلی قسم - حج افراد" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/Oy0fAezLr0o" title="حج کی دوسری قسم - حج تمتع" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/cKfz5aSk8VE" title="عمرے کا طریقہ" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/MSZBVJajK00" title="حج کی تیسری قسم - حج قِرآن" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/IL9e0Q_2xHQ" title="استقبال اور استلام میں فرق" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/h34Pj3a65Vo" title="سعی سے قبل نواں استلام" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/uGaCFt6crUo" title="میقات اور حدود حرم" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/7UHT-RC_388" title="طائف میقات سے باھر ھے" loading="lazy" allowfullscreen></iframe></div>
+          <div class="short-item"><iframe src="https://www.youtube.com/embed/GKerUj-yXds" title="حج کا فاسد ھونا" loading="lazy" allowfullscreen></iframe></div>
         </div>
       </div>
     </section>
