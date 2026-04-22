@@ -8,7 +8,10 @@
       "Bash(grep -rn \"hamburger.addEventListener\\\\|getElementById\\('hamburger'\\)\\\\|updateDateTime\\\\|current-year.*textContent\" /Users/mr.khatana/Downloads/taleemaateislam.com-main/*.html)",
       "Bash(sips -g pixelWidth -g pixelHeight /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiMTahirMasood.png)",
       "WebFetch(domain:www.youtube.com)",
-      "Bash(yt-dlp --flat-playlist --print \"%\\(id\\)s %\\(title\\)s\" \"https://www.youtube.com/playlist?list=PLdujDev9jtVYGkOfaOEu80pbTtaPKPY7Q\")"
+      "Bash(yt-dlp --flat-playlist --print \"%\\(id\\)s %\\(title\\)s\" \"https://www.youtube.com/playlist?list=PLdujDev9jtVYGkOfaOEu80pbTtaPKPY7Q\")",
+      "Bash(sips -s format jpeg -s formatOptions 82 /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiShahidMushtaq2.png --out /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiShahidMushtaq2-compressed.jpg)",
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiShahidMushtaq2.png)",
+      "Bash(sips -z 1080 876 -s format jpeg -s formatOptions 80 /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiShahidMushtaq2.png --out /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiShahidMushtaq2-compressed.jpg)"
     ]
   }
 }
