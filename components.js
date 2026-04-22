@@ -706,6 +706,55 @@
     if (document.readyState === 'complete') { dismiss(); }
   }
 
+  /* ── Search modal ── */
+  function initSearch() {
+    var toggleBtn = document.getElementById('searchToggle');
+    var modal     = document.getElementById('searchModal');
+    var closeBtn  = document.getElementById('searchClose');
+    var backdrop  = document.getElementById('searchBackdrop');
+    if (!toggleBtn || !modal) return;
+
+    function openSearch() {
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      setTimeout(function () {
+        var input = modal.querySelector('input[type="text"]');
+        if (input) input.focus();
+      }, 300);
+    }
+
+    function closeSearch() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      toggleBtn.focus();
+    }
+
+    var drawerSearchBtn = document.getElementById('drawerSearchBtn');
+    if (drawerSearchBtn) {
+      drawerSearchBtn.addEventListener('click', function () {
+        var drawer = document.getElementById('navDrawer');
+        var hamburger = document.getElementById('hamburger');
+        if (drawer) { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); }
+        if (hamburger) { hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); }
+        document.body.style.overflow = '';
+        openSearch();
+      });
+    }
+
+    toggleBtn.addEventListener('click', openSearch);
+    closeBtn.addEventListener('click', closeSearch);
+    modal.addEventListener('click', function (e) {
+      if (!e.target.closest('.search-modal-inner')) closeSearch();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeSearch();
+    });
+  }
+
   /* ── Bootstrap: load both partials, then initialise ── */
   function init() {
     initPageLoader();
@@ -720,6 +769,7 @@
       initHamburger();
       initScrollToTop();
       initDateTime();
+      initSearch();
     }).catch(function (err) {
       console.error('Header load failed:', err);
     });

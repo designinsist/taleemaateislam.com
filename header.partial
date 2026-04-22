@@ -36,6 +36,10 @@
       <span id="gregorian-date"></span>
       <span class="separator" aria-hidden="true">|</span>
       <span id="hijri-date"></span>
+      <span class="separator" aria-hidden="true">|</span>
+      <button class="nav-search-btn top-bar-search-btn" id="searchToggle" aria-label="Open search" aria-expanded="false" aria-controls="searchModal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+      </button>
     </div>
 
   </div>
@@ -94,6 +98,10 @@
   <div class="nav-drawer" id="navDrawer" aria-hidden="true">
     <button type="button" class="drawer-close" id="drawerClose" aria-label="Close mobile menu">Close</button>
     <div class="drawer-links">
+      <button type="button" class="drawer-search-btn" id="drawerSearchBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+        Search the site
+      </button>
       <a href="index.html" class="drawer-link">Home</a>
       <div class="drawer-section-title">Quran</div>
       <a href="dars-e-quran.html" class="drawer-link drawer-sub" data-page="quran-section">Dars-e-Quran</a>
@@ -119,3 +127,17 @@
     </div>
   </div>
 </nav>
+
+<!-- ═══ SEARCH MODAL ═══ -->
+<div class="search-modal" id="searchModal" aria-hidden="true" role="dialog" aria-label="Site search">
+  <div class="search-modal-backdrop" id="searchBackdrop"></div>
+  <div class="search-modal-inner">
+    <button class="search-modal-close" id="searchClose" aria-label="Close search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="search-modal-body">
+      <script async src="https://cse.google.com/cse.js?cx=96e45e1f193b34d16"></script>
+      <div class="gcse-search"></div>
+    </div>
+  </div>
+</div>

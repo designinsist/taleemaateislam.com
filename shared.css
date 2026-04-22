@@ -138,6 +138,32 @@ main { flex: 1; }
 .dropdown a:last-child { border-bottom: none; }
 .dropdown a:hover { background: rgba(201,150,58,0.12); color: var(--gold-light); padding-left: 26px; }
 
+/* Search button */
+.nav-search-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: none; border: none; cursor: pointer; color: var(--gold-light); padding: 4px; transition: color var(--transition), transform var(--transition); flex-shrink: 0; }
+.nav-search-btn:hover { color: var(--white); transform: scale(1.12); }
+.nav-search-btn svg { width: 20px; height: 20px; }
+.top-bar-search-btn { width: 20px; height: 20px; padding: 0; }
+.top-bar-search-btn svg { width: 14px; height: 14px; }
+
+/* Search modal */
+.search-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: flex-start; justify-content: center; padding-top: 80px; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+.search-modal.open { opacity: 1; pointer-events: all; }
+.search-modal-backdrop { position: absolute; inset: 0; background: rgba(13, 40, 24, 0.85); backdrop-filter: blur(4px); pointer-events: none; }
+.search-modal-inner { position: relative; z-index: 1; width: 100%; max-width: 720px; margin: 0 16px; background: var(--white); border-radius: 10px; border: 1px solid rgba(201, 150, 58, 0.35); box-shadow: 0 24px 60px rgba(13, 40, 24, 0.35); transform: translateY(-16px); transition: transform 0.25s ease; overflow: hidden; }
+.search-modal.open .search-modal-inner { transform: translateY(0); }
+.search-modal-close { position: absolute; top: 12px; right: 12px; z-index: 2; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: rgba(201, 150, 58, 0.1); border: 1px solid rgba(201, 150, 58, 0.3); border-radius: 50%; cursor: pointer; color: var(--green-deep); transition: background var(--transition); }
+.search-modal-close:hover { background: rgba(201, 150, 58, 0.22); }
+.search-modal-close svg { width: 16px; height: 16px; }
+.search-modal-body { padding: 24px 24px 20px; }
+.search-modal-body .gsc-input-box { border-radius: 6px !important; border-color: var(--border) !important; background: #fff !important; }
+.search-modal-body input.gsc-input,
+.search-modal-body .gsib_a input { color: var(--text-dark) !important; background: #fff !important; caret-color: var(--green-deep) !important; }
+.search-modal-body .gsc-input-box-hover,
+.search-modal-body .gsc-input-box-focus { border-color: var(--gold) !important; }
+.search-modal-body .gsc-search-button-v2 { background: var(--green-mid) !important; border-color: var(--green-mid) !important; border-radius: 6px !important; padding: 8px 14px !important; }
+.search-modal-body .gsc-results-wrapper-overlay { z-index: 3000 !important; }
+.search-modal-body .gsc-completion-container { z-index: 3000 !important; }
+
 /* Mobile hamburger */
 .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; }
 .nav-hamburger span { display: block; height: 2px; background: var(--gold-light); border-radius: 2px; transition: all 0.3s ease; transform-origin: center; }
@@ -152,6 +178,9 @@ main { flex: 1; }
 .drawer-link:hover { color: var(--gold-light); background: rgba(255,255,255,0.04); }
 .drawer-link.active { color: var(--gold-light); background: rgba(201,150,58,0.12); }
 .drawer-section-title { padding: 18px 28px 6px; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dim); font-weight: 700; }
+.drawer-search-btn { display: flex; align-items: center; gap: 10px; width: calc(100% - 40px); margin: 14px 20px 4px; padding: 11px 16px; background: rgba(201, 150, 58, 0.1); border: 1px solid rgba(201, 150, 58, 0.35); border-radius: 6px; color: var(--gold-light); font-family: 'Nunito', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background var(--transition); }
+.drawer-search-btn:hover { background: rgba(201, 150, 58, 0.2); }
+.drawer-search-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
 .drawer-sub { padding-left: 44px; font-size: 0.88rem; }
 
 /* ═══ INNER HERO (shared by inner pages) ═══ */
@@ -480,6 +509,7 @@ footer { background: #060f0a; color: rgba(255,255,255,0.55); }
 .nav-link:focus-visible,
 .dropdown a:focus-visible,
 .nav-hamburger:focus-visible,
+.nav-search-btn:focus-visible,
 .drawer-close:focus-visible,
 .drawer-link:focus-visible,
 .footer-col a:focus-visible,
