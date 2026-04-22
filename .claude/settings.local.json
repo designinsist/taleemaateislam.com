@@ -11,7 +11,17 @@
       "Bash(yt-dlp --flat-playlist --print \"%\\(id\\)s %\\(title\\)s\" \"https://www.youtube.com/playlist?list=PLdujDev9jtVYGkOfaOEu80pbTtaPKPY7Q\")",
       "Bash(sips -s format jpeg -s formatOptions 82 /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiShahidMushtaq2.png --out /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiShahidMushtaq2-compressed.jpg)",
       "Bash(sips -g pixelWidth -g pixelHeight /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiShahidMushtaq2.png)",
-      "Bash(sips -z 1080 876 -s format jpeg -s formatOptions 80 /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiShahidMushtaq2.png --out /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiShahidMushtaq2-compressed.jpg)"
+      "Bash(sips -z 1080 876 -s format jpeg -s formatOptions 80 /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiShahidMushtaq2.png --out /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiShahidMushtaq2-compressed.jpg)",
+      "Bash(python3 -m http.server 8765)",
+      "Bash(echo \"PID:$!\")",
+      "Bash(open \"http://localhost:8765/hajj-2026.html\")",
+      "Bash(xargs -I{} basename {})",
+      "Bash(git -C /Users/mr.khatana/Downloads/taleemaateislam.com-main diff --stat HEAD)",
+      "Bash(git -C /Users/mr.khatana/Downloads/taleemaateislam.com-main status)",
+      "Bash(git -C /Users/mr.khatana/Downloads/taleemaateislam.com-main diff --stat components.js header.partial shared.css)",
+      "Bash(git -C /Users/mr.khatana/Downloads/taleemaateislam.com-main add components.js header.partial shared.css)",
+      "Bash(git -C /Users/mr.khatana/Downloads/taleemaateislam.com-main commit -m ' *)",
+      "Bash(git -C /Users/mr.khatana/Downloads/taleemaateislam.com-main push origin deploy-clean)"
     ]
   }
 }
