@@ -21,7 +21,9 @@
       "Bash(git -C /Users/mr.khatana/Downloads/taleemaateislam.com-main diff --stat components.js header.partial shared.css)",
       "Bash(git -C /Users/mr.khatana/Downloads/taleemaateislam.com-main add components.js header.partial shared.css)",
       "Bash(git -C /Users/mr.khatana/Downloads/taleemaateislam.com-main commit -m ' *)",
-      "Bash(git -C /Users/mr.khatana/Downloads/taleemaateislam.com-main push origin deploy-clean)"
+      "Bash(git -C /Users/mr.khatana/Downloads/taleemaateislam.com-main push origin deploy-clean)",
+      "Bash(grep -v \"^\\\\-\\\\-$\\\\|class=\\\\|\\\\.surah\\\\|<div\\\\|<span class\")",
+      "Bash(git -C /Users/mr.khatana/Downloads/taleemaateislam.com-main add components.js)"
     ]
   }
 }
