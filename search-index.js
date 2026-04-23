@@ -21,6 +21,13 @@ var SITE_SEARCH_INDEX = [
     tags: 'hajj 2026 pilgrimage mufti tahir masood ihram tawaf arafat mina umrah miqat jamarat muzdalifah qurbani wuqoof'
   },
   {
+    title: 'Hajj 2026 Fazaail & Aadab',
+    label: 'Hajj',
+    url: 'hajj-2026-mufti-ahmed-ali.html',
+    desc: 'Virtues and etiquettes of Hajj 2026 by Mufti Ahmed Ali, graduate of Jamia Ashrafia Lahore.',
+    tags: 'hajj fazaail aadab virtues etiquettes mufti ahmed ali jamia ashrafia lahore ikhlas sabr dhikr tawadu ihram tawaf arafat adab 2026'
+  },
+  {
     title: 'Connect with Allah - Free Islamic Books',
     label: 'Books',
     url: 'connect-with-allah.html',
