@@ -76,7 +76,13 @@
         <a href="connect-with-allah.html" class="nav-link" data-page="connect-with-allah.html">Connect with Allah</a>
       </li>
       <li class="nav-item">
-        <a href="hajj-2026.html" class="nav-link" data-page="hajj-2026.html">Hajj 2026</a>
+        <button type="button" class="nav-link nav-menu-toggle" aria-haspopup="true" aria-expanded="false" data-page="hajj-section">
+          Hajj 2026 <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg>
+        </button>
+        <ul class="dropdown" role="menu" aria-label="Hajj 2026 submenu">
+          <li><a href="hajj-2026.html" role="menuitem">Hajj Q&amp;A - Mufti M. Tahir Masood</a></li>
+          <li><a href="hajj-2026-mufti-ahmed-ali.html" role="menuitem">Fazaail &amp; Aadab - Mufti Ahmed Ali</a></li>
+        </ul>
       </li>
       <li class="nav-item">
         <a href="islamic-tools.html" class="nav-link" data-page="islamic-tools.html">Islamic Tools</a>
@@ -111,7 +117,8 @@
       <div class="drawer-section-title">Spirituality</div>
       <a href="connect-with-allah.html" class="drawer-link drawer-sub" data-page="connect-with-allah.html">Connect with Allah</a>
       <div class="drawer-section-title">Hajj Special</div>
-      <a href="hajj-2026.html" class="drawer-link drawer-sub" data-page="hajj-2026.html">Hajj 2026</a>
+      <a href="hajj-2026.html" class="drawer-link drawer-sub" data-page="hajj-section">Hajj Q&amp;A - Mufti M. Tahir Masood</a>
+      <a href="hajj-2026-mufti-ahmed-ali.html" class="drawer-link drawer-sub" data-page="hajj-section">Fazaail &amp; Aadab - Mufti Ahmed Ali</a>
       <div class="drawer-section-title">Tools &amp; Wisdom</div>
       <a href="islamic-tools.html" class="drawer-link drawer-sub" data-page="islamic-tools.html">Islamic Tools</a>
       <a href="qasas-ul-anbiya.html" class="drawer-link drawer-sub" data-page="qasas-ul-anbiya.html">Prophets</a>

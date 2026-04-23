@@ -1092,7 +1092,7 @@
         <p class="hero-bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
         <h1 class="inner-title" id="hero-title">Prayer Times, Calendar <span>& Qibla</span></h1>
         <p class="inner-desc">Accurate daily Namaz timings, Qibla direction, and Islamic Hijri calendar for major
-          cities of Pakistan — all powered by Aladhan API.</p>
+          cities of Pakistan - all powered by Aladhan API.</p>
       </div>
     </header>
 
@@ -1181,7 +1181,7 @@
         </div>
         <div id="namaz-error" class="error-msg">Unable to load prayer times. Please check your internet connection and
           refresh the page.</div>
-        <p class="namaz-note">* Prayer times calculated using the University of Islamic Sciences (Karachi) method with selectable Asr fiqh (Hanafi or Shafi'i / Ahl-e-Hadith). Powered by <a href="https://aladhan.com" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">Aladhan API</a>. Times are approximate — verify with your local mosque.</p>
+        <p class="namaz-note">* Prayer times calculated using the University of Islamic Sciences (Karachi) method with selectable Asr fiqh (Hanafi or Shafi'i / Ahl-e-Hadith). Powered by <a href="https://aladhan.com" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">Aladhan API</a>. Times are approximate - verify with your local mosque.</p>
         <div class="fiqh-explainer">
           Asr Hanafi (Asar Hanfi, عصر حنفی) uses <strong>Misal Doem / Misal Doim</strong> (مثلِ دوم), while Asr Shafi / Ahl-e-Hadith (Asar Shafi, Asar Ahle Hadees, عصر شافعی، اہل حدیث) uses <strong>Misal Awwal / Misal Awal</strong> (مثلِ اوّل).
         </div>
@@ -1192,7 +1192,7 @@
             <p>Asr Hanafi follows <strong>Misal Doem</strong> (shadow reaches roughly 2x object length), while Asr Shafi / Ahl-e-Hadith follows <strong>Misal Awwal</strong> (shadow reaches roughly 1x object length).</p>
           </details>
           <details>
-            <summary>Misal Awwal vs Misal Doem — what do these terms mean?</summary>
+            <summary>Misal Awwal vs Misal Doem - what do these terms mean?</summary>
             <p><strong>Misal Awwal (مثلِ اوّل)</strong> means first shadow method (equal shadow). <strong>Misal Doem (مثلِ دوم)</strong> means second shadow method (double shadow), commonly used in Hanafi Asr timing.</p>
           </details>
           <details>
@@ -1266,7 +1266,7 @@
             </div>
             <button class="mobile-compass-btn" id="mobile-compass-btn">🧭 Use Device Compass (Mobile)</button>
             <div class="device-compass-wrap" id="device-compass-wrap">
-              <p>Point your phone forward and rotate slowly until the arrow points up — that is your Qibla direction.
+              <p>Point your phone forward and rotate slowly until the arrow points up - that is your Qibla direction.
               </p>
               <span class="device-arrow" id="device-arrow">↑</span>
               <p class="device-status" id="device-status">Waiting for compass sensor...</p>
@@ -1281,7 +1281,7 @@
 
     <section class="cal-section" aria-labelledby="calendar-heading">
       <div class="container">
-        <span class="section-label">Islamic Calendar — Powered by Aladhan API</span>
+        <span class="section-label">Islamic Calendar - Powered by Aladhan API</span>
         <h2 class="section-title" id="calendar-heading">Hijri <span>Calendar</span></h2>
         <div class="divider-gold">
           <div class="line"></div>
@@ -1403,7 +1403,7 @@
         const now = new Date();
         document.getElementById('gregorian-date').textContent =
           now.toLocaleDateString('en-PK', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-        /* Hijri fallback (Kuwaiti algorithm) — used only when Aladhan API
+        /* Hijri fallback (Kuwaiti algorithm) - used only when Aladhan API
            is unreachable. Same algorithm as components.js fallback. */
         (function() {
           var MONTHS = ['Muharram','Safar','Rabi al-Awwal','Rabi al-Thani',
@@ -1459,7 +1459,7 @@
     setInterval(highlightActivePrayer, 60000);
 
     // ══════════════════════
-    // CALENDAR — Aladhan API
+    // CALENDAR - Aladhan API
     // ══════════════════════
     let calDate = new Date();
     const todayDate = new Date();
@@ -1538,7 +1538,7 @@
       if (eventsThisMonth.length > 0) {
         eventsThisMonth.forEach(ev => {
           evList.innerHTML += '<div class="event-chip"><div class="event-dot"></div><div class="event-body"><strong>' +
-            ev.name + '</strong><span>' + monthNames[m] + ' ' + ev.date + ' — ' + ev.hijri + ' AH</span></div></div>';
+            ev.name + '</strong><span>' + monthNames[m] + ' ' + ev.date + ' - ' + ev.hijri + ' AH</span></div></div>';
         });
       } else {
         evList.innerHTML = '<p style="color:rgba(255,255,255,0.35);font-size:0.85rem;">No major Islamic events this month.</p>';

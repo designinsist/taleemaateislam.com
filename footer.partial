@@ -59,7 +59,7 @@
       </a>
     </div>
   </div>
-  <!-- Backdrop for mobile panel — JS toggles .is-visible -->
+  <!-- Backdrop for mobile panel - JS toggles .is-visible -->
   <div class="social-sticky-backdrop" id="socialStickyBackdrop" aria-hidden="true"></div>
 
   <div class="container">
@@ -72,12 +72,14 @@
       <div class="footer-col">
         <h4>Core Topics</h4>
         <a href="dars-e-quran.html">Dars-e-Quran</a>
-        <a href="quranic-stories.html">Quranic-Stories</a>
+        <a href="quranic-stories.html">Quranic Stories</a>
         <a href="syed-ul-bashar.html">Syed-ul-Bashar (PBUH) &amp; Companions</a>
         <a href="connect-with-allah.html">Connect with Allah</a>
         <a href="islamic-tools.html">Islamic Tools &amp; Timings</a>
         <a href="qasas-ul-anbiya.html">Prophets</a>
         <a href="al-salihin.html">Al-Salihin</a>
+        <a href="hajj-2026.html">Hajj 2026 - Q&amp;A</a>
+        <a href="hajj-2026-mufti-ahmed-ali.html">Hajj 2026 - Fazaail &amp; Aadab</a>
       </div>
 
       <div class="footer-col">

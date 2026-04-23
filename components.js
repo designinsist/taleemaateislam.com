@@ -1,5 +1,5 @@
 /**
- * components.js — Taleemaat-e-Islam
+ * components.js - Taleemaat-e-Islam
  * Loads shared header.partial and footer.partial into every page,
  * then initialises: active nav link, mobile hamburger,
  * live date/time bar, and the copyright year.
@@ -7,14 +7,15 @@
 
 var SITE_SEARCH_INDEX = [
   { title: 'Home', label: 'Home', url: 'index.html', desc: 'Authentic Quranic commentary, free Islamic books, and Sunni guidance.', tags: 'taleemaat islam books quran guidance khuda mojood hai yaqeen ka safar islamic education free' },
-  { title: 'Dars-e-Quran', label: 'Quran', url: 'dars-e-quran.html', desc: 'Ayah-by-ayah Quran tafseer by Mufti Shahid Mushtaq — Surah Al-Isra, Baqarah, Yunus, Yousuf, Maidah, Al-Anam, Al-Anfal, Al-Araf, Al-Hijr, An-Nahal, Ar-Raad, At-Tauba, Hud, Ibrahim and more.', tags: 'dars quran tafseer mufti shahid mushtaq audio lecture ayah bani israel isra baqarah yunus yousuf maidah anam anfal araf hijr nahal raad tauba hud ibrahim explanation urdu' },
+  { title: 'Dars-e-Quran', label: 'Quran', url: 'dars-e-quran.html', desc: 'Ayah-by-ayah Quran tafseer by Mufti Shahid Mushtaq - Surah Al-Isra, Baqarah, Yunus, Yousuf, Maidah, Al-Anam, Al-Anfal, Al-Araf, Al-Hijr, An-Nahal, Ar-Raad, At-Tauba, Hud, Ibrahim and more.', tags: 'dars quran tafseer mufti shahid mushtaq audio lecture ayah bani israel isra baqarah yunus yousuf maidah anam anfal araf hijr nahal raad tauba hud ibrahim explanation urdu' },
   { title: 'Hajj 2026 Q&A', label: 'Hajj', url: 'hajj-2026.html', desc: 'Practical Hajj 2026 guidance and Q&A by Mufti Muhammad Tahir Masood.', tags: 'hajj 2026 pilgrimage mufti tahir masood ihram tawaf arafat mina umrah miqat jamarat muzdalifah qurbani wuqoof' },
-  { title: 'Connect with Allah — Free Islamic Books', label: 'Books', url: 'connect-with-allah.html', desc: '16 free Islamic books in Urdu and English — Khuda Mojood Hai, Yaqeen Ka Safar, Manzil Dua, and more.', tags: 'khuda mojood hai meet god islam science namaz al-hizb ul-azam munajat maqbool manzil dua istikhara fallacy evolution yaqeen ka safar hayat muslimeen polygamy tasawwuf allah sharam books free urdu english duas spirituality connect allah' },
-  { title: 'Syed-ul-Bashar — Prophet & Companions', label: 'Seerah', url: 'syed-ul-bashar.html', desc: '10 free books on Prophet Muhammad, Seerah, Sahaba and Islamic legacy.', tags: 'prophet muhammad pbuh seerah seerat mustafa sarwar konain jadeed nabi dalail nubuwwah asbat risalat khutbat asma zariya wusool durood salawat ahl al-bayt companions sahaba' },
-  { title: 'Islamic Tools — Namaz Timings & Qibla', label: 'Tools', url: 'islamic-tools.html', desc: 'Namaz timings for Pakistan cities, Hijri calendar 2026, and Qibla direction.', tags: 'namaz prayer times timings qibla hijri calendar pakistan lahore karachi fajr zuhr asr maghrib isha salah' },
-  { title: 'Qasas Ul Anbiya — Stories of Prophets', label: 'Prophets', url: 'qasas-ul-anbiya.html', desc: 'Classic Urdu collection of stories of the Prophets for spiritual education.', tags: 'qasas ul anbiya prophets stories islamic urdu adam nuh ibrahim musa isa yusuf' },
+  { title: 'Hajj ke Fazaail aur Aadab', label: 'Hajj', url: 'hajj-2026-mufti-ahmed-ali.html', desc: 'Virtues and etiquettes of Hajj by Mufti Ahmed Ali, graduate of Jamia Ashrafia Lahore.', tags: 'hajj fazaail aadab virtues etiquettes mufti ahmed ali jamia ashrafia lahore ikhlas sabr dhikr tawadu ihram tawaf arafat adab 2026' },
+  { title: 'Connect with Allah - Free Islamic Books', label: 'Books', url: 'connect-with-allah.html', desc: '16 free Islamic books in Urdu and English - Khuda Mojood Hai, Yaqeen Ka Safar, Manzil Dua, and more.', tags: 'khuda mojood hai meet god islam science namaz al-hizb ul-azam munajat maqbool manzil dua istikhara fallacy evolution yaqeen ka safar hayat muslimeen polygamy tasawwuf allah sharam books free urdu english duas spirituality connect allah' },
+  { title: 'Syed-ul-Bashar - Prophet & Companions', label: 'Seerah', url: 'syed-ul-bashar.html', desc: '10 free books on Prophet Muhammad, Seerah, Sahaba and Islamic legacy.', tags: 'prophet muhammad pbuh seerah seerat mustafa sarwar konain jadeed nabi dalail nubuwwah asbat risalat khutbat asma zariya wusool durood salawat ahl al-bayt companions sahaba' },
+  { title: 'Islamic Tools - Namaz Timings & Qibla', label: 'Tools', url: 'islamic-tools.html', desc: 'Namaz timings for Pakistan cities, Hijri calendar 2026, and Qibla direction.', tags: 'namaz prayer times timings qibla hijri calendar pakistan lahore karachi fajr zuhr asr maghrib isha salah' },
+  { title: 'Qasas Ul Anbiya - Stories of Prophets', label: 'Prophets', url: 'qasas-ul-anbiya.html', desc: 'Classic Urdu collection of stories of the Prophets for spiritual education.', tags: 'qasas ul anbiya prophets stories islamic urdu adam nuh ibrahim musa isa yusuf' },
   { title: 'Quranic Stories', label: 'Quran', url: 'quranic-stories.html', desc: 'Timeless Quranic stories of Yusuf, Musa, Ibrahim, Maryam, Ashab al-Kahf, Yunus, Ayyub, and Adam.', tags: 'quranic stories yusuf musa ibrahim maryam ashab kahf yunus ayyub adam quran lessons' },
-  { title: 'Al-Salihin — Lives of the Righteous', label: 'Biographies', url: 'al-salihin.html', desc: "Biographies of righteous Companions, Tabi'een, and scholars — Umar, Imam Ghazali, Maulana Rumi and more.", tags: 'al salihin umar ibn khattab saad muadh umar abdul aziz imam ghazali junayd baghdadi ibrahim ibn adham maulana rumi fihi ma fihi zubaidah scholars companions biographies' }
+  { title: 'Al-Salihin - Lives of the Righteous', label: 'Biographies', url: 'al-salihin.html', desc: "Biographies of righteous Companions, Tabi'een, and scholars - Umar, Imam Ghazali, Maulana Rumi and more.", tags: 'al salihin umar ibn khattab saad muadh umar abdul aziz imam ghazali junayd baghdadi ibrahim ibn adham maulana rumi fihi ma fihi zubaidah scholars companions biographies' }
 ];
 
 (function () {
@@ -27,7 +28,8 @@ var SITE_SEARCH_INDEX = [
     'dars-e-quran.html'           : 'quran-section',
     'quranic-stories.html'        : 'quran-section',
     'connect-with-allah.html'     : 'connect-with-allah.html',
-    'hajj-2026.html'              : 'hajj-2026.html',
+    'hajj-2026.html'              : 'hajj-section',
+    'hajj-2026-mufti-ahmed-ali.html' : 'hajj-section',
     'syed-ul-bashar.html'         : 'syed-ul-bashar.html',
     'islamic-tools.html'          : 'islamic-tools.html',
     'qasas-ul-anbiya.html'        : 'qasas-ul-anbiya.html',
@@ -250,7 +252,7 @@ var SITE_SEARCH_INDEX = [
     var backdrop = document.getElementById('socialStickyBackdrop');
     if (!rail || !toggle || !panel) return;
 
-    /* On mobile (≤768px) always start closed — never persist open state */
+    /* On mobile (≤768px) always start closed - never persist open state */
     var isMobile = function () { return window.innerWidth <= 768; };
 
     var storageKey = 'taleemaatSocialRailState';
@@ -337,7 +339,7 @@ var SITE_SEARCH_INDEX = [
       }
     });
 
-    /* Re-evaluate on resize — close if switching to mobile while open */
+    /* Re-evaluate on resize - close if switching to mobile while open */
     window.addEventListener('resize', function () {
       if (isMobile() && rail.classList.contains('is-open')) {
         applyState(false, false);
@@ -352,7 +354,7 @@ var SITE_SEARCH_INDEX = [
     var timeEl  = document.getElementById('live-time');
     if (!gregEl && !hijriEl && !timeEl) return;
 
-    /* ── Gregorian date & clock — runs every second, no API needed ── */
+    /* ── Gregorian date & clock - runs every second, no API needed ── */
     function tick() {
       var now = new Date();
       if (gregEl) {
@@ -374,7 +376,7 @@ var SITE_SEARCH_INDEX = [
      * Response : res.data.hijri.{ day, month.en, year }
      * This is the same trusted API powering prayer times on the site,
      * so the Hijri date is always accurate and identical on every
-     * device and browser — no more "October BC" on Android.
+     * device and browser - no more "October BC" on Android.
      *
      * Fallback : if the API is unreachable (offline / slow network)
      * the Kuwaiti algorithmic calculation runs instantly in JS and
@@ -382,7 +384,7 @@ var SITE_SEARCH_INDEX = [
      * ────────────────────────────────────────────────────────────── */
     if (!hijriEl) return;
 
-    /* Kuwaiti algorithm — pure JS, works offline on every device */
+    /* Kuwaiti algorithm - pure JS, works offline on every device */
     function hijriFallback(date) {
       var MONTHS = [
         'Muharram', 'Safar', 'Rabi al-Awwal', 'Rabi al-Thani',
@@ -403,7 +405,7 @@ var SITE_SEARCH_INDEX = [
       return day + ' ' + MONTHS[month - 1] + ' ' + year + ' AH';
     }
 
-    /* Fetch Hijri date from Aladhan — called once on load, then
+    /* Fetch Hijri date from Aladhan - called once on load, then
        again automatically at midnight if the page stays open */
     function fetchHijriDate() {
       var now  = new Date();
@@ -423,7 +425,7 @@ var SITE_SEARCH_INDEX = [
           }
         })
         .catch(function () {
-          /* Network error or offline — use instant JS fallback */
+          /* Network error or offline - use instant JS fallback */
           hijriEl.textContent = hijriFallback(now);
         });
     }
@@ -708,7 +710,7 @@ var SITE_SEARCH_INDEX = [
 
     var forceTimer = setTimeout(dismiss, 8000);
 
-    // Dismiss when own fonts are ready — does NOT wait for third-party iframes like YouTube
+    // Dismiss when own fonts are ready - does NOT wait for third-party iframes like YouTube
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(function () { setTimeout(dismiss, 250); });
     }
@@ -742,7 +744,7 @@ var SITE_SEARCH_INDEX = [
         return words.every(function (w) { return hay.indexOf(w) !== -1; });
       });
       if (!matches.length) {
-        resultsBox.innerHTML = '<p class="search-no-results">No results for <strong>"' + q + '"</strong> — try a different keyword.</p>';
+        resultsBox.innerHTML = '<p class="search-no-results">No results for <strong>"' + q + '"</strong> - try a different keyword.</p>';
         return;
       }
       resultsBox.innerHTML = matches.map(function (page) {

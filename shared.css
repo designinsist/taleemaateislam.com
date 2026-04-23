@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   TALEEMAAT-E-ISLAM — SHARED STYLESHEET
+   TALEEMAAT-E-ISLAM - SHARED STYLESHEET
    Covers: Design system, base reset, top-bar, navbar, footer,
            common utility classes, animations, and responsive rules.
    Page-specific styles remain in each page's own <style> block.
@@ -79,7 +79,7 @@ main { flex: 1; }
 
 /* ═══ COMPONENT PLACEHOLDERS ═══ */
 /* display:contents makes the wrapper div invisible to layout,
-   so the injected <nav> and <footer> act as direct body children —
+   so the injected <nav> and <footer> act as direct body children -
    required for position:sticky on the navbar to work correctly. */
 #site-header { display: contents; }
 #site-footer { display: contents; }
@@ -117,7 +117,7 @@ main { flex: 1; }
 .nav-menu { display: flex; align-items: center; gap: 0; height: 100%; margin-left: auto; }
 .nav-item { position: relative; height: 100%; display: flex; align-items: center; }
 .nav-link { display: flex; align-items: center; gap: 6px; padding: 0 12px; height: 100%; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; color: rgba(255,255,255,0.82); transition: color var(--transition), background var(--transition); white-space: nowrap; }
-.nav-menu-toggle { border: none; background: transparent; font: inherit; cursor: pointer; }
+.nav-menu-toggle { border: none; background: transparent; font-family: inherit; cursor: pointer; }
 .nav-link:hover, .nav-item:hover > .nav-link { color: var(--gold-light); background: rgba(255,255,255,0.06); }
 .nav-link.active { color: var(--gold-light); position: relative; }
 .nav-link.active::after {
@@ -603,7 +603,7 @@ footer { background: #060f0a; color: rgba(255,255,255,0.55); }
     background: linear-gradient(135deg, rgba(30,92,56,0.98), rgba(13,40,24,0.98));
   }
 
-  /* Hide text label — icon is enough on mobile */
+  /* Hide text label - icon is enough on mobile */
   .social-sticky-toggle-copy {
     display: none;
   }
