@@ -30,7 +30,8 @@
       "Bash(sips -z 630 1200 \"/Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiAhmedAli .png\" --out /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiAhmedAli-og.jpg -s format jpeg -s formatOptions 85 --cropToHeightWidth 630 1200)",
       "Bash(sips -z 1200 1200 \"/Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiAhmedAli .png\" --out /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiAhmedAli-og.jpg -s format jpeg -s formatOptions 85)",
       "Bash(xargs sed *)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiAhmedAli-og.jpg)"
     ]
   }
 }
