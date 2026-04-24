@@ -32,7 +32,17 @@
       "Bash(xargs sed *)",
       "Bash(python3 -c ' *)",
       "Bash(sips -g pixelWidth -g pixelHeight /Users/mr.khatana/Downloads/taleemaateislam.com-main/images/MuftiAhmedAli-og.jpg)",
-      "Bash(yt-dlp --flat-playlist --print \"%\\(id\\)s %\\(title\\)s\" \"https://www.youtube.com/playlist?list=PLdujDev9jtVaN5r4y0gQ0xp1_ImFjfQj_\")"
+      "Bash(yt-dlp --flat-playlist --print \"%\\(id\\)s %\\(title\\)s\" \"https://www.youtube.com/playlist?list=PLdujDev9jtVaN5r4y0gQ0xp1_ImFjfQj_\")",
+      "Bash(python3 -c \"from PIL import Image, ImageDraw, ImageFont; print\\('Pillow OK'\\)\")",
+      "Bash(convert --version)",
+      "Bash(pip3 install *)",
+      "Bash(python3 -c \"from PIL import Image; print\\('OK'\\)\")",
+      "Bash(brew install *)",
+      "Bash(magick --version)",
+      "Bash(magick -list font)",
+      "Bash(magick -size 1200x630 'xc:#0d2818' '\\(' /tmp/mufti_portrait.jpg '\\)' -gravity East -composite -gravity NorthWest -fill '#c9963a' -draw 'rectangle 0,0 5,630' -draw 'line 817,0 817,630' -font /System/Library/Fonts/HelveticaNeue.ttc -pointsize 11 -fill '#c9963a' -annotate +70+65 TALEEMAAT-E-ISLAM -pointsize 58 -fill '#ffffff' -annotate +68+90 'Hajj 2026' -pointsize 33 -fill '#e8b84b' -annotate +70+172 'Fazaail aur Aadab' -fill '#c9963a' -draw 'line 70,232 370,232' -pointsize 20 -fill '#ffffff' -annotate +70+248 'Mufti Ahmed Ali' -pointsize 12 -fill 'rgba\\(255,255,255,0.6\\)' -annotate +70+283 'Jamia Ashrafia Lahore' -quality 92 /tmp/og_preview.jpg)",
+      "Bash(magick identify *)",
+      "Bash(magick -size 1200x630 'xc:#0d2818' '\\(' /tmp/mufti_portrait.jpg '\\)' -gravity East -composite -gravity NorthWest -fill '#c9963a' -draw 'rectangle 0,0 5,630' -draw 'line 817,0 817,630' -font /System/Library/Fonts/HelveticaNeue.ttc -pointsize 11 -fill '#c9963a' -annotate +70+190 TALEEMAAT-E-ISLAM -pointsize 58 -fill '#ffffff' -annotate +68+215 'Hajj 2026' -pointsize 33 -fill '#e8b84b' -annotate +70+297 'Fazaail aur Aadab' -fill '#c9963a' -draw 'line 70,358 370,358' -pointsize 20 -fill '#ffffff' -annotate +70+374 'Mufti Ahmed Ali' -pointsize 12 -fill 'rgba\\(255,255,255,0.6\\)' -annotate +70+408 'Jamia Ashrafia Lahore' -quality 92 /tmp/og_final.jpg)"
     ]
   }
 }
