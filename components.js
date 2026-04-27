@@ -691,11 +691,6 @@ var SITE_SEARCH_INDEX = [
       btnUr.classList.toggle('is-active', lang === 'ur');
       btnEn.classList.toggle('is-active', lang === 'en');
       document.documentElement.lang = (lang === 'ur') ? 'ur' : 'en';
-      /* sync drawer buttons if present */
-      var dUr = document.getElementById('drawerLangBtnUr');
-      var dEn = document.getElementById('drawerLangBtnEn');
-      if (dUr) dUr.classList.toggle('is-active', lang === 'ur');
-      if (dEn) dEn.classList.toggle('is-active', lang === 'en');
     }
 
     /* Enhancement #4: loading state on the clicked flag */
@@ -746,18 +741,15 @@ var SITE_SEARCH_INDEX = [
 
     btnUr.addEventListener('click', function () { applyLang('ur', true); });
     btnEn.addEventListener('click', function () { applyLang('en', true); });
-
-    /* Enhancement #5: wire up drawer buttons (added after header loads) */
-    var drawerUr = document.getElementById('drawerLangBtnUr');
-    var drawerEn = document.getElementById('drawerLangBtnEn');
-    if (drawerUr) drawerUr.addEventListener('click', function () { applyLang('ur', true); });
-    if (drawerEn) drawerEn.addEventListener('click', function () { applyLang('en', true); });
   }
 
   /* ── Copyright year ── */
   function initCopyrightYear() {
+    var year = new Date().getFullYear();
     var el = document.getElementById('current-year');
-    if (el) el.textContent = new Date().getFullYear();
+    var drawerEl = document.getElementById('drawer-current-year');
+    if (el) el.textContent = year;
+    if (drawerEl) drawerEl.textContent = year;
   }
 
   /* ── Site-wide page loader ── */
@@ -894,18 +886,6 @@ var SITE_SEARCH_INDEX = [
       searchInput.addEventListener('input', function () { renderResults(this.value); });
     }
 
-    var drawerSearchBtn = document.getElementById('drawerSearchBtn');
-    if (drawerSearchBtn) {
-      drawerSearchBtn.addEventListener('click', function () {
-        var drawer = document.getElementById('navDrawer');
-        var hamburger = document.getElementById('hamburger');
-        if (drawer) { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); }
-        if (hamburger) { hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); }
-        document.body.style.overflow = '';
-        openSearch();
-      });
-    }
-
     toggleBtn.addEventListener('click', openSearch);
     closeBtn.addEventListener('click', closeSearch);
     modal.addEventListener('click', function (e) {
@@ -928,6 +908,7 @@ var SITE_SEARCH_INDEX = [
       setActiveNav();
       initDesktopDropdown();
       initHamburger();
+      initCopyrightYear();
       initScrollToTop();
       initDateTime();
       initSearch();
