@@ -38,8 +38,8 @@
       <span id="hijri-date"></span>
       <span class="separator" aria-hidden="true">|</span>
       <div class="lang-switcher" role="group" aria-label="Language switcher">
-        <button class="lang-btn" id="langBtnUr" aria-label="Switch to Urdu" title="اردو">🇵🇰</button>
-        <button class="lang-btn" id="langBtnEn" aria-label="Switch to English" title="English">🇺🇸</button>
+        <button class="lang-btn" id="langBtnUr" aria-label="Switch to Urdu" title="اردو">Urdu</button>
+        <button class="lang-btn" id="langBtnEn" aria-label="Switch to English" title="English">English</button>
       </div>
       <span class="separator" aria-hidden="true">|</span>
       <button class="nav-search-btn top-bar-search-btn" id="searchToggle" aria-label="Open search" aria-expanded="false" aria-controls="searchModal">
