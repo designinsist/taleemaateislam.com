@@ -412,16 +412,62 @@
     }
 
     .short-item {
+      display: flex;
+      flex-direction: column;
       border-radius: 10px;
       overflow: hidden;
       border: 1px solid rgba(201, 150, 58, 0.28);
       box-shadow: 0 6px 18px rgba(13, 40, 24, 0.07);
       background: #000;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      color: inherit;
+      width: 100%;
+    }
+
+    .short-media {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      background: linear-gradient(180deg, rgba(13, 40, 24, 0.1), rgba(13, 40, 24, 0.58));
+    }
+
+    .short-media img,
+    .short-media iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .short-media img {
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .short-play {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(13, 40, 24, 0.72);
+      color: var(--white);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(6px);
+    }
+
+    .short-item:hover .short-play,
+    .short-item:focus-visible .short-play {
+      background: rgba(201, 150, 58, 0.9);
+      color: var(--green-deep);
+      border-color: rgba(201, 150, 58, 0.95);
     }
 
     .short-item iframe {
-      display: block;
-      width: 100%;
       aspect-ratio: 9 / 16;
       border: none;
     }
@@ -446,10 +492,6 @@
 
     @media (max-width: 480px) {
       .shorts-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-      }
-    }
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
       }
@@ -515,78 +557,7 @@
           <div class="divider-gold" aria-hidden="true"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
         </div>
 
-        <div class="shorts-grid">
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/suqam8mwHRI" title="حج کس پر فرض ہے؟ | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">01</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/KSCCJjJAxh8" title="حج کے فرائض اور واجبات | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">02</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/16VGf5BB9b8" title="احرام کا طریقہ | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">03</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/XtFs238ST3E" title="خواتین کا احرام | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">04</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/GkCTdG8p_zg" title="خحج کے پانچ دن | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">05</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/6e_C2UgQPpw" title="نو ذی الحج عرفات کا دن | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">06</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/UZ3ORndZDjM" title="مزدلفہ - نو اوردس ذی الحجہ کی رات | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">07</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/0ue7VMfwslQ" title="دس ذی الحجہ رمی  قربانی اور احرام کھولنا | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">08</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/O_x3L6EjCkQ" title="طواف زیارت اور حج کی سعی | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">09</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/vmQ9gnDOjTc" title="گیارہ بارہ ذی الحج کی رمی | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">10</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/CCP0i3BLjWE" title="جمرات پر دعا کا طریقہ | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">11</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/nOdUsI5_IIw" title="تیرہ ذی الحج کی رمی کر سکتے ھیں - ضروری نہیں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">12</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/NrJyJ_yv7Gk" title="طوافِ وداع | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">13</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/GPNZvoovQ7Q" title="حج کی پہلی قسم - حج افراد | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">14</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/Oy0fAezLr0o" title="حج کی دوسری قسم - حج تمتع | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">15</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/cKfz5aSk8VE" title="عمرے کا طریقہ | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">16</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/MSZBVJajK00" title="حج کی تیسری قسم - حج قِرآن | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">17</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/IL9e0Q_2xHQ" title="استقبال اور استلام میں فرق | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">18</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/h34Pj3a65Vo" title="سعی سے قبل نواں استلام | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">19</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/uGaCFt6crUo" title="میقات اور حدود حرم | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">20</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/7UHT-RC_388" title="طائف میقات سے باھر ھے | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">21</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/GKerUj-yXds" title="حج کا فاسد ھونا | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">22</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/j0ia5Xl7vPM" title="مسجد عائشہ سے احرام باندھنا | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">23</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/0P0vBgv4Fes" title="احرام میں خوشبو والا ٹشو استعمال نہ کریں. | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">24</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/hlQJ2ehybCw" title="احرام میں تولیہ استعمال کرنا | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">25</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/I8O9hInFzIs" title="احرام کی چادریں بدل سکتے ھیں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">26</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/4QtlMr2kin0" title="احرام میں غسل کرنا | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">27</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/0wFjqW1hU5M" title="احرام میں سر اور چہرہ ڈھانپنا | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">28</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/GWPhFboLdBk" title="احرام میں پاؤں ڈھانپنا | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">29</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/zh_x36hqzBY" title="پاکستان سے سیدھا مکہ جانے والے احرام کہاں سے باندھیں؟ | Hajj 2026 Q&A  Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">30</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/5bHfm8AKZF0" title="طواف میں وضو ضروری ہے. | Hajj 2026 Q&A  Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">31</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/kGREAD1sCLA" title="طوافِ زیارت بارہ ذی الحجہ کو مغرب سے پہلے ہے۔ | Hajj 2026 Q&A  Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">32</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/Uf6b38vEfPg" title="عورتوں کا طواف زیارت | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">33</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/oDbftTs_MLU" title="حج کے دنوں میں عورت کو حیض آنا" loading="lazy" allowfullscreen></iframe><div class="short-number">34</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/XqDApiCaaw8" title="احرام میں عورت کا چہرہ ڈھانپنا | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">35</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/a3tfPhzPWjg" title="حلق اور قصر | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">36</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/zp-xBQW8k5Q" title="قصر کی واجب مقدار | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">37</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/v3sLRcdDSPM" title="خواتین احرام کھولتے ہوئے  بال کیسے کاٹیں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">38</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/lWQ6jcboO2A" title="بغیر وضو سعی ہو جاتی ہے۔ | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">39</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/7G1dmeIYHbo" title="بغیر احرام میقات سے گزرنا | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">40</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/ksug_Iqm5Qg" title="حدود حرم کہاں سے شروع ہوتی ہے | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">41</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/V_zwP4A5z6E" title="تھکاوٹ دور کر کے عمرہ کریں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">42</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/RGGkF_NYkKg" title="طواف کرتے ہوئے بیت اللہ کی طرف نہ دیکھیں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">43</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/xl2eC1irhzc" title="طواف میں جو دعا دل میں آئے وہ مانگیں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">44</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/Aoi0Rh-d_Ng" title="طواف کے دو نفل کب پڑھیں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">45</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/Uz0txTS7wcM" title="طواف کے نفل کہاں پڑھیں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">46</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/1GUv-zU-UkM" title="استلام کے وقت سینہ حجر اسود کی طرف ہو | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">47</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/JzloUw1dFMo" title="استلام کی دعا | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">48</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/Cknfcl8D3o0" title="سعی شروع کرتے وقت کی دعا قبول ہوتی ہے | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">49</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/bGTMWnr4PvA" title="سعی - صفا سے مروہ ایک چکر - صفا سے سعی شروع مرہ پر ختم | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">50</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/aPbVwRwJXD0" title="طواف کے نفل کہاں پڑھیں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">51</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/aporQ6NF74c" title="صفا اور مروہ پر قبلہ رخ ہو کر دعا مانگنا | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">52</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/xGqn85iojsU" title="صفا مروہ کے درمیان تیز چلنا | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">53</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/bqc5KDvKork" title="سعی کے درمیان دعائیں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">54</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/oaCYGQUxpxM" title="حرم شریف میں ایک نماز باجماعت کا ثواب | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">55</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/ZROKmFbvhRQ" title="حرم کی نماز سے قضا نمازیں ادا نہیں ہوتیں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">56</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/pOAh0EHLsi0" title="حرم میں امام بر آمدے میں ہو تو مطاف میں اس کے آگے کھڑے نہ ہوں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">57</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/f0Kl3KhGNFM" title="خواتین جماعت کی نماز میں ہوں تو مرد کہاں کھڑے ہوں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">58</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/bnCc6VWDjMc" title="حجر اسود کے بوسے کے وقت لوگوں کو تنگ نہ کریں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">59</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/cBpWA7Rpta8" title="رکن یمانی کے قریب کعبہ کے بند دروازہ کو لپٹنا ملتزم کی طرح ہے | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">60</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/aoDmw1JCbDM" title="حرم شریف میں کونسی نیکی افضل ہے | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">61</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/mOWh-vaS1wA" title="عرفات میں ظہر اور عصر پڑھنے کے طریقے پر بحث نہ کریں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">62</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/WZbcXPlvBzE" title="دم کیا ہے ؟ ایک سوال کا جواب | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">63</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/SfSnlbRoE5o" title="حجر اسود کس کی سفارش کرے گا | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">64</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/owdNOOwjfqI" title="ملتزم کیا ہے؟ | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">65</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/Glwrhl4alwg" title="Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">66</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/7rHxLUvznLs" title="میزاب رحمت کیا ہے ؟ | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">67</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/35E8u4ZixLE" title="جنت البقیع کیا ہے ؟ | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">68</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/5SaZZ7-DnoY" title="ریاض الجن٘ہ کیا ہے؟ | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">69</div></div>
-          <div class="short-item"><iframe src="https://www.youtube.com/embed/zB16xMKFvrA" title="عرفات سے کب نکلیں | Hajj 2026 Q&A | Mufti Muhammad Tahir Masood #shorts" loading="lazy" allowfullscreen></iframe><div class="short-number">70</div></div>
-        </div>
+        <div class="shorts-grid" id="hajj-shorts-grid" aria-live="polite"></div>
       </div>
     </section>
 
@@ -681,6 +652,87 @@
         if (!answer) return;
         answer.style.height = answer.scrollHeight + 'px';
       });
+    })();
+  </script>
+  <script>
+    (function () {
+      'use strict';
+
+      var shortsGrid = document.getElementById('hajj-shorts-grid');
+      if (!shortsGrid) return;
+
+      var shorts = [
+        'suqam8mwHRI', 'KSCCJjJAxh8', '16VGf5BB9b8', 'XtFs238ST3E', 'GkCTdG8p_zg',
+        '6e_C2UgQPpw', 'UZ3ORndZDjM', '0ue7VMfwslQ', 'O_x3L6EjCkQ', 'vmQ9gnDOjTc',
+        'CCP0i3BLjWE', 'nOdUsI5_IIw', 'NrJyJ_yv7Gk', 'GPNZvoovQ7Q', 'Oy0fAezLr0o',
+        'cKfz5aSk8VE', 'MSZBVJajK00', 'IL9e0Q_2xHQ', 'h34Pj3a65Vo', 'uGaCFt6crUo',
+        '7UHT-RC_388', 'GKerUj-yXds', 'j0ia5Xl7vPM', '0P0vBgv4Fes', 'hlQJ2ehybCw',
+        'I8O9hInFzIs', '4QtlMr2kin0', '0wFjqW1hU5M', 'GWPhFboLdBk', 'zh_x36hqzBY',
+        '5bHfm8AKZF0', 'kGREAD1sCLA', 'Uf6b38vEfPg', 'oDbftTs_MLU', 'XqDApiCaaw8',
+        'a3tfPhzPWjg', 'zp-xBQW8k5Q', 'v3sLRcdDSPM', 'lWQ6jcboO2A', '7G1dmeIYHbo',
+        'ksug_Iqm5Qg', 'V_zwP4A5z6E', 'RGGkF_NYkKg', 'xl2eC1irhzc', 'Aoi0Rh-d_Ng',
+        'Uz0txTS7wcM', '1GUv-zU-UkM', 'JzloUw1dFMo', 'Cknfcl8D3o0', 'bGTMWnr4PvA',
+        'aPbVwRwJXD0', 'aporQ6NF74c', 'xGqn85iojsU', 'bqc5KDvKork', 'oaCYGQUxpxM',
+        'ZROKmFbvhRQ', 'pOAh0EHLsi0', 'f0Kl3KhGNFM', 'bnCc6VWDjMc', 'cBpWA7Rpta8',
+        'aoDmw1JCbDM', 'mOWh-vaS1wA', 'WZbcXPlvBzE', 'SfSnlbRoE5o', 'owdNOOwjfqI',
+        'Glwrhl4alwg', '7rHxLUvznLs', '35E8u4ZixLE', '5SaZZ7-DnoY', 'zB16xMKFvrA'
+      ];
+
+      function createShortCard(videoId, index) {
+        var number = String(index + 1).padStart(2, '0');
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'short-item';
+        button.setAttribute('aria-label', 'Load Hajj 2026 short ' + number);
+        button.dataset.videoId = videoId;
+        button.dataset.number = number;
+
+        var media = document.createElement('div');
+        media.className = 'short-media';
+
+        var image = document.createElement('img');
+        image.src = 'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg';
+        image.alt = 'Hajj 2026 short ' + number;
+        image.loading = 'lazy';
+        image.decoding = 'async';
+
+        var overlay = document.createElement('span');
+        overlay.className = 'short-play';
+        overlay.textContent = 'Play';
+
+        media.appendChild(image);
+        media.appendChild(overlay);
+
+        var label = document.createElement('div');
+        label.className = 'short-number';
+        label.textContent = number;
+
+        button.appendChild(media);
+        button.appendChild(label);
+
+        button.addEventListener('click', function () {
+          if (button.dataset.loaded === 'true') return;
+
+          var iframe = document.createElement('iframe');
+          iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+          iframe.title = 'Hajj 2026 short ' + number;
+          iframe.loading = 'lazy';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          iframe.allowFullscreen = true;
+
+          media.innerHTML = '';
+          media.appendChild(iframe);
+          button.dataset.loaded = 'true';
+        });
+
+        return button;
+      }
+
+      var fragment = document.createDocumentFragment();
+      shorts.forEach(function (videoId, index) {
+        fragment.appendChild(createShortCard(videoId, index));
+      });
+      shortsGrid.appendChild(fragment);
     })();
   </script>
   <script src="components.js"></script>

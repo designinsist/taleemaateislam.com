@@ -285,16 +285,62 @@
     }
 
     .faq-item {
+      display: flex;
+      flex-direction: column;
       background: var(--white);
       border: 1px solid rgba(201, 150, 58, 0.24);
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(13, 40, 24, 0.06);
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      color: inherit;
+      width: 100%;
     }
 
-    .faq-question {
+    .short-media {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      background: linear-gradient(180deg, rgba(13, 40, 24, 0.1), rgba(13, 40, 24, 0.58));
+    }
+
+    .short-media img,
+    .short-media iframe {
       width: 100%;
       text-align: left;
+      height: 100%;
+      border: none;
+    }
+
+    .short-media img {
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .short-play {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(13, 40, 24, 0.72);
+      color: var(--white);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(6px);
+    }
+
+    .short-item:hover .short-play,
+    .short-item:focus-visible .short-play {
+      background: rgba(201, 150, 58, 0.9);
+      color: var(--green-deep);
+      border-color: rgba(201, 150, 58, 0.95);
+    }
+
+    .short-item iframe {
       border: none;
       background: transparent;
       padding: 16px 18px;
@@ -538,80 +584,7 @@
           <div class="divider-gold" aria-hidden="true"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
         </div>
 
-        <div class="shorts-grid">
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/qB47P9KFmQo" title="حج کب فرض ہوا ؟ | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 01</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/Bso_bAvRiAo" title="حاجی کو دعا کی درخواست کرنا | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 02</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/cNRfC07lK8w" title="خواتین محرم کے ساتھ جائیں | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 03</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/IdoTmopnFPY" title="حاجی کی اللہ کے ہاں سفارش | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 04</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/iA4qEprrLxk" title="حج اللہ کو راضی کرنے لیے ہے | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 05</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/37SE_73FYTg" title="حج کی اقسام قرآن میں بیان ھوئی ہیں | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 06</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/yHB14b4JHq4" title="دکھلاوے کا احرام | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 07</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/kMW7jx2RZYY" title="مسجد عائشہ سے احرام باندھنا | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 08</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/ZSirassUF0M" title="حج پر وقت کا صحیح استعمال | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 09</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/5rmeG7wgPTY" title="مسجد قبا میں نفل | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 10</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/2hDZ5-apHqM" title="مدینہ کی کسی چیز میں عیب نہ نکالیں | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 11</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/LnosbbJ0ZMI" title="جنمسجدِ نبوی میں نماز تکبیرِ اُولیٰ سے پڑھیں | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 12</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/PaD3a1QuE1E" title="جنت البقیع شاہی مہمان خانہ ہے | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 13</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/CRBheeTkLjo" title="مدینہ منورہ میں فرشتے بھی ادب سے حاضر ہوتے ہیں | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 14</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/9mbpsH9n7dg" title="مدینہ منورہ میں آنکھ اور زبان کی حفاظت | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 15</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/jZbF-xtglzY" title="روضۂ پاک صلی اللہ علیہ وسلم پر حاضری کے آداب | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 16</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/y2LBjUMRKIo" title="مدینہ منورہ سے واپس جاتے ہوئے ندامت | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 17</div>
-          </div>
-          <div class="short-item">
-            <iframe src="https://www.youtube.com/embed/1tLY0NEf3es" title="سید الشہداء حضرت حمزہ کی قبر پر حاضری | Hajj 2026 Fazaail &amp; Aadab | Mufti Ahmed Ali #shorts" loading="lazy" allowfullscreen></iframe>
-            <div class="short-number">Short 18</div>
-          </div>
-        </div>
+        <div class="shorts-grid" id="hajj-short-grid" aria-live="polite"></div>
       </div>
     </section>
 
@@ -706,6 +679,77 @@
         if (!answer) return;
         answer.style.height = answer.scrollHeight + 'px';
       });
+    })();
+  </script>
+  <script>
+    (function () {
+      'use strict';
+
+      var shortsGrid = document.getElementById('hajj-short-grid');
+      if (!shortsGrid) return;
+
+      var shorts = [
+        'qB47P9KFmQo', 'Bso_bAvRiAo', 'cNRfC07lK8w', 'IdoTmopnFPY', 'iA4qEprrLxk',
+        '37SE_73FYTg', 'yHB14b4JHq4', 'kMW7jx2RZYY', 'ZSirassUF0M', '5rmeG7wgPTY',
+        '2hDZ5-apHqM', 'LnosbbJ0ZMI', 'PaD3a1QuE1E', 'CRBheeTkLjo', '9mbpsH9n7dg',
+        'jZbF-xtglzY', 'y2LBjUMRKIo', '1tLY0NEf3es'
+      ];
+
+      function createShortCard(videoId, index) {
+        var number = String(index + 1).padStart(2, '0');
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'short-item';
+        button.setAttribute('aria-label', 'Load Hajj 2026 short ' + number);
+        button.dataset.videoId = videoId;
+        button.dataset.number = number;
+
+        var media = document.createElement('div');
+        media.className = 'short-media';
+
+        var image = document.createElement('img');
+        image.src = 'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg';
+        image.alt = 'Hajj 2026 short ' + number;
+        image.loading = 'lazy';
+        image.decoding = 'async';
+
+        var overlay = document.createElement('span');
+        overlay.className = 'short-play';
+        overlay.textContent = 'Play';
+
+        media.appendChild(image);
+        media.appendChild(overlay);
+
+        var label = document.createElement('div');
+        label.className = 'short-number';
+        label.textContent = 'Short ' + number;
+
+        button.appendChild(media);
+        button.appendChild(label);
+
+        button.addEventListener('click', function () {
+          if (button.dataset.loaded === 'true') return;
+
+          var iframe = document.createElement('iframe');
+          iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+          iframe.title = 'Hajj 2026 short ' + number;
+          iframe.loading = 'lazy';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          iframe.allowFullscreen = true;
+
+          media.innerHTML = '';
+          media.appendChild(iframe);
+          button.dataset.loaded = 'true';
+        });
+
+        return button;
+      }
+
+      var fragment = document.createDocumentFragment();
+      shorts.forEach(function (videoId, index) {
+        fragment.appendChild(createShortCard(videoId, index));
+      });
+      shortsGrid.appendChild(fragment);
     })();
   </script>
   <script src="components.js"></script>
