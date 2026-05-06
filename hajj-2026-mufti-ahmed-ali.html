@@ -285,62 +285,16 @@
     }
 
     .faq-item {
-      display: flex;
-      flex-direction: column;
       background: var(--white);
       border: 1px solid rgba(201, 150, 58, 0.24);
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(13, 40, 24, 0.06);
-      padding: 0;
-      cursor: pointer;
-      text-align: left;
-      color: inherit;
-      width: 100%;
     }
 
-    .short-media {
-      position: relative;
-      aspect-ratio: 9 / 16;
-      background: linear-gradient(180deg, rgba(13, 40, 24, 0.1), rgba(13, 40, 24, 0.58));
-    }
-
-    .short-media img,
-    .short-media iframe {
+    .faq-question {
       width: 100%;
       text-align: left;
-      height: 100%;
-      border: none;
-    }
-
-    .short-media img {
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .short-play {
-      position: absolute;
-      inset: 50% auto auto 50%;
-      transform: translate(-50%, -50%);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      background: rgba(13, 40, 24, 0.72);
-      color: var(--white);
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      backdrop-filter: blur(6px);
-    }
-
-    .short-item:hover .short-play,
-    .short-item:focus-visible .short-play {
-      background: rgba(201, 150, 58, 0.9);
-      color: var(--green-deep);
-      border-color: rgba(201, 150, 58, 0.95);
-    }
-
-    .short-item iframe {
       border: none;
       background: transparent;
       padding: 16px 18px;
@@ -485,11 +439,59 @@
     }
 
     .short-item {
+      display: flex;
+      flex-direction: column;
       border-radius: 10px;
       overflow: hidden;
       border: 1px solid rgba(201, 150, 58, 0.28);
       box-shadow: 0 6px 18px rgba(13, 40, 24, 0.07);
       background: #000;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      color: inherit;
+      width: 100%;
+    }
+
+    .short-media {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      background: linear-gradient(180deg, rgba(13, 40, 24, 0.1), rgba(13, 40, 24, 0.58));
+    }
+
+    .short-media img,
+    .short-media iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .short-media img {
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .short-play {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(13, 40, 24, 0.72);
+      color: var(--white);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(6px);
+    }
+
+    .short-item:hover .short-play,
+    .short-item:focus-visible .short-play {
+      background: rgba(201, 150, 58, 0.9);
+      color: var(--green-deep);
+      border-color: rgba(201, 150, 58, 0.95);
     }
 
     .short-item iframe {
@@ -689,6 +691,7 @@
       if (!shortsGrid) return;
 
       var shorts = [
+        'ddscNN5grP0', 'bsuKniu2_iE', 'IepVWRp1zU4', 'GkMgbFHGLiQ', 'jKICNVLiOt4',
         'qB47P9KFmQo', 'Bso_bAvRiAo', 'cNRfC07lK8w', 'IdoTmopnFPY', 'iA4qEprrLxk',
         '37SE_73FYTg', 'yHB14b4JHq4', 'kMW7jx2RZYY', 'ZSirassUF0M', '5rmeG7wgPTY',
         '2hDZ5-apHqM', 'LnosbbJ0ZMI', 'PaD3a1QuE1E', 'CRBheeTkLjo', '9mbpsH9n7dg',
