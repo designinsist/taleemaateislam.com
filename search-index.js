@@ -28,6 +28,13 @@ var SITE_SEARCH_INDEX = [
     tags: 'hajj fazaail aadab virtues etiquettes mufti ahmed ali jamia ashrafia lahore ikhlas sabr dhikr tawadu ihram tawaf arafat adab 2026'
   },
   {
+    title: 'Hajj 2026 Step-by-Step Guide in English',
+    label: 'Hajj',
+    url: 'hajj-2026-step-by-step-english.html',
+    desc: 'English short-video guide to the steps, terms, and essential acts of Hajj 2026.',
+    tags: 'hajj 2026 english guide step by step shorts ihram tawaf sai saee ifraad tamattu wajib fard multazam rukn yamani'
+  },
+  {
     title: 'Connect with Allah - Free Islamic Books',
     label: 'Books',
     url: 'connect-with-allah.html',

@@ -87,6 +87,7 @@
         <ul class="dropdown" role="menu" aria-label="Hajj 2026 submenu">
           <li><a href="hajj-2026.html" role="menuitem">Hajj Q&amp;A - Mufti M. Tahir Masood</a></li>
           <li><a href="hajj-2026-mufti-ahmed-ali.html" role="menuitem">Fazaail &amp; Aadab - Mufti Ahmed Ali</a></li>
+          <li><a href="hajj-2026-step-by-step-english.html" role="menuitem">Step-by-Step Guide in English</a></li>
         </ul>
       </li>
       <li class="nav-item">
@@ -120,6 +121,7 @@
       <div class="drawer-section-title">Hajj Special</div>
       <a href="hajj-2026.html" class="drawer-link drawer-sub" data-page="hajj-section">Hajj Q&amp;A - Mufti M. Tahir Masood</a>
       <a href="hajj-2026-mufti-ahmed-ali.html" class="drawer-link drawer-sub" data-page="hajj-section">Fazaail &amp; Aadab - Mufti Ahmed Ali</a>
+      <a href="hajj-2026-step-by-step-english.html" class="drawer-link drawer-sub" data-page="hajj-section">Step-by-Step Guide in English</a>
       <div class="drawer-section-title">Tools &amp; Wisdom</div>
       <a href="islamic-tools.html" class="drawer-link drawer-sub" data-page="islamic-tools.html">Islamic Tools</a>
       <a href="qasas-ul-anbiya.html" class="drawer-link drawer-sub" data-page="qasas-ul-anbiya.html">Prophets</a>
