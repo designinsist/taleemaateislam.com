@@ -283,6 +283,11 @@
     .hajj-desc{color:rgba(255,255,255,0.78);font-size:.92rem;line-height:1.85;max-width:680px;}
     .btn-hajj{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;background:var(--gold);color:var(--green-deep);font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:4px;transition:all .3s ease;}
     .btn-hajj:hover{background:var(--gold-light);transform:translateY(-2px);}
+    .latest-strip{padding:34px 0;background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+    .latest-strip-card{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;border:1px solid rgba(201,150,58,.35);border-radius:8px;background:var(--off-white);padding:22px 26px;}
+    .latest-strip-kicker{display:block;margin-bottom:6px;color:var(--gold);font-size:.68rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;}
+    .latest-strip-title{margin:0 0 6px;font-family:'Playfair Display',serif;font-size:clamp(1.25rem,2.8vw,1.8rem);color:var(--green-deep);}
+    .latest-strip-desc{margin:0;color:var(--text-light);line-height:1.65;font-size:.92rem;}
     
     @media(max-width:768px){.fonts-grid{grid-template-columns:1fr;}.fonts-header{flex-direction:column;}.fonts-note{align-self:stretch;}}
     @media(max-width:480px){.font-actions{flex-direction:column;}}
@@ -302,6 +307,7 @@
       .khutbah-spotlight-card{grid-template-columns:1fr;padding:20px;}
       .hajj-spotlight{padding:20px 0 64px;}
       .hajj-spotlight-card{grid-template-columns:1fr;padding:28px 22px;gap:16px;}
+      .latest-strip-card{grid-template-columns:1fr;padding:22px 20px;}
     }
     @media(max-width:480px){
       .topics-grid{grid-template-columns:1fr}
@@ -423,6 +429,19 @@
             <p>Lives of the righteous - the Companions, Tabi'een, and Islamic scholars who walked the path of piety and left a legacy of faith.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="latest-strip" aria-labelledby="latest-strip-title">
+      <div class="container">
+        <article class="latest-strip-card">
+          <div>
+            <span class="latest-strip-kicker">Recently Updated</span>
+            <h2 class="latest-strip-title" id="latest-strip-title">Latest Site Updates</h2>
+            <p class="latest-strip-desc">A quick index of newly refreshed Hajj shorts, Jummah Khutbah clips, and Dars-e-Quran audio without duplicating the original pages.</p>
+          </div>
+          <a class="btn-hajj" href="latest-updates.html">View Updates</a>
+        </article>
       </div>
     </section>
 

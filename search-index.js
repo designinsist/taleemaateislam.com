@@ -14,6 +14,13 @@ var SITE_SEARCH_INDEX = [
     tags: 'dars quran tafseer mufti shahid mushtaq surah yunus baqarah lecture explanation'
   },
   {
+    title: 'Latest Updates',
+    label: 'Updates',
+    url: 'latest-updates.html',
+    desc: 'Recently updated Hajj 2026 shorts, Jummah Khutbah clips, Dars-e-Quran audio, and new Islamic resources.',
+    tags: 'latest updates new shorts hajj jummah khutbah dars quran daily updates taleemaat islam'
+  },
+  {
     title: 'Jummah Khutbah',
     label: 'Dars',
     url: 'jummah-khutbah.html',

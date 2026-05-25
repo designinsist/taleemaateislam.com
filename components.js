@@ -8,6 +8,7 @@
 var SITE_SEARCH_INDEX = [
   { title: 'Home', label: 'Home', url: 'index.html', desc: 'Authentic Quranic commentary, free Islamic books, and Sunni guidance.', tags: 'taleemaat islam books quran guidance khuda mojood hai yaqeen ka safar islamic education free' },
   { title: 'Dars-e-Quran', label: 'Quran', url: 'dars-e-quran.html', desc: 'Ayah-by-ayah Quran tafseer by Mufti Shahid Mushtaq - Surah Al-Isra, Baqarah, Yunus, Yousuf, Maidah, Al-Anam, Al-Anfal, Al-Araf, Al-Hijr, An-Nahal, Ar-Raad, At-Tauba, Hud, Ibrahim and more.', tags: 'dars quran tafseer mufti shahid mushtaq audio lecture ayah bani israel isra baqarah yunus yousuf maidah anam anfal araf hijr nahal raad tauba hud ibrahim explanation urdu' },
+  { title: 'Latest Updates', label: 'Updates', url: 'latest-updates.html', desc: 'Recently updated Hajj 2026 shorts, Jummah Khutbah clips, Dars-e-Quran audio, and new Islamic resources.', tags: 'latest updates new shorts hajj jummah khutbah dars quran daily updates taleemaat islam' },
   { title: 'Jummah Khutbah', label: 'Dars', url: 'jummah-khutbah.html', desc: 'Weekly Friday sermon clips and Jummah Khutbah reminders by Mufti Shahid Mushtaq.', tags: 'jummah khutbah juma khutba friday sermon mufti shahid mushtaq bayan islamic shorts urdu halal qurbani dhul hijjah zakat' },
   { title: 'Hajj 2026 Q&A', label: 'Hajj', url: 'hajj-2026.html', desc: 'Practical Hajj 2026 guidance and Q&A by Mufti Muhammad Tahir Masood.', tags: 'hajj 2026 pilgrimage mufti tahir masood ihram tawaf arafat mina umrah miqat jamarat muzdalifah qurbani wuqoof' },
   { title: 'Hajj ke Fazaail aur Aadab', label: 'Hajj', url: 'hajj-2026-mufti-ahmed-ali.html', desc: 'Virtues and etiquettes of Hajj by Mufti Ahmed Ali, graduate of Jamia Ashrafia Lahore.', tags: 'hajj fazaail aadab virtues etiquettes mufti ahmed ali jamia ashrafia lahore ikhlas sabr dhikr tawadu ihram tawaf arafat adab 2026' },
@@ -27,6 +28,7 @@ var SITE_SEARCH_INDEX = [
   const NAV_MAP = {
     'index.html'                  : 'index.html',
     ''                            : 'index.html',   // root path
+    'latest-updates.html'         : 'more-section',
     'dars-e-quran.html'           : 'quran-section',
     'jummah-khutbah.html'         : 'quran-section',
     'quranic-stories.html'        : 'quran-section',
@@ -38,6 +40,28 @@ var SITE_SEARCH_INDEX = [
     'islamic-tools.html'          : 'islamic-tools.html',
     'qasas-ul-anbiya.html'        : 'more-section',
     'al-salihin.html'             : 'more-section',
+  };
+
+  const BREADCRUMB_MAP = {
+    'latest-updates.html': ['Latest Updates'],
+    'dars-e-quran.html': ['Quran & Dars', 'Dars-e-Quran'],
+    'jummah-khutbah.html': ['Quran & Dars', 'Jummah Khutbah'],
+    'quranic-stories.html': ['Quran & Dars', 'Quranic Stories'],
+    'syed-ul-bashar.html': ['Seerah'],
+    'connect-with-allah.html': ['Connect with Allah'],
+    'islamic-tools.html': ['Islamic Tools'],
+    'qasas-ul-anbiya.html': ['More', 'Prophets'],
+    'al-salihin.html': ['More', 'Al-Salihin'],
+    'hajj-2026.html': ['Hajj 2026', 'Questions & Answers'],
+    'hajj-2026-mufti-ahmed-ali.html': ['Hajj 2026', 'Fazaail & Aadab'],
+    'hajj-2026-step-by-step-english.html': ['Hajj 2026', 'Step-by-Step English'],
+    'privacy.html': ['Privacy Policy']
+  };
+
+  const BREADCRUMB_URLS = {
+    'Quran & Dars': 'dars-e-quran.html',
+    'Hajj 2026': 'hajj-2026.html',
+    'More': 'latest-updates.html'
   };
 
   /* ── Read fragment text with fetch first, XHR fallback for local file usage ── */
@@ -108,6 +132,85 @@ var SITE_SEARCH_INDEX = [
         link.setAttribute('aria-current', 'page');
       }
     });
+  }
+
+  function initBreadcrumbs() {
+    var page = window.location.pathname.split('/').pop() || 'index.html';
+    var trail = BREADCRUMB_MAP[page];
+    var mount = document.getElementById('site-header');
+    if (!trail || !mount || document.querySelector('.site-breadcrumbs')) return;
+
+    var breadcrumbs = document.createElement('nav');
+    breadcrumbs.className = 'site-breadcrumbs';
+    breadcrumbs.setAttribute('aria-label', 'Breadcrumb');
+
+    var container = document.createElement('div');
+    container.className = 'container';
+    breadcrumbs.appendChild(container);
+
+    function appendSeparator() {
+      var separator = document.createElement('span');
+      separator.className = 'breadcrumb-separator';
+      separator.setAttribute('aria-hidden', 'true');
+      separator.textContent = '/';
+      container.appendChild(separator);
+    }
+
+    var home = document.createElement('a');
+    home.href = 'index.html';
+    home.textContent = 'Home';
+    container.appendChild(home);
+
+    trail.forEach(function (label, index) {
+      appendSeparator();
+      var isCurrent = index === trail.length - 1;
+      if (isCurrent) {
+        var current = document.createElement('span');
+        current.setAttribute('aria-current', 'page');
+        current.textContent = label;
+        container.appendChild(current);
+        return;
+      }
+
+      var crumbUrl = BREADCRUMB_URLS[label];
+      if (crumbUrl) {
+        var crumbLink = document.createElement('a');
+        crumbLink.href = crumbUrl;
+        crumbLink.textContent = label;
+        container.appendChild(crumbLink);
+        return;
+      }
+
+      var crumb = document.createElement('span');
+      crumb.textContent = label;
+      container.appendChild(crumb);
+    });
+
+    mount.insertAdjacentElement('afterend', breadcrumbs);
+
+    var structuredData = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [{
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://taleemaateislam.com/'
+      }].concat(trail.map(function (label, index) {
+        var itemUrl = BREADCRUMB_URLS[label];
+        return {
+          '@type': 'ListItem',
+          position: index + 2,
+          name: label,
+          item: itemUrl ? new URL(itemUrl, 'https://taleemaateislam.com/').href : (index === trail.length - 1 ? window.location.href.split('#')[0] : undefined)
+        };
+      }))
+    };
+
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(structuredData);
+    document.head.appendChild(script);
   }
 
   /* ── Accessible desktop submenu toggle ── */
@@ -911,6 +1014,7 @@ var SITE_SEARCH_INDEX = [
 
     headerPromise.then(function () {
       setActiveNav();
+      initBreadcrumbs();
       initDesktopDropdown();
       initHamburger();
       initCopyrightYear();

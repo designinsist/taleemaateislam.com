@@ -30,6 +30,11 @@ main { flex: 1; }
 .divider-gold { display: flex; align-items: center; gap: 12px; margin: 16px 0 32px; }
 .divider-gold .line { height: 1px; background: var(--border); flex: 1; max-width: 60px; }
 .divider-gold .diamond { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
+.faq-header .divider-gold,
+.section-header .divider-gold,
+.fonts-header .divider-gold {
+  justify-content: center;
+}
 
 /* ═══ BOOK ACTION ROWS ═══ */
 .book-actions,
@@ -77,7 +82,7 @@ main { flex: 1; }
   }
 }
 
-/* ═══ COMPONENT PLACEHOLDERS ═══ */
+/* ═══ COMPONENT MOUNTS ═══ */
 /* display:contents makes the wrapper div invisible to layout,
    so the injected <nav> and <footer> act as direct body children -
    required for position:sticky on the navbar to work correctly. */
@@ -304,6 +309,116 @@ main { flex: 1; }
   display: none;
 }
 
+.site-breadcrumbs {
+  background: rgba(250,248,243,0.96);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-light);
+  font-size: 0.78rem;
+}
+
+.site-breadcrumbs .container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.site-breadcrumbs a {
+  color: var(--green-deep);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.site-breadcrumbs a:hover {
+  color: var(--gold);
+}
+
+.breadcrumb-separator {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.ask-topic-section {
+  background: linear-gradient(135deg, var(--green-deep), #17452d);
+  color: var(--white);
+  padding: 54px 0;
+}
+
+.ask-topic-card {
+  display: grid;
+  grid-template-columns: 1.4fr auto;
+  gap: 24px;
+  align-items: center;
+  border: 1px solid rgba(201,150,58,0.35);
+  border-radius: 8px;
+  padding: 30px;
+  background: rgba(255,255,255,0.045);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.14);
+}
+
+.ask-topic-kicker {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.ask-topic-title {
+  margin: 0 0 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.45rem, 3vw, 2.1rem);
+  line-height: 1.2;
+}
+
+.ask-topic-card p {
+  margin: 0;
+  max-width: 720px;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.75;
+}
+
+.ask-topic-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.ask-topic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 18px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--green-deep);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.ask-topic-btn.secondary {
+  background: transparent;
+  color: var(--gold-light);
+}
+
+.ask-topic-btn:hover {
+  background: var(--gold-light);
+  color: var(--green-deep);
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
   .content-hub,
   .related-section {
@@ -323,6 +438,19 @@ main { flex: 1; }
   .shorts-load-more {
     width: 100%;
     max-width: 360px;
+  }
+
+  .ask-topic-card {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+  }
+
+  .ask-topic-actions {
+    justify-content: flex-start;
+  }
+
+  .ask-topic-btn {
+    width: 100%;
   }
 }
 

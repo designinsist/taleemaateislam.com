@@ -101,6 +101,7 @@
         <ul class="dropdown dropdown-right" role="menu" aria-label="More resources submenu">
           <li><a href="qasas-ul-anbiya.html" role="menuitem">Prophets</a></li>
           <li><a href="al-salihin.html" role="menuitem">Al-Salihin</a></li>
+          <li><a href="latest-updates.html" role="menuitem">Latest Updates</a></li>
         </ul>
       </li>
     </ul>
@@ -128,6 +129,7 @@
       <a href="hajj-2026-mufti-ahmed-ali.html" class="drawer-link drawer-sub" data-page="hajj-section">Fazaail &amp; Aadab - Mufti Ahmed Ali</a>
       <a href="hajj-2026-step-by-step-english.html" class="drawer-link drawer-sub" data-page="hajj-section">Step-by-Step Guide in English</a>
       <div class="drawer-section-title">Tools &amp; Wisdom</div>
+      <a href="latest-updates.html" class="drawer-link drawer-sub" data-page="more-section">Latest Updates</a>
       <a href="islamic-tools.html" class="drawer-link drawer-sub" data-page="islamic-tools.html">Islamic Tools</a>
       <a href="qasas-ul-anbiya.html" class="drawer-link drawer-sub" data-page="qasas-ul-anbiya.html">Prophets</a>
       <a href="al-salihin.html" class="drawer-link drawer-sub" data-page="al-salihin.html">Al-Salihin</a>
