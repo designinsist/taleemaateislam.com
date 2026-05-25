@@ -607,7 +607,18 @@
           <div class="divider-gold" aria-hidden="true"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
         </div>
 
+        <p class="shorts-intro">Explore Hajj virtues and etiquettes by topic. Each short now includes its title for clearer browsing and better search context.<br><span class="shorts-updated">Updated May 2026</span></p>
+        <div class="shorts-toolbar" aria-label="Filter Hajj etiquette shorts">
+          <button class="short-filter is-active" type="button" data-filter="all">All</button>
+          <button class="short-filter" type="button" data-filter="ihram">Ihram</button>
+          <button class="short-filter" type="button" data-filter="tawaf">Tawaf &amp; Sa'i</button>
+          <button class="short-filter" type="button" data-filter="rami">Rami</button>
+          <button class="short-filter" type="button" data-filter="qurbani">Qurbani</button>
+          <button class="short-filter" type="button" data-filter="madinah">Madinah</button>
+          <button class="short-filter" type="button" data-filter="women">Women</button>
+        </div>
         <div class="shorts-grid" id="hajj-short-grid" aria-live="polite"></div>
+        <div class="shorts-load-wrap"><button class="shorts-load-more" type="button" data-shorts-load>Load More Shorts</button></div>
       </div>
     </section>
 
@@ -657,6 +668,21 @@
           </div>
 
           <p class="scholar-consult"><strong>Important:</strong> This series focuses on the spiritual virtues and etiquettes of Hajj. For personal fiqh rulings, emergencies, or complex matters specific to your circumstances, always consult a qualified scholar directly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-section" aria-labelledby="related-title">
+      <div class="container">
+        <div class="faq-header">
+          <span class="section-label">Continue Learning</span>
+          <h2 class="section-title" id="related-title">Related <span>Guidance</span></h2>
+          <div class="divider-gold" aria-hidden="true"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+        </div>
+        <div class="related-grid">
+          <a class="related-card" href="hajj-2026.html"><strong>Hajj Questions &amp; Answers</strong><span>Practical answers for Hajj 2026 rulings and common situations.</span></a>
+          <a class="related-card" href="hajj-2026-step-by-step-english.html"><strong>Step-by-Step English</strong><span>English short clips explaining the sequence of Hajj rites.</span></a>
+          <a class="related-card" href="connect-with-allah.html"><strong>Connect With Allah</strong><span>Daily spiritual reminders to strengthen sincerity before and after Hajj.</span></a>
         </div>
       </div>
     </section>
@@ -798,6 +824,55 @@
       function getShortTitle(videoId, number) {
         return shortTitles[videoId] || "Short reminder " + number;
       }
+      function getShortCategory(title) {
+        var text = title.toLowerCase();
+        if (/احرام|ihram/.test(text)) return "ihram";
+        if (/طواف|سعی|sa'i|sai|tawaf/.test(text)) return "tawaf";
+        if (/رمی|کنکری|jamarat|rami|stoning/.test(text)) return "rami";
+        if (/قربانی|qurbani|sacrifice/.test(text)) return "qurbani";
+        if (/مدینہ|نبوی|روض|بقیع|madinah|madina|nabawi/.test(text)) return "madinah";
+        if (/خواتین|عورت|women|woman|female|ladies/.test(text)) return "women";
+        if (/قرآن|quran|وَلَیَال/.test(text)) return "quran";
+        if (/سنت|حضور|صحابہ|sunnah|prophet/.test(text)) return "sunnah";
+        if (/زکوٰۃ|زکوة|zakat/.test(text)) return "zakat";
+        if (/ذی الحج|ذی الحجہ|dhul/.test(text)) return "dhul-hijjah";
+        if (/حلال|halal/.test(text)) return "halal";
+        return "general";
+      }
+
+      function addVideoStructuredData(pageName, pageUrl) {
+        var structuredData = {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": pageName,
+          "url": pageUrl,
+          "itemListElement": shorts.map(function (videoId, index) {
+            var number = String(index + 1).padStart(2, "0");
+            var title = getShortTitle(videoId, number);
+            return {
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "VideoObject",
+                "name": title,
+                "description": title + " - " + pageName + " on Taleemaat-e-Islam.",
+                "thumbnailUrl": "https://i.ytimg.com/vi/" + videoId + "/hqdefault.jpg",
+                "embedUrl": "https://www.youtube.com/embed/" + videoId,
+                "url": "https://www.youtube.com/shorts/" + videoId,
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Taleemaat-e-Islam",
+                  "url": "https://taleemaateislam.com/"
+                }
+              }
+            };
+          })
+        };
+        var script = document.createElement("script");
+        script.type = "application/ld+json";
+        script.text = JSON.stringify(structuredData);
+        document.head.appendChild(script);
+      }
 
       function createShortCard(videoId, index) {
         var number = String(index + 1).padStart(2, '0');
@@ -860,11 +935,54 @@
         return button;
       }
 
-      var fragment = document.createDocumentFragment();
-      shorts.forEach(function (videoId, index) {
-        fragment.appendChild(createShortCard(videoId, index));
+var filterButtons = Array.prototype.slice.call(document.querySelectorAll(".short-filter"));
+      var loadMoreButton = document.querySelector("[data-shorts-load]");
+      var batchSize = 24;
+      var visibleCount = batchSize;
+      var activeFilter = "all";
+
+      function getFilteredShorts() {
+        if (activeFilter === "all") return shorts;
+        return shorts.filter(function (videoId, index) {
+          var number = String(index + 1).padStart(2, "0");
+          return getShortCategory(getShortTitle(videoId, number)) === activeFilter;
+        });
+      }
+
+      function renderShorts(resetCount) {
+        if (resetCount) visibleCount = batchSize;
+        var filteredShorts = getFilteredShorts();
+        shortsGrid.innerHTML = "";
+        var fragment = document.createDocumentFragment();
+        filteredShorts.slice(0, visibleCount).forEach(function (videoId) {
+          fragment.appendChild(createShortCard(videoId, shorts.indexOf(videoId)));
+        });
+        shortsGrid.appendChild(fragment);
+        if (loadMoreButton) {
+          loadMoreButton.hidden = visibleCount >= filteredShorts.length;
+          loadMoreButton.textContent = "Load More Shorts";
+        }
+      }
+
+      filterButtons.forEach(function (filterButton) {
+        filterButton.addEventListener("click", function () {
+          activeFilter = filterButton.dataset.filter || "all";
+          filterButtons.forEach(function (button) {
+            button.classList.toggle("is-active", button === filterButton);
+          });
+          renderShorts(true);
+        });
       });
-      shortsGrid.appendChild(fragment);
+
+      if (loadMoreButton) {
+        loadMoreButton.addEventListener("click", function () {
+          visibleCount += batchSize;
+          renderShorts(false);
+        });
+      }
+
+      renderShorts(true);
+      addVideoStructuredData("Hajj 2026 Fazaail and Aadab", "https://taleemaateislam.com/hajj-2026-mufti-ahmed-ali.html");
     })();
   </script>
   <script src="components.js"></script>
