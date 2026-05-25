@@ -8,6 +8,7 @@
 var SITE_SEARCH_INDEX = [
   { title: 'Home', label: 'Home', url: 'index.html', desc: 'Authentic Quranic commentary, free Islamic books, and Sunni guidance.', tags: 'taleemaat islam books quran guidance khuda mojood hai yaqeen ka safar islamic education free' },
   { title: 'Dars-e-Quran', label: 'Quran', url: 'dars-e-quran.html', desc: 'Ayah-by-ayah Quran tafseer by Mufti Shahid Mushtaq - Surah Al-Isra, Baqarah, Yunus, Yousuf, Maidah, Al-Anam, Al-Anfal, Al-Araf, Al-Hijr, An-Nahal, Ar-Raad, At-Tauba, Hud, Ibrahim and more.', tags: 'dars quran tafseer mufti shahid mushtaq audio lecture ayah bani israel isra baqarah yunus yousuf maidah anam anfal araf hijr nahal raad tauba hud ibrahim explanation urdu' },
+  { title: 'Jummah Khutbah', label: 'Dars', url: 'jummah-khutbah.html', desc: 'Weekly Friday sermon clips and Jummah Khutbah reminders by Mufti Shahid Mushtaq.', tags: 'jummah khutbah juma khutba friday sermon mufti shahid mushtaq bayan islamic shorts urdu halal qurbani dhul hijjah zakat' },
   { title: 'Hajj 2026 Q&A', label: 'Hajj', url: 'hajj-2026.html', desc: 'Practical Hajj 2026 guidance and Q&A by Mufti Muhammad Tahir Masood.', tags: 'hajj 2026 pilgrimage mufti tahir masood ihram tawaf arafat mina umrah miqat jamarat muzdalifah qurbani wuqoof' },
   { title: 'Hajj ke Fazaail aur Aadab', label: 'Hajj', url: 'hajj-2026-mufti-ahmed-ali.html', desc: 'Virtues and etiquettes of Hajj by Mufti Ahmed Ali, graduate of Jamia Ashrafia Lahore.', tags: 'hajj fazaail aadab virtues etiquettes mufti ahmed ali jamia ashrafia lahore ikhlas sabr dhikr tawadu ihram tawaf arafat adab 2026' },
   { title: 'Hajj 2026 Step-by-Step Guide in English', label: 'Hajj', url: 'hajj-2026-step-by-step-english.html', desc: 'English short-video guide to the steps, terms, and essential acts of Hajj 2026.', tags: 'hajj 2026 english guide step by step shorts ihram tawaf sai saee ifraad tamattu wajib fard multazam rukn yamani' },
@@ -27,6 +28,7 @@ var SITE_SEARCH_INDEX = [
     'index.html'                  : 'index.html',
     ''                            : 'index.html',   // root path
     'dars-e-quran.html'           : 'quran-section',
+    'jummah-khutbah.html'         : 'quran-section',
     'quranic-stories.html'        : 'quran-section',
     'connect-with-allah.html'     : 'connect-with-allah.html',
     'hajj-2026.html'              : 'hajj-section',
@@ -34,8 +36,8 @@ var SITE_SEARCH_INDEX = [
     'hajj-2026-step-by-step-english.html' : 'hajj-section',
     'syed-ul-bashar.html'         : 'syed-ul-bashar.html',
     'islamic-tools.html'          : 'islamic-tools.html',
-    'qasas-ul-anbiya.html'        : 'qasas-ul-anbiya.html',
-    'al-salihin.html'             : 'al-salihin.html',
+    'qasas-ul-anbiya.html'        : 'more-section',
+    'al-salihin.html'             : 'more-section',
   };
 
   /* ── Read fragment text with fetch first, XHR fallback for local file usage ── */
@@ -98,9 +100,10 @@ var SITE_SEARCH_INDEX = [
       }
     });
 
-    var drawerLinks = document.querySelectorAll('.nav-drawer .drawer-link[data-page]');
+    var drawerLinks = document.querySelectorAll('.nav-drawer .drawer-link');
     drawerLinks.forEach(function (link) {
-      if (link.getAttribute('data-page') === activeKey) {
+      var hrefPage = (link.getAttribute('href') || '').split('/').pop();
+      if (hrefPage === page || (page === '' && hrefPage === 'index.html')) {
         link.classList.add('active');
         link.setAttribute('aria-current', 'page');
       }

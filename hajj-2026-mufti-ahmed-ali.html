@@ -502,14 +502,35 @@
     }
 
     .short-number {
-      text-align: center;
-      padding: 8px 0;
-      font-family: 'Playfair Display', serif;
-      font-size: 0.82rem;
-      color: var(--gold);
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-height: 84px;
+      padding: 10px 12px 12px;
+      text-align: left;
+      font-family: "Nunito", sans-serif;
       background: var(--white);
+      line-height: 1.45;
+    }
+
+    .short-index {
+      font-family: "Playfair Display", serif;
+      font-size: 0.76rem;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .short-title {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: var(--green-deep);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: none;
     }
 
     @media (max-width: 768px) {
@@ -709,12 +730,82 @@
         'jZbF-xtglzY', 'y2LBjUMRKIo', '1tLY0NEf3es', 'QRb5nkTArzc'
       ];
 
+      var shortTitles = {
+        "rzNKtnl2RfI": "مزدلفہ میں اپنی راحت کا خیال رکھیں",
+        "Nx-JyQPfHXk": "‎طوافِ زیارت پہلے کرنے پر احرام کی پابندیاں",
+        "ZeKM3o3HqTQ": "زیادہ طواف کا ثواب",
+        "XU9nPB6xzPg": "حلق یا قصر سے پہلے طوافِ زیارت",
+        "p9UUTdMB5XI": "حج میں توجہ اللہ کی طرف رکھیں",
+        "Cz9YIcrK6ow": "تینوں دن رمی نہ کرنے پر ایک ہی دم پڑے گا",
+        "ThPcRaec2NY": "تیرہ ذی الحج کی رمی کب واجب ہوگی؟",
+        "zCOk467_xd8": "کیا احرام کی چادر پر سلائی جائز ہے؟",
+        "qi--R8blpMA": "حج کے پانچ دن مختصر خاکہ!",
+        "yU-Y32YF5bI": "قربانی کے جانور کے ہر بال پر ثواب ہے",
+        "NZLrn5BeOVo": "اللہ کے عرش کے نیچے جگہ پانے والا عمل سورہ فاتحہ ، آیت الکرسی، آل عمران",
+        "DxuENLJIRlY": "عرفہ کے دن کان آنکھ اور زبان کی حفاظت",
+        "xNsTbnFOc9w": "عرفات میں بخشش حاصل کرنے کا طریقہ",
+        "g9aMi7VxN7k": "دنیا کے حجّاج میں پاکستان کی عزت الحمد للہ",
+        "uTSwtMl3yv8": "حاجی دل سے سچّی توبہ کیسے کریں !",
+        "JyVJ89yTKXg": "توجہ والی نماز کیسے ادا کریں",
+        "YK8apdHyLqI": "حضرت علی کی حضور PBUH کی طرف سے قربانی",
+        "V6FKVS9JQ9c": "قربانی کی شرعی حیثیت!",
+        "GZ2UtSwP78g": "‎خواتین کے لیے طوافِ زیارت اور مخصوص ایام",
+        "QBnelw3A9OE": "‎حج اور عمرہ کرنے والے اللہ تعالیٰ کا وفد ہیں",
+        "klojN6JLBL4": "‎دورانِ حج فوت ہونے والے کی شان",
+        "TCAQNnHu2ao": "Darbar-e-Nabi ﷺ mein Salam (نبی کریم ﷺ کے دربار میں سلام)",
+        "c6ORmyicmVo": "طوافِ زیارت میں آسانی",
+        "6AdlZ3wZfyo": "Nafli Saee (نفلی سعی)",
+        "vdmHpLzP8WA": "Sa'i ke Chakkar (سعی کے چار چکر فرض باقی واجب ہیں)",
+        "metzLIjA1yQ": "Tawaf ke baad Sa'i (طواف کے فوراً بعد سعی کرنا لازمی نہیں)",
+        "MmKx2HDBaXE": "Makkah mein Dua (مکہ مکرمہ میں دعا کہاں قبول ہوتی ہے)",
+        "GLTG6r2Eu0Y": "Idtiba Kya Hai? (اضطباع کیا ہے)",
+        "AbMdW6ciG18": "Umrah ka Tawaf (عمرے کا طواف)",
+        "H6gCZ4N0S1k": "Talbiyah Kab Band Karein (تلبیہ پڑھنا کب بند کریں)",
+        "q4BTWxiltfY": "Hajj mein Parda (حج میں پردہ)",
+        "KktwlLCwaFw": "Ihram mein Jaiz Kaam (احرام کی حالت میں کون سے کام کرنا جائز ہے)",
+        "E1eXz0GVzi8": "Talbiyah Parhne ka Tarika (تلبیہ کیسے پڑھیں)",
+        "tk_VhRdtwvg": "Ihram ke Nafl (احرام کے نفل کیسے پڑھیں)",
+        "9xfsJEwvqlo": "Niyat aur Talbiyah (احرام کے لئے نیت اور تلبیہ دونوں ضروری ہیں)",
+        "9ihd8DRzM1I": "Hajj ki Niyat (حج کی نیت کیسے کریں)⁩",
+        "NHZ0SbxFASE": "‎⁨حلال مال سے حج کرنا⁩",
+        "evlSS9u8MIE": "مدینہ مکہ ٹرین میں کتنا سامان لے جا سکتے ہیں؟",
+        "ku7uAPcUtbA": "نسک ایپ سے ریاض الجنہ میں داخلے کا طریقہ 2026",
+        "ddscNN5grP0": "حج کی قربانی شکرانہ کی ہے - وطن میں بھی قرب..",
+        "bsuKniu2_iE": "منی میں پوری نماز پڑھیں یا قصر",
+        "IepVWRp1zU4": "عرفات کی بہترین دعا",
+        "GkMgbFHGLiQ": "دورانِ حج راستوں پر چیزیں نہ پھینکیں",
+        "jKICNVLiOt4": "سفر حج کی مشقت کو برداشت کریں - حضور.....",
+        "qB47P9KFmQo": "حج کب فرض ہوا ؟",
+        "Bso_bAvRiAo": "حاجی کو دعا کی درخواست کرنا",
+        "cNRfC07lK8w": "خواتین محرم کے ساتھ جائیں",
+        "IdoTmopnFPY": "حاجی کی اللہ کے ہاں سفارش",
+        "iA4qEprrLxk": "حج اللہ کو راضی کرنے لیے ہے",
+        "37SE_73FYTg": "حج کی اقسام قرآن میں بیان ھوئی ہیں",
+        "yHB14b4JHq4": "دکھلاوے کا احرام",
+        "kMW7jx2RZYY": "مسجد عائشہ سے احرام باندھنا",
+        "ZSirassUF0M": "حج پر وقت کا صحیح استعمال",
+        "5rmeG7wgPTY": "مسجد قبا میں نفل",
+        "2hDZ5-apHqM": "مدینہ کی کسی چیز میں عیب نہ نکالیں",
+        "LnosbbJ0ZMI": "مسجدِ نبوی میں نماز تکبیرِ اُولیٰ سے پڑھیں",
+        "PaD3a1QuE1E": "جنت البقیع شاہی مہمان خانہ ہے",
+        "CRBheeTkLjo": "مدینہ منورہ میں فرشتے بھی ادب سے حاضر ہوتے ہیں",
+        "9mbpsH9n7dg": "مدینہ منورہ میں آنکھ اور زبان کی حفاظت",
+        "jZbF-xtglzY": "روضۂ پاک صلی اللہ علیہ وسلم پر حاضری کے آداب",
+        "y2LBjUMRKIo": "مدینہ منورہ سے واپس جاتے ہوئے ندامت",
+        "1tLY0NEf3es": "سید الشہداء حضرت حمزہ کی قبر پر حاضری"
+      };
+
+      function getShortTitle(videoId, number) {
+        return shortTitles[videoId] || "Short reminder " + number;
+      }
+
       function createShortCard(videoId, index) {
         var number = String(index + 1).padStart(2, '0');
+        var title = getShortTitle(videoId, number);
         var button = document.createElement('button');
         button.type = 'button';
         button.className = 'short-item';
-        button.setAttribute('aria-label', 'Load Hajj 2026 short ' + number);
+        button.setAttribute("aria-label", "Load " + title);
         button.dataset.videoId = videoId;
         button.dataset.number = number;
 
@@ -723,7 +814,7 @@
 
         var image = document.createElement('img');
         image.src = 'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg';
-        image.alt = 'Hajj 2026 short ' + number;
+        image.alt = title;
         image.loading = 'lazy';
         image.decoding = 'async';
 
@@ -734,9 +825,19 @@
         media.appendChild(image);
         media.appendChild(overlay);
 
-        var label = document.createElement('div');
-        label.className = 'short-number';
-        label.textContent = 'Short ' + number;
+        var label = document.createElement("div");
+        label.className = "short-number";
+
+        var indexLabel = document.createElement("span");
+        indexLabel.className = "short-index";
+        indexLabel.textContent = number;
+
+        var titleLabel = document.createElement("span");
+        titleLabel.className = "short-title";
+        titleLabel.textContent = title;
+
+        label.appendChild(indexLabel);
+        label.appendChild(titleLabel);
 
         button.appendChild(media);
         button.appendChild(label);
@@ -746,7 +847,7 @@
 
           var iframe = document.createElement('iframe');
           iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
-          iframe.title = 'Hajj 2026 short ' + number;
+          iframe.title = title;
           iframe.loading = 'lazy';
           iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
           iframe.allowFullscreen = true;

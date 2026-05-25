@@ -132,11 +132,12 @@ main { flex: 1; }
 }
 .nav-link svg { width: 10px; height: 10px; fill: currentColor; transition: transform var(--transition); }
 .nav-item:hover > .nav-link svg, .nav-item.is-open > .nav-link svg { transform: rotate(180deg); }
-.dropdown { position: absolute; top: 100%; left: 0; min-width: 250px; background: var(--green-deep); border: 1px solid var(--border); border-top: 2px solid var(--gold); box-shadow: 0 8px 30px var(--shadow-green); opacity: 0; visibility: hidden; transform: translateY(8px); transition: all 0.22s ease; z-index: 100; }
+.dropdown { position: absolute; top: 100%; left: 0; min-width: 280px; background: var(--green-deep); border: 1px solid var(--border); border-top: 2px solid var(--gold); box-shadow: 0 8px 30px var(--shadow-green); opacity: 0; visibility: hidden; transform: translateY(8px); transition: all 0.22s ease; z-index: 100; }
+.dropdown-right { left: auto; right: 0; }
 .nav-item:hover .dropdown, .nav-item:focus-within .dropdown, .nav-item.is-open .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-.dropdown a { display: block; padding: 12px 20px; font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.05); transition: background var(--transition), color var(--transition), padding-left var(--transition); }
+.dropdown a { display: block; padding: 12px 20px; font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.05); white-space: nowrap; transition: background var(--transition), color var(--transition), transform var(--transition); }
 .dropdown a:last-child { border-bottom: none; }
-.dropdown a:hover { background: rgba(201,150,58,0.12); color: var(--gold-light); padding-left: 26px; }
+.dropdown a:hover { background: rgba(201,150,58,0.12); color: var(--gold-light); transform: translateX(4px); }
 
 /* Search button */
 .nav-search-btn { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: none; border: none; cursor: pointer; color: var(--gold-light); padding: 4px; transition: color var(--transition), transform var(--transition); flex-shrink: 0; }

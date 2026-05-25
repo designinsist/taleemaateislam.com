@@ -67,15 +67,16 @@
       </li>
       <li class="nav-item">
         <button type="button" class="nav-link nav-menu-toggle" aria-haspopup="true" aria-expanded="false" data-page="quran-section">
-          Quran <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg>
+          Quran &amp; Dars <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg>
         </button>
-        <ul class="dropdown" role="menu" aria-label="Quran submenu">
+        <ul class="dropdown" role="menu" aria-label="Quran and Dars submenu">
           <li><a href="dars-e-quran.html" role="menuitem">Dars-e-Quran</a></li>
+          <li><a href="jummah-khutbah.html" role="menuitem">Jummah Khutbah</a></li>
           <li><a href="quranic-stories.html" role="menuitem">Quranic Stories</a></li>
         </ul>
       </li>
       <li class="nav-item">
-        <a href="syed-ul-bashar.html" class="nav-link" data-page="syed-ul-bashar.html">Syed-ul-Bashar (PBUH) &amp; Companions</a>
+        <a href="syed-ul-bashar.html" class="nav-link" data-page="syed-ul-bashar.html">Seerah</a>
       </li>
       <li class="nav-item">
         <a href="connect-with-allah.html" class="nav-link" data-page="connect-with-allah.html">Connect with Allah</a>
@@ -94,10 +95,13 @@
         <a href="islamic-tools.html" class="nav-link" data-page="islamic-tools.html">Islamic Tools</a>
       </li>
       <li class="nav-item">
-        <a href="qasas-ul-anbiya.html" class="nav-link" data-page="qasas-ul-anbiya.html">Prophets</a>
-      </li>
-      <li class="nav-item">
-        <a href="al-salihin.html" class="nav-link" data-page="al-salihin.html">Al-Salihin</a>
+        <button type="button" class="nav-link nav-menu-toggle" aria-haspopup="true" aria-expanded="false" data-page="more-section">
+          More <svg viewBox="0 0 10 6" aria-hidden="true"><path d="M0 0l5 6 5-6z"/></svg>
+        </button>
+        <ul class="dropdown dropdown-right" role="menu" aria-label="More resources submenu">
+          <li><a href="qasas-ul-anbiya.html" role="menuitem">Prophets</a></li>
+          <li><a href="al-salihin.html" role="menuitem">Al-Salihin</a></li>
+        </ul>
       </li>
     </ul>
 
@@ -111,8 +115,9 @@
     <button type="button" class="drawer-close" id="drawerClose" aria-label="Close mobile menu">Close</button>
     <div class="drawer-links">
       <a href="index.html" class="drawer-link">Home</a>
-      <div class="drawer-section-title">Quran</div>
+      <div class="drawer-section-title">Quran &amp; Dars</div>
       <a href="dars-e-quran.html" class="drawer-link drawer-sub" data-page="quran-section">Dars-e-Quran</a>
+      <a href="jummah-khutbah.html" class="drawer-link drawer-sub" data-page="quran-section">Jummah Khutbah</a>
       <a href="quranic-stories.html" class="drawer-link drawer-sub" data-page="quran-section">Quranic Stories</a>
       <div class="drawer-section-title">Quran &amp; Seerah</div>
       <a href="syed-ul-bashar.html" class="drawer-link drawer-sub" data-page="syed-ul-bashar.html">Syed-ul-Bashar (PBUH) &amp; Companions</a>

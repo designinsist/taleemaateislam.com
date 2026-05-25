@@ -14,6 +14,13 @@ var SITE_SEARCH_INDEX = [
     tags: 'dars quran tafseer mufti shahid mushtaq surah yunus baqarah lecture explanation'
   },
   {
+    title: 'Jummah Khutbah',
+    label: 'Dars',
+    url: 'jummah-khutbah.html',
+    desc: 'Weekly Friday sermon clips and Jummah Khutbah reminders by Mufti Shahid Mushtaq.',
+    tags: 'jummah khutbah juma khutba friday sermon mufti shahid mushtaq bayan islamic shorts urdu halal qurbani dhul hijjah zakat'
+  },
+  {
     title: 'Hajj 2026 Q&A',
     label: 'Hajj',
     url: 'hajj-2026.html',

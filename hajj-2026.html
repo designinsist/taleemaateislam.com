@@ -473,14 +473,35 @@
     }
 
     .short-number {
-      text-align: center;
-      padding: 8px 0;
-      font-family: 'Playfair Display', serif;
-      font-size: 0.82rem;
-      color: var(--gold);
-      font-weight: 600;
-      letter-spacing: 0.08em;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-height: 84px;
+      padding: 10px 12px 12px;
+      text-align: left;
+      font-family: "Nunito", sans-serif;
       background: var(--white);
+      line-height: 1.45;
+    }
+
+    .short-index {
+      font-family: "Playfair Display", serif;
+      font-size: 0.76rem;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .short-title {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: var(--green-deep);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: none;
     }
 
     @media (max-width: 768px) {
@@ -692,12 +713,153 @@
         'FcYcybrRltw', '3wih6sXupwI', '5R3F2ssdeyY', 'LotEzHoUcOI'
       ];
 
+      var shortTitles = {
+        "jiMtdMrf74U": "قربانی کا آغاز کب ہوا؟",
+        "iRYooSzPqN0": "قربانی کس پر واجب ہے؟",
+        "N_idl21gIH8": "اجتماعی اور اپنی علیحدہ قربانی!",
+        "51e0gAD83V4": "اجتماعی قربانی میں احتیاط",
+        "gIkeVnzCd0E": "اگر قربانی کا جانور گم جائے",
+        "rDCzOb66BCI": "اگر قربانی کا جانور مر جائے تو کیا کریں",
+        "TVoI0wKu9ug": "قربانی رات کو بھی کر سکتے ہیں",
+        "h_mP66TRvFk": "قربانی کا جانور تبدیل کر سکتے ہیں",
+        "jIHZICJLsCQ": "قربانی کس وقت کریں",
+        "pZZvvChdxIM": "قربانی کے گوشت کا استعمال",
+        "suqam8mwHRI": "حج کس پر فرض ہے؟",
+        "KSCCJjJAxh8": "حج کے فرائض اور واجبات",
+        "16VGf5BB9b8": "احرام کا طریقہ",
+        "XtFs238ST3E": "خواتین کا احرام",
+        "GkCTdG8p_zg": "حج کے پانچ دن",
+        "6e_C2UgQPpw": "نو ذی الحج عرفات کا دن",
+        "UZ3ORndZDjM": "مزدلفہ - نو اوردس ذی الحجہ کی رات",
+        "0ue7VMfwslQ": "دس ذی الحجہ رمی قربانی اور احرام کھولنا",
+        "O_x3L6EjCkQ": "طواف زیارت اور حج کی سعی",
+        "vmQ9gnDOjTc": "گیارہ بارہ ذی الحج کی رمی",
+        "CCP0i3BLjWE": "جمرات پر دعا کا طریقہ",
+        "nOdUsI5_IIw": "تیرہ ذی الحج کی رمی کر سکتے ھیں - ضروری نہیں",
+        "NrJyJ_yv7Gk": "طوافِ وداع",
+        "GPNZvoovQ7Q": "حج کی پہلی قسم - حج افراد",
+        "Oy0fAezLr0o": "حج کی دوسری قسم - حج تمتع",
+        "cKfz5aSk8VE": "عمرے کا طریقہ",
+        "MSZBVJajK00": "حج کی تیسری قسم - حج قِرآن",
+        "IL9e0Q_2xHQ": "استقبال اور استلام میں فرق",
+        "h34Pj3a65Vo": "سعی سے قبل نواں استلام",
+        "uGaCFt6crUo": "میقات اور حدود حرم",
+        "7UHT-RC_388": "طائف میقات سے باھر ھے",
+        "GKerUj-yXds": "حج کا فاسد ھونا",
+        "j0ia5Xl7vPM": "مسجد عائشہ سے احرام باندھنا",
+        "0P0vBgv4Fes": "احرام میں خوشبو والا ٹشو استعمال نہ کریں.",
+        "hlQJ2ehybCw": "احرام میں تولیہ استعمال کرنا",
+        "I8O9hInFzIs": "احرام کی چادریں بدل سکتے ھیں",
+        "4QtlMr2kin0": "احرام میں غسل کرنا",
+        "0wFjqW1hU5M": "احرام میں سر اور چہرہ ڈھانپنا",
+        "GWPhFboLdBk": "احرام میں پاؤں ڈھانپنا",
+        "zh_x36hqzBY": "پاکستان سے سیدھا مکہ جانے والے احرام کہاں سے باندھیں؟",
+        "5bHfm8AKZF0": "طواف میں وضو ضروری ہے.",
+        "kGREAD1sCLA": "طوافِ زیارت بارہ ذی الحجہ کو مغرب سے پہلے ہے۔",
+        "Uf6b38vEfPg": "عورتوں کا طواف زیارت",
+        "oDbftTs_MLU": "حج کے دنوں میں عورت کو حیض آنا",
+        "XqDApiCaaw8": "احرام میں عورت کا چہرہ ڈھانپنا",
+        "a3tfPhzPWjg": "حلق اور قصر",
+        "zp-xBQW8k5Q": "قصر کی واجب مقدار",
+        "v3sLRcdDSPM": "خواتین احرام کھولتے ہوئے بال کیسے کاٹیں",
+        "lWQ6jcboO2A": "بغیر وضو سعی ہو جاتی ہے۔",
+        "7G1dmeIYHbo": "بغیر احرام میقات سے گزرنا",
+        "ksug_Iqm5Qg": "حدود حرم کہاں سے شروع ہوتی ہے",
+        "V_zwP4A5z6E": "تھکاوٹ دور کر کے عمرہ کریں",
+        "RGGkF_NYkKg": "طواف کرتے ہوئے بیت اللہ کی طرف نہ دیکھیں",
+        "xl2eC1irhzc": "طواف میں جو دعا دل میں آئے وہ مانگیں",
+        "Aoi0Rh-d_Ng": "طواف کے دو نفل کب پڑھیں",
+        "Uz0txTS7wcM": "طواف کے نفل کہاں پڑھیں",
+        "1GUv-zU-UkM": "استلام کے وقت سینہ حجر اسود کی طرف ہو",
+        "JzloUw1dFMo": "استلام کی دعا",
+        "Cknfcl8D3o0": "سعی شروع کرتے وقت کی دعا قبول ہوتی ہے",
+        "bGTMWnr4PvA": "سعی - صفا سے مروہ ایک چکر - صفا سے سعی شروع مرہ پر ختم",
+        "aPbVwRwJXD0": "طواف کے نفل کہاں پڑھیں",
+        "aporQ6NF74c": "صفا اور مروہ پر قبلہ رخ ہو کر دعا مانگنا",
+        "xGqn85iojsU": "صفا مروہ کے درمیان تیز چلنا",
+        "bqc5KDvKork": "سعی کے درمیان دعائیں",
+        "oaCYGQUxpxM": "حرم شریف میں ایک نماز باجماعت کا ثواب ستائیس لاکھ نمازوں کی برابر Hajj 2026 Q&A",
+        "ZROKmFbvhRQ": "حرم کی نماز سے قضا نمازیں ادا نہیں ہوتیں",
+        "pOAh0EHLsi0": "حرم میں امام بر آمدے میں ہو تو مطاف میں اس کے آگے کھڑے نہ ہوں",
+        "f0Kl3KhGNFM": "خواتین جماعت کی نماز میں ہوں تو مرد کہاں کھڑے ہوں",
+        "bnCc6VWDjMc": "حجر اسود کے بوسے کے وقت لوگوں کو تنگ نہ کریں",
+        "cBpWA7Rpta8": "رکن یمانی کے قریب کعبہ کے بند دروازہ کو لپٹنا ملتزم کی طرح ہے",
+        "aoDmw1JCbDM": "حرم شریف میں کونسی نیکی افضل ہے",
+        "mOWh-vaS1wA": "عرفات میں ظہر اور عصر پڑھنے کے طریقے پر بحث نہ کریں",
+        "WZbcXPlvBzE": "دم کیا ہے ؟ ایک سوال کا جواب",
+        "SfSnlbRoE5o": "حجر اسود کس کی سفارش کرے گا",
+        "owdNOOwjfqI": "ملتزم کیا ہے؟",
+        "Glwrhl4alwg": "حطیم کیا ہے ؟",
+        "7rHxLUvznLs": "میزاب رحمت کیا ہے ؟",
+        "35E8u4ZixLE": "جنت البقیع کیا ہے ؟",
+        "5SaZZ7-DnoY": "ریاض الجن٘ہ کیا ہے؟",
+        "zB16xMKFvrA": "عرفات سے کب نکلیں",
+        "V_k5ZBRqV10": "مزدلفہ میں مغرب اور عشاء پڑھنا",
+        "6ZVfcAG17ao": "دس ذی الحجہ کی رات مزدلفہ میں گذارنا سن٘ت ہے",
+        "Slbx4PT-K_c": "تین دن رمی کے لئے انچاس کنکریاں استعمال ہوں گی",
+        "vLtGrTFyois": "کنکریوں کا سائز کیا ہو",
+        "_jult7oubvU": "دس کی رمی کی کنکریاں مزدلفہ سے اٹھانا مستحب ہے",
+        "V9cVJNMQLzY": "مزدلفہ کے وقوف کا صحیح وقت",
+        "w7R0Zmp-scc": "دس ذی الحج صرف بڑے شیطان کو کنکری مارنی ہے",
+        "6vfgSwRJe2Y": "قربانی اور حجامت بنوانا",
+        "eKO6C311RdY": "دس ذی الحج کا چوتھا کام",
+        "qoxeoQFy8PU": "طوافِ زیارت قربانی سے پہلے بھی کر سکتے ہیں",
+        "gWsJPkrgIJg": "طوافِ زیارت کے بعد سعی",
+        "WNrL6-HbZ-w": "حجِ٘ افراد اور قِرآن کرنے والے کی منی جانے سے پہلے حج کی سعی",
+        "QV8V__Sv6o8": "حجِ٘ تمت٘ع کرنے والے کی منیٰ جانے سے پہلے حج کی سعی",
+        "vtrSSMSQRFw": "رمی کا وکیل کرنے کی شرط",
+        "p4C1R9QjDJk": "وکیل پہلے اپنی رمی کرے",
+        "n7QAQFt3gXQ": "حجِ٘ افراد اور قِرآن کرنے والے کی منی جانے سے پہلے حج کی سعی.",
+        "baDxURAr0Rg": "رمی کے بعد دعا",
+        "bSwKDisCC3w": "رمی کا طریقہ",
+        "FNzRh6vnEbU": "تیرہ ذی الحج کی رمی",
+        "uHK8sCoCkws": "تیرہ ذی الحج کی رمی کرنی ھو تو بارہ کی رات منیٰ میں گذاریں",
+        "iWuJ__P13EM": "حج کا چھٹا واجب- طوافِ وداع",
+        "edNeVDPiPXQ": "حج کے بعد میقات سے نکلنے سے پہلے طوافِ وداع کریں",
+        "7i5Iu92x0nY": "نو اور دس کی رات کو مغرب کے بعد عرفات پہنچا تو بھی وقوف ہو گیا",
+        "Ry4mGzmjPWM": "مریض کا وقوفِ عرفہ",
+        "eKh_c1qfEb0": "جو شخص نو ذی الحج ظہر سے لے کر دس کی صبح صادق تک عرفات نہ پہنچا اس کا حج..... Hajj 2026 Q&A",
+        "owTtKCQ8u7o": "نابالغ کا حج",
+        "svq1pVpyCZY": "طواف کے بعد زمزم کا پینا",
+        "FWNq7aOvPmo": "دربارِ رسالت مآب صلی اللہ علیہ والہ وسلّم میں حاضری",
+        "dsv2FlADD6A": "چھوٹی چھوٹی غلطیوں سے دم نہیں پڑتا",
+        "9aT0xshMdcU": "مکّہ مکرّمہ کی زیارات",
+        "Gn7ieVbUY5Q": "دورانِ سفر حج کاروبار جائز ہے",
+        "t_byp5clDPg": "صدقہ اور دم میں فرق",
+        "PFQzz8he-eI": "زیاراتِ مدینہ منورہ",
+        "EwAfnKaNbRg": "حج سے واپسی پر تبرّکات لانا",
+        "KHgOzuLCB6A": "حج پر جاتے ہوئے عزیز و اقارب سے مل کر جائیں",
+        "MY2U1CHeNTs": "حج سے واپسی پر حاجی سے دعا کرائیں",
+        "6NdQqHIyyeQ": "حج میں لڑائی جھگڑا نہ کریں",
+        "Q3Gz1yZhTeQ": "گیارہ اور بارہ کی رمی",
+        "3y5avmKfvSE": "گیارہ اور بارہ کو نماز پڑھنے حرم جانا",
+        "bUPnXIqFiGc": "تکبیراتِ تشریق",
+        "n55r8Nf8lWg": "خواتین کی تکبیرات تشریق",
+        "P4WviIrcu8o": "میڈیکیٹڈ شیمپو کا استعمال - ایک سوال کا جواب",
+        "yCv31vH0stw": "جمعے کے حج کی فضیلت",
+        "PByTQzo1ilw": "اگر مسجد نبوی میں چالیس نمازیں نہ ملیں......",
+        "y-n4LOlgLYw": "مقامِ ابراہیم علیہ السلام",
+        "APw95TWIRkw": "دورانِ طواف وضو ٹوٹنا",
+        "qck0_TC7V4w": "بیت اللہ پر پہلی نظر پڑنے پر کی ہوئی دعا قبول",
+        "ktgSkvuMY4U": "طواف کس جگہ کریں",
+        "EFjjN0cgsVQ": "دورانِ طواف نماز کا شروع ہو جانا",
+        "FcYcybrRltw": "ہر طواف کے بعد پہلے نفل پڑھیں پھر دوسرا......",
+        "3wih6sXupwI": "رمل اور اضطباع کا اصول",
+        "5R3F2ssdeyY": "طوافِ زیارت -حالتِ احرام اور سادہ کپڑوں میں...",
+        "LotEzHoUcOI": "نماز میں صفوں کا ملا ہوا ہونا"
+      };
+
+      function getShortTitle(videoId, number) {
+        return shortTitles[videoId] || "Short reminder " + number;
+      }
+
       function createShortCard(videoId, index) {
         var number = String(index + 1).padStart(2, '0');
+        var title = getShortTitle(videoId, number);
         var button = document.createElement('button');
         button.type = 'button';
         button.className = 'short-item';
-        button.setAttribute('aria-label', 'Load Hajj 2026 short ' + number);
+        button.setAttribute("aria-label", "Load " + title);
         button.dataset.videoId = videoId;
         button.dataset.number = number;
 
@@ -706,7 +868,7 @@
 
         var image = document.createElement('img');
         image.src = 'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg';
-        image.alt = 'Hajj 2026 short ' + number;
+        image.alt = title;
         image.loading = 'lazy';
         image.decoding = 'async';
 
@@ -717,9 +879,19 @@
         media.appendChild(image);
         media.appendChild(overlay);
 
-        var label = document.createElement('div');
-        label.className = 'short-number';
-        label.textContent = number;
+        var label = document.createElement("div");
+        label.className = "short-number";
+
+        var indexLabel = document.createElement("span");
+        indexLabel.className = "short-index";
+        indexLabel.textContent = number;
+
+        var titleLabel = document.createElement("span");
+        titleLabel.className = "short-title";
+        titleLabel.textContent = title;
+
+        label.appendChild(indexLabel);
+        label.appendChild(titleLabel);
 
         button.appendChild(media);
         button.appendChild(label);
@@ -729,7 +901,7 @@
 
           var iframe = document.createElement('iframe');
           iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
-          iframe.title = 'Hajj 2026 short ' + number;
+          iframe.title = title;
           iframe.loading = 'lazy';
           iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
           iframe.allowFullscreen = true;

@@ -266,6 +266,14 @@
     .btn-font-info:hover{border-color:var(--gold);color:var(--gold-light);}
 
     .hajj-spotlight{padding:36px 0 88px;background:var(--off-white);}
+    .khutbah-spotlight{padding:34px 0 20px;background:var(--off-white);}
+    .khutbah-spotlight-card{background:var(--white);border:1px solid rgba(201,150,58,0.22);border-radius:10px;display:grid;grid-template-columns:220px minmax(0,1fr) auto;gap:24px;align-items:center;padding:24px;box-shadow:0 12px 28px rgba(13,40,24,0.08);}
+    .khutbah-thumb{border-radius:8px;overflow:hidden;background:#113320;aspect-ratio:16/9;}
+    .khutbah-thumb img{width:100%;height:100%;object-fit:cover;}
+    .khutbah-kicker{display:block;color:var(--gold-dim);font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
+    .khutbah-title{font-family:'Playfair Display',serif;color:var(--green-deep);font-size:1.55rem;line-height:1.25;margin-bottom:8px;}
+    .khutbah-title span{color:var(--gold);}
+    .khutbah-desc{color:var(--text-muted);font-size:.9rem;line-height:1.75;max-width:620px;}
     .hajj-spotlight-card{position:relative;overflow:hidden;background:linear-gradient(120deg,#0c2517 0%,#143724 56%,#1f5938 100%);border:1px solid rgba(201,150,58,0.35);border-radius:10px;padding:40px 44px;display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center;box-shadow:0 16px 34px rgba(13,40,24,0.16);}
     .hajj-spotlight-card::before{content:'';position:absolute;inset:0;opacity:.08;background-image:repeating-linear-gradient(45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px),repeating-linear-gradient(-45deg,transparent,transparent 29px,rgba(201,150,58,1) 30px);pointer-events:none;}
     .hajj-copy,.hajj-action{position:relative;z-index:1;}
@@ -291,6 +299,7 @@
       .hero-short-nav{width:32px;height:32px;font-size:1rem;}
       .hero-short-status{font-size:0.58rem;}
       .topics-grid{grid-template-columns:1fr 1fr;}
+      .khutbah-spotlight-card{grid-template-columns:1fr;padding:20px;}
       .hajj-spotlight{padding:20px 0 64px;}
       .hajj-spotlight-card{grid-template-columns:1fr;padding:28px 22px;gap:16px;}
     }
@@ -353,7 +362,7 @@
       <div class="container">
         <div style="margin-bottom:50px;">
           <span class="section-label">What We Cover</span>
-          <h2 class="section-title" id="topics-title">Seven Pathways to <span>Islamic Wisdom</span></h2>
+          <h2 class="section-title" id="topics-title">Eight Pathways to <span>Islamic Wisdom</span></h2>
           <div class="divider-gold" aria-hidden="true"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
         </div>
         
@@ -366,47 +375,70 @@
           </article>
 
           <article class="topic-card">
-            <span class="topic-num" aria-hidden="true">02</span><span class="topic-icon" aria-hidden="true">📜</span>
+            <span class="topic-num" aria-hidden="true">02</span><span class="topic-icon" aria-hidden="true">🎙️</span>
+            <h3><a href="jummah-khutbah.html" class="stretched-link">Jummah Khutbah</a></h3>
+            <span class="topic-urdu" lang="ur" dir="rtl">جمعہ خطبہ</span>
+            <p>Weekly Friday sermon clips by Mufti Shahid Mushtaq with practical reminders from Quran and Sunnah.</p>
+          </article>
+
+          <article class="topic-card">
+            <span class="topic-num" aria-hidden="true">03</span><span class="topic-icon" aria-hidden="true">📜</span>
             <h3><a href="quranic-stories.html" class="stretched-link">Quranic Stories</a></h3>
             <span class="topic-urdu" lang="ur" dir="rtl">واقعاتِ قرآنی</span>
             <p>Timeless stories from the Holy Quran - Yusuf, Musa, Ibrahim, Maryam, Ashab al-Kahf and more, with authentic lessons for every believer.</p>
           </article>
 
           <article class="topic-card">
-            <span class="topic-num" aria-hidden="true">03</span><span class="topic-icon" aria-hidden="true">🌙</span>
+            <span class="topic-num" aria-hidden="true">04</span><span class="topic-icon" aria-hidden="true">🌙</span>
             <h3><a href="syed-ul-bashar.html" class="stretched-link">Syed-ul-Bashar ﷺ &amp; Companions</a></h3>
             <span class="topic-urdu" lang="ur" dir="rtl">سیدالبشر صلی اللہ علیہ وآلہٖ وسلم اور اصحاب</span>
             <p>The blessed Seerah of Prophet Muhammad ﷺ and his noble Companions - the greatest examples for mankind.</p>
           </article>
 
           <article class="topic-card">
-            <span class="topic-num" aria-hidden="true">04</span><span class="topic-icon" aria-hidden="true">✨</span>
+            <span class="topic-num" aria-hidden="true">05</span><span class="topic-icon" aria-hidden="true">✨</span>
             <h3><a href="connect-with-allah.html" class="stretched-link">Connect with Allah</a></h3>
             <span class="topic-urdu" lang="ur" dir="rtl">اللہ سے تعلق</span>
             <p>Strengthen your bond with Allah ﷻ through spiritual guidance and 8 free books in Urdu &amp; English - available to read online or download.</p>
           </article>
 
           <article class="topic-card">
-            <span class="topic-num" aria-hidden="true">05</span><span class="topic-icon" aria-hidden="true">⏱️</span>
+            <span class="topic-num" aria-hidden="true">06</span><span class="topic-icon" aria-hidden="true">⏱️</span>
             <h3><a href="islamic-tools.html" class="stretched-link">Islamic Tools &amp; Timings</a></h3>
             <span class="topic-urdu" lang="ur" dir="rtl">نماز کے اوقات و اسلامی ٹولز</span>
             <p>Accurate daily Namaz timings for Hanafi &amp; Shafi, Qibla direction, and Hijri calendar for Pakistan.</p>
           </article>
 
           <article class="topic-card">
-            <span class="topic-num" aria-hidden="true">06</span><span class="topic-icon" aria-hidden="true">🕯️</span>
+            <span class="topic-num" aria-hidden="true">07</span><span class="topic-icon" aria-hidden="true">🕯️</span>
             <h3><a href="qasas-ul-anbiya.html" class="stretched-link">Prophets</a></h3>
             <span class="topic-urdu" lang="ur" dir="rtl">انبیاء و رُسُلِ عظام</span>
             <p>Stories of the Prophets - lessons of faith, patience, and divine wisdom from the lives of Allah's chosen messengers.</p>
           </article>
 
           <article class="topic-card">
-            <span class="topic-num" aria-hidden="true">07</span><span class="topic-icon" aria-hidden="true">🌿</span>
+            <span class="topic-num" aria-hidden="true">08</span><span class="topic-icon" aria-hidden="true">🌿</span>
             <h3><a href="al-salihin.html" class="stretched-link">Al-Salihin</a></h3>
             <span class="topic-urdu" lang="ur" dir="rtl">الصالحین</span>
             <p>Lives of the righteous - the Companions, Tabi'een, and Islamic scholars who walked the path of piety and left a legacy of faith.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="khutbah-spotlight" aria-labelledby="khutbah-spotlight-title">
+      <div class="container">
+        <article class="khutbah-spotlight-card">
+          <a class="khutbah-thumb" href="jummah-khutbah.html" aria-label="Open Jummah Khutbah clips">
+            <img src="https://i.ytimg.com/vi/0cqY-mzAeWg/hqdefault.jpg" alt="Jummah Khutbah short clip" loading="lazy" decoding="async">
+          </a>
+          <div>
+            <span class="khutbah-kicker">Weekly Friday Sermon</span>
+            <h2 class="khutbah-title" id="khutbah-spotlight-title">Jummah <span>Khutbah Clips</span></h2>
+            <p class="khutbah-desc">Short weekly reminders by Mufti Shahid Mushtaq covering Quran, Sunnah, worship, halal earnings, sacrifice, and spiritual reform.</p>
+          </div>
+          <a class="btn-hajj" href="jummah-khutbah.html">Watch Khutbah Clips</a>
+        </article>
       </div>
     </section>
 
