@@ -1,0 +1,39 @@
+name: Update daily shorts
+
+on:
+  schedule:
+    - cron: "15 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-daily-shorts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install yt-dlp
+        run: python -m pip install --upgrade yt-dlp
+
+      - name: Sync homepage daily shorts
+        run: python scripts/update-daily-shorts.py
+
+      - name: Commit updated shorts
+        run: |
+          if git diff --quiet -- daily-shorts.js; then
+            echo "daily-shorts.js is already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add daily-shorts.js
+          git commit -m "Update homepage daily shorts"
+          git push

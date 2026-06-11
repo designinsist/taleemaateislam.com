@@ -6,27 +6,12 @@
    * The last ID you add is treated as the latest short.
    */
   var DAILY_SHORTS = [
-    'M8DZqaM4-q8',
-    'CTniDtcXyvg',
-    'B4Ng9uI49pI',
-    'drjILoGSSb8',
-    'q-YFZTSYlIU',
-    'Ma9KGG9tOGA',
-    'o1Jk3ldq2AQ',
-    'F59Wu6udQ6o',
-    '5r68tVuCqz4',
-    'iioQf-IJfn8',
-    'KZ2w6cpbRkU',
-    'I7xi57XYYAk',
-    'S1nUSi-_fEw',
-    'XFRB7AQy-NE',
-    '8N9eQl6Vns8',
-    'VGgmL9SQ_ls',
-    'u5X2Pdvx88k',
-    'zimpZAbHp44',
-    '0VcxvuTC-7k',
-    'BkjBUJynaHU',
-    'ylsUWuNRELw',
+    'M8DZqaM4-q8', 'CTniDtcXyvg', 'B4Ng9uI49pI', 'drjILoGSSb8', 'q-YFZTSYlIU',
+    'Ma9KGG9tOGA', 'o1Jk3ldq2AQ', 'F59Wu6udQ6o', '5r68tVuCqz4', 'iioQf-IJfn8',
+    'KZ2w6cpbRkU', 'I7xi57XYYAk', 'S1nUSi-_fEw', 'XFRB7AQy-NE', '8N9eQl6Vns8',
+    'VGgmL9SQ_ls', 'u5X2Pdvx88k', 'zimpZAbHp44', '0VcxvuTC-7k', 'BkjBUJynaHU',
+    'r0IRUmvxjdY', '99e7OcBJVUk', 'ylsUWuNRELw', '67nvk2u_8DA', 'V5Mr7g6umnc',
+    'jDdIVzv1-J4', 'ob23nhWKIzc', 'jcGET1V0n9I', '1yx13ihY1Qo',
   ];
 
   function buildEmbedUrl(videoId) {
