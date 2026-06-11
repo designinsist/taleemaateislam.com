@@ -3,8 +3,8 @@ var SITE_SEARCH_INDEX = [
     title: 'Home',
     label: 'Home',
     url: 'index.html',
-    desc: 'Authentic Quranic commentary, free Islamic books, and Sunni guidance.',
-    tags: 'taleemaat islam books quran guidance khuda mojood hai yaqeen ka safar islamic education free'
+    desc: 'Authentic Quranic commentary, free Islamic books, daily shorts, and Sunni guidance.',
+    tags: 'taleemaat islam books quran guidance khuda mojood hai yaqeen ka safar islamic education free daily shorts homepage reminders'
   },
   {
     title: 'Dars-e-Quran',
@@ -17,8 +17,8 @@ var SITE_SEARCH_INDEX = [
     title: 'Latest Updates',
     label: 'Updates',
     url: 'latest-updates.html',
-    desc: 'Recently updated Hajj 2026 shorts, Jummah Khutbah clips, Dars-e-Quran audio, and new Islamic resources.',
-    tags: 'latest updates new shorts hajj jummah khutbah dars quran daily updates taleemaat islam'
+    desc: 'Recently updated Hajj 2026 shorts, Jummah Khutbah clips, Dars-e-Quran audio, daily homepage shorts, and new Islamic resources.',
+    tags: 'latest updates new shorts hajj jummah khutbah dars quran daily updates daily shorts yaqeen ka safar taleemaat islam'
   },
   {
     title: 'Jummah Khutbah',
@@ -89,5 +89,12 @@ var SITE_SEARCH_INDEX = [
     url: 'al-salihin.html',
     desc: 'Biographies of righteous Companions, Tabi\'een, and scholars - Umar, Imam Ghazali, Maulana Rumi and more.',
     tags: 'al-salihin umar ibn khattab saad ibn muadh umar ibn abdul aziz imam ghazali hujjat ul islam junayd baghdadi ibrahim ibn adham maulana rumi fihi ma fihi zubaidah scholars companions biographies salihin'
+  },
+  {
+    title: 'Privacy Policy',
+    label: 'Policy',
+    url: 'privacy.html',
+    desc: 'Privacy policy for Taleemaat-e-Islam, including analytics, external links, Google Drive books, and contact information.',
+    tags: 'privacy policy taleemaat islam analytics cookies google drive contact data external links'
   }
 ];
