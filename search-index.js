@@ -14,6 +14,13 @@ var SITE_SEARCH_INDEX = [
     tags: 'dars quran tafseer mufti shahid mushtaq surah yunus baqarah lecture explanation'
   },
   {
+    title: 'Dars-e-Quran Videos',
+    label: 'Quran',
+    url: 'dars-e-quran-videos.html',
+    desc: 'Surah-based Dars-e-Quran YouTube videos by Mufti Shahid Mushtaq, including Al-Kahf, Al-Isra, and An-Nahal.',
+    tags: 'dars quran videos youtube tafseer mufti shahid mushtaq surah kahf isra bani israel nahal ayah playlist explanation urdu'
+  },
+  {
     title: 'Latest Updates',
     label: 'Updates',
     url: 'latest-updates.html',

@@ -8,6 +8,7 @@
 var SITE_SEARCH_INDEX = [
   { title: 'Home', label: 'Home', url: 'index.html', desc: 'Authentic Quranic commentary, free Islamic books, daily shorts, and Sunni guidance.', tags: 'taleemaat islam books quran guidance khuda mojood hai yaqeen ka safar islamic education free daily shorts homepage reminders' },
   { title: 'Dars-e-Quran', label: 'Quran', url: 'dars-e-quran.html', desc: 'Ayah-by-ayah Quran tafseer by Mufti Shahid Mushtaq - Surah Al-Isra, Baqarah, Yunus, Yousuf, Maidah, Al-Anam, Al-Anfal, Al-Araf, Al-Hijr, An-Nahal, Ar-Raad, At-Tauba, Hud, Ibrahim and more.', tags: 'dars quran tafseer mufti shahid mushtaq audio lecture ayah bani israel isra baqarah yunus yousuf maidah anam anfal araf hijr nahal raad tauba hud ibrahim explanation urdu' },
+  { title: 'Dars-e-Quran Videos', label: 'Quran', url: 'dars-e-quran-videos.html', desc: 'Surah-based Dars-e-Quran YouTube videos by Mufti Shahid Mushtaq, including Al-Kahf, Al-Isra, and An-Nahal.', tags: 'dars quran videos youtube tafseer mufti shahid mushtaq surah kahf isra bani israel nahal ayah playlist quran explanation urdu' },
   { title: 'Latest Updates', label: 'Updates', url: 'latest-updates.html', desc: 'Recently updated Hajj 2026 shorts, Jummah Khutbah clips, Dars-e-Quran audio, daily homepage shorts, and new Islamic resources.', tags: 'latest updates new shorts hajj jummah khutbah dars quran daily updates daily shorts yaqeen ka safar taleemaat islam' },
   { title: 'Jummah Khutbah', label: 'Dars', url: 'jummah-khutbah.html', desc: 'Weekly Friday sermon clips and Jummah Khutbah reminders by Mufti Shahid Mushtaq.', tags: 'jummah khutbah juma khutba friday sermon mufti shahid mushtaq bayan islamic shorts urdu halal qurbani dhul hijjah zakat' },
   { title: 'Hajj 2026 Q&A', label: 'Hajj', url: 'hajj-2026.html', desc: 'Practical Hajj 2026 guidance and Q&A by Mufti Muhammad Tahir Masood.', tags: 'hajj 2026 pilgrimage mufti tahir masood ihram tawaf arafat mina umrah miqat jamarat muzdalifah qurbani wuqoof' },
@@ -31,6 +32,7 @@ var SITE_SEARCH_INDEX = [
     ''                            : 'index.html',   // root path
     'latest-updates.html'         : 'more-section',
     'dars-e-quran.html'           : 'quran-section',
+    'dars-e-quran-videos.html'    : 'quran-section',
     'jummah-khutbah.html'         : 'quran-section',
     'quranic-stories.html'        : 'quran-section',
     'connect-with-allah.html'     : 'connect-with-allah.html',
@@ -46,6 +48,7 @@ var SITE_SEARCH_INDEX = [
   const BREADCRUMB_MAP = {
     'latest-updates.html': ['Latest Updates'],
     'dars-e-quran.html': ['Quran & Dars', 'Dars-e-Quran'],
+    'dars-e-quran-videos.html': ['Quran & Dars', 'Dars-e-Quran Videos'],
     'jummah-khutbah.html': ['Quran & Dars', 'Jummah Khutbah'],
     'quranic-stories.html': ['Quran & Dars', 'Quranic Stories'],
     'syed-ul-bashar.html': ['Seerah'],

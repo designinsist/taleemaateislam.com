@@ -71,6 +71,7 @@
         </button>
         <ul class="dropdown" role="menu" aria-label="Quran and Dars submenu">
           <li><a href="dars-e-quran.html" role="menuitem">Dars-e-Quran</a></li>
+          <li><a href="dars-e-quran-videos.html" role="menuitem">Dars-e-Quran Videos</a></li>
           <li><a href="jummah-khutbah.html" role="menuitem">Jummah Khutbah</a></li>
           <li><a href="quranic-stories.html" role="menuitem">Quranic Stories</a></li>
         </ul>
@@ -118,6 +119,7 @@
       <a href="index.html" class="drawer-link">Home</a>
       <div class="drawer-section-title">Quran &amp; Dars</div>
       <a href="dars-e-quran.html" class="drawer-link drawer-sub" data-page="quran-section">Dars-e-Quran</a>
+      <a href="dars-e-quran-videos.html" class="drawer-link drawer-sub" data-page="quran-section">Dars-e-Quran Videos</a>
       <a href="jummah-khutbah.html" class="drawer-link drawer-sub" data-page="quran-section">Jummah Khutbah</a>
       <a href="quranic-stories.html" class="drawer-link drawer-sub" data-page="quran-section">Quranic Stories</a>
       <div class="drawer-section-title">Quran &amp; Seerah</div>
