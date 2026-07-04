@@ -678,6 +678,34 @@
 
         <div class="accordion-container">
 
+          <article class="surah-card updating">
+            <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
+              onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
+              <div class="surah-title-area">
+                <span class="surah-icon">مريم</span>
+                <div>
+                  <h2 class="surah-name">Surah Maryam</h2>
+                  <p class="surah-meta">Surah No. 19 &mdash; Daily Ayah-by-Ayah Tafseer Updates</p>
+                </div>
+              </div>
+              <span class="updating-badge">Updating Daily</span>
+              <svg class="toggle-icon" viewBox="0 0 24 24">
+                <path d="M7 10l5 5 5-5z" />
+              </svg>
+            </div>
+
+            <div class="surah-content" aria-hidden="true">
+              <div class="surah-content-inner">
+                <div class="audio-row">
+                  <div class="audio-label">Ayah (Maryam) 1</div>
+                  <div class="lazy-player" data-id="">
+                    <button class="play-btn" onclick="loadPlayer(this)">▶ Play Audio</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
           <article class="surah-card">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
@@ -955,31 +983,6 @@
 
 
 
-              </div>
-            </div>
-          </article>
-
-          <article class="surah-card updating">
-            <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
-              onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
-              <div class="surah-title-area">
-                <span class="surah-icon">مريم</span>
-                <div>
-                  <h2 class="surah-name">Surah Maryam</h2>
-                  <p class="surah-meta">Surah No. 19 &mdash; Daily Ayah-by-Ayah Tafseer Updates</p>
-                </div>
-              </div>
-              <span class="updating-badge">Updating Daily</span>
-              <svg class="toggle-icon" viewBox="0 0 24 24">
-                <path d="M7 10l5 5 5-5z" />
-              </svg>
-            </div>
-
-            <div class="surah-content" aria-hidden="true">
-              <div class="surah-content-inner">
-                <div class="audio-row">
-                  <div class="audio-label">Surah Maryam audio updates will be added here.</div>
-                </div>
               </div>
             </div>
           </article>
