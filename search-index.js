@@ -17,8 +17,8 @@ var SITE_SEARCH_INDEX = [
     title: 'Dars-e-Quran Videos',
     label: 'Quran',
     url: 'dars-e-quran-videos.html',
-    desc: 'Surah-based Dars-e-Quran YouTube videos by Mufti Shahid Mushtaq, including Al-Kahf, Al-Isra, and An-Nahal.',
-    tags: 'dars quran videos youtube tafseer mufti shahid mushtaq surah kahf isra bani israel nahal ayah playlist explanation urdu'
+    desc: 'Surah-based Dars-e-Quran YouTube videos by Mufti Shahid Mushtaq, including Maryam, Al-Kahf, Al-Isra, and An-Nahal.',
+    tags: 'dars quran videos youtube tafseer mufti shahid mushtaq surah maryam kahf isra bani israel nahal ayah playlist explanation urdu'
   },
   {
     title: 'Latest Updates',
@@ -33,6 +33,13 @@ var SITE_SEARCH_INDEX = [
     url: 'jummah-khutbah.html',
     desc: 'Weekly Friday sermon clips and Jummah Khutbah reminders by Mufti Shahid Mushtaq.',
     tags: 'jummah khutbah juma khutba friday sermon mufti shahid mushtaq bayan islamic shorts urdu halal qurbani dhul hijjah zakat'
+  },
+  {
+    title: 'Islamic Knowledge',
+    label: 'Dars',
+    url: 'islamic-knowledge.html',
+    desc: 'Short Islamic knowledge reminders on Muharram, Karbala, unity, fasting, and practical faith guidance.',
+    tags: 'islamic knowledge reminders muharram karbala hussain ashura fasting unity islamic shorts taleemaat islam'
   },
   {
     title: 'Hajj 2026 Q&A',
