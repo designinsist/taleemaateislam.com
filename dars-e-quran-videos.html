@@ -21,13 +21,13 @@
   <meta property="og:title" content="Dars-e-Quran Videos by Surah | Taleemaat-e-Islam" />
   <meta property="og:description" content="Surah-based Dars-e-Quran video playlists by Mufti Shahid Mushtaq." />
   <meta property="og:site_name" content="Taleemaat-e-Islam" />
-  <meta property="og:image" content="https://i.ytimg.com/vi/e7oDGxbE4iQ/hqdefault.jpg" />
+  <meta property="og:image" content="https://i.ytimg.com/vi/oiaoih7u5T4/hqdefault.jpg" />
   <meta property="og:image:width" content="480" />
   <meta property="og:image:height" content="360" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dars-e-Quran Videos by Surah | Taleemaat-e-Islam" />
   <meta name="twitter:description" content="Watch Quran tafseer videos organized by Surah playlists." />
-  <meta name="twitter:image" content="https://i.ytimg.com/vi/e7oDGxbE4iQ/hqdefault.jpg" />
+  <meta name="twitter:image" content="https://i.ytimg.com/vi/oiaoih7u5T4/hqdefault.jpg" />
   <meta name="twitter:image:alt" content="Dars-e-Quran video thumbnail" />
 
   <script type="application/ld+json">
@@ -59,7 +59,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="shortcut icon" href="/images/favicon.ico">
 
-  <link rel="preload" as="image" href="https://i.ytimg.com/vi/e7oDGxbE4iQ/hqdefault.jpg" />
+  <link rel="preload" as="image" href="https://i.ytimg.com/vi/oiaoih7u5T4/hqdefault.jpg" />
   <link rel="stylesheet" href="shared.css" />
   <style>
     :root {
@@ -429,7 +429,7 @@
           </div>
         </div>
         <figure class="hero-card">
-          <img src="https://i.ytimg.com/vi/e7oDGxbE4iQ/hqdefault.jpg" alt="Dars-e-Quran video lesson" loading="eager" fetchpriority="high" />
+          <img src="https://i.ytimg.com/vi/oiaoih7u5T4/hqdefault.jpg" alt="Dars-e-Quran video lesson" loading="eager" fetchpriority="high" />
           <figcaption class="hero-card-caption">
             <strong>Surah Maryam</strong>
             <span>Current video playlist with new Dars-e-Quran updates.</span>
@@ -490,9 +490,22 @@
   <script>
     const DARS_PLAYLISTS = [
       { key: "maryam", name: "Surah Maryam", surahNo: 19, status: "Current daily update", playlistId: "PLb9F2UZzrMqo", videos: [
+        {"id":"oiaoih7u5T4","title":"Surah Maryam | Ayah 12-15"},
+        {"id":"U2ILzFdMRT8","title":"حضرت ابوبکر صدیق اور فدک کی حقیقت"},
+        {"id":"YpeLHgErySo","title":"وراثت کے بارے میں سب سے اہم حدیث"},
+        {"id":"PYZgvQbpHmY","title":"والدین کی اولاد کے لیے سب سے اہم دعا"},
+        {"id":"WjfdvQwhIj0","title":"Surah Maryam | Ayah 7-11"},
+        {"id":"6rbTa74fBc4","title":"5 انبیاء کی وراثت... صرف مال نہیں"},
+        {"id":"BjqwVnCQEK0","title":"ہر وقت دعا کریں الله ہمیشہ سن رہا ہے"},
+        {"id":"AMsX9XVWKec","title":"سچی دعا انکساری سے آتی ہے"},
+        {"id":"a5ifverzxkw","title":"اللہ سے نرم آواز میں دعا کریں"},
+        {"id":"ZanKQY2tulg","title":"What happened when Hazrat Jafar al-Tayyar recited the Quran before the Negus"},
+        {"id":"nJimCEPdqeU","title":"Surah Maryam | Ayah 5-6 | Quran Lesson"},
         {"id":"e7oDGxbE4iQ","title":"Surah Maryam | Ayah 1-4 | Quran Lesson"},
       ] },
       { key: "kahf", name: "Surah Al-Kahf", surahNo: 18, status: "Complete", playlistId: "PLdujDev9jtVYteodb2c4DpSj_ESdjYb-G", videos: [
+        {"id":"7KkKWxXlqa4","title":"Takwa mein Riyakari nahi aona chahiye"},
+        {"id":"-wmZRws8HVs","title":"شرک خفی سے بچو، ہر نیکی میں"},
         {"id":"9W3czn3Wwpw","title":"Amal aur niyat dono pure hone chahiye"},
         {"id":"lvv76_xiscM","title":"logon me se hi rasool bana kar beja aur ye kyon zaroori tha"},
         {"id":"mFrnkvt5veM","title":"سورہ الکہف آیات 109-110 | شرک خفی کی تشریح"},
@@ -723,7 +736,7 @@
         summaryCard.innerHTML =
           '<strong>' + playlist.name + '</strong>' +
           '<span>Surah No. ' + playlist.surahNo + ' · ' + playlist.videos.length + ' public videos</span>' +
-          '<div class="summary-meta"><span class="summary-badge' + (playlist.key === 'kahf' ? ' current' : '') + '">' + playlist.status + '</span><span class="summary-badge">YouTube Playlist</span></div>';
+          '<div class="summary-meta"><span class="summary-badge' + (playlist.status.toLowerCase().includes('current') ? ' current' : '') + '">' + playlist.status + '</span><span class="summary-badge">YouTube Playlist</span></div>';
         summary.appendChild(summaryCard);
 
         const block = document.createElement('section');
