@@ -35,6 +35,13 @@ var SITE_SEARCH_INDEX = [
     tags: 'yaqeen ka safar shorts daily islamic reminders faith iman tawbah repentance prayer namaz self reform tazkiyah allah spirituality'
   },
   {
+    title: 'Finality of Prophethood',
+    label: 'Aqeedah',
+    url: 'finality-of-prophethood.html',
+    desc: 'Educational Khatm-e-Nubuwwat videos and shorts in collaboration with Finality of Prophethood.',
+    tags: 'finality of prophethood khatm e nubuwwat khatme nabuwat ختم نبوت prophet muhammad final prophet aqeedah qadiani literature review educational shorts finalityofprophethood'
+  },
+  {
     title: 'Jummah Khutbah',
     label: 'Dars',
     url: 'jummah-khutbah.html',

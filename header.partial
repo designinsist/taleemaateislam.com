@@ -103,6 +103,7 @@
         <ul class="dropdown dropdown-right" role="menu" aria-label="More resources submenu">
           <li><a href="qasas-ul-anbiya.html" role="menuitem">Prophets</a></li>
           <li><a href="al-salihin.html" role="menuitem">Al-Salihin</a></li>
+          <li><a href="finality-of-prophethood.html" role="menuitem">Finality of Prophethood</a></li>
           <li><a href="yaqeen-ka-safar-shorts.html" role="menuitem">Yaqeen Ka Safar Shorts</a></li>
           <li><a href="latest-updates.html" role="menuitem">Latest Updates</a></li>
         </ul>
@@ -127,6 +128,7 @@
       <a href="quranic-stories.html" class="drawer-link drawer-sub" data-page="quran-section">Quranic Stories</a>
       <div class="drawer-section-title">Quran &amp; Seerah</div>
       <a href="syed-ul-bashar.html" class="drawer-link drawer-sub" data-page="syed-ul-bashar.html">Syed-ul-Bashar (PBUH) &amp; Companions</a>
+      <a href="finality-of-prophethood.html" class="drawer-link drawer-sub" data-page="more-section">Finality of Prophethood</a>
       <div class="drawer-section-title">Spirituality</div>
       <a href="connect-with-allah.html" class="drawer-link drawer-sub" data-page="connect-with-allah.html">Connect with Allah</a>
       <a href="yaqeen-ka-safar-shorts.html" class="drawer-link drawer-sub" data-page="connect-with-allah.html">Yaqeen Ka Safar Shorts</a>
