@@ -197,6 +197,21 @@
       color:rgba(201,150,58,0.95);
       opacity:0.95;
     }
+    .hero-short-archive{
+      position:relative;
+      z-index:2;
+      display:flex;
+      justify-content:center;
+      margin-top:10px;
+      color:rgba(255,255,255,0.78);
+      font-size:0.66rem;
+      font-weight:800;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      text-decoration:none;
+      transition:color var(--transition);
+    }
+    .hero-short-archive:hover{color:var(--gold-light);}
 
     /* ═══ TOPICS GRID ═══ */
     .topics-section{padding:96px 0;background:var(--off-white);position:relative;}
@@ -342,23 +357,24 @@
               <a href="#topics" class="btn-outline">Explore Topics</a>
             </div>
           </div>
-          <div class="hero-short-wrap" aria-label="Daily Dars-e-Quran Short">
+          <div class="hero-short-wrap" aria-label="Daily Yaqeen Ka Safar Short">
             <div class="hero-short-inner">
               <iframe
                 src="about:blank"
-                title="Dars-e-Quran - Taleemaat-e-Islam"
+                title="Yaqeen Ka Safar - Taleemaat-e-Islam"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
                 loading="lazy">
               </iframe>
             </div>
-            <p class="hero-short-label">Daily Dars-e-Quran Short</p>
+            <p class="hero-short-label">Daily Yaqeen Ka Safar Short</p>
             <div class="hero-short-controls" aria-label="Short navigation">
               <button type="button" class="hero-short-nav" data-short-prev aria-label="Previous short">‹</button>
               <p class="hero-short-status" data-short-status aria-live="polite"></p>
               <button type="button" class="hero-short-nav" data-short-next aria-label="Next short">›</button>
             </div>
+            <a class="hero-short-archive" href="yaqeen-ka-safar-shorts.html">View Full Archive</a>
           </div>
         </div>
       </div>
@@ -438,7 +454,7 @@
           <div>
             <span class="latest-strip-kicker">Recently Updated</span>
             <h2 class="latest-strip-title" id="latest-strip-title">Latest Site Updates</h2>
-            <p class="latest-strip-desc">A quick index of newly refreshed Hajj shorts, Jummah Khutbah clips, and Dars-e-Quran audio without duplicating the original pages.</p>
+            <p class="latest-strip-desc">A quick index of newly refreshed Yaqeen Ka Safar shorts, Hajj shorts, Jummah Khutbah clips, and Dars-e-Quran audio without duplicating the original pages.</p>
           </div>
           <a class="btn-hajj" href="latest-updates.html">View Updates</a>
         </article>

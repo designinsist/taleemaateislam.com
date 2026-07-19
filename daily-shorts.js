@@ -26,7 +26,7 @@
   }
 
   function buildTitle(index, total) {
-    return 'Dars-e-Quran Short ' + (index + 1) + ' of ' + total;
+    return 'Yaqeen Ka Safar Short ' + (index + 1) + ' of ' + total;
   }
 
   function buildStatus(index, total) {

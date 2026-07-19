@@ -10,6 +10,7 @@ var SITE_SEARCH_INDEX = [
   { title: 'Dars-e-Quran', label: 'Quran', url: 'dars-e-quran.html', desc: 'Ayah-by-ayah Quran tafseer by Mufti Shahid Mushtaq - Surah Maryam, Surah Al-Kahf, Surah Al-Isra, Baqarah, Yunus, Yousuf, Maidah, Al-Anam, Al-Anfal, Al-Araf, Al-Hijr, An-Nahal, Ar-Raad, At-Tauba, Hud, Ibrahim and more.', tags: 'dars quran tafseer mufti shahid mushtaq audio lecture ayah maryam kahf bani israel isra baqarah yunus yousuf maidah anam anfal araf hijr nahal raad tauba hud ibrahim explanation urdu' },
   { title: 'Dars-e-Quran Videos', label: 'Quran', url: 'dars-e-quran-videos.html', desc: 'Surah-based Dars-e-Quran YouTube videos by Mufti Shahid Mushtaq, including Maryam, Al-Kahf, Al-Isra, and An-Nahal.', tags: 'dars quran videos youtube tafseer mufti shahid mushtaq surah maryam kahf isra bani israel nahal ayah playlist quran explanation urdu' },
   { title: 'Latest Updates', label: 'Updates', url: 'latest-updates.html', desc: 'Recently updated Hajj 2026 shorts, Jummah Khutbah clips, Dars-e-Quran audio, daily homepage shorts, and new Islamic resources.', tags: 'latest updates new shorts hajj jummah khutbah dars quran daily updates daily shorts yaqeen ka safar taleemaat islam' },
+  { title: 'Yaqeen Ka Safar Shorts', label: 'Shorts', url: 'yaqeen-ka-safar-shorts.html', desc: 'Daily Yaqeen Ka Safar short reminders on faith, tawbah, prayer, self-reform, gratitude, and connection with Allah.', tags: 'yaqeen ka safar shorts daily islamic reminders faith iman tawbah repentance prayer namaz self reform tazkiyah allah spirituality' },
   { title: 'Jummah Khutbah', label: 'Dars', url: 'jummah-khutbah.html', desc: 'Weekly Friday sermon clips and Jummah Khutbah reminders by Mufti Shahid Mushtaq.', tags: 'jummah khutbah juma khutba friday sermon mufti shahid mushtaq bayan islamic shorts urdu halal qurbani dhul hijjah zakat' },
   { title: 'Islamic Knowledge', label: 'Dars', url: 'islamic-knowledge.html', desc: 'Short Islamic knowledge reminders on Muharram, Karbala, unity, fasting, and practical faith guidance.', tags: 'islamic knowledge reminders muharram karbala hussain ashura fasting unity islamic shorts taleemaat islam' },
   { title: 'Hajj 2026 Q&A', label: 'Hajj', url: 'hajj-2026.html', desc: 'Practical Hajj 2026 guidance and Q&A by Mufti Muhammad Tahir Masood.', tags: 'hajj 2026 pilgrimage mufti tahir masood ihram tawaf arafat mina umrah miqat jamarat muzdalifah qurbani wuqoof' },
@@ -32,6 +33,7 @@ var SITE_SEARCH_INDEX = [
     'index.html'                  : 'index.html',
     ''                            : 'index.html',   // root path
     'latest-updates.html'         : 'more-section',
+    'yaqeen-ka-safar-shorts.html' : 'connect-with-allah.html',
     'dars-e-quran.html'           : 'quran-section',
     'dars-e-quran-videos.html'    : 'quran-section',
     'jummah-khutbah.html'         : 'quran-section',
@@ -49,6 +51,7 @@ var SITE_SEARCH_INDEX = [
 
   const BREADCRUMB_MAP = {
     'latest-updates.html': ['Latest Updates'],
+    'yaqeen-ka-safar-shorts.html': ['Connect with Allah', 'Yaqeen Ka Safar Shorts'],
     'dars-e-quran.html': ['Quran & Dars', 'Dars-e-Quran'],
     'dars-e-quran-videos.html': ['Quran & Dars', 'Dars-e-Quran Videos'],
     'jummah-khutbah.html': ['Quran & Dars', 'Jummah Khutbah'],
@@ -68,6 +71,7 @@ var SITE_SEARCH_INDEX = [
   const BREADCRUMB_URLS = {
     'Quran & Dars': 'dars-e-quran.html',
     'Hajj 2026': 'hajj-2026.html',
+    'Connect with Allah': 'connect-with-allah.html',
     'More': 'latest-updates.html'
   };
 

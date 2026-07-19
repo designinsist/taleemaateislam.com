@@ -28,6 +28,13 @@ var SITE_SEARCH_INDEX = [
     tags: 'latest updates new shorts hajj jummah khutbah dars quran daily updates daily shorts yaqeen ka safar taleemaat islam'
   },
   {
+    title: 'Yaqeen Ka Safar Shorts',
+    label: 'Shorts',
+    url: 'yaqeen-ka-safar-shorts.html',
+    desc: 'Daily Yaqeen Ka Safar short reminders on faith, tawbah, prayer, self-reform, gratitude, and connection with Allah.',
+    tags: 'yaqeen ka safar shorts daily islamic reminders faith iman tawbah repentance prayer namaz self reform tazkiyah allah spirituality'
+  },
+  {
     title: 'Jummah Khutbah',
     label: 'Dars',
     url: 'jummah-khutbah.html',
