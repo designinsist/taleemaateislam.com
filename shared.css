@@ -9,7 +9,7 @@
 :root {
   --green-deep:#0d2818; --green-mid:#1a4a2e; --green-rich:#1e5c38; --green-bright:#2d7a50; --green-light:#e8f5ee;
   --gold:#c9963a; --gold-light:#e8b84b; --gold-pale:#f5e6c0; --gold-dim:#7a5a1a;
-  --white:#ffffff; --off-white:#faf9f5; --text-dark:#1a2a1e; --text-mid:#3d5a45; --text-muted:#6b8a73;
+  --white:#ffffff; --off-white:#faf9f5; --text-dark:#1a2a1e; --text-mid:#3d5a45; --text-muted:#566e5c;
   --border:rgba(201,150,58,0.25); --shadow-green:rgba(13,40,24,0.18); --nav-h:72px; --radius:4px; --transition:0.3s ease;
 }
 

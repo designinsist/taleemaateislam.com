@@ -77,7 +77,7 @@
       --off-white: #faf9f5;
       --text-dark: #1a2a1e;
       --text-mid: #3d5a45;
-      --text-muted: #6b8a73;
+      --text-muted: #566e5c;
       --border: rgba(201, 150, 58, 0.25);
       --shadow-green: rgba(13, 40, 24, 0.18);
       --nav-h: 72px;
@@ -289,6 +289,7 @@
       margin-bottom: 16px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
       overflow: hidden;
+      scroll-margin-top: calc(var(--nav-h) + 62px);
     }
 
     .surah-header {
@@ -388,11 +389,14 @@
     /* Lazy Player & Play Button Styling */
     .lazy-player {
       width: 100%;
-      min-height: 80px;
+      min-height: 130px;
       display: flex;
       align-items: center;
       flex: 1;
       position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
 
     .play-btn {
@@ -420,7 +424,7 @@
     /* Player loading skeleton */
     .player-loading {
       width: 100%;
-      height: 80px;
+      height: 130px;
       border-radius: 8px;
       background: linear-gradient(90deg, rgba(201, 150, 58, 0.08) 25%, rgba(201, 150, 58, 0.18) 50%, rgba(201, 150, 58, 0.08) 75%);
       background-size: 200% 100%;
@@ -480,12 +484,12 @@
     .lazy-player iframe {
       opacity: 0;
       transition: opacity 0.5s ease;
-      border-radius: 6px;
+      border-radius: 8px;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 80px;
+      height: 130px;
     }
 
     .lazy-player iframe.loaded {
@@ -562,6 +566,87 @@
       direction: ltr;
       display: inline-block;
       margin: 0 4px;
+    }
+
+    /* ═══ JUMP TO SURAH BAR ═══ */
+    .surah-jump {
+      position: sticky;
+      top: var(--nav-h);
+      z-index: 500;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 20px 0;
+      padding: 12px 16px;
+      background: rgba(250, 249, 245, 0.92);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(201, 150, 58, 0.2);
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(13, 40, 24, 0.05);
+    }
+
+    .surah-jump-label {
+      flex-shrink: 0;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+    }
+
+    .surah-jump-list {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .surah-jump-link {
+      flex-shrink: 0;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      color: var(--text-mid, var(--green-deep));
+      font-size: 0.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .surah-jump-link:hover {
+      border-color: var(--gold);
+      color: var(--gold-dim);
+      transform: translateY(-1px);
+    }
+
+    .surah-jump-link.is-updating {
+      border-color: var(--gold);
+      background: rgba(201, 150, 58, 0.08);
+      color: var(--gold-dim);
+    }
+
+    .surah-jump-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: blink 1.2s ease-in-out infinite;
+    }
+
+    @media(max-width:768px) {
+      .surah-jump {
+        gap: 10px;
+        padding: 10px 12px;
+      }
+      .surah-jump-label {
+        display: none;
+      }
     }
 
     /* ═══ ACTIVELY UPDATING SURAH BADGE ═══ */
@@ -675,10 +760,30 @@
           </ol>
         </div>
 
+        <nav class="surah-jump" aria-label="Jump to Surah">
+          <span class="surah-jump-label">Jump to Surah:</span>
+          <div class="surah-jump-list">
+            <a href="#surah-maryam" class="surah-jump-link is-updating" onclick="return jumpToSurah(event,'surah-maryam')">Maryam <span class="surah-jump-dot" aria-hidden="true"></span></a>
+            <a href="#surah-al-kahf" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-al-kahf')">Al-Kahf</a>
+            <a href="#surah-al-isra" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-al-isra')">Al-Isra</a>
+            <a href="#surah-an-nahal" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-an-nahal')">An-Nahal</a>
+            <a href="#surah-al-hijr" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-al-hijr')">Al-Hijr</a>
+            <a href="#surah-ibrahim" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-ibrahim')">Ibrahim</a>
+            <a href="#surah-ar-raad" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-ar-raad')">Ar-Raad</a>
+            <a href="#surah-yousuf" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-yousuf')">Yousuf</a>
+            <a href="#surah-hud" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-hud')">Hud</a>
+            <a href="#surah-yunus" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-yunus')">Yunus</a>
+            <a href="#surah-at-tauba" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-at-tauba')">At-Tauba</a>
+            <a href="#surah-al-anfal" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-al-anfal')">Al-Anfal</a>
+            <a href="#surah-al-araf" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-al-araf')">Al-Araf</a>
+            <a href="#surah-al-anaam" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-al-anaam')">Al-Anaam</a>
+            <a href="#surah-maidah" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-maidah')">Maidah</a>
+          </div>
+        </nav>
 
         <div class="accordion-container">
 
-          <article class="surah-card updating">
+          <article class="surah-card updating" id="surah-maryam">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -873,7 +978,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-al-kahf">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -1154,7 +1259,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-al-isra">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -1461,7 +1566,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-an-nahal">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -1740,7 +1845,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-al-hijr">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -1872,7 +1977,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-ibrahim">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -1983,7 +2088,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-ar-raad">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -2115,7 +2220,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-yousuf">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -2324,7 +2429,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-hud">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -2512,7 +2617,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-yunus">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -2684,7 +2789,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-at-tauba">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -3068,7 +3173,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-al-anfal">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -3312,7 +3417,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-al-araf">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -3780,7 +3885,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-al-anaam">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -4241,7 +4346,7 @@
             </div>
           </article>
 
-          <article class="surah-card">
+          <article class="surah-card" id="surah-maidah">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
@@ -4788,6 +4893,21 @@
 
 
     // Accordion Logic for Surahs (Updated for A11y)
+    // Jump-to-Surah bar: open the target accordion (if needed) then scroll to it
+    function jumpToSurah(event, id) {
+      if (event) event.preventDefault();
+      const card = document.getElementById(id);
+      if (!card) return false;
+
+      if (!card.classList.contains('active')) {
+        toggleAccordion(card.querySelector('.surah-header'));
+      }
+
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', '#' + id);
+      return false;
+    }
+
     function toggleAccordion(header) {
       const card = header.parentElement;
       const content = card.querySelector('.surah-content');
@@ -4834,7 +4954,7 @@
       const iframe = document.createElement('iframe');
       iframe.src = 'https://drive.google.com/file/d/' + fileId + '/preview';
       iframe.width = '100%';
-      iframe.height = '80';
+      iframe.height = '130';
       iframe.frameBorder = '0';
       iframe.allow = 'autoplay';
       iframe.title = 'Quran Audio Player';
