@@ -9,7 +9,7 @@
   <meta name="description"
     content="Listen to Dars-e-Quran by Mufti Shahid Mushtaq, with clear Quran explanation, brief tafseer-focused learning, and authentic Sunni scholarly guidance." />
   <meta name="keywords"
-    content="Dars-e-Quran, Mufti Shahid Mushtaq, M.Phil Islamic Studies, MA Urdu, Faazil Jamia Darul Uloom Karachi, Quran Tafseer, Quran explanation, Surah Yunus, Surah Baqarah, Islamic lectures, Taleemaat-e-Islam" />
+    content="Dars-e-Quran, Mufti Shahid Mushtaq, M.Phil Islamic Studies, MA Urdu, Faazil Jamia Darul Uloom Karachi, Quran Tafseer, Quran explanation, Surah Taha, Surah Maryam, Surah Yunus, Surah Baqarah, Islamic lectures, Taleemaat-e-Islam" />
   <meta name="author" content="Taleemaat-e-Islam" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://taleemaateislam.com/dars-e-quran.html" />
@@ -763,7 +763,8 @@
         <nav class="surah-jump" aria-label="Jump to Surah">
           <span class="surah-jump-label">Jump to Surah:</span>
           <div class="surah-jump-list">
-            <a href="#surah-maryam" class="surah-jump-link is-updating" onclick="return jumpToSurah(event,'surah-maryam')">Maryam <span class="surah-jump-dot" aria-hidden="true"></span></a>
+            <a href="#surah-taha" class="surah-jump-link is-updating" onclick="return jumpToSurah(event,'surah-taha')">Taha <span class="surah-jump-dot" aria-hidden="true"></span></a>
+            <a href="#surah-maryam" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-maryam')">Maryam</a>
             <a href="#surah-al-kahf" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-al-kahf')">Al-Kahf</a>
             <a href="#surah-al-isra" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-al-isra')">Al-Isra</a>
             <a href="#surah-an-nahal" class="surah-jump-link" onclick="return jumpToSurah(event,'surah-an-nahal')">An-Nahal</a>
@@ -783,17 +784,44 @@
 
         <div class="accordion-container">
 
-          <article class="surah-card updating" id="surah-maryam">
+          <article class="surah-card updating" id="surah-taha">
+            <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
+              onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
+              <div class="surah-title-area">
+                <span class="surah-icon">طه</span>
+                <div>
+                  <h2 class="surah-name">Surah Taha</h2>
+                  <p class="surah-meta">Surah No. 20 &mdash; Daily Ayah-by-Ayah Tafseer Updates</p>
+                </div>
+              </div>
+              <span class="updating-badge">Updating Daily</span>
+              <svg class="toggle-icon" viewBox="0 0 24 24">
+                <path d="M7 10l5 5 5-5z" />
+              </svg>
+            </div>
+
+            <div class="surah-content" aria-hidden="true">
+              <div class="surah-content-inner">
+                <div class="audio-row">
+                  <div class="audio-label">Ayah (Taha) 1-8</div>
+                  <div class="lazy-player" data-id="16FtNDmfobuF5bc6BSX8wHA97Z0ZmuJQO">
+                    <button class="play-btn" onclick="loadPlayer(this)">▶ Play Audio</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="surah-card" id="surah-maryam">
             <div class="surah-header" onclick="toggleAccordion(this)" aria-expanded="false" role="button" tabindex="0"
               onkeydown="if(event.key === 'Enter' || event.key === ' ') toggleAccordion(this); event.preventDefault();">
               <div class="surah-title-area">
                 <span class="surah-icon">مريم</span>
                 <div>
                   <h2 class="surah-name">Surah Maryam</h2>
-                  <p class="surah-meta">Surah No. 19 &mdash; Daily Ayah-by-Ayah Tafseer Updates</p>
+                  <p class="surah-meta">Surah No. 19 &mdash; Complete Ayah-by-Ayah Tafseer</p>
                 </div>
               </div>
-              <span class="updating-badge">Updating Daily</span>
               <svg class="toggle-icon" viewBox="0 0 24 24">
                 <path d="M7 10l5 5 5-5z" />
               </svg>

@@ -11,14 +11,14 @@ var SITE_SEARCH_INDEX = [
     label: 'Quran',
     url: 'dars-e-quran.html',
     desc: 'Dars-e-Quran by Mufti Shahid Mushtaq - Quran explanation with brief tafseer.',
-    tags: 'dars quran tafseer mufti shahid mushtaq surah yunus baqarah lecture explanation'
+    tags: 'dars quran tafseer mufti shahid mushtaq surah taha maryam yunus baqarah lecture explanation'
   },
   {
     title: 'Dars-e-Quran Videos',
     label: 'Quran',
     url: 'dars-e-quran-videos.html',
-    desc: 'Surah-based Dars-e-Quran YouTube videos by Mufti Shahid Mushtaq, including Maryam, Al-Kahf, Al-Isra, and An-Nahal.',
-    tags: 'dars quran videos youtube tafseer mufti shahid mushtaq surah maryam kahf isra bani israel nahal ayah playlist explanation urdu'
+    desc: 'Surah-based Dars-e-Quran YouTube videos by Mufti Shahid Mushtaq, including Taha, Maryam, Al-Kahf, Al-Isra, and An-Nahal.',
+    tags: 'dars quran videos youtube tafseer mufti shahid mushtaq surah taha maryam kahf isra bani israel nahal ayah playlist explanation urdu'
   },
   {
     title: 'Latest Updates',
