@@ -19,8 +19,7 @@
     '-_U00xdWMKw', 'i6NfZQfkF40', 'lH69EEXjvQo', '-iC7Xw86Q-0', 'cXejsAKUvlU',
     'cAjkLSVs3jk', 'o3pMkmWEp-s', 'irAI4m_aouw', 'lTnTZI2C4GQ', '-yB_c35GHKE',
     'j2c9tXm7xVI', 'YnZqFICbF-k', 'SH2UlFUVPMs', '4-DVr9ULV_o', 'Y8_ymCB0YGw',
-    '46VwptDhTsw', 'T3ANRP1cvVI', 'srBtUCd2PUw', 'JY5Qd0G0UUE',
-    'p-ANwOP8w_k',
+    '46VwptDhTsw', 'T3ANRP1cvVI', 'srBtUCd2PUw', 'JY5Qd0G0UUE', 'p-ANwOP8w_k',
   ];
 
   function buildEmbedUrl(videoId) {
