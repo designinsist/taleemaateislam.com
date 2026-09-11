@@ -1036,12 +1036,21 @@ html.is-native-app .app-tabbar {
   border-top: 1px solid rgba(201,150,58,0.25);
   box-shadow: 0 -2px 20px var(--shadow-green);
   padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  mask-image: linear-gradient(90deg, #000 calc(100% - 22px), transparent);
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 22px), transparent);
 }
+html.is-native-app .app-tabbar::-webkit-scrollbar { display: none; }
 .app-tabbar-item {
-  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  flex: 0 0 auto; width: 66px; display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 3px; padding: 6px 2px; border: none; background: none; cursor: pointer;
-  color: rgba(255,255,255,0.6); font-family: 'Nunito', sans-serif; font-size: 0.62rem;
+  color: rgba(255,255,255,0.6); font-family: 'Nunito', sans-serif; font-size: 0.6rem;
   font-weight: 600; letter-spacing: 0.01em; transition: color var(--transition);
+  scroll-snap-align: start; white-space: nowrap;
 }
-.app-tabbar-item svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.app-tabbar-item svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .app-tabbar-item.active { color: var(--gold-light); }

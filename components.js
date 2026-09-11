@@ -161,13 +161,22 @@ var SITE_SEARCH_INDEX = [
       }
     });
 
+    /* Tab bar items match either the grouped nav key (e.g. "quran-section")
+       or the literal filename, so single-page tabs like Islamic Tools work
+       without changing what the desktop "More" dropdown treats as active. */
     var tabLinks = document.querySelectorAll('.app-tabbar [data-page]');
+    var activeTab = null;
     tabLinks.forEach(function (link) {
-      if (link.getAttribute('data-page') === activeKey) {
+      var key = link.getAttribute('data-page');
+      if (key === activeKey || key === page || (page === '' && key === 'index.html')) {
         link.classList.add('active');
         link.setAttribute('aria-current', 'page');
+        activeTab = link;
       }
     });
+    if (activeTab && activeTab.scrollIntoView) {
+      activeTab.scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+    }
   }
 
   /* ── Bottom tab bar: "More" opens the existing drawer, drawer search opens the search modal ── */

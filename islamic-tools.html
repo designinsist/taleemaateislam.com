@@ -309,6 +309,34 @@
       box-shadow: 0 8px 18px rgba(13, 40, 24, 0.28), inset 0 0 0 1px rgba(232, 184, 75, 0.25);
     }
 
+    @media(max-width:600px) {
+      .city-select-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .filter-group {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .fiqh-toggle {
+        flex: 1;
+      }
+
+      .fiqh-btn {
+        flex: 1;
+        padding: 10px 8px;
+        font-size: 0.76rem;
+        text-align: center;
+      }
+
+      .fiqh-detail {
+        display: none;
+      }
+    }
+
     .date-display {
       display: flex;
       gap: 14px;
@@ -1134,8 +1162,8 @@
           <div class="filter-group">
             <label id="fiqh-toggle-label">Fiqh:</label>
             <div class="fiqh-toggle" role="group" aria-labelledby="fiqh-toggle-label">
-              <button type="button" class="fiqh-btn active" data-school="1" id="fiqh-hanafi" aria-pressed="true">Hanafi (Misal Doem)</button>
-              <button type="button" class="fiqh-btn" data-school="0" id="fiqh-shafi" aria-pressed="false">Shafi (Misal Awwal)</button>
+              <button type="button" class="fiqh-btn active" data-school="1" id="fiqh-hanafi" aria-pressed="true">Hanafi<span class="fiqh-detail"> (Misal Doem)</span></button>
+              <button type="button" class="fiqh-btn" data-school="0" id="fiqh-shafi" aria-pressed="false">Shafi<span class="fiqh-detail"> (Misal Awwal)</span></button>
             </div>
           </div>
         </div>
