@@ -18,6 +18,16 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- Android App Links: taps on https://taleemaateislam.com/... open this
+                 app directly instead of a browser, once assetlinks.json verifies it.
+                 autoVerify requires a *separate* filter from the launcher one above. -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="taleemaateislam.com" />
+            </intent-filter>
         </activity>
 
         <provider

@@ -2,3 +2,5 @@ permalink: pretty
 exclude:
   - mobile-app/
   - CODEX_PROJECT_NOTES.md
+include:
+  - .well-known

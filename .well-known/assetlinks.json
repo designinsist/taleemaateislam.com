@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.taleemaateislam.app",
+      "sha256_cert_fingerprints": [
+        "F4:37:F7:0C:3A:9C:DE:EF:07:CD:EC:F3:BB:6D:2C:E3:F4:9E:52:F9:5B:E7:7F:D5:DF:73:50:73:FE:DD:3E:19"
+      ]
+    }
+  }
+]
