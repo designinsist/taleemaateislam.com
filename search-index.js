@@ -126,6 +126,13 @@ var SITE_SEARCH_INDEX = [
     tags: 'al-salihin umar ibn khattab saad ibn muadh umar ibn abdul aziz imam ghazali hujjat ul islam junayd baghdadi ibrahim ibn adham maulana rumi fihi ma fihi zubaidah scholars companions biographies salihin'
   },
   {
+    title: 'Get the App',
+    label: 'App',
+    url: 'mobile-app.html',
+    desc: 'Download the Taleemaat-e-Islam Android app - Dars-e-Quran, Jummah Khutbah, Hajj 2026, free books, and prayer timings in one app.',
+    tags: 'download android app apk mobile install taleemaat islam get the app'
+  },
+  {
     title: 'Privacy Policy',
     label: 'Policy',
     url: 'privacy.html',

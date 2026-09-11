@@ -1,0 +1,22 @@
+{
+  "appId": "com.taleemaateislam.app",
+  "appName": "Taleemaat-e-Islam",
+  "webDir": "www",
+  "server": {
+    "url": "https://taleemaateislam.com",
+    "androidScheme": "https",
+    "cleartext": false
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1200,
+      "backgroundColor": "#0d2818",
+      "androidSplashResourceName": "splash",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "light",
+      "backgroundColor": "#1a4a2e"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+node_modules/
+.DS_Store
+
+# Android build outputs (keep the android/ project itself once generated)
+android/app/build/
+android/build/
+android/.gradle/
+android/local.properties
+android/captures/
+android/*.iml
+android/.idea/
+
+# iOS build outputs (keep the ios/ project itself once generated)
+ios/App/Pods/
+ios/App/build/
+ios/App/DerivedData/
+ios/App/*.xcworkspace/xcuserdata/
+ios/App/*.xcodeproj/xcuserdata/
+ios/App/Podfile.lock
+
+# signing material - never commit
+*.keystore
+*.jks
+*.p12
+*.mobileprovision
+*.p8

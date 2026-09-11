@@ -24,11 +24,20 @@ var SITE_SEARCH_INDEX = [
   { title: 'Qasas Ul Anbiya - Stories of Prophets', label: 'Prophets', url: 'qasas-ul-anbiya.html', desc: 'Classic Urdu collection of stories of the Prophets for spiritual education.', tags: 'qasas ul anbiya prophets stories islamic urdu adam nuh ibrahim musa isa yusuf' },
   { title: 'Quranic Stories', label: 'Quran', url: 'quranic-stories.html', desc: 'Timeless Quranic stories of Yusuf, Musa, Ibrahim, Maryam, Ashab al-Kahf, Yunus, Ayyub, and Adam.', tags: 'quranic stories yusuf musa ibrahim maryam ashab kahf yunus ayyub adam quran lessons' },
   { title: 'Al-Salihin - Lives of the Righteous', label: 'Biographies', url: 'al-salihin.html', desc: "Biographies of righteous Companions, Tabi'een, and scholars - Umar, Imam Ghazali, Maulana Rumi and more.", tags: 'al salihin umar ibn khattab saad muadh umar abdul aziz imam ghazali junayd baghdadi ibrahim ibn adham maulana rumi fihi ma fihi zubaidah scholars companions biographies' },
+  { title: 'Get the App', label: 'App', url: 'mobile-app.html', desc: 'Download the Taleemaat-e-Islam Android app - Dars-e-Quran, Jummah Khutbah, Hajj 2026, free books, and prayer timings in one app.', tags: 'download android app apk mobile install taleemaat islam get the app' },
   { title: 'Privacy Policy', label: 'Policy', url: 'privacy.html', desc: 'Privacy policy for Taleemaat-e-Islam, including analytics, external links, Google Drive books, and contact information.', tags: 'privacy policy taleemaat islam analytics cookies google drive contact data external links' }
 ];
 
 (function () {
   'use strict';
+
+  /* Flag the Capacitor app shell so shared.css can swap in native-app chrome
+     (bottom tab bar, no utility bar) without touching the regular website. */
+  try {
+    if (window.Capacitor && typeof window.Capacitor.isNativePlatform === 'function' && window.Capacitor.isNativePlatform()) {
+      document.documentElement.classList.add('is-native-app');
+    }
+  } catch (e) {}
 
   /* ── Map: page filename → which desktop nav item is "active" ── */
   const NAV_MAP = {
@@ -51,6 +60,7 @@ var SITE_SEARCH_INDEX = [
     'islamic-tools.html'          : 'islamic-tools.html',
     'qasas-ul-anbiya.html'        : 'more-section',
     'al-salihin.html'             : 'more-section',
+    'mobile-app.html'             : 'more-section',
   };
 
   const BREADCRUMB_MAP = {
@@ -71,6 +81,7 @@ var SITE_SEARCH_INDEX = [
     'hajj-2026.html': ['Hajj 2026', 'Questions & Answers'],
     'hajj-2026-mufti-ahmed-ali.html': ['Hajj 2026', 'Fazaail & Aadab'],
     'hajj-2026-step-by-step-english.html': ['Hajj 2026', 'Step-by-Step English'],
+    'mobile-app.html': ['More', 'Get the App'],
     'privacy.html': ['Privacy Policy']
   };
 
@@ -149,6 +160,34 @@ var SITE_SEARCH_INDEX = [
         link.setAttribute('aria-current', 'page');
       }
     });
+
+    var tabLinks = document.querySelectorAll('.app-tabbar [data-page]');
+    tabLinks.forEach(function (link) {
+      if (link.getAttribute('data-page') === activeKey) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+  }
+
+  /* ── Bottom tab bar: "More" opens the existing drawer, drawer search opens the search modal ── */
+  function initAppTabbar() {
+    var moreBtn = document.getElementById('tabbarMore');
+    var hamburger = document.getElementById('hamburger');
+    if (moreBtn && hamburger) {
+      moreBtn.addEventListener('click', function () {
+        hamburger.click();
+      });
+    }
+
+    var drawerSearchBtn = document.getElementById('drawerSearchBtn');
+    var searchToggle = document.getElementById('searchToggle');
+    if (drawerSearchBtn && searchToggle) {
+      drawerSearchBtn.addEventListener('click', function () {
+        if (hamburger && hamburger.classList.contains('open')) hamburger.click();
+        setTimeout(function () { searchToggle.click(); }, 50);
+      });
+    }
   }
 
   function initBreadcrumbs() {
@@ -1039,6 +1078,7 @@ var SITE_SEARCH_INDEX = [
       initDateTime();
       initSearch();
       initGoogleTranslate();
+      initAppTabbar();
     }).catch(function (err) {
       console.error('Header load failed:', err);
     });

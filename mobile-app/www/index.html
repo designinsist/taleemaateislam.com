@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Taleemaat-e-Islam</title>
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #0d2818;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .wrap { padding: 24px; }
+  img { width: 96px; height: 96px; border-radius: 20px; margin-bottom: 16px; }
+  h1 { font-size: 18px; font-weight: 600; margin: 0 0 8px; }
+  p { font-size: 14px; opacity: 0.8; margin: 0; }
+  .gold { color: #c9963a; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <img src="icon.png" alt="Taleemaat-e-Islam" />
+    <h1>Taleemaat<span class="gold">-e-</span>Islam</h1>
+    <p id="status">Connecting…</p>
+  </div>
+  <script>
+    // This screen only appears if the live site (configured in capacitor.config.json
+    // as server.url) fails to load, e.g. no internet connection on first launch.
+    window.addEventListener("online", function () {
+      location.reload();
+    });
+    if (!navigator.onLine) {
+      document.getElementById("status").textContent = "No internet connection. Please reconnect and reopen the app.";
+    }
+  </script>
+</body>
+</html>
