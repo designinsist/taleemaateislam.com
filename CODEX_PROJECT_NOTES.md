@@ -46,6 +46,7 @@ Common steps:
 - Dars Kahf: `PLdujDev9jtVYteodb2c4DpSj_ESdjYb-G` -> `dars-e-quran-videos.html`
 - Dars Isra: `PLdujDev9jtVa_X_RmQNXyPQrSTn2M1MM9` -> `dars-e-quran-videos.html`
 - Dars Nahal: `PLdujDev9jtVb4vxiTa3RxH34684mB0YLN` -> `dars-e-quran-videos.html`
+- Quran Urdu Translation: `PLDd64bTnmNGE` -> `quran-urdu-translation.html`
 - Finality of Prophethood: `PLyKJKwnd-x9I5uXx9SkoT09iIYgTCFVjo` -> `finality-of-prophethood.html`
 
 Known unavailable video:
@@ -60,6 +61,7 @@ Known unavailable video:
 - `yaqeen-ka-safar-shorts.html` stores objects newest first.
 - `jummah-khutbah.html` stores the `shorts` ID array newest first and has a `shortTitles` map.
 - `dars-e-quran-videos.html` stores Dars playlist objects newest first.
+- `quran-urdu-translation.html` stores translation video objects newest first.
 - Update `latest-updates.html` counts when Yaqeen, Dars, Jummah, or Finality counts change.
 - Update `sitemap.xml` `lastmod` for changed public pages and usually `/` and `latest-updates.html`.
 
@@ -85,4 +87,3 @@ Before committing:
 - Stage explicit files only.
 - Never use `git add .`.
 - Leave `.DS_Store` uncommitted.
-

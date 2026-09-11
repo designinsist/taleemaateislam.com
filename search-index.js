@@ -21,6 +21,13 @@ var SITE_SEARCH_INDEX = [
     tags: 'dars quran videos youtube tafseer mufti shahid mushtaq surah taha maryam kahf isra bani israel nahal ayah playlist explanation urdu'
   },
   {
+    title: 'Quran with Urdu Translation',
+    label: 'Quran',
+    url: 'quran-urdu-translation.html',
+    desc: 'Quran passages with clear Urdu translation, beginning with selected verses from Surah Taha.',
+    tags: 'quran urdu translation tarjuma قرآن مجید اردو ترجمہ surah taha verses taleemaat islam'
+  },
+  {
     title: 'Latest Updates',
     label: 'Updates',
     url: 'latest-updates.html',
