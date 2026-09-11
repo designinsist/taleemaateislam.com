@@ -1068,3 +1068,15 @@ html.is-native-app .app-ptr-indicator {
 }
 .app-ptr-indicator.refreshing svg { animation: appPtrSpin 0.8s linear infinite; }
 @keyframes appPtrSpin { to { transform: rotate(360deg); } }
+
+.notif-hint { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; margin: -8px 0 20px; }
+.notif-toggle-list { display: flex; flex-direction: column; gap: 2px; padding-bottom: 22px; }
+.notif-toggle-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 4px; border-bottom: 1px solid rgba(25,82,64,0.08); cursor: pointer; font-size: 0.95rem; color: var(--text-dark); font-weight: 700; }
+.notif-toggle-row:last-child { border-bottom: none; }
+.notif-switch { position: relative; display: inline-block; width: 44px; height: 26px; flex-shrink: 0; }
+.notif-switch input { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; z-index: 1; }
+.notif-switch-track { position: absolute; inset: 0; background: rgba(122,90,26,0.25); border-radius: 999px; transition: background var(--transition); }
+.notif-switch-track::before { content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; background: #fff; border-radius: 50%; box-shadow: 0 1px 4px rgba(0,0,0,0.25); transition: transform var(--transition); }
+.notif-switch input:checked + .notif-switch-track { background: var(--green-deep); }
+.notif-switch input:checked + .notif-switch-track::before { transform: translateX(18px); }
+.notif-switch input:focus-visible + .notif-switch-track { outline: 2px solid var(--gold); outline-offset: 2px; }

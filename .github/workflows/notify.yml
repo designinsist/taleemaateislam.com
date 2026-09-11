@@ -1,0 +1,29 @@
+name: Send content-update notifications
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - latest-updates.html
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install script dependencies
+        working-directory: .github/scripts
+        run: npm install
+
+      - name: Send notifications for new updates
+        env:
+          FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
+          GITHUB_EVENT_BEFORE: ${{ github.event.before }}
+        run: node .github/scripts/send-notifications.mjs

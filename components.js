@@ -258,6 +258,105 @@ var SITE_SEARCH_INDEX = [
         setTimeout(function () { searchToggle.click(); }, 50);
       });
     }
+
+    var drawerNotifBtn = document.getElementById('drawerNotifBtn');
+    var notifPanel = document.getElementById('notifSettingsPanel');
+    if (drawerNotifBtn && notifPanel) {
+      drawerNotifBtn.addEventListener('click', function () {
+        haptic('Light');
+        if (hamburger && hamburger.classList.contains('open')) hamburger.click();
+        setTimeout(function () {
+          notifPanel.classList.add('open');
+          notifPanel.setAttribute('aria-hidden', 'false');
+        }, 50);
+      });
+    }
+  }
+
+  /* ── Notification topic toggles (native app only) ──
+     Topics map to what we actually post: Dars-e-Quran, Quran with Urdu
+     Translation, Yaqeen Ka Safar, Jummah Khutbah. Subscription state is
+     kept in localStorage on-device; Firebase owns the actual subscriber
+     list, so there is nothing to sync anywhere else. */
+  /* Tapping a notification opens the page it was about, if the sender included one. */
+  function initNotificationTapHandling() {
+    if (!document.documentElement.classList.contains('is-native-app')) return;
+    var push = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.PushNotifications;
+    if (!push || !push.addListener) return;
+    push.addListener('pushNotificationActionPerformed', function (action) {
+      try {
+        var url = action && action.notification && action.notification.data && action.notification.data.url;
+        if (url) window.location.href = url;
+      } catch (e) {}
+    });
+  }
+
+  function initNotificationSettings() {
+    var panel = document.getElementById('notifSettingsPanel');
+    if (!panel || !document.documentElement.classList.contains('is-native-app')) return;
+
+    var closeBtn = document.getElementById('notifSettingsClose');
+    var backdrop = document.getElementById('notifSettingsBackdrop');
+    function closePanel() {
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+    }
+    if (closeBtn) closeBtn.addEventListener('click', closePanel);
+    if (backdrop) backdrop.addEventListener('click', closePanel);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('open')) closePanel();
+    });
+
+    var STORAGE_KEY = 'taleemaatNotifTopics';
+    function getSubs() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) { return {}; }
+    }
+    function saveSubs(subs) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(subs)); } catch (e) {}
+    }
+
+    var topicsPlugin = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.NotificationTopics;
+    var pushPlugin = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.PushNotifications;
+    var permissionGranted = null;
+
+    function ensurePermission() {
+      return new Promise(function (resolve) {
+        if (permissionGranted !== null) { resolve(permissionGranted); return; }
+        if (!pushPlugin) { resolve(false); return; }
+        pushPlugin.requestPermissions().then(function (res) {
+          permissionGranted = !!(res && res.receive === 'granted');
+          if (permissionGranted) {
+            pushPlugin.register();
+            if (pushPlugin.createChannel) {
+              pushPlugin.createChannel({ id: 'fcm_default_channel', name: 'Updates', importance: 4 }).catch(function () {});
+            }
+          }
+          resolve(permissionGranted);
+        }).catch(function () { resolve(false); });
+      });
+    }
+
+    var subs = getSubs();
+    panel.querySelectorAll('[data-topic]').forEach(function (input) {
+      var topic = input.getAttribute('data-topic');
+      input.checked = !!subs[topic];
+      input.addEventListener('change', function () {
+        if (input.checked) {
+          ensurePermission().then(function (granted) {
+            if (!granted) { input.checked = false; return; }
+            if (topicsPlugin) topicsPlugin.subscribe({ topic: topic });
+            subs[topic] = true;
+            saveSubs(subs);
+            haptic('Light');
+          });
+        } else {
+          if (topicsPlugin) topicsPlugin.unsubscribe({ topic: topic });
+          subs[topic] = false;
+          saveSubs(subs);
+          haptic('Light');
+        }
+      });
+    });
   }
 
   function initBreadcrumbs() {
@@ -1151,6 +1250,8 @@ var SITE_SEARCH_INDEX = [
       initSearch();
       initGoogleTranslate();
       initAppTabbar();
+      initNotificationSettings();
+      initNotificationTapHandling();
     }).catch(function (err) {
       console.error('Header load failed:', err);
     });

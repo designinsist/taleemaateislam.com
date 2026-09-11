@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "997046663158",
+    "project_id": "taleemaat-e-islam",
+    "storage_bucket": "taleemaat-e-islam.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997046663158:android:408c87ab292664041439d7",
+        "android_client_info": {
+          "package_name": "com.taleemaateislam.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCs7-rBIyh8abyyHN5tBh_93ZWHCtRszEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
