@@ -55,8 +55,12 @@ async function main() {
   const afterContent = execSync("git show HEAD:latest-updates.html", { encoding: "utf8" });
   const beforeContent = getBeforeContent();
 
-  const beforeTitles = new Set(extractCards(beforeContent).map((c) => c.title));
-  const newCards = extractCards(afterContent).filter((c) => !beforeTitles.has(c.title));
+  // Keyed by title+desc, not just title: the daily sync often edits an
+  // existing evergreen card in place (e.g. "Dars-e-Quran Videos" going from
+  // 59 to 62 lessons) rather than adding a freshly-titled one, and that's
+  // just as notification-worthy as a brand new card.
+  const beforeKeys = new Set(extractCards(beforeContent).map((c) => c.title + "|" + c.desc));
+  const newCards = extractCards(afterContent).filter((c) => !beforeKeys.has(c.title + "|" + c.desc));
 
   if (newCards.length === 0) {
     console.log("No new latest-updates.html cards - nothing to notify.");
