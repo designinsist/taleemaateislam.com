@@ -8,6 +8,7 @@
     "open:android": "cap open android",
     "open:ios": "cap open ios",
     "assets": "capacitor-assets generate",
+    "assets:ios": "node make-ios-assets.mjs",
     "build:android": "cd android && ./gradlew assembleDebug",
     "build:android:release": "cd android && ./gradlew assembleRelease",
     "bundle:android:release": "cd android && ./gradlew bundleRelease"
