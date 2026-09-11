@@ -1028,6 +1028,10 @@ html.is-native-app .drawer-search-btn {
 }
 .drawer-search-btn svg { width: 18px; height: 18px; stroke: var(--gold-light); fill: none; stroke-width: 2; flex-shrink: 0; }
 
+/* No point advertising the app to someone already inside it. */
+html.is-native-app a[href="mobile-app.html"] { display: none; }
+html.is-native-app .update-card:has(a[href="mobile-app.html"]) { display: none; }
+
 .app-tabbar { display: none; }
 html.is-native-app .app-tabbar {
   display: flex;
@@ -1080,3 +1084,17 @@ html.is-native-app .app-ptr-indicator {
 .notif-switch input:checked + .notif-switch-track { background: var(--green-deep); }
 .notif-switch input:checked + .notif-switch-track::before { transform: translateX(18px); }
 .notif-switch input:focus-visible + .notif-switch-track { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.notif-optin-inner { max-width: 380px; }
+.notif-optin-actions { display: flex; flex-direction: column; gap: 10px; padding-bottom: 4px; }
+.notif-optin-enable {
+  background: var(--green-deep); color: var(--gold-light); border: none; border-radius: 8px;
+  padding: 14px 20px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.92rem;
+  cursor: pointer; transition: background var(--transition);
+}
+.notif-optin-enable:hover { background: var(--green-rich); }
+.notif-optin-dismiss {
+  background: none; border: none; color: var(--text-mid); font-family: 'Nunito', sans-serif;
+  font-weight: 700; font-size: 0.85rem; padding: 8px; cursor: pointer;
+}
+.notif-optin-dismiss:hover { color: var(--text-dark); }

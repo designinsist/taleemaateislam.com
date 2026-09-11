@@ -291,22 +291,11 @@ var SITE_SEARCH_INDEX = [
     });
   }
 
-  function initNotificationSettings() {
-    var panel = document.getElementById('notifSettingsPanel');
-    if (!panel || !document.documentElement.classList.contains('is-native-app')) return;
+  var NOTIF_TOPICS = ['dars_e_quran', 'quran_urdu_translation', 'yaqeen_ka_safar', 'jummah_khutbah'];
 
-    var closeBtn = document.getElementById('notifSettingsClose');
-    var backdrop = document.getElementById('notifSettingsBackdrop');
-    function closePanel() {
-      panel.classList.remove('open');
-      panel.setAttribute('aria-hidden', 'true');
-    }
-    if (closeBtn) closeBtn.addEventListener('click', closePanel);
-    if (backdrop) backdrop.addEventListener('click', closePanel);
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && panel.classList.contains('open')) closePanel();
-    });
-
+  /* Shared by both the settings panel and the first-launch opt-in prompt,
+     so there is one place that owns permission state and subscriptions. */
+  function createNotificationController() {
     var STORAGE_KEY = 'taleemaatNotifTopics';
     function getSubs() {
       try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) { return {}; }
@@ -318,6 +307,8 @@ var SITE_SEARCH_INDEX = [
     var topicsPlugin = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.NotificationTopics;
     var pushPlugin = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.PushNotifications;
     var permissionGranted = null;
+    var subs = getSubs();
+    var onChange = [];
 
     function ensurePermission() {
       return new Promise(function (resolve) {
@@ -336,27 +327,102 @@ var SITE_SEARCH_INDEX = [
       });
     }
 
-    var subs = getSubs();
+    function setTopicEnabled(topic, enabled) {
+      if (topicsPlugin) topicsPlugin[enabled ? 'subscribe' : 'unsubscribe']({ topic: topic });
+      subs[topic] = enabled;
+      saveSubs(subs);
+      onChange.forEach(function (fn) { fn(topic, enabled); });
+    }
+
+    return {
+      topics: NOTIF_TOPICS,
+      isEnabled: function (topic) { return !!subs[topic]; },
+      hasAnyEnabled: function () { return NOTIF_TOPICS.some(function (t) { return !!subs[t]; }); },
+      ensurePermission: ensurePermission,
+      setTopicEnabled: setTopicEnabled,
+      onChange: function (fn) { onChange.push(fn); }
+    };
+  }
+
+  function initNotificationSettings(notif) {
+    var panel = document.getElementById('notifSettingsPanel');
+    if (!panel || !document.documentElement.classList.contains('is-native-app')) return;
+
+    var closeBtn = document.getElementById('notifSettingsClose');
+    var backdrop = document.getElementById('notifSettingsBackdrop');
+    function closePanel() {
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+    }
+    if (closeBtn) closeBtn.addEventListener('click', closePanel);
+    if (backdrop) backdrop.addEventListener('click', closePanel);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('open')) closePanel();
+    });
+
     panel.querySelectorAll('[data-topic]').forEach(function (input) {
       var topic = input.getAttribute('data-topic');
-      input.checked = !!subs[topic];
+      input.checked = notif.isEnabled(topic);
       input.addEventListener('change', function () {
         if (input.checked) {
-          ensurePermission().then(function (granted) {
+          notif.ensurePermission().then(function (granted) {
             if (!granted) { input.checked = false; return; }
-            if (topicsPlugin) topicsPlugin.subscribe({ topic: topic });
-            subs[topic] = true;
-            saveSubs(subs);
+            notif.setTopicEnabled(topic, true);
             haptic('Light');
           });
         } else {
-          if (topicsPlugin) topicsPlugin.unsubscribe({ topic: topic });
-          subs[topic] = false;
-          saveSubs(subs);
+          notif.setTopicEnabled(topic, false);
           haptic('Light');
         }
       });
     });
+
+    notif.onChange(function (topic, enabled) {
+      var input = panel.querySelector('[data-topic="' + topic + '"]');
+      if (input) input.checked = enabled;
+    });
+  }
+
+  /* First launch only: ask once whether to opt in to notifications, rather
+     than requiring a trip to the drawer to discover the feature exists. */
+  function initNotificationOptInPrompt(notif) {
+    var prompt = document.getElementById('notifOptInPrompt');
+    if (!prompt || !document.documentElement.classList.contains('is-native-app')) return;
+
+    var SEEN_KEY = 'taleemaatNotifPromptSeen';
+    var seen = false;
+    try { seen = !!localStorage.getItem(SEEN_KEY); } catch (e) {}
+    if (seen || notif.hasAnyEnabled()) return;
+
+    var enableBtn = document.getElementById('notifOptInEnable');
+    var dismissBtn = document.getElementById('notifOptInDismiss');
+    var backdrop = document.getElementById('notifOptInBackdrop');
+
+    function markSeen() {
+      try { localStorage.setItem(SEEN_KEY, '1'); } catch (e) {}
+    }
+    function close() {
+      prompt.classList.remove('open');
+      prompt.setAttribute('aria-hidden', 'true');
+    }
+
+    if (enableBtn) {
+      enableBtn.addEventListener('click', function () {
+        haptic('Light');
+        notif.ensurePermission().then(function (granted) {
+          if (granted) notif.topics.forEach(function (t) { notif.setTopicEnabled(t, true); });
+          markSeen();
+          close();
+        });
+      });
+    }
+    if (dismissBtn) dismissBtn.addEventListener('click', function () { markSeen(); close(); });
+    if (backdrop) backdrop.addEventListener('click', function () { markSeen(); close(); });
+
+    setTimeout(function () {
+      prompt.classList.add('open');
+      prompt.setAttribute('aria-hidden', 'false');
+    }, 1500);
   }
 
   function initBreadcrumbs() {
@@ -1250,7 +1316,9 @@ var SITE_SEARCH_INDEX = [
       initSearch();
       initGoogleTranslate();
       initAppTabbar();
-      initNotificationSettings();
+      var notif = createNotificationController();
+      initNotificationSettings(notif);
+      initNotificationOptInPrompt(notif);
       initNotificationTapHandling();
     }).catch(function (err) {
       console.error('Header load failed:', err);

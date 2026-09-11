@@ -137,22 +137,20 @@
       <a href="jummah-khutbah.html" class="drawer-link drawer-sub" data-page="quran-section">Jummah Khutbah</a>
       <a href="islamic-knowledge.html" class="drawer-link drawer-sub" data-page="quran-section">Islamic Knowledge</a>
       <a href="quranic-stories.html" class="drawer-link drawer-sub" data-page="quran-section">Quranic Stories</a>
-      <div class="drawer-section-title">Quran &amp; Seerah</div>
-      <a href="syed-ul-bashar.html" class="drawer-link drawer-sub" data-page="syed-ul-bashar.html">Syed-ul-Bashar (PBUH) &amp; Companions</a>
-      <a href="finality-of-prophethood.html" class="drawer-link drawer-sub" data-page="more-section">Finality of Prophethood</a>
-      <div class="drawer-section-title">Spirituality</div>
-      <a href="connect-with-allah.html" class="drawer-link drawer-sub" data-page="connect-with-allah.html">Connect with Allah</a>
-      <a href="yaqeen-ka-safar-shorts.html" class="drawer-link drawer-sub" data-page="connect-with-allah.html">Yaqeen Ka Safar Shorts</a>
-      <div class="drawer-section-title">Hajj Special</div>
+      <a href="syed-ul-bashar.html" class="drawer-link" data-page="syed-ul-bashar.html">Seerah</a>
+      <a href="connect-with-allah.html" class="drawer-link" data-page="connect-with-allah.html">Connect with Allah</a>
+      <div class="drawer-section-title">Hajj 2026</div>
       <a href="hajj-2026.html" class="drawer-link drawer-sub" data-page="hajj-section">Hajj Q&amp;A - Mufti M. Tahir Masood</a>
       <a href="hajj-2026-mufti-ahmed-ali.html" class="drawer-link drawer-sub" data-page="hajj-section">Fazaail &amp; Aadab - Mufti Ahmed Ali</a>
       <a href="hajj-2026-step-by-step-english.html" class="drawer-link drawer-sub" data-page="hajj-section">Step-by-Step Guide in English</a>
-      <div class="drawer-section-title">Tools &amp; Wisdom</div>
+      <a href="islamic-tools.html" class="drawer-link" data-page="islamic-tools.html">Islamic Tools</a>
+      <div class="drawer-section-title">More</div>
+      <a href="qasas-ul-anbiya.html" class="drawer-link drawer-sub" data-page="more-section">Prophets</a>
+      <a href="al-salihin.html" class="drawer-link drawer-sub" data-page="more-section">Al-Salihin</a>
+      <a href="finality-of-prophethood.html" class="drawer-link drawer-sub" data-page="more-section">Finality of Prophethood</a>
+      <a href="yaqeen-ka-safar-shorts.html" class="drawer-link drawer-sub" data-page="more-section">Yaqeen Ka Safar Shorts</a>
       <a href="latest-updates.html" class="drawer-link drawer-sub" data-page="more-section">Latest Updates</a>
       <a href="mobile-app.html" class="drawer-link drawer-sub" data-page="more-section">Get the App</a>
-      <a href="islamic-tools.html" class="drawer-link drawer-sub" data-page="islamic-tools.html">Islamic Tools</a>
-      <a href="qasas-ul-anbiya.html" class="drawer-link drawer-sub" data-page="qasas-ul-anbiya.html">Prophets</a>
-      <a href="al-salihin.html" class="drawer-link drawer-sub" data-page="al-salihin.html">Al-Salihin</a>
     </div>
 
     <div class="drawer-footer" aria-label="Mobile drawer footer">
@@ -206,6 +204,21 @@
           <span>Jummah Khutbah</span>
           <span class="notif-switch"><input type="checkbox" data-topic="jummah_khutbah"><span class="notif-switch-track"></span></span>
         </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FIRST-LAUNCH NOTIFICATION OPT-IN (native app only) ═══ -->
+<div class="search-modal" id="notifOptInPrompt" aria-hidden="true" role="dialog" aria-label="Enable notifications">
+  <div class="search-modal-backdrop" id="notifOptInBackdrop"></div>
+  <div class="search-modal-inner notif-optin-inner">
+    <div class="search-modal-body">
+      <p class="search-modal-label">Stay Updated</p>
+      <p class="notif-hint">Get notified about new Dars-e-Quran lessons, Quran with Urdu Translation, Yaqeen Ka Safar, and Jummah Khutbah. You can change this anytime from the menu.</p>
+      <div class="notif-optin-actions">
+        <button type="button" class="notif-optin-enable" id="notifOptInEnable">Enable Notifications</button>
+        <button type="button" class="notif-optin-dismiss" id="notifOptInDismiss">Not Now</button>
       </div>
     </div>
   </div>
