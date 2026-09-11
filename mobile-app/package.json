@@ -9,7 +9,8 @@
     "open:ios": "cap open ios",
     "assets": "capacitor-assets generate",
     "build:android": "cd android && ./gradlew assembleDebug",
-    "build:android:release": "cd android && ./gradlew assembleRelease"
+    "build:android:release": "cd android && ./gradlew assembleRelease",
+    "bundle:android:release": "cd android && ./gradlew bundleRelease"
   },
   "dependencies": {
     "@capacitor/android": "^7.0.0",

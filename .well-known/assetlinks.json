@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "com.taleemaateislam.app",
       "sha256_cert_fingerprints": [
-        "F4:37:F7:0C:3A:9C:DE:EF:07:CD:EC:F3:BB:6D:2C:E3:F4:9E:52:F9:5B:E7:7F:D5:DF:73:50:73:FE:DD:3E:19"
+        "F4:37:F7:0C:3A:9C:DE:EF:07:CD:EC:F3:BB:6D:2C:E3:F4:9E:52:F9:5B:E7:7F:D5:DF:73:50:73:FE:DD:3E:19",
+        "8A:35:0E:F9:EB:81:F0:B5:B2:28:95:8D:FA:05:95:3B:D8:30:9E:B6:1F:EE:F5:85:0E:64:BD:F0:63:56:93:C4"
       ]
     }
   }

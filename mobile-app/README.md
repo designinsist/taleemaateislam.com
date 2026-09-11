@@ -86,28 +86,45 @@ cd android
 iOS requires Xcode's build tooling (`xcodebuild`) or the Xcode GUI; it cannot be
 fully scripted without a paid Apple Developer account for device/App Store signing.
 
-## Before submitting to the app stores
+## Play Store submission (Android)
 
-1. **Replace the placeholder icon/splash.** `resources/icon.png` and
-   `resources/splash.png` are currently the website's 564×564 logo, upscaled.
-   Before a store submission, replace both with a proper 1024×1024 icon (and a
-   1024×1024+ splash image) and re-run `npx capacitor-assets generate`.
-2. **Apple Developer Program** ($99/yr) — required to submit to the App Store and
-   to test on a physical iPhone. Enroll at https://developer.apple.com/programs/.
-3. **Google Play Console** ($25 one-time) — required to publish to the Play Store.
-   Register at https://play.google.com/console/.
-4. **App signing:**
-   - Android: generate a release keystore (`keytool -genkey -v -keystore
-     release.keystore ...`), configure it in `android/app/build.gradle`. Never
-     commit the keystore file (already git-ignored here).
-   - iOS: signing is managed through Xcode + your Apple Developer team once
-     enrolled.
-5. **Privacy policy** — the site already has one at `/privacy.html`; both stores
-   require a privacy policy URL during submission, so `https://taleemaateislam.com/privacy.html`
-   can be reused.
-6. **Bundle/App ID** is set to `com.taleemaateislam.app` in `capacitor.config.json`
-   — change it now if you want a different reverse-domain identifier, since it
-   cannot be changed after the first store submission.
+Everything technical is done - see `play-store/listing.md` for the full
+copy-paste-ready listing content, graphics, data safety answers, and a
+step-by-step walkthrough of the Play Console side. Summary of what's in place:
+
+- **Release signing**: `android/keystore.properties` (git-ignored) points at
+  `android/app/release.keystore` (also git-ignored) - both live only on this
+  machine and whatever you back them up to. `android/app/build.gradle` picks
+  this up automatically for release builds; debug builds are unaffected.
+  **Back up `release.keystore` and the password somewhere durable (a password
+  manager) - Play App Signing means losing it isn't catastrophic (Google can
+  reset your upload key), but you'll need it for every release build until
+  you do.**
+- **Release bundle**: `npm run bundle:android:release` produces
+  `android/app/build/outputs/bundle/release/app-release.aab`, the format
+  Play Store requires (not the `.apk` used for direct/sideload distribution).
+- **Store listing assets**: `play-store/icon-512.png`,
+  `play-store/feature-graphic.png`, `play-store/listing.md`.
+- **Still needed from you**: a Play Console developer account ($25 one-time,
+  https://play.google.com/console/), phone screenshots taken from an actual
+  device, and the actual upload/submission in the Play Console web UI.
+
+## Apple App Store (iOS) - on hold
+
+Not started. Needs a $99/yr Apple Developer Program enrollment
+(https://developer.apple.com/programs/) and a Mac with full Xcode installed;
+signing is then managed through Xcode + your Apple Developer team.
+
+## Privacy policy
+
+The site already has one at `/privacy.html`; both stores require a privacy
+policy URL during submission, so `https://taleemaateislam.com/privacy.html`
+can be reused as-is.
+
+## Bundle/App ID
+
+Set to `com.taleemaateislam.app` in `capacitor.config.json` - this cannot be
+changed after the first store submission on either platform.
 
 ## Project structure
 
@@ -116,7 +133,14 @@ mobile-app/
   capacitor.config.json   # app id, name, remote URL, splash/status bar config
   package.json             # Capacitor dependencies + build scripts
   resources/                # source icon.png / splash.png for asset generation
+  make-icon.mjs             # regenerates resources/icon.png (book + bookmark mark)
+  make-splash.mjs           # regenerates android splash screens directly (bypasses
+                             # a real stretching bug in @capacitor/assets' own splash step)
+  make-feature-graphic.mjs  # regenerates play-store/feature-graphic.png
+  play-store/                # Play Store listing copy + graphics (see listing.md)
   www/                      # offline fallback page (not the app's real content)
   android/                  # generated native Android project (after cap add android)
-  ios/                      # generated native iOS project (after cap add ios)
+    keystore.properties      # release signing config - git-ignored, exists only locally
+    app/release.keystore     # release signing key - git-ignored, exists only locally
+  ios/                      # generated native iOS project (not yet started)
 ```
