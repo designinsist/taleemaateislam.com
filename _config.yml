@@ -1,4 +1,4 @@
 permalink: pretty
 exclude:
-  - mobile-app
+  - mobile-app/
   - CODEX_PROJECT_NOTES.md
