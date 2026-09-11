@@ -1,0 +1,52 @@
+name: Send custom notification
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Notification title"
+        required: true
+        type: string
+      body:
+        description: "Notification body text"
+        required: true
+        type: string
+      topic:
+        description: "Who gets it"
+        required: true
+        type: choice
+        options:
+          - all
+          - dars_e_quran
+          - quran_urdu_translation
+          - yaqeen_ka_safar
+          - jummah_khutbah
+        default: all
+      url:
+        description: "Page to open on tap (optional - defaults to homepage)"
+        required: false
+        type: string
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install script dependencies
+        working-directory: .github/scripts
+        run: npm install
+
+      - name: Send notification
+        env:
+          FCM_SERVICE_ACCOUNT_JSON: ${{ secrets.FCM_SERVICE_ACCOUNT_JSON }}
+          NOTIF_TITLE: ${{ inputs.title }}
+          NOTIF_BODY: ${{ inputs.body }}
+          NOTIF_TOPIC: ${{ inputs.topic }}
+          NOTIF_URL: ${{ inputs.url }}
+        run: node send-custom-notification.mjs
+        working-directory: .github/scripts
