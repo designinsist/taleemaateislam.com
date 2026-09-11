@@ -1054,3 +1054,17 @@ html.is-native-app .app-tabbar::-webkit-scrollbar { display: none; }
 }
 .app-tabbar-item svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .app-tabbar-item.active { color: var(--gold-light); }
+
+.app-ptr-indicator { display: none; }
+html.is-native-app .app-ptr-indicator {
+  display: flex; align-items: center; justify-content: center;
+  position: fixed; top: 0; left: 0; right: 0; height: 60px; z-index: 1300;
+  transform: translateY(-60px); opacity: 0; pointer-events: none;
+}
+.app-ptr-indicator svg {
+  width: 24px; height: 24px; stroke: var(--gold-light); fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  filter: drop-shadow(0 2px 6px rgba(13,40,24,0.45));
+}
+.app-ptr-indicator.refreshing svg { animation: appPtrSpin 0.8s linear infinite; }
+@keyframes appPtrSpin { to { transform: rotate(360deg); } }

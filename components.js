@@ -39,6 +39,15 @@ var SITE_SEARCH_INDEX = [
     }
   } catch (e) {}
 
+  /* Light haptic tap on primary navigation - no-op outside the native app
+     (or on an app build that predates the Haptics plugin). */
+  function haptic(style) {
+    try {
+      var haptics = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Haptics;
+      if (haptics) haptics.impact({ style: style || 'Light' });
+    } catch (e) {}
+  }
+
   /* ── Map: page filename → which desktop nav item is "active" ── */
   const NAV_MAP = {
     'index.html'                  : 'index.html',
@@ -179,6 +188,53 @@ var SITE_SEARCH_INDEX = [
     }
   }
 
+  /* ── Pull-to-refresh (native app only, pure gesture handler - reloads the live page) ── */
+  function initPullToRefresh() {
+    if (!document.documentElement.classList.contains('is-native-app')) return;
+
+    var indicator = document.createElement('div');
+    indicator.className = 'app-ptr-indicator';
+    indicator.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3.1-6.8"/><path d="M21 4v6h-6"/></svg>';
+    document.body.appendChild(indicator);
+
+    var startY = 0, pulling = false, refreshing = false, triggered = false;
+    var THRESHOLD = 70, MAX_PULL = 110;
+
+    document.addEventListener('touchstart', function (e) {
+      if (refreshing || window.scrollY > 0) return;
+      if (e.target.closest('.nav-drawer, .search-modal, .social-sticky-panel')) return;
+      startY = e.touches[0].clientY;
+      pulling = true;
+      triggered = false;
+    }, { passive: true });
+
+    document.addEventListener('touchmove', function (e) {
+      if (!pulling || refreshing) return;
+      var delta = e.touches[0].clientY - startY;
+      if (delta <= 0) { pulling = false; indicator.style.transform = 'translateY(-60px)'; indicator.style.opacity = '0'; return; }
+      var pull = Math.min(delta * 0.5, MAX_PULL);
+      indicator.style.transform = 'translateY(' + (pull - 60) + 'px)';
+      indicator.style.opacity = String(Math.min(pull / THRESHOLD, 1));
+      if (pull >= THRESHOLD && !triggered) { triggered = true; haptic('Light'); }
+    }, { passive: true });
+
+    document.addEventListener('touchend', function () {
+      if (!pulling || refreshing) { pulling = false; return; }
+      pulling = false;
+      if (triggered) {
+        refreshing = true;
+        indicator.classList.add('refreshing');
+        indicator.style.transform = 'translateY(10px)';
+        indicator.style.opacity = '1';
+        haptic('Medium');
+        setTimeout(function () { window.location.reload(); }, 300);
+      } else {
+        indicator.style.transform = 'translateY(-60px)';
+        indicator.style.opacity = '0';
+      }
+    }, { passive: true });
+  }
+
   /* ── Bottom tab bar: "More" opens the existing drawer, drawer search opens the search modal ── */
   function initAppTabbar() {
     var moreBtn = document.getElementById('tabbarMore');
@@ -189,10 +245,15 @@ var SITE_SEARCH_INDEX = [
       });
     }
 
+    document.querySelectorAll('.app-tabbar-item').forEach(function (item) {
+      item.addEventListener('click', function () { haptic('Light'); });
+    });
+
     var drawerSearchBtn = document.getElementById('drawerSearchBtn');
     var searchToggle = document.getElementById('searchToggle');
     if (drawerSearchBtn && searchToggle) {
       drawerSearchBtn.addEventListener('click', function () {
+        haptic('Light');
         if (hamburger && hamburger.classList.contains('open')) hamburger.click();
         setTimeout(function () { searchToggle.click(); }, 50);
       });
@@ -382,6 +443,7 @@ var SITE_SEARCH_INDEX = [
     /* Close drawer when a link inside it is clicked */
     navDrawer.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
+        haptic('Light');
         closeDrawer();
       });
     });
@@ -1073,6 +1135,7 @@ var SITE_SEARCH_INDEX = [
   function init() {
     initPageLoader();
     initBookSharing();
+    initPullToRefresh();
 
     var headerPromise = loadFragment('site-header', 'header.partial');
     var footerPromise = loadFragment('site-footer', 'footer.partial');
