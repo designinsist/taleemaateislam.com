@@ -41,6 +41,7 @@ Common steps:
 - Jummah Khutbah: `PLdujDev9jtVZm37FyiWT_bX7Pt24b7gam` -> `jummah-khutbah.html`
 - Yaqeen Ka Safar: `PLdujDev9jtVYtRi2Ef_X85JaqfhMPT0Ai` -> `yaqeen-ka-safar-shorts.html` and `daily-shorts.js`
 - Islamic Knowledge: `PLTrTk_fdnvMA` -> `islamic-knowledge.html`
+- Dars Al-Anbiya: `PLDDgYN8YRcIg` -> `dars-e-quran-videos.html`
 - Dars Taha: `PLf3p6vt-01vk` -> `dars-e-quran-videos.html`
 - Dars Maryam: `PLb9F2UZzrMqo` -> `dars-e-quran-videos.html`
 - Dars Kahf: `PLdujDev9jtVYteodb2c4DpSj_ESdjYb-G` -> `dars-e-quran-videos.html`
