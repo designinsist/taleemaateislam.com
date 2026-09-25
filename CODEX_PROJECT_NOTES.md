@@ -53,7 +53,6 @@ Common steps:
 Known unavailable video:
 - `YK_wMxPgnng` in Maryam playlist is unavailable/deleted; exclude it from comparison and do not re-add it.
 - `4rzWIJM1RW0` in the Quran Urdu Translation playlist has no public title and is unavailable; exclude it from comparison and do not add it unless it becomes publicly playable.
-- `XSGb3I6_RIM` in the Yaqeen Ka Safar playlist is a private video; exclude it from comparison and do not add it unless it becomes public.
 
 ## Page Conventions
 
