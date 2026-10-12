@@ -6,7 +6,7 @@
    * The last ID you add is treated as the latest short.
    */
   var DAILY_SHORTS = [
-    'B4Ng9uI49pI', 'drjILoGSSb8', 'q-YFZTSYlIU',
+    'M8DZqaM4-q8', 'CTniDtcXyvg', 'B4Ng9uI49pI', 'drjILoGSSb8', 'q-YFZTSYlIU',
     'Ma9KGG9tOGA', 'o1Jk3ldq2AQ', 'F59Wu6udQ6o', '5r68tVuCqz4', 'iioQf-IJfn8',
     'KZ2w6cpbRkU', 'I7xi57XYYAk', 'S1nUSi-_fEw', 'XFRB7AQy-NE', '8N9eQl6Vns8',
     'VGgmL9SQ_ls', 'u5X2Pdvx88k', 'zimpZAbHp44', '0VcxvuTC-7k', 'BkjBUJynaHU',
@@ -26,7 +26,7 @@
     'd1MNhPVTtBU', 'gsACZLeiCLI', 'OYPSsFIVfKs', 'PM9THAFizwQ', 'DijIbTm54o4',
     'DAXLNI6Y2bA', 'kgGm8Tti_a4', '6bxwDAqvgf4', 'IHwOW4HjPI8', 'XSGb3I6_RIM',
     'gilCkDpu-e8', '5rahigKcsKw', 'QI70R7s1P04', 'a26txJ0LUwo', '73GGEZ0eT3A',
-    '6w0Qf1JE_no', '55npu0CabWQ',
+    '6w0Qf1JE_no', '55npu0CabWQ', 'Nv78fs0v0_A',
   ];
 
   function buildEmbedUrl(videoId) {
