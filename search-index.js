@@ -11,7 +11,7 @@ var SITE_SEARCH_INDEX = [
     label: 'Quran',
     url: 'dars-e-quran.html',
     desc: 'Dars-e-Quran by Mufti Shahid Mushtaq - Quran explanation with brief tafseer.',
-    tags: 'dars quran tafseer mufti shahid mushtaq surah al anbiya taha maryam yunus baqarah lecture explanation'
+    tags: 'dars quran tafseer mufti shahid mushtaq surah al hajj anbiya taha maryam yunus baqarah lecture explanation'
   },
   {
     title: 'Dars-e-Quran Videos',
